@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller']	= "registration";
+$route['default_controller']	= "main_controller";
 $route['home'] 					= "home";
 $route['home/add'] 				= 'home/register';
 $route['home/delete/(:any)'] 	= '/home/delete/$1';
