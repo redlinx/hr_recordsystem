@@ -48,6 +48,15 @@ color:white;
 
 	<table width="600" border="0" align="center">
 
+		
+		<tr>
+			<td width="130" align="left" bgcolor="#FFFFFF">Username: </td>
+			<td><?php echo form_input($username); ?></td>
+		</tr>
+		<tr>
+			<td width="130" align="left" bgcolor="#FFFFFF">Password: </td>
+			<td><?php echo form_input($password); ?></td>
+		</tr>
 		<tr>
 			<td width="130" align="left" bgcolor="#FFFFFF">Last Name: </td>
 			<td><?php echo form_input($lastname); ?></td>

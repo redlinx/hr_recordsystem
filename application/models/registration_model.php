@@ -23,6 +23,13 @@ class Registration_model extends CI_Model {
 		return (isset($id)) ? $id : FALSE;
 	
 	}
+	public function view($user_id)
+	{
+		$this->db->where('id', $user_id);
+		$this->db->select('id, lastname, firstname');
+		$query = $this->db->get('users');
+		return $query->result_array();
+	}
 	public function delete($user_id)
 	{
 		$this->db->where('id', $user_id);

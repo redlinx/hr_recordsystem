@@ -63,6 +63,7 @@ color:white;
 			<th>ID No</th>
 			<th>Last Name</th>
 			<th>First Name</th>
+			<th>View</th>
 			<th>Delete</th>
 		</tr>
 		<?php
@@ -73,6 +74,11 @@ color:white;
 				<td><?php echo $user['id'] ?></td>
 				<td><?php echo $user['lastname'] ?></td>
 				<td><?php echo $user['firstname'] ?></td>
+				<td>
+					<?php 
+						echo anchor('index.php/home/view/'.$user_id, 'View');
+					?>
+				</td>
 				<td>
 					<?php 
 						echo anchor('index.php/home/delete/'.$user_id, 'Delete', array('onClick' => "return confirm('Are you sure you want to delete?')"));

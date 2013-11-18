@@ -21,6 +21,8 @@ class Home extends CI_Controller {
 	function register() {
 
 		//validate form input
+		$this->form_validation->set_rules('username', 'Username', 'required|xss_clean');
+		$this->form_validation->set_rules('password', 'Password', 'required|xss_clean');
 		$this->form_validation->set_rules('lastname', 'Last Name', 'required|xss_clean');
 		$this->form_validation->set_rules('firstname', 'First Name', 'required|xss_clean');
 		$this->form_validation->set_rules('middlename', 'Middle Name', 'required|xss_clean');
@@ -42,6 +44,8 @@ class Home extends CI_Controller {
 		{		
 			$data = array(
 				'id'			=> $this->input->post('id'),
+				'username'		=> $this->input->post('username'),
+				'password'		=> $this->input->post('password'),
 				'lastname'		=> $this->input->post('lastname'),
 				'firstname' 	=> $this->input->post('firstname'),
 				'middlename'  	=> $this->input->post('middlename'),
@@ -67,6 +71,21 @@ class Home extends CI_Controller {
 		}
 		else{
 			
+			$this->data['username'] = array(
+				'name'  	=> 'username',
+				'id'    	=> 'username',
+				'type'  	=> 'text',
+				'style'		=> 'width:200px;',
+				'value' 	=> $this->form_validation->set_value('username'),
+			);
+			$this->data['password'] = array(
+				'name'  	=> 'password',
+				'id'    	=> 'password',
+				'type'  	=> 'text',
+				'style'		=> 'width:200px;',
+				'value' 	=> $this->form_validation->set_value('password'),
+			);
+
 			$this->data['lastname'] = array(
 				'name'  	=> 'lastname',
 				'id'    	=> 'lastname',
@@ -178,17 +197,30 @@ class Home extends CI_Controller {
 				'value' => $this->form_validation->set_value('status'),
 			);
 			$this->data['rank'] = array(
-				''  		=> 'Rank:',
-				'Regular' 	=> 'Regular',
-				'Probi 1' 	=> 'Probationary 1',
-				'Probi 2' 	=> 'Probationary 2',
-				'Probi 3' 	=> 'Probationary 3',
+				''  			=> 'Rank:',
+				'Instructor I' 	=> 'Instructor I',
+				'Instructor II' => 'Instructor II',
+				'Assis. Prof' 	=> 'Assistang Professor',
+				'Agg. Prof' 	=> 'Aggregate Professor',
+				'Assoc. Prof' 	=> 'Associate Professor',
+				'Prof' 			=> 'Full Professor',
+				'Prof I' 		=> 'Full Professor I',
+				'Prof II' 		=> 'Full Professor II',
+				'Prof III' 		=> 'Full Professor III',
+				'Prof IV' 		=> 'Full Professor IV',
+				'Prof V' 		=> 'Full Professor V',
+				'Prof VI' 		=> 'Full Professor VI',
+				'Prof Emeritus' => 'Professor Emeritus',
 				'value' => $this->form_validation->set_value('rank'),
 			);
 
 			
 			$this->load->view('register', $this->data);
 		}
+	}
+	function view($user_id) {
+		$data['users'] = $this->Registration_model->view($user_id);
+		$this->load->view('view', $data);
 	}
 	function delete($user_id) {
 		$this->Registration_model->delete($user_id);

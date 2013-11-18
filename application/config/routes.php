@@ -42,6 +42,7 @@ $route['default_controller']	= "registration";
 $route['home'] 					= "home";
 $route['home/add'] 				= 'home/register';
 $route['home/delete/(:any)'] 	= '/home/delete/$1';
+$route['home/view/(:any)'] 		= '/home/view/$1';
 $route['404_override'] 			= '';
 
 
