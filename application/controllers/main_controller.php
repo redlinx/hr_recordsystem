@@ -3,6 +3,12 @@
    
    class Main_controller extends CI_Controller{
     
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('Registration_model');
+        $this->load->helper('url');
+    }
     public function index()
     {
         $this->main_view();
@@ -12,7 +18,7 @@
     {
         $this->load->view('main_view');
     }
-    
+  
     public function members(){
         if($this->session->userdata('is_logged_in')){
              $this->load->view('members');

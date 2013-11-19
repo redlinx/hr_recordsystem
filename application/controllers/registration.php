@@ -11,8 +11,6 @@ class Registration extends CI_Controller {
 
 	public function index()
 	{	
-		$this->data['users'] = $this->Registration_model->get_all();
-		$this->data['message'] = $this->session->flashdata('message');
-		$this->load->view('management', $this->data);
+		
 	}
 }
