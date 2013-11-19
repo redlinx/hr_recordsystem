@@ -35,4 +35,11 @@ class Registration_model extends CI_Model {
 		$this->db->where('id', $user_id);
 		$this->db->delete('users');
 	}
+	public function edit($data)
+	{
+		$this->db->update('users', $data);
+		$id = $this->db->update_id();
+		
+		return (isset($id)) ? $id : FALSE;		
+	}
 }

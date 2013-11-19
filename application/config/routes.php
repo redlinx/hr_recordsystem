@@ -39,11 +39,11 @@
 */
 
 $route['default_controller']	= "main_controller";
-$route['home'] 					= "home";
-$route['home/add'] 				= 'home/register';
+$route['home'] 			= "home";
+$route['home/add'] 		= 'home/register';
 $route['home/delete/(:any)'] 	= '/home/delete/$1';
-$route['home/view/(:any)'] 		= '/home/view/$1';
-$route['404_override'] 			= '';
+$route['home/view/(:any)'] 	= '/home/view/$1';
+$route['404_override'] 		= '';
 
 
 /* End of file routes.php */

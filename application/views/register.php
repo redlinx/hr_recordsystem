@@ -75,7 +75,7 @@ color:white;
 		</tr>
 		<tr>
 			<td align="left" bgcolor="#FFFFFF">Religion:</td>
-			<td><?php echo form_input($religon); ?></td>
+			<td><?php echo form_input($religion); ?></td>
 		</tr>
 		<tr>
 			<td align="left" bgcolor="#FFFFFF">Date of Birth:</td>

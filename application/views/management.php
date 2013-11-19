@@ -51,7 +51,7 @@ color:white;
 			<a href="http://localhost/hr_recordsystem/">
 				<input name="New" type="button" value="Home">
 			</a>
-			<input name="New" type="button" value="Register" onclick="window.location='index.php/home/add'" />
+			<input name="New" type="button" value="Register" onclick="window.location='home/add'" />
 		</td>
 	</tr>
 </table>
@@ -65,6 +65,7 @@ color:white;
 			<th>First Name</th>
 			<th>View</th>
 			<th>Delete</th>
+			<th>Edit</th>
 		</tr>
 		<?php
 		foreach ($users as $user){
@@ -82,6 +83,11 @@ color:white;
 				<td>
 					<?php 
 						echo anchor('index.php/home/delete/'.$user_id, 'Delete', array('onClick' => "return confirm('Are you sure you want to delete?')"));
+					?>
+				</td>
+				<td>
+					<?php
+						echo anchor('index.php/home/edit/'.$user_id, 'Edit');
 					?>
 				</td>
 			</tr>
