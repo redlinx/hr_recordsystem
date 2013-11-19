@@ -17,7 +17,17 @@ class Home extends CI_Controller {
 		$this->data['message'] = $this->session->flashdata('message');
 		$this->load->view('management', $this->data);
 	}
-	
+	 public function login()
+    {
+      $this->load->view('login');
+    }
+    public function management()
+    {
+    	$this->data['users'] = $this->Registration_model->get_all();
+		$this->data['message'] = $this->session->flashdata('message');
+		$this->load->view('management', $this->data);
+    }
+
 	function register() {
 
 		//validate form input

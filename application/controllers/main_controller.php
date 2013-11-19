@@ -11,14 +11,15 @@
     }
     public function index()
     {
-        $this->main_view();
+        
+        $this->load->view('welcome');
+
     }
-    
-    public function main_view()
+    public function login()
     {
-        $this->load->view('main_view');
+      $this->load->view('login');
     }
-  
+      
     public function members(){
         if($this->session->userdata('is_logged_in')){
              $this->load->view('members');

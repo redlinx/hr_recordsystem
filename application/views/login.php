@@ -39,15 +39,19 @@ color:white;
     <tr>
         <td id="header">
             <h2>Records Management System</h2>
-            <h4>Human Resource Office| University of the Immaculate Conception</h4>
+            <h4>Human Resource Office | University of the Immaculate Conception</h4>
         </td>
     </tr>
     <tr>
-        <td>
+          <td>
             <a href="http://localhost/hr_recordsystem/">
                 <input id="home" name="New" type="button" value="Home">
             </a>
-            <input id="reg" name="New" type="button" value="Register" onclick="window.location='index.php/home/add'" />
+            <a href="http://localhost/hr_recordsystem/index.php/home/login">
+                <input id="home" name="New" type="button" value="Login">
+            </a>
+            <input id="reg" name="New" type="button" value="Register" onclick="window.location='add'" />
+            <input id="reg" name="New" type="button" value="Faculty" onclick="window.location='management'" />
         </td>
     </tr>
     <tr>

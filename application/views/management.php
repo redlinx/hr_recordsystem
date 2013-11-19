@@ -18,19 +18,19 @@ th
 background-color: MediumBlue;
 color:white;
 }
+#home, #reg
+{
+    background-color: MediumBlue;
+    color:white;
+}
 
 #list
 {
-	text-align: center;
+    text-align: center;
 }
-#infoMessage p{
-	padding: .8em;
-	margin-bottom: 1em;
-	border: 2px solid #ddd;
-	background: #FFF6BF;
-	color: #817134;
-	border-color: #FFD324;
-	text-align: center;
+#container
+{
+    margin: auto;
 }
 	
 </style>
@@ -40,7 +40,7 @@ color:white;
 	<tr>
 		<td id="header">
 			<h2>Records Management System</h2>
-			<h4>Human Resource Office| University of the Immaculate Conception</h4>
+			<h4>Human Resource Office | University of the Immaculate Conception</h4>
 		</td>
 	</tr>
 	<tr>
@@ -48,11 +48,19 @@ color:white;
 	</tr>
 	<tr>
 		<td>
-			<a href="http://localhost/hr_recordsystem/">
-				<input name="New" type="button" value="Home">
-			</a>
-			<input name="New" type="button" value="Register" onclick="window.location='index.php/home/add'" />
-		</td>
+            <a href="http://localhost/hr_recordsystem/">
+                <input id="home" name="New" type="button" value="Home">
+            </a>
+            <a href="http://localhost/hr_recordsystem/index.php/home/login">
+                <input id="home" name="New" type="button" value="Login">
+            </a>
+            <a href="http://localhost/hr_recordsystem/index.php/home/add">
+                <input id="home" name="New" type="button" value="Register">
+            </a>
+            <a href="http://localhost/hr_recordsystem/index.php/home/management">
+                <input id="home" name="New" type="button" value="Faculty">
+            </a>
+        </td>
 	</tr>
 </table>
 <form name="list" method="post">
@@ -76,7 +84,7 @@ color:white;
 				<td><?php echo $user['firstname'] ?></td>
 				<td>
 					<?php 
-						echo anchor('index.php/home/view/'.$user_id, 'View');
+						echo anchor('home/view/'.$user_id, 'View');
 					?>
 				</td>
 				<td>
