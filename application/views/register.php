@@ -19,10 +19,19 @@ th
 background-color: MediumBlue;
 color:white;
 }
+#home, #reg
+{
+    background-color: MediumBlue;
+    color:white;
+}
 
 #list
 {
-	text-align: center;
+    text-align: center;
+}
+#container
+{
+    margin: auto;
 }
 </style>
 <body>
@@ -30,21 +39,27 @@ color:white;
 	<tr>
 		<td id="header">
 			<h2>Records Management System</h2>
-			<h4>Human Resource Office| University of the Immaculate Conception</h4>
+			<h4>Human Resource Office | University of the Immaculate Conception</h4>
 			<hr>
 			<h3>Faculty Registration Module</h3>
 		</td>
 	</tr>
 	<tr>
-		<td>
-			<a href="http://localhost/hr_recordsystem/">
-				<input name="New" type="button" value="Home">
-			</a>
-			<input name="New" type="button" value="Register" onclick="window.location='http://localhost/hr_recordsystem/index.php/home/add'" />
-		</td>
+		 <td>
+            <a href="http://localhost/hr_recordsystem/">
+                <input id="home" name="New" type="button" value="Home">
+            </a>
+            <a href="http://localhost/hr_recordsystem/index.php/home/login">
+                <input id="home" name="New" type="button" value="Login">
+            </a>
+            <a href="http://localhost/hr_recordsystem/index.php/home/add">
+                <input id="home" name="New" type="button" value="Register">
+            </a>
+            <input id="reg" name="New" type="button" value="Faculty" onclick="window.location='management'" />
+        </td>
 	</tr>
 </table>
-<?php echo form_open("index.php/home/add");?>
+<?php echo form_open("home/add");?>
 
 	<table width="600" border="0" align="center">
 

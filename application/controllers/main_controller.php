@@ -3,16 +3,23 @@
    
    class Main_controller extends CI_Controller{
     
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('Registration_model');
+        $this->load->helper('url');
+    }
     public function index()
     {
-        $this->main_view();
+        
+        $this->load->view('welcome');
+
     }
-    
-    public function main_view()
+    public function login()
     {
-        $this->load->view('main_view');
+      $this->load->view('login');
     }
-    
+      
     public function members(){
         if($this->session->userdata('is_logged_in')){
              $this->load->view('members');
@@ -34,7 +41,7 @@
           if ($this->form_validation->run()){
             
             $data = array(
-                'username' =>$this->input->post('username'), 'is_logged_in' => 1 );
+                'username' => $this->input->post('username'), 'is_logged_in' => 1 );
             
             $this->session->set_userdata($data);
             redirect('main_controller/members');

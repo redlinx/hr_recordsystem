@@ -18,12 +18,20 @@ th
 background-color: MediumBlue;
 color:white;
 }
+#home, #reg
+{
+    background-color: MediumBlue;
+    color:white;
+}
 
 #list
 {
-	text-align: center;
+    text-align: center;
 }
-
+#container
+{
+    margin: auto;
+}
 </style>
 </head>
 <body>
@@ -31,7 +39,7 @@ color:white;
 	<tr>
 		<td id="header">
 			<h2>Records Management System</h2>
-			<h4>Human Resource Office| University of the Immaculate Conception</h4>
+			<h4>Human Resource Office | University of the Immaculate Conception</h4>
 			<hr>
 			<h3>Faculty Profile</h3>
 		</td>
@@ -39,15 +47,23 @@ color:white;
 	<tr>
 		<td>
 			<a href="http://localhost/hr_recordsystem/">
-				<input name="New" type="button" value="Home">
-			</a>
-			<input name="New" type="button" value="Register" onclick="window.location='index.php/home/add'" />
+                <input id="home" name="New" type="button" value="Home">
+            </a>
+            <a href="http://localhost/hr_recordsystem/index.php/home/login">
+                <input id="home" name="New" type="button" value="Login">
+            </a>
+            <a href="http://localhost/hr_recordsystem/index.php/home/add">
+                <input id="home" name="New" type="button" value="Register">
+            </a>
+            <a href="http://localhost/hr_recordsystem/index.php/home/management">
+                <input id="home" name="New" type="button" value="Facuty">
+            </a>
+            
 		</td>
 	</tr>
 </table>
-<h1> Buang c Cah </h1>
 
-<?php print_r($users); ?>
-	
+<?php print_r($users); ?> <br/>
+
 </body>
 </html>
