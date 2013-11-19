@@ -40,7 +40,7 @@
           if ($this->form_validation->run()){
             
             $data = array(
-                'username' =>$this->input->post('username'), 'is_logged_in' => 1 );
+                'username' => $this->input->post('username'), 'is_logged_in' => 1 );
             
             $this->session->set_userdata($data);
             redirect('main_controller/members');
