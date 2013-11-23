@@ -278,9 +278,9 @@ class Home extends CI_Controller {
 	}
 	public function edit() {
 
-<<<<<<< HEAD
+	<<< HEAD
 
-=======
+	=======
 		//validate form input
 		$this->form_validation->set_rules('username', 'Username', 'required|xss_clean');
 		$this->form_validation->set_rules('password', 'Password', 'required|xss_clean');
@@ -478,6 +478,6 @@ class Home extends CI_Controller {
 			
 			$this->load->view('edit', $this->data);
 		}
-	}
 >>>>>>> 2451fc724c3ae7336099dc9664a3452c3bb4511e
 }
+
