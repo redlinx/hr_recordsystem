@@ -9,5 +9,9 @@ class Layouts extends CI_Controller {
 	{
 		$this->load->view('paascu_profile');
 	}
+	public function sample()
+	{
+		$this->load->view('sample_view');
+	}
 }
 ?>
