@@ -14,20 +14,63 @@ class Home extends CI_Controller {
 	public function index()
 	{
 		$this->data['users'] = $this->Registration_model->get_all();
-		$this->data['message'] = $this->session->flashdata('message');
 		$this->load->view('management', $this->data);
 	}
 	 public function login()
     {
       $this->load->view('login');
     }
-    public function management()
+    public function members()
     {
-    	$this->data['users'] = $this->Registration_model->get_all();
-		$this->data['message'] = $this->session->flashdata('message');
-		$this->load->view('management', $this->data);
+        if($this->session->userdata('is_logged_in'))
+        {
+          $this->load->view('home');
+        }
+        else
+        {
+          redirect('restricted');
+        }
     }
-
+    public function restricted()
+    {
+      $this->load->view('restricted');
+    }
+    public function main_view_validation()
+    {    
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('username', 'Username', 'required|trim|xss_clean|callback_validate_credentials');
+        $this->form_validation->set_rules('password', 'Password', 'required|trim');
+          
+		if ($this->form_validation->run())
+		{
+			$data = array('username' => $this->input->post('username'), 'is_logged_in' => 1 );
+			$this->session->set_userdata($data);
+			redirect('login');
+		}
+		else
+		{
+			$this->load->view('home');
+		}
+          
+    }
+    public function validate_credentials()
+    {
+    	$this->load->model('registration_model');
+    	if($this->registration_model->can_log_in())
+    	{
+    		return true;
+  		}
+  		else
+  		{
+      	$this->form_validation->set_message('validate_credentials', 'Incorrect Username/Password');
+      	return false;
+    	}
+    }
+    public function logout()
+    {
+        $this->session->sess_destroy();
+        redirect('');
+    }
 	function register() {
 
 		//validate form input
@@ -201,9 +244,9 @@ class Home extends CI_Controller {
 			$this->data['status'] = array(
 				''  		=> 'Status:',
 				'Regular' 	=> 'Regular',
-				'Probi 1' 	=> 'Probationary 1',
-				'Probi 2' 	=> 'Probationary 2',
-				'Probi 3' 	=> 'Probationary 3',
+				'Probi1' 	=> 'Probationary 1',
+				'Probi2' 	=> 'Probationary 2',
+				'Probi3' 	=> 'Probationary 3',
 				'value' => $this->form_validation->set_value('status'),
 			);
 			$this->data['rank'] = array(
@@ -228,14 +271,11 @@ class Home extends CI_Controller {
 			$this->load->view('register', $this->data);
 		}
 	}
-	function view($user_id) {
-		$data['users'] = $this->Registration_model->view($user_id);
-		$this->load->view('view', $data);
-	}
+
 	function delete($user_id) {
 		$this->Registration_model->delete($user_id);
-				
-		redirect('index.php');
+
 	}
+
 
 }

@@ -47,16 +47,20 @@ color:white;
             <a href="http://localhost/hr_recordsystem/">
                 <input id="home" name="New" type="button" value="Home">
             </a>
-            <input id="reg" name="New" type="button" value="Login" onclick="window.location='index.php/home/log'" />
+            <input id="reg" name="New" type="button" value="Logout" onclick="window.location='logout'" />
         </td>
     </tr>
     <tr>
         <td>
-            <h2>
                 <center>
-                    Welcome
-                </center> 
-            </h2>    
+                    <?php
+            
+                        echo "Invalid Username/Password";
+                        echo "<pre>";
+                        print_r($this->input->post());
+                        echo "</pre>";  
+                    ?>
+                </center>    
         </td>
     </tr>
 </table>
