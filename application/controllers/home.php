@@ -250,19 +250,19 @@ class Home extends CI_Controller {
 				'value' => $this->form_validation->set_value('status'),
 			);
 			$this->data['rank'] = array(
-				''  			=> 'Rank:',
+				''  		=> 'Rank:',
 				'Instructor I' 	=> 'Instructor I',
 				'Instructor II' => 'Instructor II',
 				'Assis. Prof' 	=> 'Assistang Professor',
 				'Agg. Prof' 	=> 'Aggregate Professor',
 				'Assoc. Prof' 	=> 'Associate Professor',
-				'Prof' 			=> 'Full Professor',
-				'Prof I' 		=> 'Full Professor I',
-				'Prof II' 		=> 'Full Professor II',
-				'Prof III' 		=> 'Full Professor III',
-				'Prof IV' 		=> 'Full Professor IV',
-				'Prof V' 		=> 'Full Professor V',
-				'Prof VI' 		=> 'Full Professor VI',
+				'Prof' 		=> 'Full Professor',
+				'Prof I' 	=> 'Full Professor I',
+				'Prof II' 	=> 'Full Professor II',
+				'Prof III' 	=> 'Full Professor III',
+				'Prof IV' 	=> 'Full Professor IV',
+				'Prof V' 	=> 'Full Professor V',
+				'Prof VI' 	=> 'Full Professor VI',
 				'Prof Emeritus' => 'Professor Emeritus',
 				'value' => $this->form_validation->set_value('rank'),
 			);
@@ -301,6 +301,7 @@ class Home extends CI_Controller {
 		$this->form_validation->set_rules('status', 'Status', 'required|xss_clean');
 		$this->form_validation->set_rules('rank', 'rank', 'required|xss_clean');
 
+		
 		if ($this->form_validation->run() == true)
 		{		
 			$data = array(
@@ -326,7 +327,7 @@ class Home extends CI_Controller {
 			);
 			
 			$this->Registration_model->edit($data);
-			$this->session->set_flashdata('message', "<p>Added successfully.</p>");
+			$this->session->set_flashdata('message', "<p>Update successfully.</p>");
 			redirect(base_url().'index.php');
 	
 		}
@@ -477,6 +478,33 @@ class Home extends CI_Controller {
 
 			
 			$this->load->view('edit', $this->data);
+			$query = $this->db->get('users');
+		foreach($query->result() as $row)
+		{
+		echo $row->username; 
+		echo $row->password; 
+		echo $row->lastname; 
+		echo $row->firstname;
+		echo $row->middlename;
+		echo $row->gender;
+		echo $row->religion;
+		echo $row->bday;
+		echo $row->birthplace;
+		echo $row->city_add;
+		echo $row->prov_add;
+		echo $row->tell_no;
+		echo $row->cell_no;
+		echo $row->email;
+		echo $row->civil_stat;
+		echo $row->user_type;
+		echo $row->status;
+		echo $row->rank;
+		}
+
+
+	
+		
+
 		}
 >>>>>>> 2451fc724c3ae7336099dc9664a3452c3bb4511e
 }
