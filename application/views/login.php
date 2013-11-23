@@ -18,10 +18,21 @@ th
 background-color: MediumBlue;
 color:white;
 }
-#home, #reg
+#buttons
 {
     background-color: MediumBlue;
     color:white;
+    padding: 4px;
+    width: 115px;
+    border-radius: 6px;
+}
+#username, #pass
+{
+    background-color: white;
+    color:black;
+    width: 150px;
+    border-radius: 6px;
+
 }
 
 #list
@@ -45,13 +56,14 @@ color:white;
     <tr>
           <td>
             <a href="http://localhost/hr_recordsystem/">
-                <input id="home" name="New" type="button" value="Home">
+                <input id="buttons" name="New" type="button" value="Home">
             </a>
             <a href="http://localhost/hr_recordsystem/index.php/home/login">
-                <input id="home" name="New" type="button" value="Login">
+                <input id="buttons" name="New" type="button" value="Login">
             </a>
-            <input id="reg" name="New" type="button" value="Register" onclick="window.location='add'" />
-            <input id="reg" name="New" type="button" value="Faculty" onclick="window.location='management'" />
+            <a href="http://localhost/hr_recordsystem/index.php/home/add">
+                <input id="buttons" name="New" type="button" value="Register">
+            </a>
         </td>
     </tr>
     <tr>
@@ -59,23 +71,12 @@ color:white;
 <table width="600" border="0" align="center">
 <div id="container">
     <center>
-        <h3> Login </h3>
-<?php 
-        echo form_open('main_controller/main_view_validation');
-            echo validation_errors();
-                
-            echo "<p>Username: ";
-            echo form_input('username');
-            echo "</p>";            
-            echo "<p>Password: ";
-            echo form_password('password');
-            echo "</p>";
-            
-            echo "<p>";
-            echo form_submit('main_view_submit', 'Login');
-            echo "</p>";
-        echo form_close();
-?>
+    <h3> Login </h3>
+    <form action="" method="POST">
+        <input id="username" type="text" name="username"><br>
+        <input id="pass" type="password" name="password"><br>
+        <input id="buttons" type="submit" value="Login">
+    </form>
 </center>
 </table>
 
