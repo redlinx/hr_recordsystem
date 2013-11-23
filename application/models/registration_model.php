@@ -28,16 +28,13 @@ class Registration_model extends CI_Model {
 		$this->db->where('id', $user_id);
 		$this->db->delete('users');
 	}
-<<<<<<< HEAD
-	public function edit($user_id)
-=======
-<<<<<<< HEAD
-	public function view()
+	public function view($user_id)
 	{
-		$this->load->database();
-		$query = $this->db->getwhere('users', array('id=>1'));
+		$this->db->where('id', $user_id);
+		$this->db->select('*');	
+        $query = $this->db->get('users');
 
-		return $query->row_array();
+        return $query->result_array();
 	}
 	public function can_log_in()
     {
@@ -55,9 +52,7 @@ class Registration_model extends CI_Model {
             return false;
         }
     }
-=======
 	public function edit($data)
->>>>>>> 9597603ecce8e253b669931963715a9e19b491ce
 	{
 		//$query = $this->db->get('users');
 		//$this->db->update('users');
@@ -71,9 +66,4 @@ class Registration_model extends CI_Model {
 		
 		}
 	}
-<<<<<<< HEAD
-
-=======
->>>>>>> 2451fc724c3ae7336099dc9664a3452c3bb4511e
->>>>>>> 9597603ecce8e253b669931963715a9e19b491ce
 }
