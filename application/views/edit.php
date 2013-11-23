@@ -2,7 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Registration</title>
+<title>Register Faculty</title>
+</head>
 <style>
 table, td, th
 {
@@ -18,36 +19,137 @@ th
 background-color: MediumBlue;
 color:white;
 }
+#home, #reg
+{
+    background-color: MediumBlue;
+    color:white;
+}
 
 #list
 {
-	text-align: center;
+    text-align: center;
 }
-
+#container
+{
+    margin: auto;
+}
 </style>
-</head>
 <body>
 <table width="600" border="0" align="center">
 	<tr>
 		<td id="header">
 			<h2>Records Management System</h2>
-			<h4>Human Resource Office| University of the Immaculate Conception</h4>
+			<h4>Human Resource Office | University of the Immaculate Conception</h4>
 			<hr>
-			<h3>Faculty Profile</h3>
+			<h3>Faculty Registration Module</h3>
 		</td>
 	</tr>
 	<tr>
-		<td>
-			<a href="http://localhost/hr_recordsystem/">
-				<input name="New" type="button" value="Home">
-			</a>
-			<input name="New" type="button" value="Register" onclick="window.location='index.php/home/add'" />
-		</td>
+		 <td>
+            <a href="http://localhost/hr_recordsystem/">
+                <input id="home" name="New" type="button" value="Home">
+            </a>
+            <a href="http://localhost/hr_recordsystem/index.php/home/login">
+                <input id="home" name="New" type="button" value="Login">
+            </a>
+            <a href="http://localhost/hr_recordsystem/index.php/home/add">
+                <input id="home" name="New" type="button" value="Register">
+            </a>
+            <input id="reg" name="New" type="button" value="Faculty" onclick="window.location='management'" />
+        </td>
 	</tr>
 </table>
-<h1> Buang c Cah </h1>
+<?php echo form_open("home/add");?>
 
-<?php print_r($users); ?>
+	<table width="600" border="0" align="center">
+
+		
+		<tr>
+			<td width="130" align="left" bgcolor="#FFFFFF">Username: </td>
+			<td><?php echo form_input($username); ?></td>
+		</tr>
+		<tr>
+			<td width="130" align="left" bgcolor="#FFFFFF">Password: </td>
+			<td><?php echo form_input($password); ?></td>
+		</tr>
+		<tr>
+			<td width="130" align="left" bgcolor="#FFFFFF">Last Name: </td>
+			<td><?php echo form_input($lastname); ?></td>
+		</tr>
+		<tr>
+			<td align="left" bgcolor="#FFFFFF">First Name:</td>
+			<td><?php echo form_input($firstname); ?></td>
+		</tr>
+		<tr>
+			<td align="left" bgcolor="#FFFFFF">Middle Name:</td>
+			<td><?php echo form_input($middlename); ?></td>
+		</tr>
+		<tr>
+			<td align="left" bgcolor="#FFFFFF">Gender:</td>
+			<td><?php echo form_dropdown('gender',$gender); ?></td>
+		</tr>
+		<tr>
+			<td align="left" bgcolor="#FFFFFF">Religion:</td>
+			<td><?php echo form_input($religion); ?></td>
+		</tr>
+		<tr>
+			<td align="left" bgcolor="#FFFFFF">Date of Birth:</td>
+			<td><?php echo form_input($bday); ?></td>
+		</tr>
+		<tr>
+			<td align="left" bgcolor="#FFFFFF">Place of Birth:</td>
+			<td><?php echo form_input($birthplace); ?></td>
+		</tr>
+		<tr>
+			<td align="left" bgcolor="#FFFFFF">City Address:</td>
+			<td><?php echo form_input($city_add); ?></td>
+		</tr>
+		<tr>
+			<td align="left" bgcolor="#FFFFFF">Province Address:</td>
+			<td><?php echo form_input($prov_add); ?></td>
+		</tr>
+		<tr>
+			<td align="left" bgcolor="#FFFFFF">Telephone Number:</td>
+			<td><?php echo form_input($tell_no); ?></td>
+		</tr>
+		<tr>
+			<td align="left" bgcolor="#FFFFFF">Cellphone Number:</td>
+			<td><?php echo form_input($cell_no); ?></td>
+		</tr>
+		<tr>
+			<td align="left" bgcolor="#FFFFFF">Email Address:</td>
+			<td><?php echo form_input($email); ?></td>
+		</tr>
+		<tr>
+			<td align="left" bgcolor="#FFFFFF">Civil Status:</td>
+			<td><?php echo form_dropdown('civil_stat', $civil_stat); ?></td>
+		</tr>
+		<tr>
+			<td align="left" bgcolor="#FFFFFF">User Type:</td>
+			<td><?php echo form_dropdown('user_type', $user_type); ?></td>
+		</tr>
+		<tr>
+			<td align="left" bgcolor="#FFFFFF">Status:</td>
+			<td><?php echo form_dropdown('status', $status); ?></td>
+		</tr>
+		<tr>
+			<td align="left" bgcolor="#FFFFFF">Rank:</td>
+			<td><?php echo form_dropdown('rank', $rank); ?></td>
+		</tr>
+		
+		<tr>
+			<td align="right" bgcolor="#FFFFFF">&nbsp;</td>
+			<td>
+				<?php echo form_submit('submit', 'Register');?>
+				<?php echo form_reset('reset', 'Clear');?>
+		</tr>
 	
+	</table>
+	
+	
+	
+<?php echo form_close();
+
+?>
 </body>
 </html>
