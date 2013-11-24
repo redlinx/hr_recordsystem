@@ -6,17 +6,20 @@
 <style>
 table, td, th
 {
-border:1px solid HotPink;
+	border:1px solid HotPink;
 }
 #header
 {
-background-color: MediumBlue;
-color:white;
+	background-color: MediumBlue;
+	color:white;
+	border-radius: 6px;
+	margin: auto;
+	text-indent: 10px;
 }
 th
 {
-background-color: MediumBlue;
-color:white;
+	background-color: MediumBlue;
+	color:white;
 }
 #buttons
 {
@@ -58,15 +61,13 @@ color:white;
             <a href="http://localhost/hr_recordsystem/">
                 <input id="buttons" name="New" type="button" value="Home">
             </a>
-            <a href="http://localhost/hr_recordsystem/index.php/home/login">
-                <input id="buttons" name="New" type="button" value="Login">
-            </a>
             <a href="http://localhost/hr_recordsystem/index.php/home/add">
                 <input id="buttons" name="New" type="button" value="Register">
             </a>
         </td>
 	</tr>
 </table>
+<br/>
 <form name="list" method="post">
 	<input type="hidden" name="rid" />
 	<input type="hidden" name="command" />

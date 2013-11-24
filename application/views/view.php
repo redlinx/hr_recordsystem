@@ -136,6 +136,10 @@ color:white;
             <td><?php echo "<input type='text' value=' " . $user['civil_stat'] . "' >" ?></td>
         </tr>
         <tr>
+            <td align="left" bgcolor="#FFFFFF">Program:</td>
+            <td><?php echo "<input type='text' value=' " . $user['program'] . "' >" ?></td>
+        </tr>
+        <tr>
             <td align="left" bgcolor="#FFFFFF">User Type:</td>
             <td><?php echo "<input type='text' value=' " . $user['user_type'] . "' >" ?></td>
         </tr>

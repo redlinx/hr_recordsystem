@@ -90,6 +90,7 @@ class Home extends CI_Controller {
 		$this->form_validation->set_rules('cell_no', 'Cellphone Number', 'required|xss_clean');
 		$this->form_validation->set_rules('email', 'Email Address', 'required|xss_clean');
 		$this->form_validation->set_rules('civil_stat', 'Civil Status', 'required|xss_clean');
+		$this->form_validation->set_rules('program', 'Program', 'required|xss_clean');
 		$this->form_validation->set_rules('user_type', 'User Type', 'required|xss_clean');
 		$this->form_validation->set_rules('status', 'Status', 'required|xss_clean');
 		$this->form_validation->set_rules('rank', 'rank', 'required|xss_clean');
@@ -113,6 +114,7 @@ class Home extends CI_Controller {
 				'cell_no'  		=> $this->input->post('cell_no'),
 				'email'  		=> $this->input->post('email'),
 				'civil_stat'  	=> $this->input->post('civil_stat'),
+				'program'  		=> $this->input->post('program'),
 				'user_type'  	=> $this->input->post('user_type'),
 				'status'  		=> $this->input->post('status'),
 				'rank'  		=> $this->input->post('rank'),
@@ -233,6 +235,20 @@ class Home extends CI_Controller {
 				'Entitled Exemption Units' 		=> 'Entitled Exemption Units',
 				'Not Entitled Exemption Units' 	=> 'Not Entitled Exemption Units',
 				'value' => $this->form_validation->set_value('civil_stat'),
+			);
+			$this->data['program'] = array(
+				''  					=> 'Program:',
+				'LA' 					=> 'Liberal Arts',
+				'ABA' 					=> 'Accountancy and Business Administration',
+				'Engineering'			=> 'Engineering',
+				'Education'				=> 'Education',
+				'ND/HRM'				=> 'Nutrition and Dietetics/ Hotel and Restaurant Management',
+				'Music'					=> 'Music',
+				'ITE'					=> 'Information Technology Education',
+				'MLS'					=> 'Medical Laboratory Science',
+				'Pharma/Chem'			=> 'Pharmacy/Chemistry',
+				'Nursing'				=> 'Nursing',
+				'value' => $this->form_validation->set_value('program'),
 			);
 			$this->data['user_type'] = array(
 				''  		=> 'User Type:',
