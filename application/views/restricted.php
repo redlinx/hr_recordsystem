@@ -15,7 +15,7 @@
             
             <h1>you do not have access to this page</h1>
             
-            <a href='<?php echo base_url(), "main_controller/main_view"; ?>'>Back to Login</a>
+            <a href='<?php echo base_url(). "main_controller/main_view"; ?>'>Back to Login</a>
            </div>
         
     </body>

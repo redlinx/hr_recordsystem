@@ -14,18 +14,74 @@ class Home extends CI_Controller {
 	public function index()
 	{
 		$this->data['users'] = $this->Registration_model->get_all();
-		$this->data['message'] = $this->session->flashdata('message');
 		$this->load->view('management', $this->data);
 	}
-	
-	function register() {
+	 public function login()
+    {
+      $this->load->view('login');
+    }
+    public function members()
+    {
+        if($this->session->userdata('is_logged_in'))
+        {
+          $this->load->view('home');
+        }
+        else
+        {
+          redirect('restricted');
+        }
+    }
+    public function restricted()
+    {
+      $this->load->view('restricted');
+    }
+    public function main_view_validation()
+    {    
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('username', 'Username', 'required|trim|xss_clean|callback_validate_credentials');
+        $this->form_validation->set_rules('password', 'Password', 'required|trim');
+          
+		if ($this->form_validation->run())
+		{
+			$data = array('username' => $this->input->post('username'), 'is_logged_in' => 1 );
+			$this->session->set_userdata($data);
+			redirect('login');
+		}
+		else
+		{
+			$this->load->view('home');
+		}
+          
+    }
+    public function validate_credentials()
+    {
+    	$this->load->model('registration_model');
+    	if($this->registration_model->can_log_in())
+    	{
+    		return true;
+  		}
+  		else
+  		{
+      	$this->form_validation->set_message('validate_credentials', 'Incorrect Username/Password');
+      	return false;
+    	}
+    }
+    public function logout()
+    {
+        $this->session->sess_destroy();
+        redirect('');
+    }
+	function register()
+	{
 
 		//validate form input
+		$this->form_validation->set_rules('username', 'Username', 'required|xss_clean');
+		$this->form_validation->set_rules('password', 'Password', 'required|xss_clean');
 		$this->form_validation->set_rules('lastname', 'Last Name', 'required|xss_clean');
 		$this->form_validation->set_rules('firstname', 'First Name', 'required|xss_clean');
 		$this->form_validation->set_rules('middlename', 'Middle Name', 'required|xss_clean');
 		$this->form_validation->set_rules('gender', 'Gender', 'required|xss_clean');
-		$this->form_validation->set_rules('religon', 'Religon', 'required|xss_clean');
+		$this->form_validation->set_rules('religion', 'Religion', 'required|xss_clean');
 		$this->form_validation->set_rules('bday', 'Date of Birth', 'required|xss_clean');
 		$this->form_validation->set_rules('birthplace', 'Place of Birth', 'required|xss_clean');
 		$this->form_validation->set_rules('city_add', 'City Address', 'required|xss_clean');
@@ -42,11 +98,13 @@ class Home extends CI_Controller {
 		{		
 			$data = array(
 				'id'			=> $this->input->post('id'),
+				'username'		=> $this->input->post('username'),
+				'password'		=> $this->input->post('password'),
 				'lastname'		=> $this->input->post('lastname'),
 				'firstname' 	=> $this->input->post('firstname'),
 				'middlename'  	=> $this->input->post('middlename'),
 				'gender'  		=> $this->input->post('gender'),
-				'religon'  		=> $this->input->post('religon'),
+				'religion'  	=> $this->input->post('religion'),
 				'bday'  		=> $this->input->post('bday'),
 				'birthplace'  	=> $this->input->post('birthplace'),
 				'city_add'  	=> $this->input->post('city_add'),
@@ -61,12 +119,26 @@ class Home extends CI_Controller {
 			);
 			
 			$this->Registration_model->add($data);
-			$this->session->set_flashdata('message', "<p>Added successfully.</p>");
 			redirect(base_url().'index.php');
 	
 		}
 		else{
 			
+			$this->data['username'] = array(
+				'name'  	=> 'username',
+				'id'    	=> 'username',
+				'type'  	=> 'text',
+				'style'		=> 'width:200px;',
+				'value' 	=> $this->form_validation->set_value('username'),
+			);
+			$this->data['password'] = array(
+				'name'  	=> 'password',
+				'id'    	=> 'password',
+				'type'  	=> 'text',
+				'style'		=> 'width:200px;',
+				'value' 	=> $this->form_validation->set_value('password'),
+			);
+
 			$this->data['lastname'] = array(
 				'name'  	=> 'lastname',
 				'id'    	=> 'lastname',
@@ -94,12 +166,12 @@ class Home extends CI_Controller {
 				'F' 	=> 'Female',
 				'value' => $this->form_validation->set_value('gender'),
 			);
-			$this->data['religon'] = array(
-				'name'  => 'religon',
-				'id'    => 'religon',
+			$this->data['religion'] = array(
+				'name'  => 'religion',
+				'id'    => 'religion',
 				'type'  => 'text',
 				'style'	=> 'width:200px;',
-				'value' => $this->form_validation->set_value('religon'),
+				'value' => $this->form_validation->set_value('religion'),
 			);
 			$this->data['bday'] = array(
 				'name'  => 'bday',
@@ -172,17 +244,26 @@ class Home extends CI_Controller {
 			$this->data['status'] = array(
 				''  		=> 'Status:',
 				'Regular' 	=> 'Regular',
-				'Probi 1' 	=> 'Probationary 1',
-				'Probi 2' 	=> 'Probationary 2',
-				'Probi 3' 	=> 'Probationary 3',
+				'Probi1' 	=> 'Probationary 1',
+				'Probi2' 	=> 'Probationary 2',
+				'Probi3' 	=> 'Probationary 3',
 				'value' => $this->form_validation->set_value('status'),
 			);
 			$this->data['rank'] = array(
 				''  		=> 'Rank:',
-				'Regular' 	=> 'Regular',
-				'Probi 1' 	=> 'Probationary 1',
-				'Probi 2' 	=> 'Probationary 2',
-				'Probi 3' 	=> 'Probationary 3',
+				'Instructor I' 	=> 'Instructor I',
+				'Instructor II' => 'Instructor II',
+				'Assis. Prof' 	=> 'Assistang Professor',
+				'Agg. Prof' 	=> 'Aggregate Professor',
+				'Assoc. Prof' 	=> 'Associate Professor',
+				'Prof' 		=> 'Full Professor',
+				'Prof I' 	=> 'Full Professor I',
+				'Prof II' 	=> 'Full Professor II',
+				'Prof III' 	=> 'Full Professor III',
+				'Prof IV' 	=> 'Full Professor IV',
+				'Prof V' 	=> 'Full Professor V',
+				'Prof VI' 	=> 'Full Professor VI',
+				'Prof Emeritus' => 'Professor Emeritus',
 				'value' => $this->form_validation->set_value('rank'),
 			);
 
@@ -190,10 +271,18 @@ class Home extends CI_Controller {
 			$this->load->view('register', $this->data);
 		}
 	}
-	function delete($user_id) {
+
+	function view($user_id)
+	{
+  		$this->data['users'] = $this->Registration_model->view($user_id);
+		$this->load->view('view', $this->data);
+
+	}
+	function delete($user_id)
+	{
 		$this->Registration_model->delete($user_id);
-				
-		redirect('index.php');
+
 	}
 
+	
 }
