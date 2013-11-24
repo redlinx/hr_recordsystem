@@ -59,7 +59,7 @@ color:white;
         </td>
 	</tr>
 </table>
-<?php echo form_open("home/add");?>
+<?php echo form_open("home/edit");?>
 
 	<table width="600" border="0" align="center">
 
