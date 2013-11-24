@@ -25,7 +25,7 @@
 |
 | There area two reserved routes:
 |
-|	$route['default_controller'] = 'welcome';
+|	$route['default_controller'] = 'upload';
 |
 | This route indicates which controller class should be loaded if the
 | URI contains no data. In the above example, the "welcome" class
@@ -38,7 +38,11 @@
 |
 */
 
+<<<<<<< HEAD
+$route['default_controller']	= "upload";
+=======
 $route['default_controller']	= "home";
+>>>>>>> 466e2e7821d398137c6dbf13a1d90c6e211ab660
 $route['home'] 					= "home";
 $route['home/add'] 				= 'home/register';
 $route['home/management']		= 'home/management';
