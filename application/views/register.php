@@ -49,9 +49,6 @@ color:white;
             <a href="http://localhost/hr_recordsystem/">
                 <input id="buttons" name="New" type="button" value="Home">
             </a>
-            <a href="http://localhost/hr_recordsystem/index.php/home/login">
-                <input id="buttons" name="New" type="button" value="Login">
-            </a>
             <a href="http://localhost/hr_recordsystem/index.php/home/add">
                 <input id="buttons" name="New" type="button" value="Register">
             </a>
@@ -122,6 +119,10 @@ color:white;
 		<tr>
 			<td align="left" bgcolor="#FFFFFF">Civil Status:</td>
 			<td><?php echo form_dropdown('civil_stat', $civil_stat); ?></td>
+		</tr>
+		<tr>
+			<td align="left" bgcolor="#FFFFFF">Civil Status:</td>
+			<td><?php echo form_dropdown('program', $program); ?></td>
 		</tr>
 		<tr>
 			<td align="left" bgcolor="#FFFFFF">User Type:</td>

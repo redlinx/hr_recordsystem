@@ -54,7 +54,7 @@ color:white;
         </td>
     </tr>
     <tr>
-          <td>
+        <td>
             <a href="http://localhost/hr_recordsystem/">
                 <input id="buttons" name="New" type="button" value="Home">
             </a>
