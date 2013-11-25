@@ -90,6 +90,7 @@ class Home extends CI_Controller {
 		$this->form_validation->set_rules('cell_no', 'Cellphone Number', 'required|xss_clean');
 		$this->form_validation->set_rules('email', 'Email Address', 'required|xss_clean');
 		$this->form_validation->set_rules('civil_stat', 'Civil Status', 'required|xss_clean');
+		$this->form_validation->set_rules('program', 'Program', 'required|xss_clean');
 		$this->form_validation->set_rules('user_type', 'User Type', 'required|xss_clean');
 		$this->form_validation->set_rules('status', 'Status', 'required|xss_clean');
 		$this->form_validation->set_rules('rank', 'rank', 'required|xss_clean');
@@ -113,6 +114,7 @@ class Home extends CI_Controller {
 				'cell_no'  		=> $this->input->post('cell_no'),
 				'email'  		=> $this->input->post('email'),
 				'civil_stat'  	=> $this->input->post('civil_stat'),
+				'program'  		=> $this->input->post('program'),
 				'user_type'  	=> $this->input->post('user_type'),
 				'status'  		=> $this->input->post('status'),
 				'rank'  		=> $this->input->post('rank'),
@@ -234,6 +236,20 @@ class Home extends CI_Controller {
 				'Not Entitled Exemption Units' 	=> 'Not Entitled Exemption Units',
 				'value' => $this->form_validation->set_value('civil_stat'),
 			);
+			$this->data['program'] = array(
+				''  					=> 'Program:',
+				'LA' 					=> 'Liberal Arts',
+				'ABA' 					=> 'Accountancy and Business Administration',
+				'Engineering'			=> 'Engineering',
+				'Education'				=> 'Education',
+				'ND/HRM'				=> 'Nutrition and Dietetics/ Hotel and Restaurant Management',
+				'Music'					=> 'Music',
+				'ITE'					=> 'Information Technology Education',
+				'MLS'					=> 'Medical Laboratory Science',
+				'Pharma/Chem'			=> 'Pharmacy/Chemistry',
+				'Nursing'				=> 'Nursing',
+				'value' => $this->form_validation->set_value('program'),
+			);
 			$this->data['user_type'] = array(
 				''  		=> 'User Type:',
 				'Admin' 	=> 'Administrator',
@@ -278,6 +294,55 @@ class Home extends CI_Controller {
 		$this->load->view('view', $this->data);
 
 	}
+<<<<<<< HEAD
+	public function edit($user_id)
+	{{
+		// set common properties
+		$data['title'] = 'Updating Profile';
+		$data['action'] = site_url('home/edit');
+		$data['link_back'] = anchor('home/index/','Back to home',array('class'=>'back'));
+		
+		// set empty default form field values
+		//$this->_set_fields();
+		// set validation properties
+		//$this->_set_rules();
+		
+		// run validation
+		if ($this->form_validation->run() == true)
+		{		
+			$data = array(
+				'id'			=> $this->input->post('id'),
+				'username'		=> $this->input->post('username'),
+				'password'		=> $this->input->post('password'),
+				'lastname'		=> $this->input->post('lastname'),
+				'firstname' 	=> $this->input->post('firstname'),
+				'middlename'  	=> $this->input->post('middlename'),
+				'gender'  		=> $this->input->post('gender'),
+				'religion'  		=> $this->input->post('religion'),
+				'bday'  		=> $this->input->post('bday'),
+				'birthplace'  	=> $this->input->post('birthplace'),
+				'city_add'  	=> $this->input->post('city_add'),
+				'prov_add'  	=> $this->input->post('prov_add'),
+				'tell_no'  		=> $this->input->post('tell_no'),
+				'cell_no'  		=> $this->input->post('cell_no'),
+				'email'  		=> $this->input->post('email'),
+				'civil_stat'  	=> $this->input->post('civil_stat'),
+				'user_type'  	=> $this->input->post('user_type'),
+				'status'  		=> $this->input->post('status'),
+				'rank'  		=> $this->input->post('rank'),
+			);
+			
+			$this->registration_model->edit($user_id,$users);
+			
+			// set user message
+			$data['message'] = '<div class="success">update person success</div>';
+		}
+		
+		// load view
+		$this->load->view('edit', $data);
+	}
+	}}
+=======
 	function delete($user_id)
 	{
 		$this->Registration_model->delete($user_id);
@@ -286,3 +351,4 @@ class Home extends CI_Controller {
 
 	
 }
+>>>>>>> 64e05423d2451d95e0eb9ccd3d960088aa06dac4
