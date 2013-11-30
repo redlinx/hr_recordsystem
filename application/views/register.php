@@ -121,7 +121,7 @@ color:white;
 			<td><?php echo form_dropdown('civil_stat', $civil_stat); ?></td>
 		</tr>
 		<tr>
-			<td align="left" bgcolor="#FFFFFF">Civil Status:</td>
+			<td align="left" bgcolor="#FFFFFF">Program:</td>
 			<td><?php echo form_dropdown('program', $program); ?></td>
 		</tr>
 		<tr>
