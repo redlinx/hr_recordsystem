@@ -16,6 +16,8 @@ class Home extends CI_Controller {
 		$this->data['users'] = $this->Registration_model->get_all();
 		$this->load->view('management', $this->data);
 	}
+
+
 	 public function login()
     {
       $this->load->view('login');
@@ -53,6 +55,21 @@ class Home extends CI_Controller {
 		}
           
     }
+
+    public function create_faculty_profile()
+    {
+    	$lname = 'tico';
+    	$fname = 'wency';
+    	$mname = 'dango';
+    	$user = '0001';
+    	$pass = 'temp';
+    	
+    	$this->load->model('HR');
+    	$this->register->insert_faculty_profile($lname,$fname,$mname,$user,$pass);
+		
+		echo "Record inserted";
+    }
+
     public function validate_credentials()
     {
     	$this->load->model('registration_model');
