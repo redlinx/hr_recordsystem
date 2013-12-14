@@ -13,7 +13,7 @@ class Home_controller extends CI_Controller {
     {
       $session_data = $this->session->userdata('logged_in');
       $data['username'] = $session_data['username'];
-      $this->load->view('home_view', $data);
+      $this->load->view('facu_home', $data);
     }
     else
     {

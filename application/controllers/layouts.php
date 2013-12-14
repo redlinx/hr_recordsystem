@@ -5,13 +5,15 @@ class Layouts extends CI_Controller {
 	{
 		$this->load->view('201file');
 	}
-	public function paascu()
-	{
+		public function paascu()
+		{
 		$this->load->view('paascu_profile');
 	}
 	public function sample()
 	{
-		$this->load->view('sample_view');
+         $this->load->view('sample_view');
 	}
+	
+
 }
 ?>
