@@ -7,21 +7,49 @@ class HR extends CI_Model {
 		//$this->load->database();
 	}
 
-	public function insert_faculty_profile($lname,$fname,$mname,$username,$password,$date_hired,$gender,$bday)
+	public function insert( $lname, $fname, $mname, $username, $password, $date_hired, $gender, $bday, $civ_stat, $tell_no )
 	{
 		$this->load->database();
 
-		$sql_insert_profile = "INSERT INTO faculty_profile(lname, fname, mname, gender, bday)
-								VALUES('$lname', '$fname', '$mname', '$gender', '$bday')";
+		$sql_insert_profile = "INSERT INTO faculty_profile(lname, fname, mname, gender, bday, civ_stat, email)
+								VALUES( '$lname',
+										'$fname',
+										'$mname',
+										'$gender',
+										'$bday',
+										'$civ_stat',
+										'$email'
+										)";
 
 		$query = $this->db->query($sql_insert_profile);
 
 		$faculty_id = mysql_insert_id();
 
-		$sql_insert_account = "INSERT INTO faculty_account (username,password,date_hired,faculty_profile_emp_id)
-															VALUES('$username', '$password', '$date_hired' , '$faculty_id' )";
+		$sql_insert_account = "INSERT INTO faculty_account (username, password, date_hired, faculty_profile_emp_id)
+								VALUES( '$username',
+										'$password',
+										'$date_hired',
+										'$faculty_id' 
+										)";
 
 		$query = $this->db->query($sql_insert_account);
+	}
+	public function add($data)
+	{
+		$sql_insert_profile = $this->db->insert('faculty_profile', $data);
+		
+		$query = $this->db->query($sql_insert_profile);
+
+		$faculty_id = mysql_insert_id();
+
+		$sql_insert_account = "INSERT INTO faculty_account (faculty_profile_emp_id)
+								VALUES( '$faculty_id')" ;
+
+		$this->db->insert('faculty_account', $data);
+
+		$id = $this->db->insert_id();
+		
+		return (isset($id)) ? $id : FALSE;
 	}
 	
 }

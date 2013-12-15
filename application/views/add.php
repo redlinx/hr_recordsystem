@@ -12,37 +12,46 @@
 <hr>
 <h2> Faculty Registration </h2>
 
-<?php echo form_open("add/create_faculty_profile");?>
+<?php echo form_open("add/insert");?>
 
 	<table width="600" border="0" align="left">
 
 		<tr>
 			<td width="130" align="left" bgcolor="#FFFFFF">Username: </td>
-			<td><input type="text" name="username" value="<?php echo set_value('username'); ?>"/></td>
+			<td><?php echo form_input($username); ?></td>
 		</tr>
 		<tr>
 			<td width="130" align="left" bgcolor="#FFFFFF">Password: </td>
-			<td><input type="text" name="password" value="<?php echo set_value('password'); ?>"/></td>
+			<td><?php echo form_input($password); ?></td>
 		</tr>
 		<tr>
 			<td width="130" align="left" bgcolor="#FFFFFF">Last Name: </td>
-			<td><input type="text" name="lname" value="<?php echo set_value('lname'); ?>"/></td>
+			<td><?php echo form_input($lname); ?></td>
 		</tr>
 		<tr>
-			<td width="130" align="left" bgcolor="#FFFFFF">First Name: </td>
-			<td><input type="text" name="fname" value="<?php echo set_value('fname'); ?>"/></td>
+			<td align="left" bgcolor="#FFFFFF">First Name:</td>
+			<td><?php echo form_input($fname); ?></td>
 		</tr>
 		<tr>
-			<td width="130" align="left" bgcolor="#FFFFFF">Middle Name: </td>
-			<td><input type="text" name="mname" value="<?php echo set_value('mname'); ?>"/></td>
+			<td align="left" bgcolor="#FFFFFF">Middle Name:</td>
+			<td><?php echo form_input($mname); ?></td>
 		</tr>
 		<tr>
-			<td width="130" align="left" bgcolor="#FFFFFF">Gender: </td>
-			<td><input type="text" name="gender" value="<?php echo set_value('gender'); ?>"/></td>
+			<td align="left" bgcolor="#FFFFFF">Gender:</td>
+			<td><?php echo form_input($gender); ?></td>
 		</tr>
 		<tr>
-			<td width="130" align="left" bgcolor="#FFFFFF">Birth Day: </td>
-			<td><input type="text" name="bday" value="<?php echo set_value('bday'); ?>"/></td>
+		<tr>
+			<td align="left" bgcolor="#FFFFFF">Date of Birth:</td>
+			<td><?php echo form_input($bday); ?></td>
+		</tr>
+		<tr>
+			<td align="left" bgcolor="#FFFFFF">Civil Status: </td>
+			<td><?php echo form_input($civ_stat); ?></td>
+		</tr>
+		<tr>
+			<td align="left" bgcolor="#FFFFFF">City Address:</td>
+			<td><?php echo form_input($email); ?></td>
 		</tr>
 
 		<tr>
