@@ -294,21 +294,40 @@ class Home extends CI_Controller {
 		$this->load->view('view', $this->data);
 
 	}
-<<<<<<< HEAD
-	public function edit($user_id)
-	{{
-		// set common properties
-		$data['title'] = 'Updating Profile';
-		$data['action'] = site_url('home/edit');
-		$data['link_back'] = anchor('home/index/','Back to home',array('class'=>'back'));
+
+	function update($user_id)
+	{
+
+		$this->data['users'] = $this->Registration_model->update($user_id);
+		$this->load->view('update', $this->data);
 		
-		// set empty default form field values
-		//$this->_set_fields();
-		// set validation properties
-		//$this->_set_rules();
-		
-		// run validation
-		if ($this->form_validation->run() == true)
+	}
+	
+	public function update_validation()
+	{
+$this->load->library('form_validation');
+		//validate form input
+		$this->form_validation->set_rules('username', 'Username', 'required|xss_clean');
+		$this->form_validation->set_rules('password', 'Password', 'required|xss_clean');
+		$this->form_validation->set_rules('lastname', 'Last Name', 'required|xss_clean');
+		$this->form_validation->set_rules('firstname', 'First Name', 'required|xss_clean');
+		$this->form_validation->set_rules('middlename', 'Middle Name', 'required|xss_clean');
+		$this->form_validation->set_rules('gender', 'Gender', 'required|xss_clean');
+		$this->form_validation->set_rules('religion', 'Religion', 'required|xss_clean');
+		$this->form_validation->set_rules('bday', 'Date of Birth', 'required|xss_clean');
+		$this->form_validation->set_rules('birthplace', 'Place of Birth', 'required|xss_clean');
+		$this->form_validation->set_rules('city_add', 'City Address', 'required|xss_clean');
+		$this->form_validation->set_rules('prov_add', 'Province Address', 'required|xss_clean');
+		$this->form_validation->set_rules('tell_no', 'Telephone Number', 'required|xss_clean');
+		$this->form_validation->set_rules('cell_no', 'Cellphone Number', 'required|xss_clean');
+		$this->form_validation->set_rules('email', 'Email Address', 'required|xss_clean');
+		$this->form_validation->set_rules('civil_stat', 'Civil Status', 'required|xss_clean');
+		$this->form_validation->set_rules('program', 'Program', 'required|xss_clean');
+		$this->form_validation->set_rules('user_type', 'User Type', 'required|xss_clean');
+		$this->form_validation->set_rules('status', 'Status', 'required|xss_clean');
+		$this->form_validation->set_rules('rank', 'rank', 'required|xss_clean');
+
+		if ($this->form_validation->run())
 		{		
 			$data = array(
 				'id'			=> $this->input->post('id'),
@@ -318,7 +337,7 @@ class Home extends CI_Controller {
 				'firstname' 	=> $this->input->post('firstname'),
 				'middlename'  	=> $this->input->post('middlename'),
 				'gender'  		=> $this->input->post('gender'),
-				'religion'  		=> $this->input->post('religion'),
+				'religion'  	=> $this->input->post('religion'),
 				'bday'  		=> $this->input->post('bday'),
 				'birthplace'  	=> $this->input->post('birthplace'),
 				'city_add'  	=> $this->input->post('city_add'),
@@ -327,28 +346,28 @@ class Home extends CI_Controller {
 				'cell_no'  		=> $this->input->post('cell_no'),
 				'email'  		=> $this->input->post('email'),
 				'civil_stat'  	=> $this->input->post('civil_stat'),
+				'program'  		=> $this->input->post('program'),
 				'user_type'  	=> $this->input->post('user_type'),
 				'status'  		=> $this->input->post('status'),
 				'rank'  		=> $this->input->post('rank'),
 			);
 			
-			$this->registration_model->edit($user_id,$users);
-			
-			// set user message
-			$data['message'] = '<div class="success">update person success</div>';
+			$this->Registration_model->update_account($data);
+			redirect(base_url().'index.php');
+	
 		}
-		
-		// load view
-		$this->load->view('edit', $data);
+		else{
+			
+			$this->data['users'] = $this->Registration_model->update($this->input->post('id'));
+			$this->load->view('update', $this->data);
+		}
 	}
-	}}
-=======
+
 	function delete($user_id)
 	{
 		$this->Registration_model->delete($user_id);
-
 	}
 
-	
 }
->>>>>>> 64e05423d2451d95e0eb9ccd3d960088aa06dac4
+
+

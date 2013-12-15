@@ -2,15 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<<<<<<< HEAD
 
-=======
->>>>>>> 64e05423d2451d95e0eb9ccd3d960088aa06dac4
 <title>Registration</title>
 <style>
 table, td, th
 {
-<<<<<<< HEAD
+
 border:1px solid HotPink;
 }
 #header
@@ -37,8 +34,7 @@ table
 }
 td, th
 {
-=======
->>>>>>> 64e05423d2451d95e0eb9ccd3d960088aa06dac4
+
 	border:1px solid HotPink;
 }
 #header
@@ -69,10 +65,6 @@ th
     width: 150px;
     border-radius: 6px;
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 64e05423d2451d95e0eb9ccd3d960088aa06dac4
 }
 
 #list
@@ -83,10 +75,7 @@ th
 {
     margin: auto;
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> 64e05423d2451d95e0eb9ccd3d960088aa06dac4
 </style>
 </head>
 <body>
@@ -97,16 +86,15 @@ th
 			<h4>Human Resource Office | University of the Immaculate Conception</h4>
 		</td>
 	</tr>
-<<<<<<< HEAD
+
 	<tr>
 
 
-=======
->>>>>>> 64e05423d2451d95e0eb9ccd3d960088aa06dac4
+
 	</tr>
 		<td>
             <a href="http://localhost/hr_recordsystem/">
-<<<<<<< HEAD
+
                 <input id="home" name="New" type="button" value="Home">
             </a>
             <a href="http://localhost/hr_recordsystem/index.php/home/login">
@@ -123,8 +111,7 @@ th
 
 		<td id="nav">
             <a href="http://localhost/hr_recordsystem/">
-=======
->>>>>>> 64e05423d2451d95e0eb9ccd3d960088aa06dac4
+
                 <input id="buttons" name="New" type="button" value="Home">
             </a>
             <a href="http://localhost/hr_recordsystem/index.php/home/add">
@@ -132,13 +119,11 @@ th
             </a>
         </td>
 	</tr>
-<<<<<<< HEAD
+
 	<tr>
 
-=======
->>>>>>> 64e05423d2451d95e0eb9ccd3d960088aa06dac4
 </table>
-<br/>
+
 <form name="list" method="post">
 	<input type="hidden" name="rid" />
 	<input type="hidden" name="command" />
@@ -151,34 +136,26 @@ th
 			<th>First Name</th>
 			<th>View</th>
 			<th>Delete</th>
-			<th>Edit</th>
-<<<<<<< HEAD
+			<th>Update</th>
 
-=======
->>>>>>> 64e05423d2451d95e0eb9ccd3d960088aa06dac4
 		</tr>
 		<?php
 		foreach ($users as $user){
 			$user_id = $user['id'];
 		?>
 			<tr>
-<<<<<<< HEAD
+
 
 				<td><?php echo $user['id'] ?></td>
 
 				<td><?php echo $user['username'] ?></td>
 
-=======
-				<td><?php echo $user['username'] ?></td>
->>>>>>> 64e05423d2451d95e0eb9ccd3d960088aa06dac4
+
 				<td><?php echo $user['lastname'] ?></td>
 				<td><?php echo $user['firstname'] ?></td>
 				<td>
 					<?php 
-<<<<<<< HEAD
 
-=======
->>>>>>> 64e05423d2451d95e0eb9ccd3d960088aa06dac4
 						echo anchor('home/view/'.$user_id, 'View');
 					?>
 				</td>
@@ -189,14 +166,10 @@ th
 					?>
 				</td>
 				<td>
-					<?php 
-						echo anchor('home/edit/'.$user_id, 'Edit');
-<<<<<<< HEAD
-
+					<?php
 						
+						echo anchor('home/update/'.$user_id, 'Update');
 
-=======
->>>>>>> 64e05423d2451d95e0eb9ccd3d960088aa06dac4
 					?>
 				</td>
 			</tr>

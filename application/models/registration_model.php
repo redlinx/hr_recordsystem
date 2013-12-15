@@ -28,14 +28,9 @@ class Registration_model extends CI_Model {
 		$this->db->where('id', $user_id);
 		$this->db->delete('users');
 	}
-<<<<<<< HEAD
 
-	
-	
-	public function view()
-=======
+
 	public function view($user_id)
->>>>>>> 64e05423d2451d95e0eb9ccd3d960088aa06dac4
 	{
 		$this->db->where('id', $user_id);
 		$this->db->select('*');	
@@ -59,36 +54,30 @@ class Registration_model extends CI_Model {
             return false;
         }
     }
-<<<<<<< HEAD
-
-	public function edit($id, $users){
-		$this->db->where('id', $user_id);
-		$this->db->update($this->users, $users);
-	
-	} 
-	//public function edit($data)
-
-	//{
-=======
-	public function edit($data)
-	{
->>>>>>> 64e05423d2451d95e0eb9ccd3d960088aa06dac4
-		//$query = $this->db->get('users');
-		//$this->db->update('users');
-		//$id = $this->db->update_id();
-		//return (isset($id)) ? $id : FALSE;
-	//$query = $this->db->get('users', $user_id);
-
-	//	foreach ($query->result() as $row)
-	//	{
-	//	echo $row->$user_id;
+public function update($data)
+		{
 		
-<<<<<<< HEAD
-	//	}
-	//}
+		$this->db->where('id', $data);
+		$this->db->select('*');	
+        $query = $this->db->get('users');
 
-=======
+        return $query->result_array();
+		
+
+		
 		}
-	}
->>>>>>> 64e05423d2451d95e0eb9ccd3d960088aa06dac4
+		
+public function update_account($data)
+		{
+			
+			$this->db->where('id', $data['id']);
+        $query = $this->db->update('users', $data);
+        if($query){
+            return true;
+        }
+        else {
+            return false;
+        }
+		}
 }
+
