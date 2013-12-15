@@ -7,7 +7,7 @@ class HR extends CI_Model {
 		//$this->load->database();
 	}
 
-	public function insert( $lname, $fname, $mname, $username, $password, $date_hired, $gender, $bday, $civ_stat, $tell_no )
+	public function insert( $lname, $fname, $mname, $username, $password, $date_hired, $gender, $bday, $civ_stat, $email )
 	{
 		$this->load->database();
 
@@ -33,23 +33,6 @@ class HR extends CI_Model {
 										)";
 
 		$query = $this->db->query($sql_insert_account);
-	}
-	public function add($data)
-	{
-		$sql_insert_profile = $this->db->insert('faculty_profile', $data);
-		
-		$query = $this->db->query($sql_insert_profile);
-
-		$faculty_id = mysql_insert_id();
-
-		$sql_insert_account = "INSERT INTO faculty_account (faculty_profile_emp_id)
-								VALUES( '$faculty_id')" ;
-
-		$this->db->insert('faculty_account', $data);
-
-		$id = $this->db->insert_id();
-		
-		return (isset($id)) ? $id : FALSE;
 	}
 	
 }

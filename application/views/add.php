@@ -18,40 +18,39 @@
 
 		<tr>
 			<td width="130" align="left" bgcolor="#FFFFFF">Username: </td>
-			<td><?php echo form_input($username); ?></td>
+			<td><input type="text" name="username" value="<?php echo set_value('username'); ?>"  size="30" required /></td>
 		</tr>
 		<tr>
 			<td width="130" align="left" bgcolor="#FFFFFF">Password: </td>
-			<td><?php echo form_input($password); ?></td>
+			<td><input type="text" name="password" value="<?php echo set_value('password'); ?>" size="30" required /></td>
 		</tr>
 		<tr>
 			<td width="130" align="left" bgcolor="#FFFFFF">Last Name: </td>
-			<td><?php echo form_input($lname); ?></td>
+			<td><input type="text" name="lname" value="<?php echo set_value('fname'); ?>"  size="30" required /></td>
 		</tr>
 		<tr>
 			<td align="left" bgcolor="#FFFFFF">First Name:</td>
-			<td><?php echo form_input($fname); ?></td>
+			<td><input type="text" name="fname" value="<?php echo set_value('lname'); ?>"  size="30" required /></td>
 		</tr>
 		<tr>
 			<td align="left" bgcolor="#FFFFFF">Middle Name:</td>
-			<td><?php echo form_input($mname); ?></td>
+			<td><input type="text" name="mname" value="<?php echo set_value('mname'); ?>"  size="30" required /></td>
 		</tr>
 		<tr>
 			<td align="left" bgcolor="#FFFFFF">Gender:</td>
-			<td><?php echo form_input($gender); ?></td>
+			<td><input type="text" name="gender" value="<?php echo set_value('gender'); ?>"  size="30" required /></td>
 		</tr>
 		<tr>
-		<tr>
 			<td align="left" bgcolor="#FFFFFF">Date of Birth:</td>
-			<td><?php echo form_input($bday); ?></td>
+			<td><input type="text" name="bday" value="<?php echo set_value('bday'); ?>"  size="30" required /></td>
 		</tr>
 		<tr>
 			<td align="left" bgcolor="#FFFFFF">Civil Status: </td>
-			<td><?php echo form_input($civ_stat); ?></td>
+			<td><input type="text" name="civ_stat" value="<?php echo set_value('civ_stat'); ?>" size="30" required /></td>
 		</tr>
 		<tr>
-			<td align="left" bgcolor="#FFFFFF">City Address:</td>
-			<td><?php echo form_input($email); ?></td>
+			<td align="left" bgcolor="#FFFFFF">Email Address:</td>
+			<td><input type="text" name="email" value="<?php echo set_value('email'); ?>" size="30" required /></td>
 		</tr>
 
 		<tr>
