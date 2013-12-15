@@ -25,7 +25,7 @@
 |
 | There area two reserved routes:
 |
-|	$route['default_controller'] = 'upload';
+|	$route['default_controller'] = 'welcome';
 |
 | This route indicates which controller class should be loaded if the
 | URI contains no data. In the above example, the "welcome" class
@@ -38,7 +38,10 @@
 |
 */
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3a2c79b40ce847853fc59840f8c66eb0b47bfc0d
 $route['default_controller']	= "upload";
 
 $route['default_controller']	= "home";
@@ -49,7 +52,14 @@ $route['home/management']		= 'home/management';
 $route['home/view/(:any)'] 		= '/home/view/$1';
 $route['home/delete/(:any)'] 	= '/home/delete/$1';
 $route['404_override'] 			= '';
+<<<<<<< HEAD
 $route['home/update/(:any)']              ='/home/update/$1';
+=======
+$route['home/update/(:any)']    ='/home/update/$1';
+$route['default_controller'] 	= "upload";
+$route['404_override'] = '';
+
+>>>>>>> 3a2c79b40ce847853fc59840f8c66eb0b47bfc0d
 
 
 /* End of file routes.php */

@@ -1,7 +1,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <title>Simple Login with CodeIgniter</title>
+   <p></p><center><b>University of the Immaculate Conception
+    <br/>Fr. Selga Street, Davao City
+    <br/><br/> FACULTY'S INFORMATION SHEET</b></center></p>
+    <br/>
+<body bgcolor="pink">
   </head>
   <style>
   input
@@ -13,7 +17,8 @@
   <?php echo validation_errors(); ?>
     <?php echo form_open('verifylogin'); ?>
  <form>
-  <fieldset >
+ <center>
+  <fieldset style="width: 320px;">
 <legend><b>Login</b></legend>
  
       <label for="username">Username:</label>
@@ -24,7 +29,7 @@
       <br/>
       <input type="submit" value="Login"/>
     </form>
-
+</center>
   </fieldset>
   </body>
 </html>
