@@ -18,41 +18,9 @@ class Home extends CI_Controller {
 	}
 	 public function login()
     {
-      $this->load->view('login');
+      $this->load->view('login_view');
     }
-    public function members()
-    {
-        if($this->session->userdata('is_logged_in'))
-        {
-          $this->load->view('home');
-        }
-        else
-        {
-          redirect('restricted');
-        }
-    }
-    public function restricted()
-    {
-      $this->load->view('restricted');
-    }
-    public function main_view_validation()
-    {    
-        $this->load->library('form_validation');
-        $this->form_validation->set_rules('username', 'Username', 'required|trim|xss_clean|callback_validate_credentials');
-        $this->form_validation->set_rules('password', 'Password', 'required|trim');
-          
-		if ($this->form_validation->run())
-		{
-			$data = array('username' => $this->input->post('username'), 'is_logged_in' => 1 );
-			$this->session->set_userdata($data);
-			redirect('login');
-		}
-		else
-		{
-			$this->load->view('home');
-		}
-          
-    }
+ 
     public function validate_credentials()
     {
     	$this->load->model('registration_model');
