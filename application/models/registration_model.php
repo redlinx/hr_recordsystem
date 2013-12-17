@@ -56,7 +56,7 @@ class Registration_model extends CI_Model {
     }
 public function update($data)
 		{
-<<<<<<< HEAD
+
 		
 		$this->db->where('id', $data);
 		$this->db->select('*');	
@@ -65,7 +65,7 @@ public function update($data)
         return $query->result_array();
 		
 
-=======
+
 		
 		$this->db->where('id', $data);
 		$this->db->select('*');	
@@ -74,7 +74,7 @@ public function update($data)
         return $query->result_array();
 		
 		//$this->db->update('users', $data, $user_id);
->>>>>>> 3a2c79b40ce847853fc59840f8c66eb0b47bfc0d
+
 		
 		}
 		
@@ -91,4 +91,3 @@ public function update_account($data)
         }
 		}
 }
-
