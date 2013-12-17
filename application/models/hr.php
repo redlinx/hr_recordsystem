@@ -7,17 +7,16 @@ class HR extends CI_Model {
 		//$this->load->database();
 	}
 
-	public function insert( $lname, $fname, $mname, $username, $password, $date_hired, $gender, $bday, $civ_stat, $email )
+	public function insert( $lname, $fname, $mname, $username, $password, $date_hired, $gender, $bday, $email )
 	{
 		$this->load->database();
 
-		$sql_insert_profile = "INSERT INTO faculty_profile(lname, fname, mname, gender, bday, civ_stat, email)
+		$sql_insert_profile = "INSERT INTO faculty_profile(lname, fname, mname, gender, bday, email)
 								VALUES( '$lname',
 										'$fname',
 										'$mname',
 										'$gender',
 										'$bday',
-										'$civ_stat',
 										'$email'
 										)";
 

@@ -24,7 +24,6 @@ class add extends CI_Controller {
 		$this->form_validation->set_rules('date_hired', 'Date Hired', 'required|xss_clean');
 		$this->form_validation->set_rules('gender', 'Gender', 'required|xss_clean');
 		$this->form_validation->set_rules('bday', 'Birthday', 'required|xss_clean');
-		$this->form_validation->set_rules('civ_stat', 'Civil Status', 'required|xss_clean');
 		$this->form_validation->set_rules('email', 'Email Address', 'required|xss_clean');
 		
 		
@@ -36,20 +35,23 @@ class add extends CI_Controller {
 		$date_hired = $this->input->post('date_hired');
 		$gender 	= $this->input->post('gender');
 		$bday 		= $this->input->post('bday');
-		$civ_stat 	= $this->input->post('civ_stat');
 		$email 		= $this->input->post('email');
 
 		$this->load->model('HR');
-    	$this->HR->insert(  $lname,
-    						$fname,
-    						$mname,
-    						$username,
-    						$password,
-    						$date_hired,
-    						$gender,
-    						$bday,
-    						$email
-    						);
+		if($this->input->post())
+		{
+	    	$this->HR->insert(  $lname,
+	    						$fname,
+	    						$mname,
+	    						$username,
+	    						$password,
+	    						$date_hired,
+	    						$gender,
+	    						$bday,
+	    						$email
+	    						);	
+		}			
+			
     	$this->load->view('add',    $lname,
     								$fname,
     								$mname,
