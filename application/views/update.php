@@ -55,7 +55,7 @@ color:white;
 	</tr>
 	<tr>
 		<td>
-            <a href="http://localhost/hr_recordsystem/">
+            <a href="http://localhost/hr_recordsystem/index.php/home">
                 <input id="buttons" name="New" type="button" value="Home">
             </a>
             <a href="http://localhost/hr_recordsystem/index.php/home/login">
