@@ -33,4 +33,8 @@
             </fieldset>
         </form>
         <input type="button" name="b1" value="back" onclick="location.href='fifthpage'">
+<<<<<<< HEAD
      <input type="button" name="b2" value="home" onclick="location.href='facu_cont'">
+=======
+     <input type="button" name="b2" value="home" onclick="location.href='home_controller'">
+>>>>>>> aa66e310187b22d139dfd3bcbb82dde11624fbb9

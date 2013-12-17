@@ -16,60 +16,11 @@ class Home extends CI_Controller {
 		$this->data['users'] = $this->Registration_model->get_all();
 		$this->load->view('management', $this->data);
 	}
-
-
 	 public function login()
     {
-      $this->load->view('login');
+      $this->load->view('login_view');
     }
-    public function members()
-    {
-        if($this->session->userdata('is_logged_in'))
-        {
-          $this->load->view('home');
-        }
-        else
-        {
-          redirect('restricted');
-        }
-    }
-    public function restricted()
-    {
-      $this->load->view('restricted');
-    }
-    public function main_view_validation()
-    {    
-        $this->load->library('form_validation');
-        $this->form_validation->set_rules('username', 'Username', 'required|trim|xss_clean|callback_validate_credentials');
-        $this->form_validation->set_rules('password', 'Password', 'required|trim');
-          
-		if ($this->form_validation->run())
-		{
-			$data = array('username' => $this->input->post('username'), 'is_logged_in' => 1 );
-			$this->session->set_userdata($data);
-			redirect('login');
-		}
-		else
-		{
-			$this->load->view('home');
-		}
-          
-    }
-
-    public function create_faculty_profile()
-    {
-    	$lname = 'tico';
-    	$fname = 'wency';
-    	$mname = 'dango';
-    	$user = '0001';
-    	$pass = 'temp';
-    	
-    	$this->load->model('HR');
-    	$this->register->insert_faculty_profile($lname,$fname,$mname,$user,$pass);
-		
-		echo "Record inserted";
-    }
-
+ 
     public function validate_credentials()
     {
     	$this->load->model('registration_model');
@@ -319,6 +270,10 @@ class Home extends CI_Controller {
 		$this->data['users'] = $this->Registration_model->update($user_id);
 		$this->load->view('update', $this->data);
 		
+<<<<<<< HEAD
+=======
+
+>>>>>>> aa66e310187b22d139dfd3bcbb82dde11624fbb9
 	/*	$data = array(
                'username' => $username,
                'password' => $password,
@@ -346,7 +301,12 @@ class Home extends CI_Controller {
 		$this->db->update('users', $data);
 		
 		*/
+<<<<<<< HEAD
 		
+=======
+		//$this->data['users'] = $this->Registration_model->update($user_id);
+		//$this->load->view('update', $this->data);
+>>>>>>> aa66e310187b22d139dfd3bcbb82dde11624fbb9
 		//$this->Registration_model->update($user_id);
 		//$this->load->view('update');
 		
@@ -403,7 +363,7 @@ $this->load->library('form_validation');
 			);
 			
 			$this->Registration_model->update_account($data);
-			redirect(base_url().'index.php');
+			 redirect('home');
 	
 		}
 		else{

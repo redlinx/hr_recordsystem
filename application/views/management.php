@@ -93,12 +93,9 @@ th
 
 	</tr>
 		<td>
-            <a href="http://localhost/hr_recordsystem/">
-
-                <input id="home" name="New" type="button" value="Home">
-            </a>
-            <a href="http://localhost/hr_recordsystem/index.php/home/login">
-                <input id="home" name="New" type="button" value="Login">
+            
+            <a href="http://localhost/hr_recordsystem/index.php/login/logout">
+                <input id="home" name="New" type="button" value="logout">
             </a>
             <a href="http://localhost/hr_recordsystem/index.php/home/register">
                 <input id="home" name="New" type="button" value="Register">
@@ -109,16 +106,7 @@ th
         </td>
 	</tr>
 
-		<td id="nav">
-            <a href="http://localhost/hr_recordsystem/">
-
-                <input id="buttons" name="New" type="button" value="Home">
-            </a>
-            <a href="http://localhost/hr_recordsystem/index.php/home/add">
-                <input id="buttons" name="New" type="button" value="Register">
-            </a>
-        </td>
-	</tr>
+		
 
 	<tr>
 

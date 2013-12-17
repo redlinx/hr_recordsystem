@@ -39,9 +39,13 @@
 */
 
 
+<<<<<<< HEAD
 $route['default_controller']	= "upload";
+=======
+$route['default_controller']	= "login";
 
-$route['default_controller']	= "home";
+>>>>>>> aa66e310187b22d139dfd3bcbb82dde11624fbb9
+
 
 $route['home'] 					= "home";
 $route['home/add'] 				= 'home/register';
@@ -49,12 +53,13 @@ $route['home/management']		= 'home/management';
 $route['home/view/(:any)'] 		= '/home/view/$1';
 $route['home/delete/(:any)'] 	= '/home/delete/$1';
 $route['404_override'] 			= '';
+<<<<<<< HEAD
 
 $route['home/update/(:any)']    ='/home/update/$1';
 $route['default_controller'] 	= "upload";
 $route['404_override'] = '';
 
+=======
+>>>>>>> aa66e310187b22d139dfd3bcbb82dde11624fbb9
 
 
-/* End of file routes.php */
-/* Location: ./application/config/routes.php */
