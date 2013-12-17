@@ -45,7 +45,7 @@ color:white;
 }
 </style>
 </head>
-<body>
+<body >
 <table width="600" border="0" align="center">
 	<tr>
 		<td id="header">
@@ -255,6 +255,7 @@ color:white;
 			<td>
 				<?php echo form_submit('submit', 'Update');?>
 				<?php echo form_reset('reset', 'Clear');?>
+
 		</tr>
 	
     </table>

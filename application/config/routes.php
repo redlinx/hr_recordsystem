@@ -38,14 +38,10 @@
 |
 */
 
-<<<<<<< HEAD
-=======
+
+$route['default_controller']	= "login";
 
 
->>>>>>> f20d9a79e92e5264e84dfb57f0f681a7b6482b81
-$route['default_controller']	= "upload";
-
-$route['default_controller']	= "home";
 
 $route['home'] 					= "home";
 $route['home/add'] 				= 'home/register';
@@ -53,29 +49,5 @@ $route['home/management']		= 'home/management';
 $route['home/view/(:any)'] 		= '/home/view/$1';
 $route['home/delete/(:any)'] 	= '/home/delete/$1';
 $route['404_override'] 			= '';
-<<<<<<< HEAD
-$route['home/update/(:any)']    ='/home/update/$1';
-$route['default_controller'] 	= "upload";
-$route['404_override'] = '';
-$route['home/update/(:any)']    ='/home/update/$1';
-$route['home/update/(:any)']    ='/home/update/$1';
-$route['default_controller'] 	= "upload";
-$route['404_override'] 			= '';
-=======
-
-$route['home/update/(:any)']              ='/home/update/$1';
-
-$route['default_controller'] = "upload";
-$route['404_override'] = '';
-
-$route['home/update/(:any)']              ='/home/update/$1';
-
-$route['home/update/(:any)']    ='/home/update/$1';
-$route['default_controller'] 	= "upload";
-$route['404_override'] = '';
 
 
->>>>>>> f20d9a79e92e5264e84dfb57f0f681a7b6482b81
-
-/* End of file routes.php */
-/* Location: ./application/config/routes.php */
