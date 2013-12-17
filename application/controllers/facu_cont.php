@@ -5,13 +5,30 @@ class Facu_cont extends CI_Controller {
 	{
 		$this->load->view('facu_home');
 	}
-	/*function view_facu_prof()
+	function firstpage()
         {
-            $this->load->view('view_facu_prof');
-        }*/
-        public function upload_facu_cred()
-        {
-            $this->load->view('upload_facu_cred');
+            $this->load->view('firstpage');
         }
+        function secondpage()
+        {
+            $this->load->view('secondpage');
+        }
+           function thirdpage()
+        {
+            $this->load->view('thirdpage');
+        }
+           function fourthpage()
+        {
+            $this->load->view('fourthpage');
+        }
+           function fifthpage()
+        {
+            $this->load->view('fifthpage');
+        }
+           function sixthpage()
+        {
+            $this->load->view('sixthpage');
+        }
+
 }
 ?>

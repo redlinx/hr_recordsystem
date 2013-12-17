@@ -22,6 +22,31 @@ class Home_controller extends CI_Controller {
 	}
   }
   
+  function firstpage()
+        {
+            $this->load->view('firstpage');
+        }
+  function secondpage()
+        {
+            $this->load->view('secondpage');
+        }
+  function thirdpage()
+        {
+            $this->load->view('thirdpage');
+        }
+  function fourthpage()
+        {
+            $this->load->view('fourthpage');
+        }
+  function fifthpage()
+        {
+            $this->load->view('fifthpage');
+        }
+  function sixthpage()
+        {
+            $this->load->view('sixthpage');
+        }
+        
   function logout()
   {
     $this->session->unset_userdata('logged_in');
