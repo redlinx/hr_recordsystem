@@ -46,7 +46,7 @@ class Login extends CI_Controller
        $level = $this->input->post('level');
        $fname = $this->input->post('firstname');
        $lname = $this->input->post('lastname');
-$cek = $this->m_login->takeUser($firstname,$lastname,$username, $password, 1, $level);
+$cek = $this->m_login->takeUser($username, $password, 1, $level);
    if($cek <> 0)
         {
           $this->session->set_userdata('isLogin', TRUE);

@@ -270,10 +270,7 @@ class Home extends CI_Controller {
 		$this->data['users'] = $this->Registration_model->update($user_id);
 		$this->load->view('update', $this->data);
 		
-<<<<<<< HEAD
-=======
 
->>>>>>> aa66e310187b22d139dfd3bcbb82dde11624fbb9
 	/*	$data = array(
                'username' => $username,
                'password' => $password,
@@ -301,12 +298,10 @@ class Home extends CI_Controller {
 		$this->db->update('users', $data);
 		
 		*/
-<<<<<<< HEAD
-		
-=======
+
 		//$this->data['users'] = $this->Registration_model->update($user_id);
 		//$this->load->view('update', $this->data);
->>>>>>> aa66e310187b22d139dfd3bcbb82dde11624fbb9
+
 		//$this->Registration_model->update($user_id);
 		//$this->load->view('update');
 		

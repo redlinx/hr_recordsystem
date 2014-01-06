@@ -5,7 +5,7 @@ public function __construct()
 { 
 parent::__construct(); 
 } 
-public function takeUser($firstname, $lastname,$username, $password, $type, $level) 
+public function takeUser($username, $password, $type, $level) 
 { 
 $this->db->select('*');
 $this->db->from('user');

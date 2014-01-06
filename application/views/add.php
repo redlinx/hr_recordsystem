@@ -72,11 +72,16 @@
 	<div id="header">
 		<p>
 			<h2 id="title"> Web Based Records Management System </h2>
-			<h3 id="subtitle"> Human Resource Office | University of the Immaculate Conception</h3>
+			<h3 id="subtitle"> Human Resource Office | University of the Immaculate Conception</h3><br/>
+			
 		</p>
+
+
 	</div>
 	<div id="content">
+	
 		<h2> Faculty Registration </h2>
+
 		<?php echo form_open("add/create");?>
 
 			<table width="600" border="0" align="left">
@@ -106,7 +111,7 @@
 					<td><input type="text" name="gender" value="<?php echo set_value('gender'); ?>"  size="30" required /></td>
 				</tr>
 				<tr>
-					<td align="left" bgcolor="#FFFFFF">Date of Birth:</td>
+					<td align="left" bgcolor="#FFFFFF">Date of Birth: (Y-M-D)</td>
 					<td><input type="text" name="bday" value="<?php echo set_value('bday'); ?>"  size="30" required /></td>
 				</tr>
 				<tr>
@@ -119,10 +124,12 @@
 					<td>
 						<input type="submit" value="Submit" />
 						<input type="reset" value="Clear" />
+
 				</tr>
 			</table>
 		<?php echo form_close();
 		?>
+		
 	</div>
 	<div id="footer">
 		All Rights Reserved 2013

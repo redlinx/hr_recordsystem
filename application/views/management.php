@@ -93,11 +93,13 @@ th
 
 	</tr>
 		<td>
-            
+
+            <a href="http://localhost/hr_recordsystem/index.php/facu_cont">
+                <input id="home" name="New" type="button" value="home">
             <a href="http://localhost/hr_recordsystem/index.php/login/logout">
                 <input id="home" name="New" type="button" value="logout">
             </a>
-            <a href="http://localhost/hr_recordsystem/index.php/home/register">
+            <a href="http://localhost/hr_recordsystem/index.php/add/create">
                 <input id="home" name="New" type="button" value="Register">
             </a>
             <a href="http://localhost/hr_recordsystem/index.php/home/management">
