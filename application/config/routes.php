@@ -39,9 +39,16 @@
 */
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> cbd265133764c8ddfd9359898cfa1d2fb9f1e33d
 $route['default_controller']	= "upload";
 
 $route['default_controller']	= "home";
+
+
+
 
 $route['home'] 					= "home";
 $route['home/add'] 				= 'home/register';
@@ -49,6 +56,7 @@ $route['home/management']		= 'home/management';
 $route['home/view/(:any)'] 		= '/home/view/$1';
 $route['home/delete/(:any)'] 	= '/home/delete/$1';
 $route['404_override'] 			= '';
+<<<<<<< HEAD
 
 $route['home/update/(:any)']    ='/home/update/$1';
 $route['default_controller'] 	= "upload";
@@ -58,20 +66,18 @@ $route['home/update/(:any)']    ='/home/update/$1';
 $route['default_controller'] 	= "upload";
 $route['404_override'] 			= '';
 
+=======
+>>>>>>> cbd265133764c8ddfd9359898cfa1d2fb9f1e33d
 
-$route['home/update/(:any)']              ='/home/update/$1';
-
-$route['default_controller'] = "upload";
-$route['404_override'] = '';
-
-$route['home/update/(:any)']              ='/home/update/$1';
 
 $route['home/update/(:any)']    ='/home/update/$1';
 $route['default_controller'] 	= "upload";
 $route['404_override'] = '';
 
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> cbd265133764c8ddfd9359898cfa1d2fb9f1e33d
 
 
-/* End of file routes.php */
-/* Location: ./application/config/routes.php */

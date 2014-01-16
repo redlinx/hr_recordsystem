@@ -266,9 +266,17 @@ class Home extends CI_Controller {
 	function update($user_id)
 	{
 
+<<<<<<< HEAD
 		$this->data['users'] = $this->Registration_model->update($user_id);
 		$this->load->view('update', $this->data);
 		
+=======
+
+		$this->data['users'] = $this->Registration_model->update($user_id);
+		$this->load->view('update', $this->data);
+		
+
+>>>>>>> cbd265133764c8ddfd9359898cfa1d2fb9f1e33d
 	/*	$data = array(
                'username' => $username,
                'password' => $password,
@@ -296,11 +304,17 @@ class Home extends CI_Controller {
 		$this->db->update('users', $data);
 		
 		*/
-		$this->data['users'] = $this->Registration_model->update($user_id);
-		$this->load->view('update', $this->data);
+
+		//$this->data['users'] = $this->Registration_model->update($user_id);
+		//$this->load->view('update', $this->data);
+
 		//$this->Registration_model->update($user_id);
 		//$this->load->view('update');
 		
+<<<<<<< HEAD
+=======
+
+>>>>>>> cbd265133764c8ddfd9359898cfa1d2fb9f1e33d
 	}
 	
 	public function update_validation()
@@ -353,7 +367,7 @@ $this->load->library('form_validation');
 			);
 			
 			$this->Registration_model->update_account($data);
-			redirect(base_url().'index.php');
+			 redirect('home');
 	
 		}
 		else{
@@ -520,6 +534,10 @@ $this->load->library('form_validation');
 			
 			
 			//echo "Error";
+<<<<<<< HEAD
+=======
+
+>>>>>>> cbd265133764c8ddfd9359898cfa1d2fb9f1e33d
 			$this->data['users'] = $this->Registration_model->update($this->input->post('id'));
 			$this->load->view('update', $this->data);
 		}

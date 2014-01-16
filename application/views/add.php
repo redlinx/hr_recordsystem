@@ -53,6 +53,24 @@
     </style>
 </head>
 <body>
+<<<<<<< HEAD
+=======
+<div id="wrapper">
+	<div id="header">
+		<p>
+			<h2 id="title"> Web Based Records Management System </h2>
+			<h3 id="subtitle"> Human Resource Office | University of the Immaculate Conception</h3><br/>
+			
+		</p>
+
+
+	</div>
+	<div id="content">
+	
+		<h2> Faculty Registration </h2>
+
+		<?php echo form_open("add/create");?>
+>>>>>>> cbd265133764c8ddfd9359898cfa1d2fb9f1e33d
 
 <div id="container">
     <h1>Welcome to Records Management System!</h1>
@@ -60,6 +78,7 @@
     <div id="body">
         <?php echo form_open("add/create");?>
 
+<<<<<<< HEAD
             <table width="600" border="0" align="left">
 
                 <tr>
@@ -131,6 +150,56 @@
     </div>
 
     <p class="footer"> Human Resource Office, University of the Immaculate Conception, Davao City, Philippines</p>
+=======
+				<tr>
+					<td width="130" align="left" bgcolor="#FFFFFF">Username: </td>
+					<td><input type="text" name="username" value="<?php echo set_value('username'); ?>"  size="30" required /></td>
+				</tr>
+				<tr>
+					<td width="130" align="left" bgcolor="#FFFFFF">Password: </td>
+					<td><input type="text" name="password" value="<?php echo set_value('password'); ?>" size="30" required /></td>
+				</tr>
+				<tr>
+					<td width="130" align="left" bgcolor="#FFFFFF">Last Name: </td>
+					<td><input type="text" name="lname" value="<?php echo set_value('fname'); ?>"  size="30" required /></td>
+				</tr>
+				<tr>
+					<td align="left" bgcolor="#FFFFFF">First Name:</td>
+					<td><input type="text" name="fname" value="<?php echo set_value('lname'); ?>"  size="30" required /></td>
+				</tr>
+				<tr>
+					<td align="left" bgcolor="#FFFFFF">Middle Name:</td>
+					<td><input type="text" name="mname" value="<?php echo set_value('mname'); ?>"  size="30" required /></td>
+				</tr>
+				<tr>
+					<td align="left" bgcolor="#FFFFFF">Gender:</td>
+					<td><input type="text" name="gender" value="<?php echo set_value('gender'); ?>"  size="30" required /></td>
+				</tr>
+				<tr>
+					<td align="left" bgcolor="#FFFFFF">Date of Birth: (Y-M-D)</td>
+					<td><input type="text" name="bday" value="<?php echo set_value('bday'); ?>"  size="30" required /></td>
+				</tr>
+				<tr>
+					<td align="left" bgcolor="#FFFFFF">Email Address:</td>
+					<td><input type="text" name="email" value="<?php echo set_value('email'); ?>" size="30" required /></td>
+				</tr>
+
+				<tr>
+					<td align="right" bgcolor="#FFFFFF">&nbsp;</td>
+					<td>
+						<input type="submit" value="Submit" />
+						<input type="reset" value="Clear" />
+
+				</tr>
+			</table>
+		<?php echo form_close();
+		?>
+		
+	</div>
+	<div id="footer">
+		All Rights Reserved 2013
+	</div>
+>>>>>>> cbd265133764c8ddfd9359898cfa1d2fb9f1e33d
 </div>
 
 </body>

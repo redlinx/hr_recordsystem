@@ -16,7 +16,7 @@ class add extends CI_Controller {
 		$this->load->model('HR');
 
 		$this->form_validation->set_rules('username', 'Username', 'required|xss_clean');
-		$this->form_validation->set_rules('password', 'Password', 'required|xss_clean');
+		$this->form_validation->set_rules('password', 'Password', 'required|xss_clean|md5');
 		$this->form_validation->set_rules('date_hired', 'Date Hired', 'required|xss_clean');
 		$this->form_validation->set_rules('lname', 'Last Name', 'required|xss_clean');
 		$this->form_validation->set_rules('fname', 'First Name', 'required|xss_clean');

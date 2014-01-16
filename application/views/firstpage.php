@@ -13,6 +13,7 @@
         First name: &nbsp&nbsp&nbsp <input type="text" name="Fname"><br />
         Middle name: <input type="text" name="Mname"><br />
         Last name: &nbsp&nbsp&nbsp <input type="text" name="Lname"><br />
+
                 Gender: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<select><option>Select</option><option value="Male">Male</option><option value="Female">Female</option></select>
                 <br/>Religion: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="Religion"><br />
                 Date of Birth:&nbsp<input type="text" name="bday"><br />
@@ -32,17 +33,27 @@
                     <option value="nws">Non-Working Spouse</option>
                     <option value="eeu">Entitled Exemption Units</option>
                     <option value="neeu">Not Entitled to Exemption Unit</option>
-
-                    
-        <tr>
+   <tr>
             <td align="right" bgcolor="#FFFFFF">&nbsp;</td>
             <td>
           
                 <?php echo form_submit('submit', 'Update');?>
+
+
+                </select>
+                </fieldset>
+        </form>
+   
+            
+
+                    
+     
          
         </tr>
                 </select>
                 </fieldset>
         </form> 
-         <input type="button" name="b1" value="home" onclick="location.href='facu_cont'">
+          <input type="button" name="b1" value="home" onclick="location.href='facu_cont'">
+        <!-- <a href="<?php echo base_url('facu_cont'); ?>">Home</a>-->
         <input type="button" name="b2" value="next" onclick="location.href='secondpage'">
+
