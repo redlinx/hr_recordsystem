@@ -266,11 +266,9 @@ class Home extends CI_Controller {
 	function update($user_id)
 	{
 
-<<<<<<< HEAD
 		$this->data['users'] = $this->Registration_model->update($user_id);
 		$this->load->view('update', $this->data);
 		
-=======
 	/*	$data = array(
                'username' => $username,
                'password' => $password,
@@ -303,7 +301,6 @@ class Home extends CI_Controller {
 		//$this->Registration_model->update($user_id);
 		//$this->load->view('update');
 		
->>>>>>> 3a2c79b40ce847853fc59840f8c66eb0b47bfc0d
 	}
 	
 	public function update_validation()
@@ -360,9 +357,7 @@ $this->load->library('form_validation');
 	
 		}
 		else{
-<<<<<<< HEAD
-			
-=======
+
 			/*
 			$this->data['username'] = array(
 				'name'  	=> 'username',
@@ -525,7 +520,6 @@ $this->load->library('form_validation');
 			
 			
 			//echo "Error";
->>>>>>> 3a2c79b40ce847853fc59840f8c66eb0b47bfc0d
 			$this->data['users'] = $this->Registration_model->update($this->input->post('id'));
 			$this->load->view('update', $this->data);
 		}

@@ -25,7 +25,7 @@ class add extends CI_Controller {
 		$this->form_validation->set_rules('gender', 'Gender', 'required|xss_clean');
 		$this->form_validation->set_rules('bday', 'Birthday', 'required|xss_clean');
 		$this->form_validation->set_rules('email', 'Email Address', 'required|xss_clean');
-		
+		$this->form_validation->set_rules('program', 'Program', 'required|xss_clean');
 		
 		$username 	= $this->input->post('username');
 		$password 	= $this->input->post('password');
@@ -36,7 +36,8 @@ class add extends CI_Controller {
 		$gender 	= $this->input->post('gender');
 		$bday 		= $this->input->post('bday');
 		$email 		= $this->input->post('email');
-
+		$program	= $this->input->post('program');	
+		
 		$this->load->model('HR');
 		if($this->input->post())
 		{
@@ -48,7 +49,8 @@ class add extends CI_Controller {
 	    						$date_hired,
 	    						$gender,
 	    						$bday,
-	    						$email
+	    						$email,
+	    						$program
 	    						);	
 		}			
 			
@@ -60,10 +62,9 @@ class add extends CI_Controller {
     								$date_hired,
     								$gender,
     								$bday,
-    								$email);
+    								$email,
+    								$program);
 
 		//redirect(base_url().'index.php');
 	}
-	
-
 }

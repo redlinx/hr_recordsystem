@@ -4,20 +4,49 @@ class HR extends CI_Model {
 
 	public function __construct()
 	{
-		//$this->load->database();
+		$this->load->model('mysql_database');
 	}
 
-	public function insert( $lname, $fname, $mname, $username, $password, $date_hired, $gender, $bday, $email )
+	public function display_program()
+	{
+		$sql = "CALL display_program()";
+		$sQuery = $this->db->query($sql);
+		$this->db->close();
+
+		return $sQuery->result_array();
+	}
+
+	public function add_faculty($faculty)
+	{
+		$sql = "CALL add_faculty('".$faculty['emp_lname']."',
+								 '".$faculty['emp_fname']."',
+								 '".$faculty['emp_mname']."',
+								 '".$faculty['emp_bday']."',
+								 '".$faculty['emp_gender']."',
+								 '".$faculty['emp_civStat']."',
+								 '".$faculty['emp_cellNo']."',
+								 '".$faculty['emp_tellNo']."',
+								 '".$faculty['emp_email']."',
+								 '".$faculty['username']."',
+								 '".$faculty['userpass']."',
+								 '".$faculty['progID']."')";
+		$this->db->query($sql);
+		$this->db->close();
+	}
+
+
+	public function insert( $lname, $fname, $mname, $username, $password, $date_hired, $gender, $bday, $email, $program )
 	{
 		$this->load->database();
 
-		$sql_insert_profile = "INSERT INTO faculty_profile(lname, fname, mname, gender, bday, email)
+		$sql_insert_profile = "INSERT INTO faculty_profile(lname, fname, mname, gender, bday, email, program)
 								VALUES( '$lname',
 										'$fname',
 										'$mname',
 										'$gender',
 										'$bday',
-										'$email'
+										'$email',
+										'$program'
 										)";
 
 		$query = $this->db->query($sql_insert_profile);

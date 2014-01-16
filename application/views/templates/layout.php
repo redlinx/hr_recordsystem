@@ -32,14 +32,14 @@
     #body{
        margin: 0 15px 0 15px;
     }
-
+    
     p.footer{
         text-align: right;
         font-size: 11px;
         border-top: 1px solid #D0D0D0;
         line-height: 32px;
         padding: 0 10px 0 10px;
-        margin: 10% 0 0 0;
+        margin: 40% 0 0 0;
     }
     
     #container{
@@ -50,11 +50,6 @@
         border-top-color: MediumBlue;
         -webkit-box-shadow: 0 0 8px #D0D0D0;
     }
-    form
-    {
-        text-align: left;
-        
-    }
     </style>
 </head>
 <body>
@@ -63,34 +58,8 @@
     <h1>Welcome to Records Management System!</h1>
 
     <div id="body">
-        <form name="list" method="post">
-        <input type="hidden" name="rid" />
-        <input type="hidden" name="command" />
-        <table width="600" align="center">
-            <tr>
-                <th>ID No</th>
-                <th>Last Name</th>
-                <th>First Name</th>
-                <th>Program</th>
-            </tr>
-            <?php
-                foreach ($users as $user)
-                {
-                    $user_id = $user['emp_id'];
-            ?>
-                <tr>
 
-
-                    <td><?php echo $user['emp_id'] ?></td>
-                    <td><?php echo $user['lname'] ?></td>
-                    <td><?php echo $user['fname'] ?></td>
-                    <td><?php echo $user['program'] ?></td> 
-                </tr>
-            <?php
-                }
-            ?>
-        </table>
-    </form>
+    
     </div>
 
     <p class="footer"> Human Resource Office, University of the Immaculate Conception, Davao City, Philippines</p>

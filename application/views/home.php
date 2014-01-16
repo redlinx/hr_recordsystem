@@ -14,12 +14,18 @@
         background-color: #fff;
         margin: auto;
         margin-top: 50px;
-        width: 60%;
+        width: 70%;
         font: 13px/20px normal Helvetica, Arial, sans-serif;
         color: #4F5155;
     }
 
-   h1 {
+    a {
+        color: #003399;
+        background-color: transparent;
+        font-weight: normal;
+    }
+
+    h1 {
         color: #444;
         background-color: transparent;
         border-bottom: 1px solid #D0D0D0;
@@ -29,17 +35,28 @@
         padding: 14px 15px 10px 15px;
     }
 
-    #body{
-       margin: 0 15px 0 15px;
+    code {
+        font-family: Consolas, Monaco, Courier New, Courier, monospace;
+        font-size: 12px;
+        background-color: #f9f9f9;
+        border: 1px solid #D0D0D0;
+        color: #002166;
+        display: block;
+        margin: 14px 0 14px 0;
+        padding: 12px 10px 12px 10px;
     }
 
+    #body{
+        margin: 0 15px 0 15px;
+    }
+    
     p.footer{
         text-align: right;
         font-size: 11px;
         border-top: 1px solid #D0D0D0;
         line-height: 32px;
         padding: 0 10px 0 10px;
-        margin: 10% 0 0 0;
+        margin: 20px 0 0 0;
     }
     
     #container{
@@ -50,11 +67,6 @@
         border-top-color: MediumBlue;
         -webkit-box-shadow: 0 0 8px #D0D0D0;
     }
-    form
-    {
-        text-align: left;
-        
-    }
     </style>
 </head>
 <body>
@@ -63,34 +75,15 @@
     <h1>Welcome to Records Management System!</h1>
 
     <div id="body">
-        <form name="list" method="post">
-        <input type="hidden" name="rid" />
-        <input type="hidden" name="command" />
-        <table width="600" align="center">
-            <tr>
-                <th>ID No</th>
-                <th>Last Name</th>
-                <th>First Name</th>
-                <th>Program</th>
-            </tr>
-            <?php
-                foreach ($users as $user)
-                {
-                    $user_id = $user['emp_id'];
-            ?>
-                <tr>
+        <p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
 
+        <p>If you would like to edit this page you'll find it located at:</p>
+        <code>application/views/welcome_message.php</code>
 
-                    <td><?php echo $user['emp_id'] ?></td>
-                    <td><?php echo $user['lname'] ?></td>
-                    <td><?php echo $user['fname'] ?></td>
-                    <td><?php echo $user['program'] ?></td> 
-                </tr>
-            <?php
-                }
-            ?>
-        </table>
-    </form>
+        <p>The corresponding controller for this page is found at:</p>
+        <code>application/controllers/welcome.php</code>
+
+        <p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="user_guide/">User Guide</a>.</p>
     </div>
 
     <p class="footer"> Human Resource Office, University of the Immaculate Conception, Davao City, Philippines</p>
