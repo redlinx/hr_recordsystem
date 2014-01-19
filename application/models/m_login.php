@@ -5,7 +5,11 @@ public function __construct()
 { 
 parent::__construct(); 
 } 
+<<<<<<< HEAD
 public function takeUser($firstname, $lastname,$username, $password, $type, $level) 
+=======
+public function takeUser($username, $password, $type, $level) 
+>>>>>>> daf9c6566799318851ebd25004f1ae9e4460d84a
 { 
 $this->db->select('*');
 $this->db->from('user');

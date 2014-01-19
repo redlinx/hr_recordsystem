@@ -266,6 +266,7 @@ class Home extends CI_Controller {
 	function update($user_id)
 	{
 
+<<<<<<< HEAD
 
 		$this->data['users'] = $this->Registration_model->update($user_id);
 		$this->load->view('update', $this->data);
@@ -294,6 +295,42 @@ class Home extends CI_Controller {
 	        );
 
 		
+=======
+<<<<<<< HEAD
+		$this->data['users'] = $this->Registration_model->update($user_id);
+		$this->load->view('update', $this->data);
+		
+=======
+
+		$this->data['users'] = $this->Registration_model->update($user_id);
+		$this->load->view('update', $this->data);
+		
+
+>>>>>>> cbd265133764c8ddfd9359898cfa1d2fb9f1e33d
+	/*	$data = array(
+               'username' => $username,
+               'password' => $password,
+               'lastname' => $lastname,
+	       'firstname' => $firstname,
+	       'middlename' => $middlename,
+	       'gender' => $gender,
+	       'religion' => $religion,
+	       'bday' => $bday,
+	       'birthplace' => $birthplace,
+	       'city_add' => $city_add,
+	       'prov_add' => $prov_add,
+	       'tell_no' => $tell_no,
+	       'cell_no' => $cell_no,
+	       'email' => $email,
+	       'civil_stat' => $civil_stat,
+		'program' => $program,
+	       'user_type' => $user_type,
+	         'status' => $status,
+	         'rank' => $rank
+	        );
+
+		
+>>>>>>> daf9c6566799318851ebd25004f1ae9e4460d84a
 		$this->db->where('id', $user_id);
 		$this->db->update('users', $data);
 		
@@ -305,7 +342,14 @@ class Home extends CI_Controller {
 		//$this->Registration_model->update($user_id);
 		//$this->load->view('update');
 		
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> cbd265133764c8ddfd9359898cfa1d2fb9f1e33d
+>>>>>>> daf9c6566799318851ebd25004f1ae9e4460d84a
 	}
 	
 	public function update_validation()
@@ -522,10 +566,20 @@ $this->load->library('form_validation');
 			);
 
 			*/
+<<<<<<< HEAD
 			
 			
 			//echo "Error";
 
+=======
+			
+			
+			//echo "Error";
+<<<<<<< HEAD
+=======
+
+>>>>>>> cbd265133764c8ddfd9359898cfa1d2fb9f1e33d
+>>>>>>> daf9c6566799318851ebd25004f1ae9e4460d84a
 			$this->data['users'] = $this->Registration_model->update($this->input->post('id'));
 			$this->load->view('update', $this->data);
 		}

@@ -45,7 +45,11 @@ color:white;
 }
 </style>
 </head>
+<<<<<<< HEAD
 <body>
+=======
+<body >
+>>>>>>> daf9c6566799318851ebd25004f1ae9e4460d84a
 <table width="600" border="0" align="center">
 	<tr>
 		<td id="header">
@@ -55,7 +59,11 @@ color:white;
 	</tr>
 	<tr>
 		<td>
+<<<<<<< HEAD
             <a href="http://localhost/hr_recordsystem/">
+=======
+            <a href="http://localhost/hr_recordsystem/index.php/home">
+>>>>>>> daf9c6566799318851ebd25004f1ae9e4460d84a
                 <input id="buttons" name="New" type="button" value="Home">
             </a>
             <a href="http://localhost/hr_recordsystem/index.php/home/login">
@@ -255,6 +263,10 @@ color:white;
 			<td>
 				<?php echo form_submit('submit', 'Update');?>
 				<?php echo form_reset('reset', 'Clear');?>
+<<<<<<< HEAD
+=======
+
+>>>>>>> daf9c6566799318851ebd25004f1ae9e4460d84a
 		</tr>
 	
     </table>

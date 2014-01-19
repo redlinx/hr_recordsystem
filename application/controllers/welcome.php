@@ -2,22 +2,8 @@
 
 class Welcome extends CI_Controller {
 
-	public function __construct()
-	{
-		session_start();
-		parent::__construct();
-		if(!isset($_SESSION['username'])){
-			redirect('login');
-			
-		}
-	}
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		$this->load->view('home');
 	}
-	
-	
 }
-
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */

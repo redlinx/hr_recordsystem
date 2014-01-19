@@ -34,7 +34,14 @@
         </form>
         <input type="button" name="b1" value="back" onclick="location.href='fifthpage'">
 <<<<<<< HEAD
+<<<<<<< HEAD
      <input type="button" name="b2" value="home" onclick="location.href='facu_cont'">
 =======
      <input type="button" name="b2" value="home" onclick="location.href='home_controller'">
 >>>>>>> aa66e310187b22d139dfd3bcbb82dde11624fbb9
+=======
+
+     <input type="button" name="b2" value="home" onclick="location.href='facu_cont'">
+
+    
+>>>>>>> daf9c6566799318851ebd25004f1ae9e4460d84a

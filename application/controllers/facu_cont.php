@@ -13,7 +13,13 @@ class Facu_cont extends CI_Controller {
 	public function index()
 	{
 		//$this->data['users'] = $this->Facu_model->get_all();
+<<<<<<< HEAD
 		$this->load->view('facu_home');
+=======
+		// $this->db->get()
+		$user = $this->db->get_where("user", array('username' => $this->session->userdata('username')));
+		$this->load->view('facu_home', array('user' => $user->row_array()));
+>>>>>>> daf9c6566799318851ebd25004f1ae9e4460d84a
 	}
 	function firstpage()
         {
@@ -41,6 +47,7 @@ class Facu_cont extends CI_Controller {
 	{
 		$this->load->view('sixthpage');
 	}
+<<<<<<< HEAD
 		
         public function upload_facu_cred()
 	{
@@ -50,3 +57,8 @@ class Facu_cont extends CI_Controller {
 
 }
 ?>
+=======
+	}	
+      
+     ?>
+>>>>>>> daf9c6566799318851ebd25004f1ae9e4460d84a

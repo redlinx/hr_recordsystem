@@ -52,7 +52,11 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('database','session','cart', 'form_validation');
+<<<<<<< HEAD
+$autoload['libraries'] = array('session');
+=======
+$autoload['libraries'] = array('database','session','form_validation');
+>>>>>>> cbd265133764c8ddfd9359898cfa1d2fb9f1e33d
 
 
 /*
@@ -64,7 +68,7 @@ $autoload['libraries'] = array('database','session','cart', 'form_validation');
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('url', 'form', 'html');
+$autoload['helper'] = array('url', 'form');
 
 
 /*
@@ -109,7 +113,7 @@ $autoload['language'] = array();
 |
 */
 
-$autoload['model'] = array('registration_model');
+$autoload['model'] = array();
 
 
 /* End of file autoload.php */
