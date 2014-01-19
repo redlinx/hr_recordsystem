@@ -18,41 +18,9 @@ class Home extends CI_Controller {
 	}
 	 public function login()
     {
-      $this->load->view('login');
+      $this->load->view('login_view');
     }
-    public function members()
-    {
-        if($this->session->userdata('is_logged_in'))
-        {
-          $this->load->view('home');
-        }
-        else
-        {
-          redirect('restricted');
-        }
-    }
-    public function restricted()
-    {
-      $this->load->view('restricted');
-    }
-    public function main_view_validation()
-    {    
-        $this->load->library('form_validation');
-        $this->form_validation->set_rules('username', 'Username', 'required|trim|xss_clean|callback_validate_credentials');
-        $this->form_validation->set_rules('password', 'Password', 'required|trim');
-          
-		if ($this->form_validation->run())
-		{
-			$data = array('username' => $this->input->post('username'), 'is_logged_in' => 1 );
-			$this->session->set_userdata($data);
-			redirect('login');
-		}
-		else
-		{
-			$this->load->view('home');
-		}
-          
-    }
+ 
     public function validate_credentials()
     {
     	$this->load->model('registration_model');
@@ -294,21 +262,77 @@ class Home extends CI_Controller {
 		$this->load->view('view', $this->data);
 
 	}
-<<<<<<< HEAD
-	public function edit($user_id)
-	{{
-		// set common properties
-		$data['title'] = 'Updating Profile';
-		$data['action'] = site_url('home/edit');
-		$data['link_back'] = anchor('home/index/','Back to home',array('class'=>'back'));
+
+	function update($user_id)
+	{
+
+
+		$this->data['users'] = $this->Registration_model->update($user_id);
+		$this->load->view('update', $this->data);
 		
-		// set empty default form field values
-		//$this->_set_fields();
-		// set validation properties
-		//$this->_set_rules();
+
+	/*	$data = array(
+               'username' => $username,
+               'password' => $password,
+               'lastname' => $lastname,
+	       'firstname' => $firstname,
+	       'middlename' => $middlename,
+	       'gender' => $gender,
+	       'religion' => $religion,
+	       'bday' => $bday,
+	       'birthplace' => $birthplace,
+	       'city_add' => $city_add,
+	       'prov_add' => $prov_add,
+	       'tell_no' => $tell_no,
+	       'cell_no' => $cell_no,
+	       'email' => $email,
+	       'civil_stat' => $civil_stat,
+		'program' => $program,
+	       'user_type' => $user_type,
+	         'status' => $status,
+	         'rank' => $rank
+	        );
+
 		
-		// run validation
-		if ($this->form_validation->run() == true)
+		$this->db->where('id', $user_id);
+		$this->db->update('users', $data);
+		
+		*/
+
+		//$this->data['users'] = $this->Registration_model->update($user_id);
+		//$this->load->view('update', $this->data);
+
+		//$this->Registration_model->update($user_id);
+		//$this->load->view('update');
+		
+
+	}
+	
+	public function update_validation()
+	{
+$this->load->library('form_validation');
+		//validate form input
+		$this->form_validation->set_rules('username', 'Username', 'required|xss_clean');
+		$this->form_validation->set_rules('password', 'Password', 'required|xss_clean');
+		$this->form_validation->set_rules('lastname', 'Last Name', 'required|xss_clean');
+		$this->form_validation->set_rules('firstname', 'First Name', 'required|xss_clean');
+		$this->form_validation->set_rules('middlename', 'Middle Name', 'required|xss_clean');
+		$this->form_validation->set_rules('gender', 'Gender', 'required|xss_clean');
+		$this->form_validation->set_rules('religion', 'Religion', 'required|xss_clean');
+		$this->form_validation->set_rules('bday', 'Date of Birth', 'required|xss_clean');
+		$this->form_validation->set_rules('birthplace', 'Place of Birth', 'required|xss_clean');
+		$this->form_validation->set_rules('city_add', 'City Address', 'required|xss_clean');
+		$this->form_validation->set_rules('prov_add', 'Province Address', 'required|xss_clean');
+		$this->form_validation->set_rules('tell_no', 'Telephone Number', 'required|xss_clean');
+		$this->form_validation->set_rules('cell_no', 'Cellphone Number', 'required|xss_clean');
+		$this->form_validation->set_rules('email', 'Email Address', 'required|xss_clean');
+		$this->form_validation->set_rules('civil_stat', 'Civil Status', 'required|xss_clean');
+		$this->form_validation->set_rules('program', 'Program', 'required|xss_clean');
+		$this->form_validation->set_rules('user_type', 'User Type', 'required|xss_clean');
+		$this->form_validation->set_rules('status', 'Status', 'required|xss_clean');
+		$this->form_validation->set_rules('rank', 'rank', 'required|xss_clean');
+
+		if ($this->form_validation->run())
 		{		
 			$data = array(
 				'id'			=> $this->input->post('id'),
@@ -318,7 +342,7 @@ class Home extends CI_Controller {
 				'firstname' 	=> $this->input->post('firstname'),
 				'middlename'  	=> $this->input->post('middlename'),
 				'gender'  		=> $this->input->post('gender'),
-				'religion'  		=> $this->input->post('religion'),
+				'religion'  	=> $this->input->post('religion'),
 				'bday'  		=> $this->input->post('bday'),
 				'birthplace'  	=> $this->input->post('birthplace'),
 				'city_add'  	=> $this->input->post('city_add'),
@@ -327,28 +351,191 @@ class Home extends CI_Controller {
 				'cell_no'  		=> $this->input->post('cell_no'),
 				'email'  		=> $this->input->post('email'),
 				'civil_stat'  	=> $this->input->post('civil_stat'),
+				'program'  		=> $this->input->post('program'),
 				'user_type'  	=> $this->input->post('user_type'),
 				'status'  		=> $this->input->post('status'),
 				'rank'  		=> $this->input->post('rank'),
 			);
 			
-			$this->registration_model->edit($user_id,$users);
-			
-			// set user message
-			$data['message'] = '<div class="success">update person success</div>';
+			$this->Registration_model->update_account($data);
+			 redirect('home');
+	
 		}
-		
-		// load view
-		$this->load->view('edit', $data);
+		else{
+
+			/*
+			$this->data['username'] = array(
+				'name'  	=> 'username',
+				'id'    	=> 'username',
+				'type'  	=> 'text',
+				'style'		=> 'width:200px;',
+				'value' 	=> $this->form_validation->set_value('username'),
+			);
+			$this->data['password'] = array(
+				'name'  	=> 'password',
+				'id'    	=> 'password',
+				'type'  	=> 'text',
+				'style'		=> 'width:200px;',
+				'value' 	=> $this->form_validation->set_value('password'),
+			);
+
+			$this->data['lastname'] = array(
+				'name'  	=> 'lastname',
+				'id'    	=> 'lastname',
+				'type'  	=> 'text',
+				'style'		=> 'width:200px;',
+				'value' 	=> $this->form_validation->set_value('lastname'),
+			);
+			$this->data['firstname'] = array(
+				'name'  	=> 'firstname',
+				'id'    	=> 'firstname',
+				'type'  	=> 'text',
+				'style'		=> 'width:200px;',
+				'value' 	=> $this->form_validation->set_value('firstname'),
+			);
+			$this->data['middlename'] = array(
+				'name'  => 'middlename',
+				'id'    => 'middlename',
+				'type'  => 'text',
+				'style'	=> 'width:200px;',
+				'value' => $this->form_validation->set_value('middlename'),
+			);
+			$this->data['gender'] = array(
+				''  	=> 'Gender:',
+				'M'    	=> 'Male',
+				'F' 	=> 'Female',
+				'value' => $this->form_validation->set_value('gender'),
+			);
+			$this->data['religion'] = array(
+				'name'  => 'religion',
+				'id'    => 'religion',
+				'type'  => 'text',
+				'style'	=> 'width:200px;',
+				'value' => $this->form_validation->set_value('religion'),
+			);
+			$this->data['bday'] = array(
+				'name'  => 'bday',
+				'id'    => 'bday',
+				'type'  => 'text',
+				'style'	=> 'width:200px;',
+				'value' => $this->form_validation->set_value('bday'),
+			);
+			$this->data['birthplace'] = array(
+				'name'  => 'birthplace',
+				'id'    => 'birthplace',
+				'type'  => 'text',
+				'style'	=> 'width:200px;',
+				'value' => $this->form_validation->set_value('birthplace'),
+			);
+			$this->data['city_add'] = array(
+				'name'  => 'city_add',
+				'id'    => 'city_add',
+				'type'  => 'text',
+				'style'	=> 'width:200px;',
+				'value' => $this->form_validation->set_value('city_add'),
+			);
+			$this->data['prov_add'] = array(
+				'name'  => 'prov_add',
+				'id'    => 'prov_add',
+				'type'  => 'text',
+				'style'	=> 'width:200px;',
+				'value' => $this->form_validation->set_value('prov_add'),
+			);
+			$this->data['tell_no'] = array(
+				'name'  => 'tell_no',
+				'id'    => 'tell_no',
+				'type'  => 'text',
+				'style'	=> 'width:200px;',
+				'value' => $this->form_validation->set_value('tell_no'),
+			);
+			$this->data['cell_no'] = array(
+				'name'  => 'cell_no',
+				'id'    => 'cell_no',
+				'type'  => 'text',
+				'style'	=> 'width:200px;',
+				'value' => $this->form_validation->set_value('cell_no'),
+			);
+			$this->data['email'] = array(
+				'name'  => 'email',
+				'id'    => 'email',
+				'type'  => 'text',
+				'style'	=> 'width:200px;',
+				'value' => $this->form_validation->set_value('email'),
+			);
+			$this->data['civil_stat'] = array(
+				''  							=> 'Civil Status:',
+				'Single' 						=> 'Single',
+				'Married' 						=> 'Married',
+				'Head of the Family' 			=> 'Head of the Family',
+				'Legally Separated' 			=> 'Legally Separated',
+				'Working Spouse' 				=> 'Working Spouse',
+				'Non-Working Spouse' 			=> 'Non-Working Spouse',
+				'Entitled Exemption Units' 		=> 'Entitled Exemption Units',
+				'Not Entitled Exemption Units' 	=> 'Not Entitled Exemption Units',
+				'value' => $this->form_validation->set_value('civil_stat'),
+			);
+			$this->data['program'] = array(
+				''  					=> 'Program:',
+				'LA' 					=> 'Liberal Arts',
+				'ABA' 					=> 'Accountancy and Business Administration',
+				'Engineering'			=> 'Engineering',
+				'Education'				=> 'Education',
+				'ND/HRM'				=> 'Nutrition and Dietetics/ Hotel and Restaurant Management',
+				'Music'					=> 'Music',
+				'ITE'					=> 'Information Technology Education',
+				'MLS'					=> 'Medical Laboratory Science',
+				'Pharma/Chem'			=> 'Pharmacy/Chemistry',
+				'Nursing'				=> 'Nursing',
+				'value' => $this->form_validation->set_value('program'),
+			);
+			$this->data['user_type'] = array(
+				''  		=> 'User Type:',
+				'Admin' 	=> 'Administrator',
+				'Dean' 		=> 'Dean',
+				'Faculty' 	=> 'Faculty',
+				'value' => $this->form_validation->set_value('user_type'),
+			);
+			$this->data['status'] = array(
+				''  		=> 'Status:',
+				'Regular' 	=> 'Regular',
+				'Probi1' 	=> 'Probationary 1',
+				'Probi2' 	=> 'Probationary 2',
+				'Probi3' 	=> 'Probationary 3',
+				'value' => $this->form_validation->set_value('status'),
+			);
+			$this->data['rank'] = array(
+				''  		=> 'Rank:',
+				'Instructor I' 	=> 'Instructor I',
+				'Instructor II' => 'Instructor II',
+				'Assis. Prof' 	=> 'Assistang Professor',
+				'Agg. Prof' 	=> 'Aggregate Professor',
+				'Assoc. Prof' 	=> 'Associate Professor',
+				'Prof' 		=> 'Full Professor',
+				'Prof I' 	=> 'Full Professor I',
+				'Prof II' 	=> 'Full Professor II',
+				'Prof III' 	=> 'Full Professor III',
+				'Prof IV' 	=> 'Full Professor IV',
+				'Prof V' 	=> 'Full Professor V',
+				'Prof VI' 	=> 'Full Professor VI',
+				'Prof Emeritus' => 'Professor Emeritus',
+				'value' => $this->form_validation->set_value('rank'),
+			);
+
+			*/
+			
+			
+			//echo "Error";
+
+			$this->data['users'] = $this->Registration_model->update($this->input->post('id'));
+			$this->load->view('update', $this->data);
+		}
 	}
-	}}
-=======
+
 	function delete($user_id)
 	{
 		$this->Registration_model->delete($user_id);
-
 	}
 
-	
 }
->>>>>>> 64e05423d2451d95e0eb9ccd3d960088aa06dac4
+
+
