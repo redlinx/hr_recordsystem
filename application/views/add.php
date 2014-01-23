@@ -53,8 +53,7 @@
     </style>
 </head>
 <body>
-<<<<<<< HEAD
-=======
+
 <div id="wrapper">
 	<div id="header">
 		<p>
@@ -70,7 +69,6 @@
 		<h2> Faculty Registration </h2>
 
 		<?php echo form_open("add/create");?>
->>>>>>> cbd265133764c8ddfd9359898cfa1d2fb9f1e33d
 
 <div id="container">
     <h1>Welcome to Records Management System!</h1>
@@ -78,7 +76,6 @@
     <div id="body">
         <?php echo form_open("add/create");?>
 
-<<<<<<< HEAD
             <table width="600" border="0" align="left">
 
                 <tr>

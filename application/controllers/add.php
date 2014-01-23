@@ -39,6 +39,7 @@ class add extends CI_Controller {
 		$program	= $this->input->post('program');	
 		
 		$this->load->model('HR');
+		
 		if($this->input->post())
 		{
 	    	$this->HR->insert(  $lname,

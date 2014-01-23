@@ -265,61 +265,14 @@ class Home extends CI_Controller {
 
 	function update($user_id)
 	{
-
-<<<<<<< HEAD
 		$this->data['users'] = $this->Registration_model->update($user_id);
 		$this->load->view('update', $this->data);
 		
-=======
-
-		$this->data['users'] = $this->Registration_model->update($user_id);
-		$this->load->view('update', $this->data);
-		
-
->>>>>>> cbd265133764c8ddfd9359898cfa1d2fb9f1e33d
-	/*	$data = array(
-               'username' => $username,
-               'password' => $password,
-               'lastname' => $lastname,
-	       'firstname' => $firstname,
-	       'middlename' => $middlename,
-	       'gender' => $gender,
-	       'religion' => $religion,
-	       'bday' => $bday,
-	       'birthplace' => $birthplace,
-	       'city_add' => $city_add,
-	       'prov_add' => $prov_add,
-	       'tell_no' => $tell_no,
-	       'cell_no' => $cell_no,
-	       'email' => $email,
-	       'civil_stat' => $civil_stat,
-		'program' => $program,
-	       'user_type' => $user_type,
-	         'status' => $status,
-	         'rank' => $rank
-	        );
-
-		
-		$this->db->where('id', $user_id);
-		$this->db->update('users', $data);
-		
-		*/
-
-		//$this->data['users'] = $this->Registration_model->update($user_id);
-		//$this->load->view('update', $this->data);
-
-		//$this->Registration_model->update($user_id);
-		//$this->load->view('update');
-		
-<<<<<<< HEAD
-=======
-
->>>>>>> cbd265133764c8ddfd9359898cfa1d2fb9f1e33d
 	}
 	
 	public function update_validation()
 	{
-$this->load->library('form_validation');
+	$this->load->library('form_validation');
 		//validate form input
 		$this->form_validation->set_rules('username', 'Username', 'required|xss_clean');
 		$this->form_validation->set_rules('password', 'Password', 'required|xss_clean');
@@ -534,10 +487,6 @@ $this->load->library('form_validation');
 			
 			
 			//echo "Error";
-<<<<<<< HEAD
-=======
-
->>>>>>> cbd265133764c8ddfd9359898cfa1d2fb9f1e33d
 			$this->data['users'] = $this->Registration_model->update($this->input->post('id'));
 			$this->load->view('update', $this->data);
 		}

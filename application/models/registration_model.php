@@ -64,11 +64,6 @@ public function update($data)
 
         return $query->result_array();
 
-<<<<<<< HEAD
-=======
-
-		
->>>>>>> cbd265133764c8ddfd9359898cfa1d2fb9f1e33d
 		$this->db->where('id', $data);
 		$this->db->select('*');	
         $query = $this->db->get('user');
@@ -76,10 +71,6 @@ public function update($data)
         return $query->result_array();
 		
 		//$this->db->update('users', $data, $user_id);
-<<<<<<< HEAD
-=======
-
->>>>>>> cbd265133764c8ddfd9359898cfa1d2fb9f1e33d
 		
 		}
 		

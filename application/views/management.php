@@ -135,12 +135,8 @@ th
 		?>
 			<tr>
 
-
 				<td><?php echo $user['id'] ?></td>
-
 				<td><?php echo $user['username'] ?></td>
-
-
 				<td><?php echo $user['lastname'] ?></td>
 				<td><?php echo $user['firstname'] ?></td>
 				<td>

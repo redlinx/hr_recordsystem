@@ -59,7 +59,6 @@
 
     <div id="body">
 
-    
     </div>
 
     <p class="footer"> Human Resource Office, University of the Immaculate Conception, Davao City, Philippines</p>

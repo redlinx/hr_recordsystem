@@ -58,8 +58,6 @@
     </style>
 </head>
 <body>
-<<<<<<< HEAD
-=======
 <table width="600" border="0" align="center">
 	<tr>
 		<td id="header">
@@ -86,7 +84,6 @@
     <?php
         }
     ?>
->>>>>>> cbd265133764c8ddfd9359898cfa1d2fb9f1e33d
 
 <div id="container">
     <h1>Welcome to Records Management System!</h1>
@@ -108,8 +105,6 @@
                     $user_id = $user['emp_id'];
             ?>
                 <tr>
-
-
                     <td><?php echo $user['emp_id'] ?></td>
                     <td><?php echo $user['lname'] ?></td>
                     <td><?php echo $user['fname'] ?></td>
@@ -125,8 +120,6 @@
     <p class="footer"> Human Resource Office, University of the Immaculate Conception, Davao City, Philippines</p>
 </div>
 
-<<<<<<< HEAD
-=======
         <tr>
             <td width="130" align="left" bgcolor="#FFFFFF">Username: </td>
             <td><?php echo  $user['username'] ?></td>
@@ -200,6 +193,5 @@
             <td><?php echo  $user['rank'] ?></td>
         </tr>
     </table>
->>>>>>> cbd265133764c8ddfd9359898cfa1d2fb9f1e33d
 </body>
 </html>
