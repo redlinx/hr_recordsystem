@@ -39,20 +39,40 @@
 */
 
 
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> cbd265133764c8ddfd9359898cfa1d2fb9f1e33d
+>>>>>>> daf9c6566799318851ebd25004f1ae9e4460d84a
+>>>>>>> a779f36a824c1b57de5f9b20cb437690429f3b81
 $route['default_controller']	= "upload";
 
 $route['default_controller']	= "home";
 
+<<<<<<< HEAD
+=======
 
 
 
+>>>>>>> daf9c6566799318851ebd25004f1ae9e4460d84a
 $route['home'] 					= "home";
 $route['home/add'] 				= 'home/register';
 $route['home/management']		= 'home/management';
 $route['home/view/(:any)'] 		= '/home/view/$1';
 $route['home/delete/(:any)'] 	= '/home/delete/$1';
 $route['404_override'] 			= '';
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+$route['home/update/(:any)']              ='/home/update/$1';
+=======
+<<<<<<< HEAD
+>>>>>>> a779f36a824c1b57de5f9b20cb437690429f3b81
 
 $route['home/update/(:any)']    ='/home/update/$1';
 $route['default_controller'] 	= "upload";
@@ -68,4 +88,13 @@ $route['default_controller'] 	= "upload";
 $route['404_override'] = '';
 
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> cbd265133764c8ddfd9359898cfa1d2fb9f1e33d
+>>>>>>> daf9c6566799318851ebd25004f1ae9e4460d84a
+
+>>>>>>> a779f36a824c1b57de5f9b20cb437690429f3b81
 

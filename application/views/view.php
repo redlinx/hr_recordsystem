@@ -84,6 +84,14 @@
     <?php
         }
     ?>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+    <table width="600" border="0" align="center">
+=======
+>>>>>>> cbd265133764c8ddfd9359898cfa1d2fb9f1e33d
+>>>>>>> a779f36a824c1b57de5f9b20cb437690429f3b81
 
 <div id="container">
     <h1>Welcome to Records Management System!</h1>
@@ -119,6 +127,7 @@
 
     <p class="footer"> Human Resource Office, University of the Immaculate Conception, Davao City, Philippines</p>
 </div>
+>>>>>>> daf9c6566799318851ebd25004f1ae9e4460d84a
 
         <tr>
             <td width="130" align="left" bgcolor="#FFFFFF">Username: </td>

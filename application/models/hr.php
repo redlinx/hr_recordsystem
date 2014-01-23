@@ -4,6 +4,16 @@ class HR extends CI_Model {
 
 	public function __construct()
 	{
+<<<<<<< HEAD
+		//$this->load->database();
+	}
+
+	public function insert( $lname, $fname, $mname, $username, $password, $date_hired, $gender, $bday, $email )
+	{
+		$this->load->database();
+
+		$sql_insert_profile = "INSERT INTO faculty_profile(lname, fname, mname, gender, bday, email)
+=======
 		$this->load->model('mysql_database');
 	}
 
@@ -74,6 +84,7 @@ class HR extends CI_Model {
 		$sQuery = $this->db->query($sql);
 		$this->db->close();
 
+<<<<<<< HEAD
 		return $sQuery->result_array();
 	}
 	public function display_MLS()
@@ -81,6 +92,22 @@ class HR extends CI_Model {
 		$sql =  "CALL `rms`.`display_MLS`()";
 		$sQuery = $this->db->query($sql);
 		$this->db->close();
+=======
+		$sql_insert_profile = "INSERT INTO faculty_profile(lname, fname, mname, gender, bday, email, program)
+>>>>>>> daf9c6566799318851ebd25004f1ae9e4460d84a
+								VALUES( '$lname',
+										'$fname',
+										'$mname',
+										'$gender',
+										'$bday',
+<<<<<<< HEAD
+										'$email'
+=======
+										'$email',
+										'$program'
+>>>>>>> daf9c6566799318851ebd25004f1ae9e4460d84a
+										)";
+>>>>>>> a779f36a824c1b57de5f9b20cb437690429f3b81
 
 		return $sQuery->result_array();
 	}
