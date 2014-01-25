@@ -18,41 +18,9 @@ class Home extends CI_Controller {
 	}
 	 public function login()
     {
-      $this->load->view('login');
+      $this->load->view('login_view');
     }
-    public function members()
-    {
-        if($this->session->userdata('is_logged_in'))
-        {
-          $this->load->view('home');
-        }
-        else
-        {
-          redirect('restricted');
-        }
-    }
-    public function restricted()
-    {
-      $this->load->view('restricted');
-    }
-    public function main_view_validation()
-    {    
-        $this->load->library('form_validation');
-        $this->form_validation->set_rules('username', 'Username', 'required|trim|xss_clean|callback_validate_credentials');
-        $this->form_validation->set_rules('password', 'Password', 'required|trim');
-          
-		if ($this->form_validation->run())
-		{
-			$data = array('username' => $this->input->post('username'), 'is_logged_in' => 1 );
-			$this->session->set_userdata($data);
-			redirect('login');
-		}
-		else
-		{
-			$this->load->view('home');
-		}
-          
-    }
+ 
     public function validate_credentials()
     {
     	$this->load->model('registration_model');
@@ -297,6 +265,7 @@ class Home extends CI_Controller {
 
 	function update($user_id)
 	{
+<<<<<<< HEAD
 
 	/*	$data = array(
                'username' => $username,
@@ -330,11 +299,108 @@ class Home extends CI_Controller {
 		//$this->Registration_model->update($user_id);
 		//$this->load->view('update');
 		
+=======
+<<<<<<< HEAD
+		$this->data['users'] = $this->Registration_model->update($user_id);
+		$this->load->view('update', $this->data);
+		
+=======
+
+<<<<<<< HEAD
+
+		$this->data['users'] = $this->Registration_model->update($user_id);
+		$this->load->view('update', $this->data);
+		
+
+	/*	$data = array(
+               'username' => $username,
+               'password' => $password,
+               'lastname' => $lastname,
+	       'firstname' => $firstname,
+	       'middlename' => $middlename,
+	       'gender' => $gender,
+	       'religion' => $religion,
+	       'bday' => $bday,
+	       'birthplace' => $birthplace,
+	       'city_add' => $city_add,
+	       'prov_add' => $prov_add,
+	       'tell_no' => $tell_no,
+	       'cell_no' => $cell_no,
+	       'email' => $email,
+	       'civil_stat' => $civil_stat,
+		'program' => $program,
+	       'user_type' => $user_type,
+	         'status' => $status,
+	         'rank' => $rank
+	        );
+
+		
+=======
+<<<<<<< HEAD
+		$this->data['users'] = $this->Registration_model->update($user_id);
+		$this->load->view('update', $this->data);
+		
+=======
+
+		$this->data['users'] = $this->Registration_model->update($user_id);
+		$this->load->view('update', $this->data);
+		
+
+>>>>>>> cbd265133764c8ddfd9359898cfa1d2fb9f1e33d
+	/*	$data = array(
+               'username' => $username,
+               'password' => $password,
+               'lastname' => $lastname,
+	       'firstname' => $firstname,
+	       'middlename' => $middlename,
+	       'gender' => $gender,
+	       'religion' => $religion,
+	       'bday' => $bday,
+	       'birthplace' => $birthplace,
+	       'city_add' => $city_add,
+	       'prov_add' => $prov_add,
+	       'tell_no' => $tell_no,
+	       'cell_no' => $cell_no,
+	       'email' => $email,
+	       'civil_stat' => $civil_stat,
+		'program' => $program,
+	       'user_type' => $user_type,
+	         'status' => $status,
+	         'rank' => $rank
+	        );
+
+		
+>>>>>>> daf9c6566799318851ebd25004f1ae9e4460d84a
+		$this->db->where('id', $user_id);
+		$this->db->update('users', $data);
+		
+		*/
+
+		//$this->data['users'] = $this->Registration_model->update($user_id);
+		//$this->load->view('update', $this->data);
+
+		//$this->Registration_model->update($user_id);
+		//$this->load->view('update');
+		
+<<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> cbd265133764c8ddfd9359898cfa1d2fb9f1e33d
+>>>>>>> daf9c6566799318851ebd25004f1ae9e4460d84a
+>>>>>>> a779f36a824c1b57de5f9b20cb437690429f3b81
+>>>>>>> 4150845dfd5919a39081843690f6565a950188ef
 	}
 	
 	public function update_validation()
 	{
+<<<<<<< HEAD
 $this->load->library('form_validation');
+=======
+	$this->load->library('form_validation');
+>>>>>>> 4150845dfd5919a39081843690f6565a950188ef
 		//validate form input
 		$this->form_validation->set_rules('username', 'Username', 'required|xss_clean');
 		$this->form_validation->set_rules('password', 'Password', 'required|xss_clean');
@@ -382,10 +448,18 @@ $this->load->library('form_validation');
 			);
 			
 			$this->Registration_model->update_account($data);
+<<<<<<< HEAD
 			redirect(base_url().'index.php');
 	
 		}
 		else{
+=======
+			 redirect('home');
+	
+		}
+		else{
+
+>>>>>>> 4150845dfd5919a39081843690f6565a950188ef
 			/*
 			$this->data['username'] = array(
 				'name'  	=> 'username',
@@ -545,9 +619,29 @@ $this->load->library('form_validation');
 			);
 
 			*/
+<<<<<<< HEAD
 			
 			
 			//echo "Error";
+=======
+<<<<<<< HEAD
+			
+			
+			//echo "Error";
+
+=======
+			
+			
+			//echo "Error";
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> cbd265133764c8ddfd9359898cfa1d2fb9f1e33d
+>>>>>>> daf9c6566799318851ebd25004f1ae9e4460d84a
+>>>>>>> a779f36a824c1b57de5f9b20cb437690429f3b81
+>>>>>>> 4150845dfd5919a39081843690f6565a950188ef
 			$this->data['users'] = $this->Registration_model->update($this->input->post('id'));
 			$this->load->view('update', $this->data);
 		}

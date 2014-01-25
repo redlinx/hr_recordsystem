@@ -14,11 +14,19 @@ padding:10px;
 border:1px #ccc solid;
 font-size:18px;
 font-weight:bold;
+<<<<<<< HEAD
 
 color:#FF6600;
 =======
 color: MediumBlue;
 
+=======
+<<<<<<< HEAD
+color:#FF6600;
+=======
+color: MediumBlue;
+>>>>>>> daf9c6566799318851ebd25004f1ae9e4460d84a
+>>>>>>> 4150845dfd5919a39081843690f6565a950188ef
 }
 .inputan
 {
@@ -29,10 +37,18 @@ border:1px solid #ccc;
 .button
 {
 padding:5px;
+<<<<<<< HEAD
 
 background:#FF6600;
 
 background:MediumBlue;
+=======
+<<<<<<< HEAD
+background:#FF6600;
+=======
+background:MediumBlue;
+>>>>>>> daf9c6566799318851ebd25004f1ae9e4460d84a
+>>>>>>> 4150845dfd5919a39081843690f6565a950188ef
 color:#FFF;
 font-weight:bold;
 font-family:Calibri;
@@ -44,17 +60,27 @@ border:#eee 1px solid;
 color:#FF6600;
 font-size:11px;
 }
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 4150845dfd5919a39081843690f6565a950188ef
 #form-login, #form
 {
 	background-color: HotPink;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> daf9c6566799318851ebd25004f1ae9e4460d84a
+>>>>>>> 4150845dfd5919a39081843690f6565a950188ef
 </style>
 </head>
 <body>
 <form action="<?php echo base_url();?>index.php/login/form_login" method="post" name="login">
 <div id="form-login">
+<<<<<<< HEAD
 
 Human Resource
 <br><br>
@@ -63,6 +89,16 @@ Human Resource
 	<h3> Web Based Records Management System </h3>
 <table id="form" border="0" cellpadding="4">
 
+=======
+<<<<<<< HEAD
+Human Resource
+<br><br>
+<table border="0" cellpadding="4">
+=======
+	<h3> Web Based Records Management System </h3>
+<table id="form" border="0" cellpadding="4">
+>>>>>>> daf9c6566799318851ebd25004f1ae9e4460d84a
+>>>>>>> 4150845dfd5919a39081843690f6565a950188ef
 <tr>
 <td>Username</td>
 <td>:</td>
@@ -78,10 +114,18 @@ Human Resource
 <td>:</td>
 <td><select name="level" class="inputan">
 <option value="1">Faculty</option>
+<<<<<<< HEAD
 
 
 <option value="2">HR Officer</option>
 
+=======
+<<<<<<< HEAD
+<option value="2">Hr officer</option>
+=======
+<option value="2">HR Officer</option>
+>>>>>>> daf9c6566799318851ebd25004f1ae9e4460d84a
+>>>>>>> 4150845dfd5919a39081843690f6565a950188ef
 
 </select></td>
 </tr>

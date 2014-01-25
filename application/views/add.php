@@ -126,8 +126,17 @@
 </head>
 <body>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> daf9c6566799318851ebd25004f1ae9e4460d84a
+=======
+
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> daf9c6566799318851ebd25004f1ae9e4460d84a
+>>>>>>> a779f36a824c1b57de5f9b20cb437690429f3b81
+>>>>>>> 4150845dfd5919a39081843690f6565a950188ef
 <div id="wrapper">
 	<div id="header">
 		<p>
@@ -154,7 +163,10 @@
 		<h2> Faculty Registration </h2>
 
 		<?php echo form_open("add/create");?>
+<<<<<<< HEAD
 >>>>>>> cbd265133764c8ddfd9359898cfa1d2fb9f1e33d
+=======
+>>>>>>> 4150845dfd5919a39081843690f6565a950188ef
 
 <div id="container">
     <h1>Welcome to Records Management System!</h1>
@@ -163,6 +175,9 @@
         <?php echo form_open("add/create");?>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4150845dfd5919a39081843690f6565a950188ef
             <table width="600" border="0" align="left">
 
                 <tr>

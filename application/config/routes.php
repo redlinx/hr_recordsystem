@@ -25,7 +25,7 @@
 |
 | There area two reserved routes:
 |
-|	$route['default_controller'] = 'upload';
+|	$route['default_controller'] = 'welcome';
 |
 | This route indicates which controller class should be loaded if the
 | URI contains no data. In the above example, the "welcome" class
@@ -39,18 +39,72 @@
 */
 
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> cbd265133764c8ddfd9359898cfa1d2fb9f1e33d
+>>>>>>> daf9c6566799318851ebd25004f1ae9e4460d84a
+>>>>>>> a779f36a824c1b57de5f9b20cb437690429f3b81
+>>>>>>> 4150845dfd5919a39081843690f6565a950188ef
 $route['default_controller']	= "upload";
 
 $route['default_controller']	= "home";
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> daf9c6566799318851ebd25004f1ae9e4460d84a
+>>>>>>> 4150845dfd5919a39081843690f6565a950188ef
 $route['home'] 					= "home";
 $route['home/add'] 				= 'home/register';
 $route['home/management']		= 'home/management';
 $route['home/view/(:any)'] 		= '/home/view/$1';
 $route['home/delete/(:any)'] 	= '/home/delete/$1';
 $route['404_override'] 			= '';
+<<<<<<< HEAD
 $route['home/update/(:any)']              ='/home/update/$1';
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+$route['home/update/(:any)']              ='/home/update/$1';
+=======
+<<<<<<< HEAD
+>>>>>>> a779f36a824c1b57de5f9b20cb437690429f3b81
+
+$route['home/update/(:any)']    ='/home/update/$1';
+$route['default_controller'] 	= "upload";
+$route['404_override'] = '';
+$route['home/update/(:any)']    ='/home/update/$1';
+$route['home/update/(:any)']    ='/home/update/$1';
+$route['default_controller'] 	= "upload";
+$route['404_override'] 			= '';
 
 
-/* End of file routes.php */
-/* Location: ./application/config/routes.php */
+$route['home/update/(:any)']    ='/home/update/$1';
+$route['default_controller'] 	= "upload";
+$route['404_override'] = '';
+
+
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> cbd265133764c8ddfd9359898cfa1d2fb9f1e33d
+>>>>>>> daf9c6566799318851ebd25004f1ae9e4460d84a
+>>>>>>> 4150845dfd5919a39081843690f6565a950188ef
+
+>>>>>>> a779f36a824c1b57de5f9b20cb437690429f3b81
+

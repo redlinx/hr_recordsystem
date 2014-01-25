@@ -51,6 +51,10 @@ class add extends CI_Controller {
 		
 >>>>>>> daf9c6566799318851ebd25004f1ae9e4460d84a
 		$this->load->model('HR');
+<<<<<<< HEAD
+=======
+		
+>>>>>>> 4150845dfd5919a39081843690f6565a950188ef
 		if($this->input->post())
 		{
 	    	$this->HR->insert(  $lname,

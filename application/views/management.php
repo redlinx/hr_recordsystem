@@ -93,14 +93,25 @@ th
 
 	</tr>
 		<td>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 4150845dfd5919a39081843690f6565a950188ef
             <a href="http://localhost/hr_recordsystem/">
 
                 <input id="home" name="New" type="button" value="Home">
             </a>
             <a href="http://localhost/hr_recordsystem/index.php/home/login">
                 <input id="home" name="New" type="button" value="Login">
+=======
+
+            <a href="http://localhost/hr_recordsystem/index.php/facu_cont">
+                <input id="home" name="New" type="button" value="home">
+            <a href="http://localhost/hr_recordsystem/index.php/login/logout">
+                <input id="home" name="New" type="button" value="logout">
+>>>>>>> daf9c6566799318851ebd25004f1ae9e4460d84a
             </a>
-            <a href="http://localhost/hr_recordsystem/index.php/home/register">
+            <a href="http://localhost/hr_recordsystem/index.php/add/create">
                 <input id="home" name="New" type="button" value="Register">
             </a>
             <a href="http://localhost/hr_recordsystem/index.php/home/management">
@@ -109,6 +120,7 @@ th
         </td>
 	</tr>
 
+<<<<<<< HEAD
 		<td id="nav">
             <a href="http://localhost/hr_recordsystem/">
 
@@ -119,6 +131,12 @@ th
             </a>
         </td>
 	</tr>
+<<<<<<< HEAD
+=======
+=======
+		
+>>>>>>> daf9c6566799318851ebd25004f1ae9e4460d84a
+>>>>>>> 4150845dfd5919a39081843690f6565a950188ef
 
 	<tr>
 
@@ -144,13 +162,18 @@ th
 			$user_id = $user['id'];
 		?>
 			<tr>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4150845dfd5919a39081843690f6565a950188ef
 
 				<td><?php echo $user['id'] ?></td>
-
 				<td><?php echo $user['username'] ?></td>
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 4150845dfd5919a39081843690f6565a950188ef
 				<td><?php echo $user['lastname'] ?></td>
 				<td><?php echo $user['firstname'] ?></td>
 				<td>
