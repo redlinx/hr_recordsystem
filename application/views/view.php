@@ -76,7 +76,7 @@ color:white;
     <?php
         }
     ?>
-    </table>
+
     <table width="600" border="0" align="center">
 
         <tr>

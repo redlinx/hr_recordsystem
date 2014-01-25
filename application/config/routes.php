@@ -38,17 +38,18 @@
 |
 */
 
-<<<<<<< HEAD
+
 $route['default_controller']	= "upload";
-=======
+
 $route['default_controller']	= "home";
->>>>>>> 466e2e7821d398137c6dbf13a1d90c6e211ab660
+
 $route['home'] 					= "home";
 $route['home/add'] 				= 'home/register';
 $route['home/management']		= 'home/management';
 $route['home/view/(:any)'] 		= '/home/view/$1';
 $route['home/delete/(:any)'] 	= '/home/delete/$1';
 $route['404_override'] 			= '';
+$route['home/update/(:any)']              ='/home/update/$1';
 
 
 /* End of file routes.php */
