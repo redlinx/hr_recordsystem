@@ -4,7 +4,7 @@ class HR extends CI_Model {
 
 	public function __construct()
 	{
-<<<<<<< HEAD
+
 
 		$config['hostname'] = "localhost";
 		$config['username'] = "root";
@@ -20,20 +20,19 @@ class HR extends CI_Model {
 		$config['dbcollat'] = "utf8_general_ci";
 		
 		$this->load->database($config);
-=======
-<<<<<<< HEAD
+
 		//$this->load->database();
 	}
 
-	public function insert( $lname, $fname, $mname, $username, $password, $date_hired, $gender, $bday, $email )
+	/*public function insert( $lname, $fname, $mname, $username, $password, $date_hired, $gender, $bday, $email )
 	{
 		$this->load->database();
 
-		$sql_insert_profile = "INSERT INTO faculty_profile(lname, fname, mname, gender, bday, email)
-=======
+		$sql_insert_profile = "INSERT INTO faculty_profile(lname, fname, mname, gender, bday, email)";
+
 		$this->load->model('mysql_database');
->>>>>>> 4150845dfd5919a39081843690f6565a950188ef
-	}
+
+	}*/
 
 	public function display_program()
 	{
@@ -46,12 +45,11 @@ class HR extends CI_Model {
 
 	public function add_faculty($faculty)
 	{
-<<<<<<< HEAD
-		$sql = "CALL add_faculty('".$faculty['emp_lname']."',
-=======
+
+		
+
 		$sql = "CALL add_faculty(
 								 '".$faculty['emp_lname']."',
->>>>>>> 4150845dfd5919a39081843690f6565a950188ef
 								 '".$faculty['emp_fname']."',
 								 '".$faculty['emp_mname']."',
 								 '".$faculty['emp_bday']."',
@@ -66,16 +64,15 @@ class HR extends CI_Model {
 		$this->db->query($sql);
 		$this->db->close();
 	}
-<<<<<<< HEAD
+
 
 
 	public function insert( $lname, $fname, $mname, $username, $password, $date_hired, $gender, $bday, $email, $program )
 	{
 		$this->load->database();
 
-		$sql_insert_profile = "INSERT INTO faculty_profile(lname, fname, mname, gender, bday, email, program)
-
-=======
+		$sql_insert_profile = "INSERT INTO faculty_profile(lname, fname, mname, gender, bday, email, program)";
+	}
 	public function update_faculty($empID)
 	{
 		$sql = "CALL update_faculty('".$faculty['empID']."',
@@ -116,7 +113,6 @@ class HR extends CI_Model {
 		$sQuery = $this->db->query($sql);
 		$this->db->close();
 
-<<<<<<< HEAD
 		return $sQuery->result_array();
 	}
 	public function display_MLS()
@@ -124,34 +120,10 @@ class HR extends CI_Model {
 		$sql =  "CALL `rms`.`display_MLS`()";
 		$sQuery = $this->db->query($sql);
 		$this->db->close();
-=======
-		$sql_insert_profile = "INSERT INTO faculty_profile(lname, fname, mname, gender, bday, email, program)
->>>>>>> daf9c6566799318851ebd25004f1ae9e4460d84a
->>>>>>> 4150845dfd5919a39081843690f6565a950188ef
-								VALUES( '$lname',
-										'$fname',
-										'$mname',
-										'$gender',
-										'$bday',
-<<<<<<< HEAD
-										'$email'
-										'$program'
-										)";
 
-		$query = $this->db->query($sql_insert_profile);
-
-		$faculty_id = mysql_insert_id();
-
-		$sql_insert_account = "INSERT INTO faculty_account (username, password, date_hired, faculty_profile_emp_id)
-								VALUES( '$username',
-										'$password',
-										'$date_hired',
-										'$faculty_id' 
-										)";
-
-		$query = $this->db->query($sql_insert_account);
+		return $sQuery->result_array();
 	}
-		public function update( $lname, $bday, $cell_no, $tell_no,$email )
+	public function update( $lname, $bday, $cell_no, $tell_no,$email )
 	{
 		$this->load->database();
 
@@ -167,18 +139,8 @@ class HR extends CI_Model {
 
 		$faculty_id = mysql_update_id();
 	}
-=======
-<<<<<<< HEAD
-										'$email'
-=======
-										'$email',
-										'$program'
->>>>>>> daf9c6566799318851ebd25004f1ae9e4460d84a
-										)";
->>>>>>> a779f36a824c1b57de5f9b20cb437690429f3b81
 
-		return $sQuery->result_array();
-	}
+
 	public function display_ABA()
 	{
 		$sql =  "CALL `rms`.`display_ABA`()";
@@ -259,6 +221,27 @@ class HR extends CI_Model {
 
 		return $sQuery->result_array();
 	}
+	public function change_password($empID)
+	{
+		$sql = "CALL change_password('".$faculty['empID']."',
+					'".$faculty['username']."',
+					'".$faculty['userpass']."')";
+				
+		$this->db->query($sql);
+		$this->db->close();
+	}
+	public function change_password_account( $username, $userpass )
+	{
+		$this->load->database();
 
->>>>>>> 4150845dfd5919a39081843690f6565a950188ef
+		$sql_change_password = "UPDATE `rms`.`faculty_account`
+					SET `username` = username,
+					`password` = userpass
+					WHERE `faculty_profile_emp_id` = empID";
+
+		$query = $this->db->query($sql_change_password);
+
+		$faculty_id = mysql_update_id();
+	}
+
 }

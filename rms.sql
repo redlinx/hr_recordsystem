@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.9
+-- version 3.5.2.2
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 23, 2014 at 10:33 AM
--- Server version: 5.5.34
--- PHP Version: 5.4.22
+-- Generation Time: Jan 27, 2014 at 02:54 PM
+-- Server version: 5.5.27
+-- PHP Version: 5.4.7
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -82,6 +82,21 @@ BEGIN
 	(SELECT last_insert_id()),
 	NULL,
 	progID);
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `change_password`(	IN empID INT,
+																IN username VARCHAR(45),
+																IN userpass VARCHAR(45)
+																)
+BEGIN
+
+
+UPDATE `rms`.`faculty_account`
+	SET
+	`username` = username,
+	`password` = userpass
+
+	WHERE `faculty_profile_emp_id` = empID;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `display_ABA`()
@@ -327,7 +342,7 @@ CREATE TABLE IF NOT EXISTS `faculty_account` (
   KEY `fk_faculty_account_faculty_profile1_idx` (`faculty_profile_emp_id`),
   KEY `fk_faculty_account_faculty_rank1_idx` (`faculty_rank_rank_id`),
   KEY `fk_faculty_account_Program1_idx` (`prog_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=72 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=74 ;
 
 --
 -- Dumping data for table `faculty_account`
@@ -378,7 +393,9 @@ INSERT INTO `faculty_account` (`account_id`, `username`, `password`, `date_hired
 (68, 'jimmy', 'temp', '2014-01-21 11:25:13', '0', 266, NULL, 10),
 (69, 'viri', 'temp', '2014-01-21 11:26:06', '0', 267, NULL, 11),
 (70, 'eric', 'temp', '2014-01-21 11:27:00', '0', 268, NULL, 11),
-(71, 'bruce', 'temp', '2014-01-21 17:37:57', '0', 269, NULL, 1);
+(71, 'bruce', 'temp', '2014-01-21 17:37:57', '0', 269, NULL, 1),
+(72, 'kyle', 'temp', '2014-01-26 13:10:33', '0', 270, NULL, 11),
+(73, 'eric', 'temp', '2014-01-27 16:27:24', '0', 271, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -433,7 +450,7 @@ CREATE TABLE IF NOT EXISTS `faculty_profile` (
   `email` varchar(45) DEFAULT NULL,
   `date_log` datetime DEFAULT NULL,
   PRIMARY KEY (`emp_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=270 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=272 ;
 
 --
 -- Dumping data for table `faculty_profile`
@@ -486,7 +503,9 @@ INSERT INTO `faculty_profile` (`emp_id`, `lastname`, `firstname`, `middlename`, 
 (266, 'Alapag', 'Jimmy', 'R.', '1995-02-23', 'Male', 'Single', '09481231376', '123-4567', 'jimmy@gmail.com', '2014-01-21 11:25:13'),
 (267, 'Viri', 'Maria', 'Marissa', '1994-06-19', 'Female', 'Single', '09481231376', '258-1212', 'viri@gmail.com', '2014-01-21 11:26:06'),
 (268, 'Emberda', 'Eric', 'G.', '1994-06-06', 'Male', 'Single', '09481231376', '258-1212', 'eric@gmail.com', '2014-01-21 11:27:00'),
-(269, 'Bruce', 'Lee', 'sample', '1994-07-28', 'Male', 'Single', '0987654321', '258-3138', 'wenztico@gmail.com', '2014-01-21 17:37:57');
+(269, 'Bruce', 'Lee', 'sample', '1994-07-28', 'Male', 'Single', '0987654321', '258-3138', 'wenztico@gmail.com', '2014-01-21 17:37:57'),
+(270, 'Sombilla', 'kyle', 'ivan', '1994-09-09', 'Male', 'Single', '324-3245', '234-3243', 'sombilla_ivan21@yahoo.com', '2014-01-26 13:10:33'),
+(271, 'Emberda', 'Eric', 'temp', '1989-09-09', 'Male', 'Single', '34567-56', '234-3243', 'ivansombilla@gmail.com', '2014-01-27 16:27:23');
 
 -- --------------------------------------------------------
 

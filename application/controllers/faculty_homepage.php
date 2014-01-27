@@ -1,14 +1,21 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
-class Update_faculty extends CI_Controller {
+<?php
+class Faculty_homepage extends CI_Controller {
 
 	public function index()
 	{
-
+		$this->load->view('faculty_homepage');
 		$this->load->model('hr');
-		$this->load->view('registration_form',$page_content);
+		//$this->load->view('registration_form',$page_content);
+	}
+	public function view()
+	{
+		$empID = $this->uri->segment(3, 0);
+  		$this->load->model('hr');
+ 		$page_view_content['faculty_profile'] = $this->hr->view_faculty_profile($empID);
+  		$this->load->view('view_faculty', $page_view_content);
 	}
 
+	
 	public function update_new_record()
 	{
 		$faculty['emp_lname'] = $this->input->post('lname');
@@ -54,5 +61,11 @@ class Update_faculty extends CI_Controller {
 
 		echo "Record Successfully Updated";
 
+	}
+
+	
+	public function upload()
+	{
+		$this->load->view('upload_facu_cred');
 	}
 }

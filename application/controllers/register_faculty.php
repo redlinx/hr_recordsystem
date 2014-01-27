@@ -2,8 +2,6 @@
 
 class Register_faculty extends CI_Controller {
 
-<<<<<<< HEAD
-=======
 	public function __construct()
 	{
 		parent::__construct();
@@ -13,34 +11,17 @@ class Register_faculty extends CI_Controller {
 		$this->load->helper('url');
 	}
 
->>>>>>> 4150845dfd5919a39081843690f6565a950188ef
 	public function index()
 	{
 		$this->load->model('hr');
 		$page_content['program'] = $this->hr->display_program();
 		$this->load->view('registration_form',$page_content);
-<<<<<<< HEAD
-=======
-		
->>>>>>> 4150845dfd5919a39081843690f6565a950188ef
+
 	}
 
 	public function add_new_record()
 	{
-<<<<<<< HEAD
-		$faculty['emp_lname'] = $this->input->post('lname');
-		$faculty['emp_fname'] = $this->input->post('fname');
-		$faculty['emp_mname'] = $this->input->post('mname');
-		$faculty['emp_bday'] = $this->input->post('bday');
-		$faculty['emp_gender'] = $this->input->post('gender');
-		$faculty['emp_civStat'] = $this->input->post('civStat');
-		$faculty['emp_cellNo'] = $this->input->post('cellNo');
-		$faculty['emp_tellNo'] = $this->input->post('tellNo');
-		$faculty['emp_email'] = $this->input->post('email');
-		$faculty['username'] = $this->input->post('username');
-		$faculty['userpass'] = $this->input->post('userpass');
-		$faculty['progID'] = $this->input->post('program');
-=======
+
 
 		$this->form_validation->set_rules('emp_lname', 'Last Name', 'required|xss_clean');
 		$this->form_validation->set_rules('emp_fname', 'First Name', 'required|xss_clean');
@@ -67,17 +48,16 @@ class Register_faculty extends CI_Controller {
 		$faculty['username'] 	= $this->input->post('username');
 		$faculty['userpass'] 	= $this->input->post('userpass');
 		$faculty['progID'] 		= $this->input->post('program');
->>>>>>> 4150845dfd5919a39081843690f6565a950188ef
+
 
 		$this->load->model('hr');
 		$this->hr->add_faculty($faculty);
 
-<<<<<<< HEAD
-		echo "record created.";
-=======
+
+	
 		echo "Record Successfully Added";
 
 		redirect(base_url().'index.php/register_faculty');
->>>>>>> 4150845dfd5919a39081843690f6565a950188ef
+
 	}
 }
