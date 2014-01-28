@@ -154,23 +154,10 @@
             </ul>
         </div>
         <div id="body">
-            <table align="center">
-                <?php
-                    echo form_open();
-
-                        echo "<tr><td>Last Name</td><td>:  ".$faculty_profile['lastname']."</td></tr>";
-                        echo "<code<tr><td>First Name</td><td>:  ".$faculty_profile['firstname']."</td></tr></code>";
-                        echo "<tr><td>Middle Name</td><td>:  ".$faculty_profile['middlename']."</td></tr>";
-                        echo "<tr><td>Birthday</td><td>:  ".$faculty_profile['bday']."</td></tr>";
-                        echo "<tr><td>Gender</td><td>:  ".$faculty_profile['gender']."</td></tr>";
-                        echo "<tr><td>Civil Status</td><td>:  ".$faculty_profile['civil_status']."</td></tr>";
-                        echo "<tr><td>Cell #</td><td>:  ".$faculty_profile['cell_no']."</td></tr>";
-                        echo "<tr><td>Tell #</td><td>:  ".$faculty_profile['tell_no']."</td></tr>";
-                        echo "<tr><td>Email </td><td>:  ".$faculty_profile['email']."</td></tr>";
-                        echo "<tr><td>Program</td><td>:  ".$faculty_profile['prog_name']."</td></tr>";
-                    echo form_close();
-                ?>
-            </table>
+            <h3>
+                Welcome  <?php echo $this->session->userdata('firstname'); ?> !
+            </h3>
+            <img src = "<?php echo base_url('assets/images/sample.jpg') ?>" width="220" height="200"></img>
         </div>
         
         <p class="footer"> Human Resource Office, University of the Immaculate Conception, Davao City, Philippines</p>

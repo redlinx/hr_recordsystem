@@ -265,8 +265,6 @@ class Home extends CI_Controller {
 
 	function update($user_id)
 	{
-<<<<<<< HEAD
-
 	/*	$data = array(
                'username' => $username,
                'password' => $password,
@@ -298,16 +296,8 @@ class Home extends CI_Controller {
 		$this->load->view('update', $this->data);
 		//$this->Registration_model->update($user_id);
 		//$this->load->view('update');
-		
-=======
-<<<<<<< HEAD
 		$this->data['users'] = $this->Registration_model->update($user_id);
 		$this->load->view('update', $this->data);
-		
-=======
-
-<<<<<<< HEAD
-
 		$this->data['users'] = $this->Registration_model->update($user_id);
 		$this->load->view('update', $this->data);
 		
@@ -333,20 +323,10 @@ class Home extends CI_Controller {
 	         'status' => $status,
 	         'rank' => $rank
 	        );
-
-		
-=======
-<<<<<<< HEAD
 		$this->data['users'] = $this->Registration_model->update($user_id);
 		$this->load->view('update', $this->data);
-		
-=======
-
 		$this->data['users'] = $this->Registration_model->update($user_id);
 		$this->load->view('update', $this->data);
-		
-
->>>>>>> cbd265133764c8ddfd9359898cfa1d2fb9f1e33d
 	/*	$data = array(
                'username' => $username,
                'password' => $password,
@@ -368,9 +348,6 @@ class Home extends CI_Controller {
 	         'status' => $status,
 	         'rank' => $rank
 	        );
-
-		
->>>>>>> daf9c6566799318851ebd25004f1ae9e4460d84a
 		$this->db->where('id', $user_id);
 		$this->db->update('users', $data);
 		
@@ -381,26 +358,13 @@ class Home extends CI_Controller {
 
 		//$this->Registration_model->update($user_id);
 		//$this->load->view('update');
-		
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> cbd265133764c8ddfd9359898cfa1d2fb9f1e33d
->>>>>>> daf9c6566799318851ebd25004f1ae9e4460d84a
->>>>>>> a779f36a824c1b57de5f9b20cb437690429f3b81
->>>>>>> 4150845dfd5919a39081843690f6565a950188ef
 	}
 	
 	public function update_validation()
 	{
-<<<<<<< HEAD
-$this->load->library('form_validation');
-=======
-	$this->load->library('form_validation');
->>>>>>> 4150845dfd5919a39081843690f6565a950188ef
+		$this->load->library('form_validation');
+		$this->load->library('form_validation');
+
 		//validate form input
 		$this->form_validation->set_rules('username', 'Username', 'required|xss_clean');
 		$this->form_validation->set_rules('password', 'Password', 'required|xss_clean');
@@ -448,200 +412,17 @@ $this->load->library('form_validation');
 			);
 			
 			$this->Registration_model->update_account($data);
-<<<<<<< HEAD
 			redirect(base_url().'index.php');
 	
 		}
-		else{
-=======
-			 redirect('home');
+		// else
+		// {
+		// 	 redirect('home');
 	
-		}
-		else{
+		// }
+		else
+		{
 
->>>>>>> 4150845dfd5919a39081843690f6565a950188ef
-			/*
-			$this->data['username'] = array(
-				'name'  	=> 'username',
-				'id'    	=> 'username',
-				'type'  	=> 'text',
-				'style'		=> 'width:200px;',
-				'value' 	=> $this->form_validation->set_value('username'),
-			);
-			$this->data['password'] = array(
-				'name'  	=> 'password',
-				'id'    	=> 'password',
-				'type'  	=> 'text',
-				'style'		=> 'width:200px;',
-				'value' 	=> $this->form_validation->set_value('password'),
-			);
-
-			$this->data['lastname'] = array(
-				'name'  	=> 'lastname',
-				'id'    	=> 'lastname',
-				'type'  	=> 'text',
-				'style'		=> 'width:200px;',
-				'value' 	=> $this->form_validation->set_value('lastname'),
-			);
-			$this->data['firstname'] = array(
-				'name'  	=> 'firstname',
-				'id'    	=> 'firstname',
-				'type'  	=> 'text',
-				'style'		=> 'width:200px;',
-				'value' 	=> $this->form_validation->set_value('firstname'),
-			);
-			$this->data['middlename'] = array(
-				'name'  => 'middlename',
-				'id'    => 'middlename',
-				'type'  => 'text',
-				'style'	=> 'width:200px;',
-				'value' => $this->form_validation->set_value('middlename'),
-			);
-			$this->data['gender'] = array(
-				''  	=> 'Gender:',
-				'M'    	=> 'Male',
-				'F' 	=> 'Female',
-				'value' => $this->form_validation->set_value('gender'),
-			);
-			$this->data['religion'] = array(
-				'name'  => 'religion',
-				'id'    => 'religion',
-				'type'  => 'text',
-				'style'	=> 'width:200px;',
-				'value' => $this->form_validation->set_value('religion'),
-			);
-			$this->data['bday'] = array(
-				'name'  => 'bday',
-				'id'    => 'bday',
-				'type'  => 'text',
-				'style'	=> 'width:200px;',
-				'value' => $this->form_validation->set_value('bday'),
-			);
-			$this->data['birthplace'] = array(
-				'name'  => 'birthplace',
-				'id'    => 'birthplace',
-				'type'  => 'text',
-				'style'	=> 'width:200px;',
-				'value' => $this->form_validation->set_value('birthplace'),
-			);
-			$this->data['city_add'] = array(
-				'name'  => 'city_add',
-				'id'    => 'city_add',
-				'type'  => 'text',
-				'style'	=> 'width:200px;',
-				'value' => $this->form_validation->set_value('city_add'),
-			);
-			$this->data['prov_add'] = array(
-				'name'  => 'prov_add',
-				'id'    => 'prov_add',
-				'type'  => 'text',
-				'style'	=> 'width:200px;',
-				'value' => $this->form_validation->set_value('prov_add'),
-			);
-			$this->data['tell_no'] = array(
-				'name'  => 'tell_no',
-				'id'    => 'tell_no',
-				'type'  => 'text',
-				'style'	=> 'width:200px;',
-				'value' => $this->form_validation->set_value('tell_no'),
-			);
-			$this->data['cell_no'] = array(
-				'name'  => 'cell_no',
-				'id'    => 'cell_no',
-				'type'  => 'text',
-				'style'	=> 'width:200px;',
-				'value' => $this->form_validation->set_value('cell_no'),
-			);
-			$this->data['email'] = array(
-				'name'  => 'email',
-				'id'    => 'email',
-				'type'  => 'text',
-				'style'	=> 'width:200px;',
-				'value' => $this->form_validation->set_value('email'),
-			);
-			$this->data['civil_stat'] = array(
-				''  							=> 'Civil Status:',
-				'Single' 						=> 'Single',
-				'Married' 						=> 'Married',
-				'Head of the Family' 			=> 'Head of the Family',
-				'Legally Separated' 			=> 'Legally Separated',
-				'Working Spouse' 				=> 'Working Spouse',
-				'Non-Working Spouse' 			=> 'Non-Working Spouse',
-				'Entitled Exemption Units' 		=> 'Entitled Exemption Units',
-				'Not Entitled Exemption Units' 	=> 'Not Entitled Exemption Units',
-				'value' => $this->form_validation->set_value('civil_stat'),
-			);
-			$this->data['program'] = array(
-				''  					=> 'Program:',
-				'LA' 					=> 'Liberal Arts',
-				'ABA' 					=> 'Accountancy and Business Administration',
-				'Engineering'			=> 'Engineering',
-				'Education'				=> 'Education',
-				'ND/HRM'				=> 'Nutrition and Dietetics/ Hotel and Restaurant Management',
-				'Music'					=> 'Music',
-				'ITE'					=> 'Information Technology Education',
-				'MLS'					=> 'Medical Laboratory Science',
-				'Pharma/Chem'			=> 'Pharmacy/Chemistry',
-				'Nursing'				=> 'Nursing',
-				'value' => $this->form_validation->set_value('program'),
-			);
-			$this->data['user_type'] = array(
-				''  		=> 'User Type:',
-				'Admin' 	=> 'Administrator',
-				'Dean' 		=> 'Dean',
-				'Faculty' 	=> 'Faculty',
-				'value' => $this->form_validation->set_value('user_type'),
-			);
-			$this->data['status'] = array(
-				''  		=> 'Status:',
-				'Regular' 	=> 'Regular',
-				'Probi1' 	=> 'Probationary 1',
-				'Probi2' 	=> 'Probationary 2',
-				'Probi3' 	=> 'Probationary 3',
-				'value' => $this->form_validation->set_value('status'),
-			);
-			$this->data['rank'] = array(
-				''  		=> 'Rank:',
-				'Instructor I' 	=> 'Instructor I',
-				'Instructor II' => 'Instructor II',
-				'Assis. Prof' 	=> 'Assistang Professor',
-				'Agg. Prof' 	=> 'Aggregate Professor',
-				'Assoc. Prof' 	=> 'Associate Professor',
-				'Prof' 		=> 'Full Professor',
-				'Prof I' 	=> 'Full Professor I',
-				'Prof II' 	=> 'Full Professor II',
-				'Prof III' 	=> 'Full Professor III',
-				'Prof IV' 	=> 'Full Professor IV',
-				'Prof V' 	=> 'Full Professor V',
-				'Prof VI' 	=> 'Full Professor VI',
-				'Prof Emeritus' => 'Professor Emeritus',
-				'value' => $this->form_validation->set_value('rank'),
-			);
-
-			*/
-<<<<<<< HEAD
-			
-			
-			//echo "Error";
-=======
-<<<<<<< HEAD
-			
-			
-			//echo "Error";
-
-=======
-			
-			
-			//echo "Error";
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> cbd265133764c8ddfd9359898cfa1d2fb9f1e33d
->>>>>>> daf9c6566799318851ebd25004f1ae9e4460d84a
->>>>>>> a779f36a824c1b57de5f9b20cb437690429f3b81
->>>>>>> 4150845dfd5919a39081843690f6565a950188ef
 			$this->data['users'] = $this->Registration_model->update($this->input->post('id'));
 			$this->load->view('update', $this->data);
 		}
@@ -653,5 +434,3 @@ $this->load->library('form_validation');
 	}
 
 }
-
-

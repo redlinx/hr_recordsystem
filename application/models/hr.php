@@ -4,8 +4,6 @@ class HR extends CI_Model {
 
 	public function __construct()
 	{
-
-
 		$config['hostname'] = "localhost";
 		$config['username'] = "root";
 		$config['password'] = "";
@@ -24,16 +22,14 @@ class HR extends CI_Model {
 		//$this->load->database();
 	}
 
-	/*public function insert( $lname, $fname, $mname, $username, $password, $date_hired, $gender, $bday, $email )
+	public function display_regularization_candidate()
 	{
-		$this->load->database();
+		$sql = 'CALL display_regularization_candidate()';
+		$sQuery = $this->db->query($sql);
+		$this->db->close();
 
-		$sql_insert_profile = "INSERT INTO faculty_profile(lname, fname, mname, gender, bday, email)";
-
-		$this->load->model('mysql_database');
-
-	}*/
-
+		return $sQuery->result_array();
+	}
 	public function display_program()
 	{
 		$sql = "CALL display_program()";
@@ -45,9 +41,6 @@ class HR extends CI_Model {
 
 	public function add_faculty($faculty)
 	{
-
-		
-
 		$sql = "CALL add_faculty(
 								 '".$faculty['emp_lname']."',
 								 '".$faculty['emp_fname']."',
@@ -65,17 +58,9 @@ class HR extends CI_Model {
 		$this->db->close();
 	}
 
-
-
-	public function insert( $lname, $fname, $mname, $username, $password, $date_hired, $gender, $bday, $email, $program )
+	public function update_faculty($faculty)
 	{
-		$this->load->database();
-
-		$sql_insert_profile = "INSERT INTO faculty_profile(lname, fname, mname, gender, bday, email, program)";
-	}
-	public function update_faculty($empID)
-	{
-		$sql = "CALL update_faculty('".$faculty['empID']."',
+		$sql = "CALL update_faculty('".$faculty['emp_id']."',
 									'".$faculty['emp_lname']."',
 								 	'".$faculty['emp_fname']."',
 								 	'".$faculty['emp_mname']."',
@@ -91,6 +76,7 @@ class HR extends CI_Model {
 		$this->db->query($sql);
 		$this->db->close();
 	}
+
 	public function display_faculty()
 	{
 		$sql =  "CALL `rms`.`display_faculty`()";
@@ -99,6 +85,7 @@ class HR extends CI_Model {
 
 		return $sQuery->result_array();
 	}
+
 	public function view_faculty_profile($empID)
 	{
 		$sql = "CALL view_faculty_profile(".$empID.")";
@@ -107,6 +94,7 @@ class HR extends CI_Model {
 
 		return $sQuery->row_array(1);
 	}
+
 	public function display_ITE()
 	{
 		$sql =  "CALL `rms`.`display_ITE`()";
@@ -115,6 +103,7 @@ class HR extends CI_Model {
 
 		return $sQuery->result_array();
 	}
+
 	public function display_MLS()
 	{
 		$sql =  "CALL `rms`.`display_MLS`()";
@@ -123,23 +112,6 @@ class HR extends CI_Model {
 
 		return $sQuery->result_array();
 	}
-	public function update( $lname, $bday, $cell_no, $tell_no,$email )
-	{
-		$this->load->database();
-
-		$sql_update_profile = "UPDATE faculty_profile 
-					SET `lastname`= lastname, 
-					`civil_status` = civil_status,
-					`cell_no` = cell_no,
-					`tell_no` = tell_no,
-					`email` = email
-					WHERE `emp_id`= emp_id";
-
-		$query = $this->db->query($sql_update_profile);
-
-		$faculty_id = mysql_update_id();
-	}
-
 
 	public function display_ABA()
 	{
@@ -149,6 +121,7 @@ class HR extends CI_Model {
 
 		return $sQuery->result_array();
 	}
+
 	public function display_PharmaChem()
 	{
 		$sql =  "CALL `rms`.`display_PharmaChem`()";
@@ -157,6 +130,7 @@ class HR extends CI_Model {
 
 		return $sQuery->result_array();
 	}
+
 	public function display_NDHM()
 	{
 		$sql =  "CALL `rms`.`display_NDHM`()";
@@ -165,6 +139,7 @@ class HR extends CI_Model {
 
 		return $sQuery->result_array();
 	}
+
 	public function display_Music()
 	{
 		$sql =  "CALL `rms`.`display_Music`()";
@@ -173,6 +148,7 @@ class HR extends CI_Model {
 
 		return $sQuery->result_array();
 	}
+
 	public function display_Nursing()
 	{
 		$sql =  "CALL `rms`.`display_Nursing`()";
@@ -181,6 +157,7 @@ class HR extends CI_Model {
 
 		return $sQuery->result_array();
 	}
+
 	public function display_LA()
 	{
 		$sql =  "CALL `rms`.`display_LA`()";
@@ -189,6 +166,7 @@ class HR extends CI_Model {
 
 		return $sQuery->result_array();
 	}
+
 	public function display_Educ()
 	{
 		$sql =  "CALL `rms`.`display_Educ`()";
@@ -197,6 +175,7 @@ class HR extends CI_Model {
 
 		return $sQuery->result_array();
 	}
+
 	public function display_Eng()
 	{
 		$sql =  "CALL `rms`.`display_Eng`()";
@@ -205,6 +184,7 @@ class HR extends CI_Model {
 
 		return $sQuery->result_array();
 	}
+
 	public function display_Admin()
 	{
 		$sql =  "CALL `rms`.`display_Admin`()";
@@ -213,6 +193,7 @@ class HR extends CI_Model {
 
 		return $sQuery->result_array();
 	}
+
 	public function display_byProgram($progID)
 	{
 		$sql = "CALL `rms`.`display_byProgram`(".$progID.");";
@@ -221,6 +202,7 @@ class HR extends CI_Model {
 
 		return $sQuery->result_array();
 	}
+
 	public function change_password($empID)
 	{
 		$sql = "CALL change_password('".$faculty['empID']."',
@@ -230,6 +212,7 @@ class HR extends CI_Model {
 		$this->db->query($sql);
 		$this->db->close();
 	}
+
 	public function change_password_account( $username, $userpass )
 	{
 		$this->load->database();

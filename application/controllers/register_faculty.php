@@ -16,13 +16,10 @@ class Register_faculty extends CI_Controller {
 		$this->load->model('hr');
 		$page_content['program'] = $this->hr->display_program();
 		$this->load->view('registration_form',$page_content);
-
 	}
 
 	public function add_new_record()
 	{
-
-
 		$this->form_validation->set_rules('emp_lname', 'Last Name', 'required|xss_clean');
 		$this->form_validation->set_rules('emp_fname', 'First Name', 'required|xss_clean');
 		$this->form_validation->set_rules('emp_mname', 'Middle Name', 'required|xss_clean');
@@ -49,13 +46,8 @@ class Register_faculty extends CI_Controller {
 		$faculty['userpass'] 	= $this->input->post('userpass');
 		$faculty['progID'] 		= $this->input->post('program');
 
-
 		$this->load->model('hr');
 		$this->hr->add_faculty($faculty);
-
-
-	
-		echo "Record Successfully Added";
 
 		redirect(base_url().'index.php/register_faculty');
 

@@ -28,7 +28,7 @@
         font-size: 17px;
         font-weight: bold;
         margin: 0 0 14px 0;
-        padding: 10px 15px 50px 10px;
+        padding: 10px 15px 65px 10px;
     }
 
     #subtitle
@@ -47,7 +47,6 @@
         float: right;
         font-size: 13px;
         text-decoration: none;
-        margin-top: 3%;
     }
     
     #forgotPass
@@ -68,7 +67,6 @@
     a
     {
         text-decoration: none;
-        color: Black ;
 
     }
     #body
@@ -135,42 +133,19 @@
         </div>
         <div id="nav">
             <ul>
-              <li>
-                <a href="http://localhost/hr_recordsystem/index.php/verifylogin">Home</a>
-              </li>
-              <li>
-                <?php echo '<a href="'.base_url().'index.php/view_faculty/view/'.$this->session->userdata('emp_id').'">'; ?>
-                Profile
-                </a>
-              </li>
-              <li>
-                <?php echo '<a href="'.base_url().'index.php/update_faculty/update_form/'.$this->session->userdata('emp_id').'">'; ?>
-                Update
-                </a>
-              </li>
-              <li>
-                  <a href="http://localhost/hr_recordsystem/index.php/upload">Upload</a>
-              </li>
+            <li>
+                <a href="http://localhost/hr_recordsystem/index.php/register_faculty">Add Faculty</a>
+            </li>
+            <li>
+                <a href="http://localhost/hr_recordsystem/index.php/display_faculty">View Faculty</a>
+            </li>
             </ul>
         </div>
         <div id="body">
-            <table align="center">
-                <?php
-                    echo form_open();
-
-                        echo "<tr><td>Last Name</td><td>:  ".$faculty_profile['lastname']."</td></tr>";
-                        echo "<code<tr><td>First Name</td><td>:  ".$faculty_profile['firstname']."</td></tr></code>";
-                        echo "<tr><td>Middle Name</td><td>:  ".$faculty_profile['middlename']."</td></tr>";
-                        echo "<tr><td>Birthday</td><td>:  ".$faculty_profile['bday']."</td></tr>";
-                        echo "<tr><td>Gender</td><td>:  ".$faculty_profile['gender']."</td></tr>";
-                        echo "<tr><td>Civil Status</td><td>:  ".$faculty_profile['civil_status']."</td></tr>";
-                        echo "<tr><td>Cell #</td><td>:  ".$faculty_profile['cell_no']."</td></tr>";
-                        echo "<tr><td>Tell #</td><td>:  ".$faculty_profile['tell_no']."</td></tr>";
-                        echo "<tr><td>Email </td><td>:  ".$faculty_profile['email']."</td></tr>";
-                        echo "<tr><td>Program</td><td>:  ".$faculty_profile['prog_name']."</td></tr>";
-                    echo form_close();
-                ?>
-            </table>
+            <h3>
+                Welcome  <?php echo $this->session->userdata('firstname'); ?> <?php echo $this->session->userdata('lastname'); ?>!
+            </h3>
+            <img src = "<?php echo base_url('assets/images/pic.jpg') ?>" width="200" height="150"></img>
         </div>
         
         <p class="footer"> Human Resource Office, University of the Immaculate Conception, Davao City, Philippines</p>

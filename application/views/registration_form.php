@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Welcome to Records Management System</title>
+	<title>Registeration</title>
 
 	<style type="text/css">
 
@@ -75,7 +75,7 @@
 <body>
 
 <div id="container">
-    <h1>Welcome to Records Management System!</h1>
+    <h1>Web Based Records Management System</h1>
 	
     <div id="body">
              <code>REGISTER NEW APPLICANT</code>

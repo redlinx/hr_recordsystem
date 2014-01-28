@@ -54,10 +54,9 @@ class Registration_model extends CI_Model {
             return false;
         }
     }
-public function update($data)
+	public function update($data)
 		{
-<<<<<<< HEAD
-		
+
 		$this->db->where('id', $data);
 		$this->db->select('*');	
         $query = $this->db->get('users');
@@ -68,75 +67,51 @@ public function update($data)
 		
 		}
 		
-public function update_account($data)
-		{
-			
+	public function update_account($data)
+		{	
 			$this->db->where('id', $data['id']);
-        $query = $this->db->update('users', $data);
-        if($query){
-            return true;
-        }
-        else {
-            return false;
-        }
-		}
-}
-
-=======
-<<<<<<< HEAD
+        	$query = $this->db->update('users', $data);
+        	if($query)
+        	{
+            	return true;
+        	}
+        	else
+        	{
+            	return false;
+        	}
 		
-		$this->db->where('id', $data);
-		$this->db->select('*');	
-        $query = $this->db->get('users');
-=======
-
+			$this->db->where('id', $data);
+			$this->db->select('*');	
+        	$query = $this->db->get('users');
 		
-		$this->db->where('id', $data);
-		$this->db->select('*');	
-        $query = $this->db->get('user');
+			$this->db->where('id', $data);
+			$this->db->select('*');	
+        	$query = $this->db->get('user');
 
-        return $query->result_array();
+        	return $query->result_array();
 
-		$this->db->where('id', $data);
-		$this->db->select('*');	
-        $query = $this->db->get('user');
->>>>>>> daf9c6566799318851ebd25004f1ae9e4460d84a
+			$this->db->where('id', $data);
+			$this->db->select('*');	
+        	$query = $this->db->get('user');
 
-        return $query->result_array();
+        	return $query->result_array();
 		
-		//$this->db->update('users', $data, $user_id);
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> cbd265133764c8ddfd9359898cfa1d2fb9f1e33d
->>>>>>> daf9c6566799318851ebd25004f1ae9e4460d84a
->>>>>>> a779f36a824c1b57de5f9b20cb437690429f3b81
-		
+			//$this->db->update('users', $data, $user_id);
 		}
 		
-public function update_account($data)
+	public function update_acc($data)
 		{
 			
-			$this->db->where('id', $data['id']);
-<<<<<<< HEAD
+		$this->db->where('id', $data['id']);
         $query = $this->db->update('users', $data);
-=======
         $query = $this->db->update('user', $data);
->>>>>>> daf9c6566799318851ebd25004f1ae9e4460d84a
-        if($query){
-            return true;
-        }
-        else {
-            return false;
-        }
+        	if($query)
+        	{
+            	return true;
+        	}
+        	else
+        	{
+            	return false;
+        	}
 		}
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> daf9c6566799318851ebd25004f1ae9e4460d84a
->>>>>>> 4150845dfd5919a39081843690f6565a950188ef
