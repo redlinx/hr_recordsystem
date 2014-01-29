@@ -69,10 +69,7 @@ class HR extends CI_Model {
 								 	'".$faculty['emp_civStat']."',
 								 	'".$faculty['emp_cellNo']."',
 								 	'".$faculty['emp_tellNo']."',
-								 	'".$faculty['emp_email']."',
-								 	'".$faculty['username']."',
-								 	'".$faculty['userpass']."',
-								 	'".$faculty['progID']."')";
+								 	'".$faculty['emp_email']."')";
 		$this->db->query($sql);
 		$this->db->close();
 	}

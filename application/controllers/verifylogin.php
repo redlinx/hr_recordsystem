@@ -15,23 +15,14 @@ class Verifylogin extends CI_Controller
     {
       redirect('login/form_login');
     }
-    
-    $faculty = $this->m_login->user_login();
-      // echo "<pre>";
-      // print_r($faculty);
-      // echo "</pre>";
-      // $faculty= $this->session->userdata('username');
-      // $data['level'] = $this->session->userdata('level');
-      // $faculty = $this->m_login->userData($faculty); 
+      $faculty = $this->m_login->user_login();
       $this->session->set_userdata('username', $faculty['username']);
       $this->session->set_userdata('firstname', $faculty['firstname']);
       $this->session->set_userdata('lastname', $faculty['lastname']);
       $this->session->set_userdata('level', $faculty['level']);
       $this->session->set_userdata('emp_id', $faculty['emp_id']);
-      //$this->load->view('facu_home');
-      //echo "<pre>";
-      //print_r($this->session->all_userdata());
-      //echo "</pre>";
+      $this->session->set_userdata('account_id', $faculty['account_id']);
+
       if ($this->session->userdata('level') == 1)
       {
         $this->load->view('home_faculty');

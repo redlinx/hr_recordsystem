@@ -62,28 +62,18 @@
         </div>
         <div id="body">
             <?php
-                foreach($page_content as $page)
+                for($x=0;$x<count($type);$x++)
                 {
-                    if ($page['prog_name'] == $page_view_content['prog_name'])
-                    {
-                        $current_program = $page['prog_id'];
-                    }
-                    $page_array[$page['prog_id']] = $page['prog_name'];
+                    $type_option[$type[$x]['type_id']] = $type[$x]['type_desc'];
                 }
-
                 echo "<table>";
-                    echo form_open('update_faculty/update_record');
-                        echo "<tr><td>Last Name</td><td>".form_input('lastname', $page_view_content['lastname'])."</td></tr>";
-                        echo "<tr><td>First Name</td><td>".form_input('firstname', $page_view_content['firstname'])."</td></tr>";
-                        echo "<tr><td>Middle Name</td><td>".form_input('middlename', $page_view_content['middlename'])."</td></tr>";
-                        echo "<tr><td>Birthday</td><td>".form_input('bday', $page_view_content['bday'])."</td></tr>";
-                        echo "<tr><td>Gender</td><td>".form_input('gender', $page_view_content['gender'])."</td></tr>";
-                        echo "<tr><td>Civil Status</td><td>".form_input('civil_status', $page_view_content['civil_status'])."</td></tr>";
-                        echo "<tr><td>Cell #</td><td>".form_input('cell_no', $page_view_content['cell_no'])."</td></tr>";
-                        echo "<tr><td>Tell #</td><td>".form_input('tell_no', $page_view_content['tell_no'])."</td></tr>";
-                        echo "<tr><td>Email </td><td>".form_input('email', $page_view_content['email'])."</td></tr>";
-                        /*echo "<tr><td>Program</td><td>".form_dropdown('program', $page_array, $current_program)."</td></tr>";*/
-                        echo "<tr><td colspan=2>".form_submit('mysubmit', 'Update')."</td></tr>";   
+                    echo form_open('update_education/add_educ');
+                        echo "<tr><td>School Name</td><td>".form_input('school_name')."</td></tr>";
+                        echo "<tr><td>Address</td><td>".form_input('address')."</td></tr>";
+                        echo "<tr><td>Year</td><td>".form_input('year')."</td></tr>";
+                        echo "<tr><td>Type</td><td>".form_dropdown('type',$type_option)."</td></tr>";
+                        echo "<tr><td>Degree</td><td>".form_input('degree')."</td></tr>";
+                        echo "<tr><td colspan=2>".form_submit('mysubmit', 'Add')."</td></tr>";   
                     echo form_close();
                 echo "</table>";
             ?>

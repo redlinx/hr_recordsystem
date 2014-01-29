@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.2.2
+-- version 4.0.9
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 27, 2014 at 02:54 PM
--- Server version: 5.5.27
--- PHP Version: 5.4.7
+-- Generation Time: Jan 29, 2014 at 02:19 PM
+-- Server version: 5.5.34
+-- PHP Version: 5.4.22
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -24,6 +24,33 @@ DELIMITER $$
 --
 -- Procedures
 --
+CREATE DEFINER=`root`@`localhost` PROCEDURE `add_education`(
+															IN schoolName VARCHAR(45),
+															IN address VARCHAR(50),
+															IN year DATE,
+															IN degree VARCHAR(45),
+															IN type INT,
+															IN empID INT)
+BEGIN
+	INSERT INTO `rms`.`faculty_education`
+	(
+	`school_name`,
+	`address`,
+	`year`,
+	`degree`,
+	`educ_type_type_id`,
+	`faculty_profile_emp_id`)
+	VALUES
+	(
+	schoolName,
+	address,
+	year,
+	degree,
+	type,
+	empID
+	);
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `add_faculty`(
 														IN emp_lname VARCHAR(45),
 														IN emp_fname VARCHAR(45),
@@ -84,19 +111,15 @@ BEGIN
 	progID);
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `change_password`(	IN empID INT,
-																IN username VARCHAR(45),
-																IN userpass VARCHAR(45)
-																)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `changePass`(IN accountID INT,
+														 IN newPass VARCHAR(45),
+														 IN current_password VARCHAR(45))
 BEGIN
-
-
-UPDATE `rms`.`faculty_account`
-	SET
-	`username` = username,
-	`password` = userpass
-
-	WHERE `faculty_profile_emp_id` = empID;
+UPDATE `faculty_account`
+SET
+`password` = newPass
+WHERE account_id = accountID
+AND password = current_password;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `display_ABA`()
@@ -141,6 +164,11 @@ BEGIN
 	INNER JOIN faculty_profile ON faculty_account.faculty_profile_emp_id = faculty_profile.emp_id
 	
 	WHERE prog_id = 9;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `display_educType`()
+BEGIN
+	SELECT * FROM rms.educ_type;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `display_Eng`()
@@ -247,6 +275,20 @@ BEGIN
 	SELECT * FROM rms.program;
 END$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `display_regularization_candidate`()
+BEGIN
+	SELECT
+		YEAR(NOW()) - YEAR(faculty_account.date_hired) AS Years_Of_Service,
+		faculty_account.date_hired,
+		faculty_profile.firstname,
+		faculty_profile.lastname
+
+	FROM faculty_account
+	INNER JOIN faculty_profile ON faculty_account.faculty_profile_emp_id = faculty_profile.emp_id
+
+	WHERE YEAR(NOW())-YEAR(faculty_account.date_hired) > 2 AND faculty_account.status = 0;
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `update_faculty`(	IN empID INT,
 																IN emp_lname VARCHAR(45),
 																IN emp_fname VARCHAR(45),
@@ -256,10 +298,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `update_faculty`(	IN empID INT,
 																IN emp_civStat VARCHAR(45),
 																IN emp_cellNo VARCHAR(45),
 																IN emp_tellNo VARCHAR(45),
-																IN emp_email VARCHAR(45),
-																IN username VARCHAR(45),
-																IN userpass VARCHAR(45),
-																IN progID INT
+																IN emp_email VARCHAR(45)
 																)
 BEGIN
 
@@ -277,13 +316,31 @@ UPDATE `rms`.`faculty_profile`
 
 	WHERE `emp_id` = empID;
 
-UPDATE `rms`.`faculty_account`
-	SET
-	`username` = username,
-	`password` = userpass,
-	`prog_id` = progID
+END$$
 
-	WHERE `faculty_profile_emp_id` = empID;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `user_login`(IN username VARCHAR(45),
+														 IN password VARCHAR(45)
+														)
+BEGIN
+
+SELECT  faculty_account.account_id,
+		faculty_account.username, 
+		faculty_account.password,
+		faculty_account.type,
+		faculty_account.level,
+		faculty_profile.firstname,
+		faculty_profile.lastname,
+		faculty_profile.emp_id
+
+FROM faculty_account
+
+INNER JOIN faculty_profile ON faculty_account.faculty_profile_emp_id = faculty_profile.emp_id
+
+WHERE faculty_account.username = username
+
+
+;
+
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `view_faculty_profile`(IN empID INT)
@@ -318,10 +375,22 @@ DELIMITER ;
 --
 
 CREATE TABLE IF NOT EXISTS `educ_type` (
-  `type_id` int(11) NOT NULL,
+  `type_id` int(11) NOT NULL AUTO_INCREMENT,
   `type_desc` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`type_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `educ_type`
+--
+
+INSERT INTO `educ_type` (`type_id`, `type_desc`) VALUES
+(1, 'Grade School'),
+(2, 'High School'),
+(3, 'College'),
+(4, 'M.A.'),
+(5, 'Ph. D.'),
+(6, 'Others');
 
 -- --------------------------------------------------------
 
@@ -338,64 +407,62 @@ CREATE TABLE IF NOT EXISTS `faculty_account` (
   `faculty_profile_emp_id` int(11) DEFAULT NULL,
   `faculty_rank_rank_id` int(11) DEFAULT NULL,
   `prog_id` int(11) DEFAULT NULL,
+  `level` int(11) DEFAULT NULL,
+  `type` int(11) DEFAULT NULL,
   PRIMARY KEY (`account_id`),
   KEY `fk_faculty_account_faculty_profile1_idx` (`faculty_profile_emp_id`),
   KEY `fk_faculty_account_faculty_rank1_idx` (`faculty_rank_rank_id`),
   KEY `fk_faculty_account_Program1_idx` (`prog_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=74 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=73 ;
 
 --
 -- Dumping data for table `faculty_account`
 --
 
-INSERT INTO `faculty_account` (`account_id`, `username`, `password`, `date_hired`, `status`, `faculty_profile_emp_id`, `faculty_rank_rank_id`, `prog_id`) VALUES
-(25, '2', '2', '2014-01-17 20:36:39', '0', 223, NULL, 2),
-(26, 'srosel', 'temp', '2014-01-17 20:37:21', '0', 224, NULL, 2),
-(27, 'rcarbon', 'temp', '2014-01-17 20:45:04', '0', 225, NULL, 9),
-(28, 'mrosel', 'temp', '2014-01-17 20:46:32', '0', 226, NULL, 4),
-(31, 'cmartin', 'temp', '2014-01-21 10:52:04', '0', 229, NULL, 5),
-(32, 'cuyamot', 'temp', '2014-01-21 10:52:58', '0', 230, NULL, 6),
-(33, 'ivan', 'temp', '2014-01-21 10:54:59', '0', 231, NULL, 1),
-(34, 'Jazz', 'temp', '2014-01-21 10:55:59', '0', 232, NULL, 1),
-(35, 'jess', 'temp', '2014-01-21 10:56:42', '0', 233, NULL, 1),
-(36, 'james', 'temp', '2014-01-21 10:57:39', '0', 234, NULL, 1),
-(37, '', '', '2014-01-21 10:58:09', '0', 235, NULL, 1),
-(38, '', '', '2014-01-21 10:58:21', '0', 236, NULL, 1),
-(39, 'jake', 'temp', '2014-01-21 10:59:12', '0', 237, NULL, 2),
-(40, 'alexus', 'temp', '2014-01-21 11:00:04', '0', 238, NULL, 2),
-(41, 'janpol', 'temp', '2014-01-21 11:00:54', '0', 239, NULL, 2),
-(42, 'lara', 'temp', '2014-01-21 11:01:31', '0', 240, NULL, 2),
-(43, 'emelyn', 'temp', '2014-01-21 11:02:16', '0', 241, NULL, 3),
-(44, 'jameson', 'temp', '2014-01-21 11:03:52', '0', 242, NULL, 3),
-(45, 'lebron', 'temp', '2014-01-21 11:04:45', '0', 243, NULL, 4),
-(46, 'kobe', 'temp', '2014-01-21 11:05:23', '0', 244, NULL, 4),
-(47, 'durant', 'temp', '2014-01-21 11:06:17', '0', 245, NULL, 4),
-(48, 'paul', 'temp', '2014-01-21 11:07:27', '0', 246, NULL, 5),
-(49, 'ibaka', 'temp', '2014-01-21 11:08:23', '0', 247, NULL, 5),
-(50, 'westbrook', 'temp', '2014-01-21 11:09:32', '0', 248, NULL, 5),
-(51, 'davis', 'temp', '2014-01-21 11:10:38', '0', 249, NULL, 6),
-(52, 'bynum@gmail.com', 'temp', '2014-01-21 11:11:32', '0', 250, NULL, 6),
-(53, 'farmar', 'tamp', '2014-01-21 11:12:37', '0', 251, NULL, 6),
-(54, 'richardson@gmail.com', 'temp', '2014-01-21 11:14:01', '0', 252, NULL, 7),
-(55, 'young', 'temp', '2014-01-21 11:14:44', '0', 253, NULL, 6),
-(56, 'gasol', 'temp', '2014-01-21 11:15:29', '0', 254, NULL, 7),
-(57, 'reyes', 'temp', '2014-01-21 11:16:37', '0', 255, NULL, 7),
-(58, 'taylor', 'temp', '2014-01-21 11:17:31', '0', 256, NULL, 7),
-(59, 'shen', 'temp', '2014-01-21 11:18:34', '0', 257, NULL, 8),
-(60, 'francis', 'temp', '2014-01-21 11:19:16', '0', 258, NULL, 8),
-(61, 'barrios', 'temp', '2014-01-21 11:20:06', '0', 259, NULL, 8),
-(62, 'lulo', 'temp', '2014-01-21 11:20:57', '0', 260, NULL, 9),
-(63, 'alvin', 'temp', '2014-01-21 11:21:52', '0', 261, NULL, 9),
-(64, '', '', '2014-01-21 11:22:13', '0', 262, NULL, 1),
-(65, 'mahinay', 'temp', '2014-01-21 11:23:00', '0', 263, NULL, 9),
-(66, 'la', 'temp', '2014-01-21 11:23:52', '0', 264, NULL, 10),
-(67, 'kraken', 'temp', '2014-01-21 11:24:39', '0', 265, NULL, 10),
-(68, 'jimmy', 'temp', '2014-01-21 11:25:13', '0', 266, NULL, 10),
-(69, 'viri', 'temp', '2014-01-21 11:26:06', '0', 267, NULL, 11),
-(70, 'eric', 'temp', '2014-01-21 11:27:00', '0', 268, NULL, 11),
-(71, 'bruce', 'temp', '2014-01-21 17:37:57', '0', 269, NULL, 1),
-(72, 'kyle', 'temp', '2014-01-26 13:10:33', '0', 270, NULL, 11),
-(73, 'eric', 'temp', '2014-01-27 16:27:24', '0', 271, NULL, 1);
+INSERT INTO `faculty_account` (`account_id`, `username`, `password`, `date_hired`, `status`, `faculty_profile_emp_id`, `faculty_rank_rank_id`, `prog_id`, `level`, `type`) VALUES
+(26, 'krosel', '1234', '2009-01-17 20:45:04', '', 224, NULL, 3, 1, 1),
+(27, 'rcarbon', 'temp', '2000-02-23 00:00:00', '', 225, NULL, 9, 1, 1),
+(28, 'erosel', 'temp', '2001-12-12 00:00:00', '', 226, NULL, 3, 1, 1),
+(31, 'cmartin', 'temp', '2003-06-23 00:00:00', '0', 229, NULL, 5, 1, 1),
+(32, 'cuyamot', 'temp', '1995-05-25 00:00:00', '0', 230, NULL, 6, 1, 1),
+(33, 'ivan', 'temp', '2014-01-21 10:54:59', '0', 231, NULL, 1, 1, 1),
+(34, 'Jazz', 'temp', '2014-01-21 10:55:59', '0', 232, NULL, 1, 1, 1),
+(35, 'jess', 'temp', '2014-01-21 10:56:42', '0', 233, NULL, 1, 1, 1),
+(36, 'james', 'temp', '2014-01-21 10:57:39', '0', 234, NULL, 1, 1, 1),
+(39, 'jake', 'temp', '2014-01-21 10:59:12', '0', 237, NULL, 2, 1, 1),
+(40, 'alexus', 'temp', '2014-01-21 11:00:04', '0', 238, NULL, 2, 1, 1),
+(41, 'janpol', 'temp', '2014-01-21 11:00:54', '0', 239, NULL, 2, 1, 1),
+(42, 'lara', 'temp', '2014-01-21 11:01:31', '0', 240, NULL, 2, 1, 1),
+(43, 'emelyn', 'temp', '2014-01-21 11:02:16', '0', 241, NULL, 3, 1, 1),
+(44, 'jameson', 'temp', '2014-01-21 11:03:52', '0', 242, NULL, 3, 1, 1),
+(45, 'lebron', 'temp', '2014-01-21 11:04:45', '0', 243, NULL, 4, 1, 1),
+(46, 'kobe', 'temp', '2014-01-21 11:05:23', '0', 244, NULL, 4, 1, 1),
+(47, 'durant', 'temp', '2014-01-21 11:06:17', '0', 245, NULL, 4, 1, 1),
+(48, 'paul', 'temp', '2014-01-21 11:07:27', '0', 246, NULL, 5, 1, 1),
+(49, 'ibaka', 'temp', '2014-01-21 11:08:23', '0', 247, NULL, 5, 1, 1),
+(50, 'westbrook', 'temp', '2014-01-21 11:09:32', '0', 248, NULL, 5, 1, 1),
+(51, 'davis', 'temp', '2014-01-21 11:10:38', '0', 249, NULL, 6, 1, 1),
+(52, 'bynum@gmail.com', 'temp', '2014-01-21 11:11:32', '0', 250, NULL, 6, 1, 1),
+(53, 'farmar', 'tamp', '2014-01-21 11:12:37', '0', 251, NULL, 6, 1, 1),
+(54, 'richardson@gmail.com', 'temp', '2014-01-21 11:14:01', '0', 252, NULL, 7, 1, 1),
+(55, 'young', 'temp', '2014-01-21 11:14:44', '0', 253, NULL, 6, 1, 1),
+(56, 'gasol', 'temp', '2014-01-21 11:15:29', '0', 254, NULL, 7, 1, 1),
+(57, 'reyes', 'temp', '2014-01-21 11:16:37', '0', 255, NULL, 7, 1, 1),
+(58, 'taylor', 'temp', '2014-01-21 11:17:31', '0', 256, NULL, 7, 1, 1),
+(59, 'shen', 'temp', '2014-01-21 11:18:34', '0', 257, NULL, 8, 2, 1),
+(60, 'francis', 'temp', '2014-01-21 11:19:16', '0', 258, NULL, 8, 2, 1),
+(61, 'barrios', 'temp', '2014-01-21 11:20:06', '0', 259, NULL, 8, 3, 1),
+(62, 'lulo', 'temp', '2014-01-21 11:20:57', '0', 260, NULL, 9, 2, 1),
+(63, 'alvin', 'temp', '2014-01-21 11:21:52', '0', 261, NULL, 9, 1, 1),
+(64, '', '', '2014-01-21 11:22:13', '0', 262, NULL, 1, 1, 1),
+(65, 'mahinay', 'temp', '2014-01-21 11:23:00', '0', 263, NULL, 9, 1, 1),
+(66, 'la', 'temp', '2014-01-21 11:23:52', '0', 264, NULL, 10, 1, 1),
+(67, 'kraken', 'temp', '2014-01-21 11:24:39', '0', 265, NULL, 10, 1, 1),
+(68, 'jimmy', 'temp', '2014-01-21 11:25:13', '0', 266, NULL, 10, 1, 1),
+(69, 'viri', 'temp', '2014-01-21 11:26:06', '0', 267, NULL, 11, 2, 1),
+(70, 'eric', 'temp', '2014-01-21 11:27:00', '0', 268, NULL, 11, 2, 1),
+(71, 'bruce', 'temp', '2014-01-21 17:37:57', '0', 269, NULL, 1, 1, 1),
+(72, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -419,17 +486,26 @@ CREATE TABLE IF NOT EXISTS `faculty_children` (
 --
 
 CREATE TABLE IF NOT EXISTS `faculty_education` (
-  `educ_id` int(11) NOT NULL,
+  `educ_id` int(11) NOT NULL AUTO_INCREMENT,
   `school_name` varchar(45) DEFAULT NULL,
-  `address` varchar(45) DEFAULT NULL,
+  `address` varchar(50) DEFAULT NULL,
   `year` varchar(45) DEFAULT NULL,
-  `degreee` varchar(45) DEFAULT NULL,
+  `degree` varchar(45) DEFAULT NULL,
   `educ_type_type_id` int(11) NOT NULL,
   `faculty_profile_emp_id` int(11) NOT NULL,
   PRIMARY KEY (`educ_id`),
   KEY `fk_faculty_education_educ_type1_idx` (`educ_type_type_id`),
   KEY `fk_faculty_education_faculty_profile1_idx` (`faculty_profile_emp_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+
+--
+-- Dumping data for table `faculty_education`
+--
+
+INSERT INTO `faculty_education` (`educ_id`, `school_name`, `address`, `year`, `degree`, `educ_type_type_id`, `faculty_profile_emp_id`) VALUES
+(2, 'UIC', 'Davao City', '1994-02-12', '', 1, 224),
+(6, 'HCDC', 'Davao City', '2001-03-23', 'High School Graduate', 2, 224),
+(9, 'ADDU', 'Davao City', '2010-03-12', 'BSIT', 3, 224);
 
 -- --------------------------------------------------------
 
@@ -450,7 +526,7 @@ CREATE TABLE IF NOT EXISTS `faculty_profile` (
   `email` varchar(45) DEFAULT NULL,
   `date_log` datetime DEFAULT NULL,
   PRIMARY KEY (`emp_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=272 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=270 ;
 
 --
 -- Dumping data for table `faculty_profile`
@@ -458,11 +534,9 @@ CREATE TABLE IF NOT EXISTS `faculty_profile` (
 
 INSERT INTO `faculty_profile` (`emp_id`, `lastname`, `firstname`, `middlename`, `bday`, `gender`, `civil_status`, `cell_no`, `tell_no`, `email`, `date_log`) VALUES
 (223, 'Tico', 'Wency', 'Dango', '1995-02-23', 'Male', 'Single', '09876543211', '123-4567', 'wenztico@gmail.com', '2014-01-17 20:36:39'),
-(224, 'Rosel', 'Sidney', 'Dango', '1998-05-28', 'Male', 'Single', '09481231376', '258-1212', 'sidneyrosel@gmail.com', '2014-01-17 20:37:21'),
+(224, 'Rosel', 'Kokie', 'Dango', '1998-05-28', 'Male', 'Complicated', '0987654321', '123-4567', 'koke@gmail.com', '2009-01-17 20:45:04'),
 (225, 'Carbon', 'Raymund', 'Labor', '1994-04-19', 'Male', 'Single', '09481231376', '258-1212', 'butch@gmail.com', '2014-01-17 20:45:04'),
-(226, 'Rosel', 'Mariel', 'Dango', '1997-07-02', 'Female', 'Single', '09876543211', '123-4567', 'emak@yahoo.com', '2014-01-17 20:46:32'),
-(227, '', '', '', '0000-00-00', '', '', '', '', '', '2014-01-21 10:46:41'),
-(228, '', '', '', '0000-00-00', '', '', '', '', '', '2014-01-21 10:46:47'),
+(226, 'Rosel', 'Emak', 'Dango', '1997-07-02', 'Female', 'Widow', '0987654321', '123-4567', 'erosel@gmail.com', '2014-01-17 20:46:32'),
 (229, 'Martin', 'Coco', 'John', '1995-01-10', 'Male', 'Single', '09481231376', '258-1212', 'cocomartin@yahoo.com', '2014-01-21 10:52:04'),
 (230, 'Uyamot', 'Carollene', 'Dango', '1995-02-23', 'Female', 'Married', '09481231376', '258-1212', 'uyamotcah@gmail.com', '2014-01-21 10:52:58'),
 (231, 'SombillA', 'Ivan', 'Karl', '1994-07-28', 'Male', 'Single', '09097829965', '258-1212', 'ivansombilla@gmail.com', '2014-01-21 10:54:59'),
@@ -503,9 +577,7 @@ INSERT INTO `faculty_profile` (`emp_id`, `lastname`, `firstname`, `middlename`, 
 (266, 'Alapag', 'Jimmy', 'R.', '1995-02-23', 'Male', 'Single', '09481231376', '123-4567', 'jimmy@gmail.com', '2014-01-21 11:25:13'),
 (267, 'Viri', 'Maria', 'Marissa', '1994-06-19', 'Female', 'Single', '09481231376', '258-1212', 'viri@gmail.com', '2014-01-21 11:26:06'),
 (268, 'Emberda', 'Eric', 'G.', '1994-06-06', 'Male', 'Single', '09481231376', '258-1212', 'eric@gmail.com', '2014-01-21 11:27:00'),
-(269, 'Bruce', 'Lee', 'sample', '1994-07-28', 'Male', 'Single', '0987654321', '258-3138', 'wenztico@gmail.com', '2014-01-21 17:37:57'),
-(270, 'Sombilla', 'kyle', 'ivan', '1994-09-09', 'Male', 'Single', '324-3245', '234-3243', 'sombilla_ivan21@yahoo.com', '2014-01-26 13:10:33'),
-(271, 'Emberda', 'Eric', 'temp', '1989-09-09', 'Male', 'Single', '34567-56', '234-3243', 'ivansombilla@gmail.com', '2014-01-27 16:27:23');
+(269, 'Bruce', 'Lee', 'sample', '1994-07-28', 'Male', 'Single', '0987654321', '258-3138', 'wenztico@gmail.com', '2014-01-21 17:37:57');
 
 -- --------------------------------------------------------
 
