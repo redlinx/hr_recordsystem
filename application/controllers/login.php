@@ -53,7 +53,7 @@ class Login extends CI_Controller
         }
         else
         {
-            echo "<script> alert('Failed Login: Incorrect Username/Password'); history.go(-1); </script>";        
+            echo "<script> alert('Failed Login: Incorrect Username/Password'); history.go(-1); </script>";
         }
     }  
   }

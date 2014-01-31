@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Welcome to Records Management System</title>
+    <title>Home</title>
     <link href="<?php echo base_url('assets/css/layout.css') ?>" rel="stylesheet" type="text/css" />
     <style>
         body

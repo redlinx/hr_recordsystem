@@ -11,6 +11,9 @@ class View_faculty extends CI_Controller {
 		$empID = $this->uri->segment(3, 0);
   		$this->load->model('hr');
  		$page_view_content['faculty_profile'] = $this->hr->view_faculty_profile($empID);
-  		$this->load->view('view_faculty', $page_view_content);
+		// echo "<pre>";
+ 	// 	print_r($page_view_content);
+ 	// 	echo "</pre>";
+ 		$this->load->view('view_faculty', $page_view_content);
 	}
 }

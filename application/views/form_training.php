@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Home</title>
+    <title>Education</title>
     <link href="<?php echo base_url('assets/css/layout.css') ?>" rel="stylesheet" type="text/css" />
     <style>
         body
@@ -66,10 +66,23 @@
             </ul>
         </div>
         <div id="body">
-            <h3>
-                Welcome  <?php echo $this->session->userdata('firstname'); ?> !
-            </h3>
-            <img src = "<?php echo base_url('assets/images/sample.jpg') ?>" width="150  " height="150"></img>
+            <?php
+                for($x=0;$x<count($type);$x++)
+                {
+                    $type_option[$type[$x]['type_id']] = $type[$x]['type_desc'];
+                }
+                echo "<table>";
+                    echo form_open('add_training/add_train');
+                        echo "<tr><td>Training Title</td><td>".form_input('trainingTitle')."</td></tr>";
+                        echo "<tr><td>Venue</td><td>".form_input('venue')."</td></tr>";
+                        echo "<tr><td>Date</td><td>".form_input('date')."</td></tr>";
+                        echo "<tr><td>Organizer</td><td>".form_input('organizer')."</td></tr>";
+                        echo "<tr><td>Role</td><td>".form_input('role')."</td></tr>";
+                        echo "<tr><td>Type</td><td>".form_dropdown('type',$type_option)."</td></tr>";
+                        echo "<tr><td colspan=2>".form_submit('mysubmit', 'Add')."</td></tr>";   
+                    echo form_close();
+                echo "</table>";
+            ?>
         </div>
         
         <p class="footer"> Human Resource Office, University of the Immaculate Conception, Davao City, Philippines</p>

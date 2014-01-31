@@ -1,49 +1,20 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Login</title>
-<style>
-table, td, th
-{
-border:1px solid HotPink;
-}
-#header
-{
-background-color: MediumBlue;
-color:white;
-}
-th
-{
-background-color: MediumBlue;
-color:white;
-}
-#buttons
-{
-    background-color: MediumBlue;
-    color:white;
-    padding: 4px;
-    width: 115px;
-    border-radius: 6px;
-}
-#username, #pass
-{
-    background-color: white;
-    color:black;
-    width: 150px;
-    border-radius: 6px;
-
-}
-
-#list
-{
-    text-align: center;
-}
-#container
-{
-    margin: auto;
-}
-</style>
+    <meta charset="utf-8">
+    <title>Welcome</title>
+    <link href="<?php echo base_url('assets/css/layout.css') ?>" rel="stylesheet" type="text/css" />
+    <style>
+        body
+        {
+            background-color: #fff;
+            margin: auto;
+            margin-top: 50px;
+            width: 60%;
+            font: 13px/20px normal Helvetica, Arial, sans-serif;
+            color: #4F5155;
+        }
+    </style>
 </head>
 <body>
 <table width="600" border="0" align="center">

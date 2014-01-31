@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Welcome to Records Management System</title>
+    <title>My Profile</title>
     <link href="<?php echo base_url('assets/css/layout.css') ?>" rel="stylesheet" type="text/css" />
     <style>
         body
@@ -50,7 +50,12 @@
                     </a>
                   </li>
                   <li>
-                      <a href="http://localhost/hr_recordsystem/index.php/update_education/educ_form">Add Education</a>
+                      <?php echo '<a href="'.base_url().'index.php/education/educ_form/'.$this->session->userdata('emp_id').'">'; ?>
+                      Education
+                    </a>
+                  </li>
+                  <li>
+                      <a href="http://localhost/hr_recordsystem/index.php/add_training/training_form">Add Training</a>
                   </li>
                   <li>
                       <a href="http://localhost/hr_recordsystem/index.php/upload_facu_cred">Upload</a>
@@ -64,9 +69,8 @@
             <table align="center">
                 <?php
                     echo form_open();
-
                         echo "<tr><td>Last Name</td><td>:  ".$faculty_profile['lastname']."</td></tr>";
-                        echo "<code<tr><td>First Name</td><td>:  ".$faculty_profile['firstname']."</td></tr></code>";
+                        echo "<tr><td>First Name</td><td>:  ".$faculty_profile['firstname']."</td></tr>";
                         echo "<tr><td>Middle Name</td><td>:  ".$faculty_profile['middlename']."</td></tr>";
                         echo "<tr><td>Birthday</td><td>:  ".$faculty_profile['bday']."</td></tr>";
                         echo "<tr><td>Gender</td><td>:  ".$faculty_profile['gender']."</td></tr>";

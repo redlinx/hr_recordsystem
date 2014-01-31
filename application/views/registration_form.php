@@ -22,7 +22,9 @@
     <h1>Web Based Records Management System</h1>
 	
     <div id="body">
-             <code>REGISTER NEW APPLICANT</code>
+             <h3>
+             	REGISTER NEW APPLICANT
+             </h3>
 
 <center>
 

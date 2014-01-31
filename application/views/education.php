@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Welcome to Records Management System</title>
+    <title>Education</title>
     <link href="<?php echo base_url('assets/css/layout.css') ?>" rel="stylesheet" type="text/css" />
     <style>
         body
@@ -50,7 +50,12 @@
                     </a>
                   </li>
                   <li>
-                      <a href="http://localhost/hr_recordsystem/index.php/update_education/educ_form">Add Education</a>
+                      <?php echo '<a href="'.base_url().'index.php/education/educ_form/'.$this->session->userdata('emp_id').'">'; ?>
+                      Education
+                    </a>
+                  </li>
+                  <li>
+                      <a href="http://localhost/hr_recordsystem/index.php/add_training/training_form">Add Training</a>
                   </li>
                   <li>
                       <a href="http://localhost/hr_recordsystem/index.php/upload_facu_cred">Upload</a>
@@ -61,13 +66,14 @@
             </ul>
         </div>
         <div id="body">
-            <?php
-                for($x=0;$x<count($type);$x++)
+            <div id="content2">
+              <?php
+                for($x=0;$x<count($page_content);$x++)
                 {
-                    $type_option[$type[$x]['type_id']] = $type[$x]['type_desc'];
+                    $type_option[$page_content[$x]['type_id']] = $page_content[$x]['type_desc'];
                 }
                 echo "<table>";
-                    echo form_open('update_education/add_educ');
+                    echo form_open('education/add_educ');
                         echo "<tr><td>School Name</td><td>".form_input('school_name')."</td></tr>";
                         echo "<tr><td>Address</td><td>".form_input('address')."</td></tr>";
                         echo "<tr><td>Year</td><td>".form_input('year')."</td></tr>";
@@ -77,6 +83,31 @@
                     echo form_close();
                 echo "</table>";
             ?>
+            </div>
+            <hr>
+            <div id="content2"> 
+              <table width="600" align="left">
+                  <tr align="left">
+                      <th>School</th>
+                      <th>Address</th>
+                      <th>Year</th>
+                      <th>Type</th>
+                      <th>Degree</th>
+                  </tr>
+                  <?php
+                      for($x=0;$x<count($page_view_content);$x++)
+                      {
+                          echo '<tr>';
+                          echo '<td>'.$page_view_content[$x]['school_name'].'</td>';
+                          echo '<td>'.$page_view_content[$x]['address'].'</td>';
+                          echo '<td>'.$page_view_content[$x]['year'].'</td>';
+                          echo '<td>'.$page_view_content[$x]['type_desc'].'</td>';
+                          echo '<td>'.$page_view_content[$x]['degree'].'</td>';
+                          echo '</tr>';
+                      }
+                  ?>
+              </table>
+            </div>
         </div>
         
         <p class="footer"> Human Resource Office, University of the Immaculate Conception, Davao City, Philippines</p>
