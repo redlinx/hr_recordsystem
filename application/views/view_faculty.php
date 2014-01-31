@@ -55,10 +55,10 @@
                     </a>
                   </li>
                   <li>
-                      <a href="http://localhost/hr_recordsystem/index.php/add_training/training_form">Add Training</a>
+                      <a href="http://localhost/hr_recordsystem/index.php/add_training/training_form">Training</a>
                   </li>
                   <li>
-                      <a href="http://localhost/hr_recordsystem/index.php/upload_facu_cred">Upload</a>
+                      <a href="http://localhost/hr_recordsystem/index.php/Upload">Upload</a>
                   </li>
                   <li>
                         <a href="http://localhost/hr_recordsystem/index.php/change_pass">Change Password</a>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 29, 2014 at 02:19 PM
+-- Generation Time: Jan 31, 2014 at 06:36 AM
 -- Server version: 5.5.34
 -- PHP Version: 5.4.22
 
@@ -109,6 +109,36 @@ BEGIN
 	(SELECT last_insert_id()),
 	NULL,
 	progID);
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `add_training`(
+								 IN trainingTitle VARCHAR(45),
+								 IN venue VARCHAR(45),
+								 IN date DATE,
+								 IN organizer VARCHAR(45),
+								 IN role VARCHAR(45),
+								 IN type INT,
+								 IN empID INT)
+BEGIN
+	INSERT INTO `rms`.`faculty_training`
+(
+`training_title`,
+`venue`,
+`date`,
+`organizer`,
+`role`,
+`training_type_type_id`,
+`faculty_profile_emp_id`)
+VALUES
+(
+trainingTitle,
+venue,
+date,
+organizer,
+role,
+type,
+empID);
+
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `changePass`(IN accountID INT,
@@ -289,6 +319,31 @@ BEGIN
 	WHERE YEAR(NOW())-YEAR(faculty_account.date_hired) > 2 AND faculty_account.status = 0;
 END$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `display_trainingType`()
+BEGIN
+	SELECT * FROM rms.training_type;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `update_education`( IN empID INT,
+																IN educID INT,
+																IN school_name VARCHAR(45),
+																IN address VARCHAR(45),
+																IN year DATE,
+																IN degree VARCHAR(45),
+																IN type INT)
+BEGIN
+	UPDATE `rms`.`faculty_education`
+	SET
+	`school_name` = school_name,
+	`address` = address,
+	`year` = year,
+	`degree` = degree,
+	`educ_type_type_id` = type
+
+	WHERE faculty_profile_emp_id = empID 
+	AND educ_id = educID;
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `update_faculty`(	IN empID INT,
 																IN emp_lname VARCHAR(45),
 																IN emp_fname VARCHAR(45),
@@ -341,6 +396,24 @@ WHERE faculty_account.username = username
 
 ;
 
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `view_faculty_education`(IN empID INT)
+BEGIN
+	SELECT
+			faculty_education.school_name,
+			faculty_education.address,
+			faculty_education.year,
+			educ_type.type_desc,
+			faculty_education.degree
+			
+			
+	FROM faculty_education
+	
+	INNER JOIN faculty_profile ON faculty_education.faculty_profile_emp_id = faculty_profile.emp_id
+	INNER JOIN educ_type ON educ_type.type_id = faculty_education.educ_type_type_id
+
+	WHERE faculty_profile.emp_id = empID;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `view_faculty_profile`(IN empID INT)
@@ -496,16 +569,18 @@ CREATE TABLE IF NOT EXISTS `faculty_education` (
   PRIMARY KEY (`educ_id`),
   KEY `fk_faculty_education_educ_type1_idx` (`educ_type_type_id`),
   KEY `fk_faculty_education_faculty_profile1_idx` (`faculty_profile_emp_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=45 ;
 
 --
 -- Dumping data for table `faculty_education`
 --
 
 INSERT INTO `faculty_education` (`educ_id`, `school_name`, `address`, `year`, `degree`, `educ_type_type_id`, `faculty_profile_emp_id`) VALUES
-(2, 'UIC', 'Davao City', '1994-02-12', '', 1, 224),
-(6, 'HCDC', 'Davao City', '2001-03-23', 'High School Graduate', 2, 224),
-(9, 'ADDU', 'Davao City', '2010-03-12', 'BSIT', 3, 224);
+(2, 'SPC', 'Davao City', '2005-03-25', 'Grade School Graduate', 1, 224),
+(6, 'HCDC', 'Davao City', '2009-03-25', 'High School Graduate', 2, 224),
+(9, 'ADDU', 'Davao City', '2013-03-25', 'BSIT', 2, 224),
+(29, 'UIC', 'Davao City', '2001-03-23', 'High School Graduate', 2, 226),
+(44, 'HCDC', 'Davao City', '2001-03-23', 'Grade School Graduate', 1, 226);
 
 -- --------------------------------------------------------
 
@@ -536,7 +611,7 @@ INSERT INTO `faculty_profile` (`emp_id`, `lastname`, `firstname`, `middlename`, 
 (223, 'Tico', 'Wency', 'Dango', '1995-02-23', 'Male', 'Single', '09876543211', '123-4567', 'wenztico@gmail.com', '2014-01-17 20:36:39'),
 (224, 'Rosel', 'Kokie', 'Dango', '1998-05-28', 'Male', 'Complicated', '0987654321', '123-4567', 'koke@gmail.com', '2009-01-17 20:45:04'),
 (225, 'Carbon', 'Raymund', 'Labor', '1994-04-19', 'Male', 'Single', '09481231376', '258-1212', 'butch@gmail.com', '2014-01-17 20:45:04'),
-(226, 'Rosel', 'Emak', 'Dango', '1997-07-02', 'Female', 'Widow', '0987654321', '123-4567', 'erosel@gmail.com', '2014-01-17 20:46:32'),
+(226, 'Rosel', 'An Mariel', 'Dango', '1997-07-02', 'Female', 'Widow', '0987654321', '123-4567', 'erosel@gmail.com', '2014-01-17 20:46:32'),
 (229, 'Martin', 'Coco', 'John', '1995-01-10', 'Male', 'Single', '09481231376', '258-1212', 'cocomartin@yahoo.com', '2014-01-21 10:52:04'),
 (230, 'Uyamot', 'Carollene', 'Dango', '1995-02-23', 'Female', 'Married', '09481231376', '258-1212', 'uyamotcah@gmail.com', '2014-01-21 10:52:58'),
 (231, 'SombillA', 'Ivan', 'Karl', '1994-07-28', 'Male', 'Single', '09097829965', '258-1212', 'ivansombilla@gmail.com', '2014-01-21 10:54:59'),
@@ -601,9 +676,9 @@ CREATE TABLE IF NOT EXISTS `faculty_rank` (
 CREATE TABLE IF NOT EXISTS `faculty_skills` (
   `skill_id` int(11) NOT NULL,
   `skill_name` varchar(45) DEFAULT NULL,
-  `faculty_profile_emp_id` int(11) NOT NULL,
+  `emp_id` int(11) NOT NULL,
   PRIMARY KEY (`skill_id`),
-  KEY `fk_faculty_skills_faculty_profile1_idx` (`faculty_profile_emp_id`)
+  KEY `fk_faculty_skills_faculty_profile1_idx` (`emp_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -619,7 +694,7 @@ CREATE TABLE IF NOT EXISTS `faculty_spouse` (
   `middlename` varchar(45) DEFAULT NULL,
   `bday` date DEFAULT NULL,
   `birth_place` varchar(45) DEFAULT NULL,
-  `faculty_profile_emp_id` int(11) NOT NULL,
+  `emp_id` int(11) NOT NULL,
   `faculty_spousecol` varchar(45) DEFAULT NULL,
   `contact_no` varchar(45) DEFAULT NULL,
   `educational_attainment` varchar(45) DEFAULT NULL,
@@ -631,7 +706,7 @@ CREATE TABLE IF NOT EXISTS `faculty_spouse` (
   `philhealth` varchar(45) DEFAULT NULL,
   `TIN` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`spouse_id`),
-  KEY `fk_faculty_spouse_faculty_profile1_idx` (`faculty_profile_emp_id`)
+  KEY `fk_faculty_spouse_faculty_profile1_idx` (`emp_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -656,19 +731,26 @@ CREATE TABLE IF NOT EXISTS `faculty_status` (
 --
 
 CREATE TABLE IF NOT EXISTS `faculty_training` (
-  `training_id` int(11) NOT NULL,
+  `training_id` int(11) NOT NULL AUTO_INCREMENT,
   `training_title` varchar(45) DEFAULT NULL,
   `venue` varchar(45) DEFAULT NULL,
   `date` date DEFAULT NULL,
   `organizer` varchar(45) DEFAULT NULL,
   `role` varchar(45) DEFAULT NULL,
-  `datelog` datetime DEFAULT NULL,
   `training_type_type_id` int(11) NOT NULL,
   `faculty_profile_emp_id` int(11) NOT NULL,
   PRIMARY KEY (`training_id`),
   KEY `fk_faculty_training_faculty_profile1_idx` (`faculty_profile_emp_id`),
   KEY `fk_faculty_training_training_type1_idx` (`training_type_type_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `faculty_training`
+--
+
+INSERT INTO `faculty_training` (`training_id`, `training_title`, `venue`, `date`, `organizer`, `role`, `training_type_type_id`, `faculty_profile_emp_id`) VALUES
+(1, 'DevCon Summit', 'CAP Auditorium', '2013-12-01', 'DevCon', 'Participant', 1, 224),
+(2, 'GraphiCon', 'UIC', '2014-01-12', 'UIC', 'Speaker', 1, 226);
 
 -- --------------------------------------------------------
 
@@ -725,11 +807,46 @@ INSERT INTO `program` (`prog_id`, `prog_name`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `training_type` (
-  `type_id` int(11) NOT NULL,
+  `type_id` int(11) NOT NULL AUTO_INCREMENT,
   `type_desc` varchar(45) DEFAULT NULL,
-  `faculty_training_training_id` int(11) NOT NULL,
   PRIMARY KEY (`type_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `training_type`
+--
+
+INSERT INTO `training_type` (`type_id`, `type_desc`) VALUES
+(1, 'Local'),
+(2, 'National'),
+(3, 'International');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `upload`
+--
+
+CREATE TABLE IF NOT EXISTS `upload` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `file_name` varchar(45) DEFAULT NULL,
+  `emp_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_upload_faculty_profile1_idx` (`emp_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+--
+-- Dumping data for table `upload`
+--
+
+INSERT INTO `upload` (`id`, `file_name`, `emp_id`) VALUES
+(1, 'Untitled9.png', 226),
+(2, '994661_10201082644244699_747886588_n.jpg', 224),
+(3, '994661_10201082644244699_747886588_n1.jpg', 224),
+(4, '224.jpg', 224),
+(5, '224_4.jpg', 224),
+(6, '224_6.jpg', 224),
+(7, '224_7.jpg', 224);
 
 --
 -- Constraints for dumped tables
@@ -760,13 +877,13 @@ ALTER TABLE `faculty_education`
 -- Constraints for table `faculty_skills`
 --
 ALTER TABLE `faculty_skills`
-  ADD CONSTRAINT `fk_faculty_skills_faculty_profile1` FOREIGN KEY (`faculty_profile_emp_id`) REFERENCES `faculty_profile` (`emp_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_faculty_skills_faculty_profile1` FOREIGN KEY (`emp_id`) REFERENCES `faculty_profile` (`emp_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `faculty_spouse`
 --
 ALTER TABLE `faculty_spouse`
-  ADD CONSTRAINT `fk_faculty_spouse_faculty_profile1` FOREIGN KEY (`faculty_profile_emp_id`) REFERENCES `faculty_profile` (`emp_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_faculty_spouse_faculty_profile1` FOREIGN KEY (`emp_id`) REFERENCES `faculty_profile` (`emp_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `faculty_status`
@@ -786,6 +903,12 @@ ALTER TABLE `faculty_training`
 --
 ALTER TABLE `faculty_work_exp`
   ADD CONSTRAINT `fk_faculty_work_exp_faculty_profile1` FOREIGN KEY (`faculty_profile_emp_id`) REFERENCES `faculty_profile` (`emp_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `upload`
+--
+ALTER TABLE `upload`
+  ADD CONSTRAINT `fk_upload_faculty_profile1` FOREIGN KEY (`emp_id`) REFERENCES `faculty_profile` (`emp_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

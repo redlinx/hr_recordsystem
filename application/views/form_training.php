@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Education</title>
+    <title>Trainings</title>
     <link href="<?php echo base_url('assets/css/layout.css') ?>" rel="stylesheet" type="text/css" />
     <style>
         body
@@ -55,10 +55,10 @@
                     </a>
                   </li>
                   <li>
-                      <a href="http://localhost/hr_recordsystem/index.php/add_training/training_form">Add Training</a>
+                      <a href="http://localhost/hr_recordsystem/index.php/add_training/training_form">Training</a>
                   </li>
                   <li>
-                      <a href="http://localhost/hr_recordsystem/index.php/upload_facu_cred">Upload</a>
+                      <a href="http://localhost/hr_recordsystem/index.php/upload">Upload</a>
                   </li>
                   <li>
                         <a href="http://localhost/hr_recordsystem/index.php/change_pass">Change Password</a>
