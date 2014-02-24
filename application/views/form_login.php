@@ -3,7 +3,6 @@
 <head>
     <meta charset="utf-8">
     <title>Welcome to Records Management System</title>
-
     <style type="text/css">
 
     ::selection{ background-color: #E13300; color: white; }
@@ -111,11 +110,17 @@
             <form action="<?php echo base_url();?>index.php/login/form_login" method="post" name="login">
                 <table>
                 <tr>
-                    <td> <input id="username" type="text" size="20" name="username" value="<?php echo set_value('username');?>" placeholder="Username"class="inputan"> <?php echo form_error('username');?> </td>
-                    <td> <input id="password" type="password" size="20" name="password" value="<?php echo set_value('password');?>" placeholder="Password" class="inputan"> <?php echo form_error('password');?> </td>
+                    <td>
+                        <input id="username" type="text" size="20" name="username" value="<?php echo set_value('username');?>" placeholder="Username"class="inputan">
+                        <?php echo form_error('username');?>
+                    </td>
+                    <td>
+                        <input id="password" type="password" size="20" name="password" value="<?php echo set_value('password');?>" placeholder="Password" class="inputan">
+                        <?php echo form_error('password');?>
+                    </td>
                 </tr>
                 <tr>
-                    <td> <a href="" id="forgotPass">Forgot Password? </a> </td>
+                    <td> <a href="http://localhost/hr_recordsystem/index.php/gfp" id="forgotPass">Forgot Password? </a> </td>
                     <td> <input id="submit" type="submit" name="login" value="Login" class="button"> </td>
                 </tr>
                 </table>
