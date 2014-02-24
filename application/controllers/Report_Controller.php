@@ -27,7 +27,7 @@ class Report_Controller extends CI_Controller {
 		$pdf -> WriteHTML('<tr><th> Regular Faculty</th></tr>');
 		$pdf -> WriteHTML('<table align="auto" border="1" width="7in">');
 		$pdf -> WriteHTML('<tr><th>LastName</th><th>FirstName</th><th>MiddleName</th><th>Date Hired</th><th>Date Regular</th></tr>');
-		for($x=0;$x<count($info);$x++)
+		for($x=0;$x<=count($info);$x++)
             {
                 // echo form_open();
                     $pdf -> WriteHTML('<tr>');
@@ -60,11 +60,11 @@ class Report_Controller extends CI_Controller {
 		$pdf -> WriteHTML('<tr><th> Regular Faculty</th></tr>');
 		$pdf -> WriteHTML('<table align="auto" border="1" width="7in">');
 		$pdf -> WriteHTML('<tr><th>LastName</th><th>FirstName</th><th>MiddleName</th><th>Date Hired</th></tr>');
-		for($x=0;$x<count($info);$x++)
+		for($x=0;$x<=count($info);$x++)
             {
                 // echo form_open();
                     $pdf -> WriteHTML('<tr>');
-                    $pdf -> WriteHTML("<td>".$info[$x]['lastname']."</td>");
+                    $pdf -> WriteHTML("<td>".count($info)."</td>");
                     $pdf -> WriteHTML("<td>".$info[$x]['firstname']."</td>");
                     $pdf -> WriteHTML("<td>".$info[$x]['middlename']."</td>");
                     $pdf -> WriteHTML("<td>".$info[$x]['MonthName'].' '.$info[$x]['Day'].', '.$info[$x]['Year']."</td>");
@@ -94,7 +94,7 @@ class Report_Controller extends CI_Controller {
 		$pdf -> WriteHTML('<tr><th> Candidates Of Regularization</th></tr>');
 		$pdf -> WriteHTML('<table align="auto" border="1" width="7in">');
 		$pdf -> WriteHTML('<tr><th>LastName</th><th>FirstName</th><th>MiddleName</th><th>Date Hired</th><th>Year Of Services</th></tr>');
-		for($x=0;$x<count($info);$x++)
+		for($x=0;$x<=count($info);$x++)
             {
                 // echo form_open();
                     $pdf -> WriteHTML('<tr>');
@@ -152,7 +152,7 @@ class Report_Controller extends CI_Controller {
         $pdf -> WriteHTML('<table align="auto" border="1"  width="7in">');
         $pdf -> WriteHTML('<tr><th colspan="5" height=".5in">Educational Attainment</th></tr>');
         $pdf -> WriteHTML('<tr><th>Type</th><th>School</th><th>Address</th><th>Year</th><th>Degree</th></tr>');
-        for($a = 0; $a < count($educ); $a++)
+        for($a = 0; $a <= count($educ); $a++)
         {
         	$pdf -> WriteHTML("<tr>");
         	$pdf -> WriteHTML("<td>".$educ[$a]['type_desc']."</td><td>".$educ[$a]['school_name']."</td><td>" . $educ[$a]['address'] . "</td><td>" . $educ[$a]['year'] . "</td><td>" . $educ[$a]['degree'] . "</td>");
@@ -164,7 +164,7 @@ class Report_Controller extends CI_Controller {
          $pdf -> WriteHTML('<table align="auto" border="1"  width="7in">');
         $pdf -> WriteHTML('<tr><th colspan="4" height=".5in">Skills</th></tr>');
        // $pdf -> WriteHTML('<tr><th>Skills</th>></tr>');
-        for($b = 0; $b < count($skills); $b++)
+        for($b = 0; $b <= count($skills); $b++)
         {
         	$pdf -> WriteHTML("<tr>");
         	$pdf -> WriteHTML("<td>".$skills[$b]['skill_name']."</td>");
@@ -178,7 +178,7 @@ class Report_Controller extends CI_Controller {
         $pdf -> WriteHTML('<tr><th colspan="4" height=".5in">Work Experience</th></tr>');
         $pdf -> WriteHTML('<tr><th>Company</th><th>Position</th><th>Inclusive Dates</th></tr>');
        // $pdf -> WriteHTML('<tr><th>Skills</th>></tr>');
-        for($c = 0; $c < count($work); $c++)
+        for($c = 0; $c <= count($work); $c++)
         {
         	$pdf -> WriteHTML("<tr>");
         	$pdf -> WriteHTML("<td>".$work[$c]['company']."</td><td>".$work[$c]['position']."</td><td>".$work[$c]['StartMonthName'].', '.$work[$c]['StartDay'].', '.$work[$c]['StartYear']."</td>");
@@ -190,7 +190,7 @@ class Report_Controller extends CI_Controller {
         $pdf -> WriteHTML('<table align="auto" border="1"  width="7in">');
         $pdf -> WriteHTML('<tr><th colspan="4" height=".5in"></th></tr>');
        $pdf -> WriteHTML('<tr><th>Name Of Children</th><th>Date of Birth</th></tr>');
-        for($d = 0; $d < count($child); $d++)
+        for($d = 0; $d <= count($child); $d++)
         {
         	$pdf -> WriteHTML("<tr>");
         	$pdf -> WriteHTML("<td>".$child[$d]['name']."</td><td>".$child[$d]['MonthName'].', '.$child[$d]['Day'].', '.$child[$d]['Year']."</td>");
