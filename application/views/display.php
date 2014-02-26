@@ -1,6 +1,6 @@
-<div id="content">
+<div id="body">
 	<br/>
-	<table id="list" width="300" align="left">
+	<table id="list" width="400" align="left">
 			<tr align="left">
 				<th>Last Name</th>
 				<th>First Name</th>

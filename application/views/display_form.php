@@ -1,4 +1,4 @@
-<body id="content">
+<div id="body">
 	<?php
 	for($x=0;$x<count($program);$x++)
 	{
@@ -14,4 +14,4 @@
 			echo form_close();
 		?>
 	</table>
-</body>
+</div>

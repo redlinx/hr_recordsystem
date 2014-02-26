@@ -16,7 +16,7 @@
             <a href="http://localhost/hr_recordsystem/index.php/display/display_regular_faculty"> Regular Faculty </a>
         </li>
          <li>
-            <a href="http://localhost/hr_recordsystem/index.php/display/display_unRegular_faculty"> UnRegular Faculty </a>
+            <a href="http://localhost/hr_recordsystem/index.php/display/display_unRegular_faculty"> Unregular Faculty </a>
         </li>
         <li>
             <a href="http://localhost/hr_recordsystem/index.php/ranking_committee"> Ranking Committee </a>

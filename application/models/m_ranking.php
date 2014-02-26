@@ -85,13 +85,13 @@ class M_ranking extends CI_Model {
 	public function rank_faculty($faculty)
 	{
 		$sql = "CALL rank_faculty(
-								 '".$faculty['empID']."',
-								 '".$faculty['EQ']."',
-								 '".$faculty['TeachP']."',
-								 '".$faculty['Research']."',
-								 '".$faculty['CS']."',
-								 '".$faculty['TrainP']."',
-								 '".$faculty['Involvement']."')";
+								 '".$faculty['faculty_profile_emp_id']."',
+								 '".$faculty['educational_qualification']."',
+								 '".$faculty['teaching_proficiency']."',
+								 '".$faculty['research']."',
+								 '".$faculty['community_services']."',
+								 '".$faculty['training_programs']."',
+								 '".$faculty['involvements']."')";
 		$this->db->query($sql);
 		$this->db->close();
 	}
