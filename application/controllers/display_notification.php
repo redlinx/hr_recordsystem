@@ -15,9 +15,6 @@ class Display_notification extends CI_Controller
     {
         $empID = $this->uri->segment(3, 0); 
         $content = array('page_view_content' => $this->hr->display_notification());
-        // echo "<pre>";
-        // print_r($content);
-        // echo "</pre>";
         $this->load->view('includes/header');
         $this->load->view('includes/navi_hr');
         $this->load->view('view_notification', $content);
@@ -29,9 +26,6 @@ class Display_notification extends CI_Controller
     {
         $uploadID = $this->uri->segment(3, 0); 
         $content = array('page_view_content' => $this->hr->updateUpload($uploadID));
-        // echo "<pre>";
-        // print_r($content);
-        // echo "</pre>";
         $faculty['upload_id'] = $content['page_view_content']['upload_id'];
         $faculty['emp_id'] = $content['page_view_content']['emp_id'];
 
@@ -96,9 +90,6 @@ class Display_notification extends CI_Controller
 
         $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
         $data['page_view_content'] = $this->hr->display_profUpdate($config['per_page'],$page);
-        // echo "<pre>";
-        // print_r($data);
-        // echo "</pre>";
         $this->load->view('includes/header');
         $this->load->view('includes/navi_hr');
         $this->load->view('display_profNoti', $data);

@@ -27,6 +27,7 @@ class Smodel extends CI_Model {
         $this->db->select('*');
         $this->db->from('faculty_profile');
         $this->db->like('firstname',$search_term);
+        $this->db->or_like('date_log',$search_term);
         $this->db->or_like('lastname',$search_term);
         $this->db->or_like('middlename',$search_term);
         $this->db->or_like('gender',$search_term);
