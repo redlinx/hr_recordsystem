@@ -1,6 +1,16 @@
 <div id="body">
+<<<<<<< HEAD
     <h3>Trainings / Seminars Notification</h3>
     <table class="table table-striped">
+=======
+<<<<<<< HEAD
+    <h3>Trainings / Seminars Notification</h3>
+    <table class="table table-striped">
+=======
+    <h3>Trainings / Seminars</h3>
+    <table width="400" align="left">
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
         <tr align="left">
             <th>Firstname</th>
             <th>Lastname</th>

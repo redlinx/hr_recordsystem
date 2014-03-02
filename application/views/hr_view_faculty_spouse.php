@@ -5,6 +5,10 @@
       window.history.go(-1)
       }
     </script>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
     <button onclick="goBack()"> Back </button>
     <?php
     if($faculty_spouse != NULL)
@@ -21,6 +25,12 @@
     ?>
 
     
+<<<<<<< HEAD
+=======
+=======
+    <button onclick="goBack()"> Back </button>  
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
     <table align="center">
         <?php
             if($faculty_spouse != NULL)

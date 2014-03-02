@@ -25,9 +25,20 @@
             for($x=0;$x<count($page_content);$x++)
             {
                 $type_option[$page_content[$x]['type_id']] = $page_content[$x]['type_desc'];
+<<<<<<< HEAD
             } ?>
         <table class="table table-striped">
          <?php
+=======
+<<<<<<< HEAD
+            } ?>
+        <table class="table table-striped">
+         <?php
+=======
+            }
+            echo "<table>";
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
                 echo form_open('add/training');
                     echo "<tr><td>Training Title</td><td>".form_input('trainingTitle')."</td></tr>";
                     echo "<tr><td>Venue</td><td>".form_input('venue')."</td></tr>";

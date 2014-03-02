@@ -20,8 +20,18 @@ class Hr_update_form extends CI_Controller
 		// echo "<pre>";
 		// print_r($content);
 		// echo "</pre>";
+<<<<<<< HEAD
 		$this->load->view('includes/header_hr');
  		//$this->load->view('includes/navi_hr');
+=======
+<<<<<<< HEAD
+		$this->load->view('includes/header_hr');
+ 		//$this->load->view('includes/navi_hr');
+=======
+		$this->load->view('includes/header');
+ 		$this->load->view('includes/navi_hr');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
 		$this->load->view('hr_update_faculty_profile', $content);
 		$this->load->view('includes/footer');
 	}
@@ -33,8 +43,18 @@ class Hr_update_form extends CI_Controller
 		// echo "<pre>";
 		// print_r($content);
 		// echo "</pre>";
+<<<<<<< HEAD
 		$this->load->view('includes/header_hr');
  		//$this->load->view('includes/navi_hr');
+=======
+<<<<<<< HEAD
+		$this->load->view('includes/header_hr');
+ 		//$this->load->view('includes/navi_hr');
+=======
+		$this->load->view('includes/header');
+ 		$this->load->view('includes/navi_hr');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
 		$this->load->view('update_spouse', $content);
 		$this->load->view('includes/footer');
 	}
@@ -47,8 +67,18 @@ class Hr_update_form extends CI_Controller
  		// echo "<pre>";
 		// print_r($content);
 		// echo "</pre>";
+<<<<<<< HEAD
 		$this->load->view('includes/header_hr');
 		//$this->load->view('includes/navi_hr');
+=======
+<<<<<<< HEAD
+		$this->load->view('includes/header_hr');
+		//$this->load->view('includes/navi_hr');
+=======
+		$this->load->view('includes/header');
+		$this->load->view('includes/navi_hr');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
 		$this->load->view('update_education', $content);
 		$this->load->view('includes/footer');
 	}
@@ -61,8 +91,18 @@ class Hr_update_form extends CI_Controller
 		// echo "<pre>";
 		// print_r($content);
 		// echo "</pre>";
+<<<<<<< HEAD
 		$this->load->view('includes/header_hr');
  		//$this->load->view('includes/navi_hr');
+=======
+<<<<<<< HEAD
+		$this->load->view('includes/header_hr');
+ 		//$this->load->view('includes/navi_hr');
+=======
+		$this->load->view('includes/header');
+ 		$this->load->view('includes/navi_hr');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
 		$this->load->view('update_training', $content);
 		$this->load->view('includes/footer');
 	}
@@ -74,8 +114,18 @@ class Hr_update_form extends CI_Controller
 		// echo "<pre>";
 		// print_r($content);
 		// echo "</pre>";
+<<<<<<< HEAD
 		$this->load->view('includes/header_faculty');
  		//$this->load->view('includes/navi_faculty');
+=======
+<<<<<<< HEAD
+		$this->load->view('includes/header_faculty');
+ 		//$this->load->view('includes/navi_faculty');
+=======
+		$this->load->view('includes/header');
+ 		$this->load->view('includes/navi_faculty');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
 		$this->load->view('update_work', $content);
 		$this->load->view('includes/footer');
 	}
@@ -87,8 +137,18 @@ class Hr_update_form extends CI_Controller
 		// echo "<pre>";
 		// print_r($content);
 		// echo "</pre>";
+<<<<<<< HEAD
 		$this->load->view('includes/header_faculty');
  		//$this->load->view('includes/navi_faculty');
+=======
+<<<<<<< HEAD
+		$this->load->view('includes/header_faculty');
+ 		//$this->load->view('includes/navi_faculty');
+=======
+		$this->load->view('includes/header');
+ 		$this->load->view('includes/navi_faculty');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
 		$this->load->view('update_skill', $content);
 		$this->load->view('includes/footer');
 	}
@@ -100,8 +160,18 @@ class Hr_update_form extends CI_Controller
 		// echo "<pre>";
 		// print_r($content);
 		// echo "</pre>";
+<<<<<<< HEAD
 		$this->load->view('includes/header_faculty');
  		//$this->load->view('includes/navi_faculty');
+=======
+<<<<<<< HEAD
+		$this->load->view('includes/header_faculty');
+ 		//$this->load->view('includes/navi_faculty');
+=======
+		$this->load->view('includes/header');
+ 		$this->load->view('includes/navi_faculty');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
 		$this->load->view('update_children', $content);
 		$this->load->view('includes/footer');
 	}

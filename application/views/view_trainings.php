@@ -1,13 +1,34 @@
+<<<<<<< HEAD
 <div>
+=======
+<<<<<<< HEAD
+<div>
+=======
+<div id="body">
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
     <script>
     function goBack()
       {
       window.history.go(-1)
       }
     </script>
+<<<<<<< HEAD
     <button onclick="goBack()"> Back </button>
     <a href="http://localhost/hr_recordsystem/index.php/forms/training"> <?php echo form_submit('mysubmit', 'Add') ?> </a>
      <table class="table table-striped">
+=======
+<<<<<<< HEAD
+    <button onclick="goBack()"> Back </button>
+    <a href="http://localhost/hr_recordsystem/index.php/forms/training"> <?php echo form_submit('mysubmit', 'Add') ?> </a>
+     <table class="table table-striped">
+=======
+    <p><b>Trainings and Seminars</b></p>
+    <button onclick="goBack()"> Back </button>
+    <a href="http://localhost/hr_recordsystem/index.php/forms/training"> <?php echo form_submit('mysubmit', 'Add') ?> </a>
+    <table width="540" align="left">
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
         <tr align="left">
             <th>Title</th>
             <th>Venue</th>

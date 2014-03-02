@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 <div class="body">
+=======
+<<<<<<< HEAD
+<div class="body">
+=======
+<div id="body">
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
     <script>
     function goBack()
       {
@@ -7,13 +15,28 @@
     </script>
     <button onclick="goBack()"> Back </button>
     <a href="http://localhost/hr_recordsystem/index.php/forms/children"> <?php echo form_submit('mysubmit', 'Add') ?> </a>
+<<<<<<< HEAD
      <table class="table table-striped">
+=======
+<<<<<<< HEAD
+     <table class="table table-striped">
+=======
+    <table width="540" align="left">
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
         <tr align="left">
             <th>Name</th>
             <th>Birthday</th>
             <th>Edit</th>
         </tr>
+<<<<<<< HEAD
       
+=======
+<<<<<<< HEAD
+      
+=======
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
     <?php
         for($x=0;$x<count($page_view_content);$x++)
         {

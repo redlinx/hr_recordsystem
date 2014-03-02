@@ -16,16 +16,36 @@ class Ranking_committee extends CI_Controller
 	}
 	public function index()
 	{
+<<<<<<< HEAD
 		$this->load->view('includes/header_hr');
 		//$this->load->view('includes/navi_hr');
+=======
+<<<<<<< HEAD
+		$this->load->view('includes/header_hr');
+		//$this->load->view('includes/navi_hr');
+=======
+		$this->load->view('includes/header');
+		$this->load->view('includes/navi_hr');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
 		$this->load->view('ranking_committee');
 		$this->load->view('includes/footer');
 	}
 	public function set()
 	{
 		$page_content['program'] = $this->hr->program();
+<<<<<<< HEAD
 		$this->load->view('includes/header_hr');
 		//$this->load->view('includes/navi_hr');
+=======
+<<<<<<< HEAD
+		$this->load->view('includes/header_hr');
+		//$this->load->view('includes/navi_hr');
+=======
+		$this->load->view('includes/header');
+		$this->load->view('includes/navi_hr');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
 		$this->load->view('display_form',$page_content);
 		//$this->load->view('includes/footer');
 		if ($this->input->post())
@@ -68,8 +88,18 @@ class Ranking_committee extends CI_Controller
 		// echo "<pre>";
   //       print_r($content);
   //       echo "</pre>";
+<<<<<<< HEAD
         $this->load->view('includes/header_hr');
 		//$this->load->view('includes/navi_hr');
+=======
+<<<<<<< HEAD
+        $this->load->view('includes/header_hr');
+		//$this->load->view('includes/navi_hr');
+=======
+        $this->load->view('includes/header');
+		$this->load->view('includes/navi_hr');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
         $this->load->view('view_rankMembers', $content);
         $this->load->view('includes/footer');
 	}
@@ -81,7 +111,15 @@ class Ranking_committee extends CI_Controller
 		// echo "<pre>";
   //       print_r($content);
   //       echo "</pre>";
+<<<<<<< HEAD
 		$this->load->view('includes/header_hr');
+=======
+<<<<<<< HEAD
+		$this->load->view('includes/header_hr');
+=======
+		$this->load->view('includes/header');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
 		$this->load->view('includes/navi_rankChair');
 		$this->load->view('display_committee', $content);
 		$this->load->view('includes/footer');
@@ -135,7 +173,15 @@ class Ranking_committee extends CI_Controller
 		// echo "</pre>";
 		$this->load->view('includes/header');
 		$this->load->view('includes/navi_rankMember');
+<<<<<<< HEAD
 		$this->load->view('rank_form');
+=======
+<<<<<<< HEAD
+		$this->load->view('rank_form');
+=======
+		$this->load->view('rank_form', $content);
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
 		$this->load->view('includes/footer');
 	}
 
@@ -147,6 +193,10 @@ class Ranking_committee extends CI_Controller
 		// 	print_r($faculty);
 		// 	echo "</pre>";
 		$empID = $content['faculty_profile']['emp_id'];
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
 		echo "<pre>";
 		print_r($empID);
 		echo "</pre>";
@@ -180,5 +230,39 @@ class Ranking_committee extends CI_Controller
 		// {
 		// 	echo "<script> alert('Please Insert Data'); history.go(-1); </script>";
 		// }
+<<<<<<< HEAD
+=======
+=======
+		// echo "<pre>";
+		// print_r($empID);
+		// echo "</pre>";
+		$this->form_validation->set_rules('EQ', 'Educational Qualification', 'required|xss_clean');
+		$this->form_validation->set_rules('TeachP', 'Teaching Proficiency', 'required|xss_clean');
+		$this->form_validation->set_rules('Research', 'Research', 'required|xss_clean');
+		$this->form_validation->set_rules('CS', 'Community Services', 'required|xss_clean');
+		$this->form_validation->set_rules('TrainP', 'Training Programs', 'required|xss_clean');
+		$this->form_validation->set_rules('Involvement', 'Organizational Involvements', 'required|xss_clean');
+
+		if($this->form_validation->run() != NULL)
+		{
+			$faculty['faculty_profile_emp_id'] 		= $empID;
+			$faculty['educational_qualification'] 	= $this->input->post('EQ');
+			$faculty['teaching_proficiency'] 		= $this->input->post('TeachP');
+			$faculty['research'] 					= $this->input->post('Research');
+			$faculty['community_services'] 			= $this->input->post('CS');
+			$faculty['training_programs'] 			= $this->input->post('TrainP');
+			$faculty['involvements'] 				= $this->input->post('Involvement');
+			echo "<pre>";
+			print_r($faculty);
+			echo "</pre>";
+			$this->m_ranking->rank_faculty($faculty);
+			redirect(base_url().'index.php/ranking_committee/faculty_list');
+		}	
+		else
+		{
+			echo "<script> alert('Please Insert Data'); history.go(-1); </script>";
+		}
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
 	}
 }

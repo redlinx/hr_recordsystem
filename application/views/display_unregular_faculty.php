@@ -1,7 +1,20 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
 <div class="body">
     <h3> UnRegular Faculty</h3>
 	<table class="table table-striped">
         <tr>
+<<<<<<< HEAD
+=======
+=======
+<div id="body">
+    <h3> UnRegular Faculty</h3>
+	<table width="500" align="left">
+        <tr align="left">
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
             <th>Lastname</th>
             <th>Firstname</th>
             <th>Date Hired</th>
@@ -21,10 +34,22 @@
                 echo form_close();
                 //echo '<td><a href="'.base_url().'index.php/view_faculty/view/'.$faculty[$x]['emp_id'].'">View</a></td>';
                 //echo '<td><a href="'.base_url().'index.php/update_faculty/update_form/'.$faculty[$x]['emp_id'].'">Update</a></td>';
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
             }?>    
             <button type="button" class="btn btn-default btn-mm"> 
                 <?php echo '<a href="' . base_url() . 'index.php/Report_controller/Un_Reg_reports">'; ?>
                 <span class="glyphicon glyphicon-print"></span> Generate
                 </a></button>
+<<<<<<< HEAD
+=======
+=======
+            }
+            echo '<a href="' . base_url() . 'index.php/Report_controller/Un_Reg_reports">Generate</a>';
+        ?>    
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
     </table>
 </div>

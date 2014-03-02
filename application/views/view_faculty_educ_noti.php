@@ -6,7 +6,15 @@
       }
     </script>
     <button onclick="goBack()"> Back </button>
+<<<<<<< HEAD
     <table class="table table-striped" align="center">
+=======
+<<<<<<< HEAD
+    <table class="table table-striped" align="center">
+=======
+    <table align="center">
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
         <?php
             if($page_view_content != NULL)
             {

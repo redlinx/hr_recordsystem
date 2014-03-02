@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 <div>
+=======
+<<<<<<< HEAD
+<div>
+=======
+<div id="body">
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
     <script>
     function goBack()
       {
@@ -22,7 +30,15 @@
     ?>
 
     
+<<<<<<< HEAD
      <table class="table table-striped">
+=======
+<<<<<<< HEAD
+     <table class="table table-striped">
+=======
+    <table align="center">
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
         <?php
             if($faculty_spouse != NULL)
             {

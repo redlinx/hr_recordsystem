@@ -29,9 +29,20 @@
                     $current_type = $page['type_id'];
                 }
                     $page_array[$page['type_id']] = $page['type_desc'];
+<<<<<<< HEAD
             } ?>
     <table class="table table-striped">
     <?php
+=======
+<<<<<<< HEAD
+            } ?>
+    <table class="table table-striped">
+    <?php
+=======
+            }
+            echo "<table>";
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
                 echo form_open('update/training');
                     echo form_hidden('trainingID', $page_view_content['training_id']);
                     echo "<tr><td>Training Title</td><td>".form_input('trainingTitle', $page_view_content['training_title'])."</td></tr>";
