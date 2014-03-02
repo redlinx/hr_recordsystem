@@ -22,6 +22,16 @@ class Report_Controller extends CI_Controller {
 		$pdf = new HTML2FPDF('p','mm','A4');
 		$pdf -> AddPage();
 		$pdf -> setDisplayMode ('fullpage');
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
+>>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
 		$info = array();
 		$info = $this->m_display->display_regular_faculty($info);
 		$pdf -> WriteHTML('<tr><th> Regular Faculty</th></tr>');
@@ -30,6 +40,27 @@ class Report_Controller extends CI_Controller {
 		for($x=0;$x<=count($info);$x++)
             {
                 // echo form_open();
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+      //  $pdf -> image('uploads/uic.jpg',10,3,60,0,'');
+      //  $this->fpdf->image(base_url().'hr_recordsystem/application/plugins/header.jpg',10,3,60,0,'');
+		$info = array();
+		$info = $this->m_display->display_regular_faculty($info);
+		$pdf -> WriteHTML('<tr><th>Regular Faculty</th></tr>');
+		$pdf -> WriteHTML('<table align="auto" border="0.5" width="7in">');
+		$pdf -> WriteHTML('<tr><th>LastName</th><th>FirstName</th><th>MiddleName</th><th>Date Hired</th><th>Date Regular</th></tr>');
+		for($x=0;$x<=count($info);$x++)
+            {
+                
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
+>>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
                     $pdf -> WriteHTML('<tr>');
                     $pdf -> WriteHTML("<td>".$info[$x]['lastname']."</td>");
                     $pdf -> WriteHTML("<td>".$info[$x]['firstname']."</td>");
@@ -37,10 +68,33 @@ class Report_Controller extends CI_Controller {
                     $pdf -> WriteHTML("<td>".$info[$x]['MonthName'].' '.$info[$x]['Day'].', '.$info[$x]['Year']."</td>");
                     $pdf -> WriteHTML("<td>".$info[$x]['RMonthName'].' '.$info[$x]['RDay'].', '.$info[$x]['RYear']."</td>");
                     $pdf -> WriteHTML('</tr>');
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
+>>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
                 // echo form_close();
                 //echo '<td><a href="'.base_url().'index.php/view_faculty/view/'.$faculty[$x]['emp_id'].'">View</a></td>';
                 //echo '<td><a href="'.base_url().'index.php/update_faculty/update_form/'.$faculty[$x]['emp_id'].'">Update</a></td>';
             }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+                
+                 }
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
+>>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
         $pdf -> WriteHTML('</table>');
 
 		$pdf -> Output('Regular_Faculty.pdf', 'D');
@@ -57,23 +111,85 @@ class Report_Controller extends CI_Controller {
 		$pdf -> setDisplayMode ('fullpage');
 		$info = array();
 		$info = $this->m_display->display_unRegular_faculty($info);
+<<<<<<< HEAD
 		$pdf -> WriteHTML('<tr><th> Regular Faculty</th></tr>');
+=======
+<<<<<<< HEAD
+		$pdf -> WriteHTML('<tr><th> Regular Faculty</th></tr>');
+=======
+<<<<<<< HEAD
+		$pdf -> WriteHTML('<tr><th> Regular Faculty</th></tr>');
+=======
+<<<<<<< HEAD
+		$pdf -> WriteHTML('<tr><th> Regular Faculty</th></tr>');
+=======
+		$pdf -> WriteHTML('<center><b>UNREGULAR FACULTY</b></center><br><br>');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
+>>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
 		$pdf -> WriteHTML('<table align="auto" border="1" width="7in">');
 		$pdf -> WriteHTML('<tr><th>LastName</th><th>FirstName</th><th>MiddleName</th><th>Date Hired</th></tr>');
 		for($x=0;$x<=count($info);$x++)
             {
+<<<<<<< HEAD
                 // echo form_open();
                     $pdf -> WriteHTML('<tr>');
                     $pdf -> WriteHTML("<td>".count($info)."</td>");
+=======
+<<<<<<< HEAD
+                // echo form_open();
+                    $pdf -> WriteHTML('<tr>');
+                    $pdf -> WriteHTML("<td>".count($info)."</td>");
+=======
+<<<<<<< HEAD
+                // echo form_open();
+                    $pdf -> WriteHTML('<tr>');
+                    $pdf -> WriteHTML("<td>".count($info)."</td>");
+=======
+<<<<<<< HEAD
+                // echo form_open();
+                    $pdf -> WriteHTML('<tr>');
+                    $pdf -> WriteHTML("<td>".count($info)."</td>");
+=======
+                    $pdf -> WriteHTML('<tr>');
+                    $pdf -> WriteHTML("<td>".$info[$x]['lastname']."</td>");
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
+>>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
                     $pdf -> WriteHTML("<td>".$info[$x]['firstname']."</td>");
                     $pdf -> WriteHTML("<td>".$info[$x]['middlename']."</td>");
                     $pdf -> WriteHTML("<td>".$info[$x]['MonthName'].' '.$info[$x]['Day'].', '.$info[$x]['Year']."</td>");
                   
                     $pdf -> WriteHTML('</tr>');
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
+>>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
                 // echo form_close();
                 //echo '<td><a href="'.base_url().'index.php/view_faculty/view/'.$faculty[$x]['emp_id'].'">View</a></td>';
                 //echo '<td><a href="'.base_url().'index.php/update_faculty/update_form/'.$faculty[$x]['emp_id'].'">Update</a></td>';
             }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+                
+                 }
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
+>>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
         $pdf -> WriteHTML('</table>');
 
 		$pdf -> Output('UnRegular_Faculty.pdf', 'D');
@@ -96,7 +212,22 @@ class Report_Controller extends CI_Controller {
 		$pdf -> WriteHTML('<tr><th>LastName</th><th>FirstName</th><th>MiddleName</th><th>Date Hired</th><th>Year Of Services</th></tr>');
 		for($x=0;$x<=count($info);$x++)
             {
+<<<<<<< HEAD
                 // echo form_open();
+=======
+<<<<<<< HEAD
+                // echo form_open();
+=======
+<<<<<<< HEAD
+                // echo form_open();
+=======
+<<<<<<< HEAD
+                // echo form_open();
+=======
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
+>>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
                     $pdf -> WriteHTML('<tr>');
                     $pdf -> WriteHTML("<td>".$info[$x]['lastname']."</td>");
                     $pdf -> WriteHTML("<td>".$info[$x]['firstname']."</td>");
@@ -104,10 +235,33 @@ class Report_Controller extends CI_Controller {
                     $pdf -> WriteHTML("<td>".$info[$x]['MonthName'].' '.$info[$x]['Day'].', '.$info[$x]['Year']."</td>");
                     $pdf -> WriteHTML("<td>".$info[$x]['Years_Of_Service']."</td>");
                     $pdf -> WriteHTML('</tr>');
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
+>>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
                 // echo form_close();
                 //echo '<td><a href="'.base_url().'index.php/view_faculty/view/'.$faculty[$x]['emp_id'].'">View</a></td>';
                 //echo '<td><a href="'.base_url().'index.php/update_faculty/update_form/'.$faculty[$x]['emp_id'].'">Update</a></td>';
             }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+              
+               }
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
+>>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
         $pdf -> WriteHTML('</table>');
 
 		$pdf -> Output('Candidates.pdf', 'D');
@@ -123,7 +277,23 @@ class Report_Controller extends CI_Controller {
 		$pdf -> AddPage();
 		$pdf -> setDisplayMode ('fullpage');
 		$info = array();
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
+
+=======
+         
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
+>>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
 		$info = $this->m_view->profile($empID);
 		$educ = $this->m_view->education($empID);
 		$skills = $this->m_view->skills($empID);
@@ -158,33 +328,108 @@ class Report_Controller extends CI_Controller {
         	$pdf -> WriteHTML("<td>".$educ[$a]['type_desc']."</td><td>".$educ[$a]['school_name']."</td><td>" . $educ[$a]['address'] . "</td><td>" . $educ[$a]['year'] . "</td><td>" . $educ[$a]['degree'] . "</td>");
         	$pdf -> WriteHTML("</tr>");
         }
+<<<<<<< HEAD
         // $pdf -> WriteHTML('<tr><td>' . print_r($educ) . '</td></tr>');
+=======
+<<<<<<< HEAD
+        // $pdf -> WriteHTML('<tr><td>' . print_r($educ) . '</td></tr>');
+=======
+<<<<<<< HEAD
+        // $pdf -> WriteHTML('<tr><td>' . print_r($educ) . '</td></tr>');
+=======
+<<<<<<< HEAD
+        // $pdf -> WriteHTML('<tr><td>' . print_r($educ) . '</td></tr>');
+=======
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
+>>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
         $pdf -> WriteHTML('</table><br>');
 
          $pdf -> WriteHTML('<table align="auto" border="1"  width="7in">');
         $pdf -> WriteHTML('<tr><th colspan="4" height=".5in">Skills</th></tr>');
+<<<<<<< HEAD
        // $pdf -> WriteHTML('<tr><th>Skills</th>></tr>');
+=======
+<<<<<<< HEAD
+       // $pdf -> WriteHTML('<tr><th>Skills</th>></tr>');
+=======
+<<<<<<< HEAD
+       // $pdf -> WriteHTML('<tr><th>Skills</th>></tr>');
+=======
+<<<<<<< HEAD
+       // $pdf -> WriteHTML('<tr><th>Skills</th>></tr>');
+=======
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
+>>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
         for($b = 0; $b <= count($skills); $b++)
         {
         	$pdf -> WriteHTML("<tr>");
         	$pdf -> WriteHTML("<td>".$skills[$b]['skill_name']."</td>");
         	$pdf -> WriteHTML("</tr>");
         }
+<<<<<<< HEAD
         // $pdf -> WriteHTML('<tr><td>' . print_r($educ) . '</td></tr>');
+=======
+<<<<<<< HEAD
+        // $pdf -> WriteHTML('<tr><td>' . print_r($educ) . '</td></tr>');
+=======
+<<<<<<< HEAD
+        // $pdf -> WriteHTML('<tr><td>' . print_r($educ) . '</td></tr>');
+=======
+<<<<<<< HEAD
+        // $pdf -> WriteHTML('<tr><td>' . print_r($educ) . '</td></tr>');
+=======
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
+>>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
         $pdf -> WriteHTML('</table><br>');
 
 
         $pdf -> WriteHTML('<table align="auto" border="1"  width="7in">');
         $pdf -> WriteHTML('<tr><th colspan="4" height=".5in">Work Experience</th></tr>');
         $pdf -> WriteHTML('<tr><th>Company</th><th>Position</th><th>Inclusive Dates</th></tr>');
+<<<<<<< HEAD
        // $pdf -> WriteHTML('<tr><th>Skills</th>></tr>');
+=======
+<<<<<<< HEAD
+       // $pdf -> WriteHTML('<tr><th>Skills</th>></tr>');
+=======
+<<<<<<< HEAD
+       // $pdf -> WriteHTML('<tr><th>Skills</th>></tr>');
+=======
+<<<<<<< HEAD
+       // $pdf -> WriteHTML('<tr><th>Skills</th>></tr>');
+=======
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
+>>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
         for($c = 0; $c <= count($work); $c++)
         {
         	$pdf -> WriteHTML("<tr>");
         	$pdf -> WriteHTML("<td>".$work[$c]['company']."</td><td>".$work[$c]['position']."</td><td>".$work[$c]['StartMonthName'].', '.$work[$c]['StartDay'].', '.$work[$c]['StartYear']."</td>");
         	$pdf -> WriteHTML("</tr>");
         }
+<<<<<<< HEAD
         // $pdf -> WriteHTML('<tr><td>' . print_r($educ) . '</td></tr>');
+=======
+<<<<<<< HEAD
+        // $pdf -> WriteHTML('<tr><td>' . print_r($educ) . '</td></tr>');
+=======
+<<<<<<< HEAD
+        // $pdf -> WriteHTML('<tr><td>' . print_r($educ) . '</td></tr>');
+=======
+<<<<<<< HEAD
+        // $pdf -> WriteHTML('<tr><td>' . print_r($educ) . '</td></tr>');
+=======
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
+>>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
         $pdf -> WriteHTML('</table><br>');
            
         $pdf -> WriteHTML('<table align="auto" border="1"  width="7in">');
@@ -196,7 +441,22 @@ class Report_Controller extends CI_Controller {
         	$pdf -> WriteHTML("<td>".$child[$d]['name']."</td><td>".$child[$d]['MonthName'].', '.$child[$d]['Day'].', '.$child[$d]['Year']."</td>");
         	$pdf -> WriteHTML("</tr>");
         }
+<<<<<<< HEAD
         // $pdf -> WriteHTML('<tr><td>' . print_r($educ) . '</td></tr>');
+=======
+<<<<<<< HEAD
+        // $pdf -> WriteHTML('<tr><td>' . print_r($educ) . '</td></tr>');
+=======
+<<<<<<< HEAD
+        // $pdf -> WriteHTML('<tr><td>' . print_r($educ) . '</td></tr>');
+=======
+<<<<<<< HEAD
+        // $pdf -> WriteHTML('<tr><td>' . print_r($educ) . '</td></tr>');
+=======
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
+>>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
         $pdf -> WriteHTML('</table><br>');
 
 
@@ -207,12 +467,43 @@ class Report_Controller extends CI_Controller {
                   $pdf -> WriteHTML("<tr><th>Name of Spouse(husband/Wife</th><td>".$spouse['lastname'].", " . $spouse['firstname'] . " " . $spouse['middlename'] . "</td></tr>");
                   $pdf -> WriteHTML("<tr><th>Date Of Birth</th><td>".$spouse['MonthName'].', '.$spouse['Day'].', '.$spouse['Year']."</td>");
                   $pdf -> WriteHTML("<tr><th>Birth Place</th><td>".$spouse['birth_place']."</td></tr>");
+<<<<<<< HEAD
                    $pdf -> WriteHTML("<tr><th>Contact #</th><td>".$spouse['contact_no']."</td></tr>");
+=======
+<<<<<<< HEAD
+                   $pdf -> WriteHTML("<tr><th>Contact #</th><td>".$spouse['contact_no']."</td></tr>");
+=======
+<<<<<<< HEAD
+                   $pdf -> WriteHTML("<tr><th>Contact #</th><td>".$spouse['contact_no']."</td></tr>");
+=======
+<<<<<<< HEAD
+                   $pdf -> WriteHTML("<tr><th>Contact #</th><td>".$spouse['contact_no']."</td></tr>");
+=======
+                  $pdf -> WriteHTML("<tr><th>Contact #</th><td>".$spouse['contact_no']."</td></tr>");
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
+>>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
         	      $pdf -> WriteHTML("<tr><th>Educational Attainment(highest Degree)</th><td>".$spouse['educational_attainment']."</td></tr>");
         	      $pdf -> WriteHTML("<tr><th>Present Occupation</th><td>".$spouse['occupation']."</td></tr>");
                   $pdf -> WriteHTML("<tr><th>Employeer/Address</th><td>".$spouse['employer']."</td></tr>");
                   $pdf -> WriteHTML('</table><br>');
+<<<<<<< HEAD
         // $pdf -> WriteHTML('<tr><td>' . print_r($educ) . '</td></tr>');
+=======
+<<<<<<< HEAD
+        // $pdf -> WriteHTML('<tr><td>' . print_r($educ) . '</td></tr>');
+=======
+<<<<<<< HEAD
+        // $pdf -> WriteHTML('<tr><td>' . print_r($educ) . '</td></tr>');
+=======
+<<<<<<< HEAD
+        // $pdf -> WriteHTML('<tr><td>' . print_r($educ) . '</td></tr>');
+=======
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
+>>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
         $pdf -> WriteHTML('</table><br>');
 		$pdf -> Output('files.pdf', 'D');
 

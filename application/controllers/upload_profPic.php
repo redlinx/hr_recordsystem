@@ -20,28 +20,100 @@ class Upload_profPic extends CI_Controller {
 		// echo "</pre>";
 		if ($this->session->userdata('level') == 1)
         {
+<<<<<<< HEAD
             $this->load->view('includes/header_faculty');
             //$this->load->view('includes/navi_faculty');
+=======
+<<<<<<< HEAD
+            $this->load->view('includes/header_faculty');
+            //$this->load->view('includes/navi_faculty');
+=======
+<<<<<<< HEAD
+            $this->load->view('includes/header_faculty');
+            //$this->load->view('includes/navi_faculty');
+=======
+<<<<<<< HEAD
+            $this->load->view('includes/header_faculty');
+            //$this->load->view('includes/navi_faculty');
+=======
+            $this->load->view('includes/header');
+            $this->load->view('includes/navi_faculty');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
+>>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
             $this->load->view('upload_profPic', $content);
             $this->load->view('includes/footer');
         }
         else if ($this->session->userdata('level') == 2)
         {
+<<<<<<< HEAD
             $this->load->view('includes/header_hr');
            // $this->load->view('includes/navi_hr');
+=======
+<<<<<<< HEAD
+            $this->load->view('includes/header_hr');
+           // $this->load->view('includes/navi_hr');
+=======
+<<<<<<< HEAD
+            $this->load->view('includes/header_hr');
+           // $this->load->view('includes/navi_hr');
+=======
+<<<<<<< HEAD
+            $this->load->view('includes/header_hr');
+           // $this->load->view('includes/navi_hr');
+=======
+            $this->load->view('includes/header');
+            $this->load->view('includes/navi_hr');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
+>>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
             $this->load->view('upload_profPic', $content);
             $this->load->view('includes/footer');
         }
         else if ($this->session->userdata('level') == 5)
         {
+<<<<<<< HEAD
             $this->load->view('includes/header_faculty');
+=======
+<<<<<<< HEAD
+            $this->load->view('includes/header_faculty');
+=======
+<<<<<<< HEAD
+            $this->load->view('includes/header_faculty');
+=======
+<<<<<<< HEAD
+            $this->load->view('includes/header_faculty');
+=======
+            $this->load->view('includes/header');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
+>>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
             $this->load->view('includes/navi_rankChair');
             $this->load->view('upload_profPic', $content);
             $this->load->view('includes/footer');
         }
         else if ($this->session->userdata('level') == 6)
         {
+<<<<<<< HEAD
             $this->load->view('includes/header_faculty');
+=======
+<<<<<<< HEAD
+            $this->load->view('includes/header_faculty');
+=======
+<<<<<<< HEAD
+            $this->load->view('includes/header_faculty');
+=======
+<<<<<<< HEAD
+            $this->load->view('includes/header_faculty');
+=======
+            $this->load->view('includes/header');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
+>>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
             $this->load->view('includes/navi_rankMember');
             $this->load->view('upload_profPic', $content);
             $this->load->view('includes/footer');
@@ -77,28 +149,100 @@ class Upload_profPic extends CI_Controller {
 				
 				if ($this->session->userdata('level') == 1)
 		        {
+<<<<<<< HEAD
 		            $this->load->view('includes/header_faculty');
 		            //$this->load->view('includes/navi_faculty');
+=======
+<<<<<<< HEAD
+		            $this->load->view('includes/header_faculty');
+		            //$this->load->view('includes/navi_faculty');
+=======
+<<<<<<< HEAD
+		            $this->load->view('includes/header_faculty');
+		            //$this->load->view('includes/navi_faculty');
+=======
+<<<<<<< HEAD
+		            $this->load->view('includes/header_faculty');
+		            //$this->load->view('includes/navi_faculty');
+=======
+		            $this->load->view('includes/header');
+		            $this->load->view('includes/navi_faculty');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
+>>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
 		            $this->load->view('upload_profPic', $content);
 		            $this->load->view('includes/footer');
 		        }
 		        else if ($this->session->userdata('level') == 2)
 		        {
+<<<<<<< HEAD
 		            $this->load->view('includes/header_hr');
 		           // $this->load->view('includes/navi_hr');
+=======
+<<<<<<< HEAD
+		            $this->load->view('includes/header_hr');
+		           // $this->load->view('includes/navi_hr');
+=======
+<<<<<<< HEAD
+		            $this->load->view('includes/header_hr');
+		           // $this->load->view('includes/navi_hr');
+=======
+<<<<<<< HEAD
+		            $this->load->view('includes/header_hr');
+		           // $this->load->view('includes/navi_hr');
+=======
+		            $this->load->view('includes/header');
+		            $this->load->view('includes/navi_hr');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
+>>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
 		            $this->load->view('upload_profPic', $content);
 		            $this->load->view('includes/footer');
 		        }
 		        else if ($this->session->userdata('level') == 5)
 		        {
+<<<<<<< HEAD
 		            $this->load->view('includes/header_faculty');
+=======
+<<<<<<< HEAD
+		            $this->load->view('includes/header_faculty');
+=======
+<<<<<<< HEAD
+		            $this->load->view('includes/header_faculty');
+=======
+<<<<<<< HEAD
+		            $this->load->view('includes/header_faculty');
+=======
+		            $this->load->view('includes/header');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
+>>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
 		            $this->load->view('includes/navi_rankChair');
 		            $this->load->view('upload_profPic', $content);
 		            $this->load->view('includes/footer');
 		        }
 		        else if ($this->session->userdata('level') == 6)
 		        {
+<<<<<<< HEAD
 		            $this->load->view('includes/header_faculty');
+=======
+<<<<<<< HEAD
+		            $this->load->view('includes/header_faculty');
+=======
+<<<<<<< HEAD
+		            $this->load->view('includes/header_faculty');
+=======
+<<<<<<< HEAD
+		            $this->load->view('includes/header_faculty');
+=======
+		            $this->load->view('includes/header');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
+>>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
 		            $this->load->view('includes/navi_rankMember');
 		            $this->load->view('upload_profPic', $content);
 		            $this->load->view('includes/footer');

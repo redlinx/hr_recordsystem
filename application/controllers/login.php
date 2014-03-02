@@ -41,14 +41,30 @@ class Login extends CI_Controller
         $level = $this->input->post('level');
         $fname = $this->input->post('fname');
         $lname = $this->input->post('lname');
+<<<<<<< HEAD
         $cek = $this->m_login->takeUser($lname,$fname,$username, $password, $level);
+=======
+<<<<<<< HEAD
+        $cek = $this->m_login->takeUser($lname,$fname,$username, $password, $level);
+=======
+<<<<<<< HEAD
+        $cek = $this->m_login->takeUser($lname,$fname,$username, $password, $level);
+=======
+<<<<<<< HEAD
+        $cek = $this->m_login->takeUser($lname,$fname,$username, $password, $level);
+=======
+        $cek = $this->m_login->takeUser($lastname,$firstname,$username, $password, $level);
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
+>>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
         if($cek <> 0)
         {
             $this->session->set_userdata('isLogin', TRUE);
             $this->session->set_userdata('username',$username);
             $this->session->set_userdata('level',$level);
-            $this->session->set_userdata('lname',$lname);
-            $this->session->set_userdata('fname',$fname);
+            $this->session->set_userdata('lastname',$lastname);
+            $this->session->set_userdata('firstname',$firstname);
             redirect('verifylogin');
         }
         else
