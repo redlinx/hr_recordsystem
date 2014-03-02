@@ -17,10 +17,8 @@
     </style>
 </head>
 <body>
-
 <div id="container">
     <h1>Welcome to Records Management System!</h1>
-
     <div id="body">
     <div id="menu">
       <?php echo '<a href="'.base_url().'index.php/view_faculty/view/'.$this->session->userdata('emp_id').'">'; ?>
