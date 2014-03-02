@@ -1,14 +1,25 @@
+<<<<<<< HEAD
 <div>
+=======
+<div id="body">
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
     <script>
     function goBack()
       {
       window.history.go(-1)
       }
     </script>
+<<<<<<< HEAD
     <button onclick="goBack()"> Back </button>
         <a href="http://localhost/hr_recordsystem/index.php/forms/education"> <?php echo form_submit('mysubmit', 'Add') ?> </a>
         <table class="table table-striped">
 
+=======
+    <p><b>Academic and Professional Preparation</b></p>
+    <button onclick="goBack()"> Back </button>
+        <a href="http://localhost/hr_recordsystem/index.php/forms/education"> <?php echo form_submit('mysubmit', 'Add') ?> </a>
+        <table width="540" align="left">
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
             <tr align="left">
                 <th>School</th>
                 <th>Address</th>

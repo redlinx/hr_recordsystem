@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 <body id="content">
 	<table class="table table-striped">
+=======
+<div id="body">
+	<br/>
+	<table id="list" width="400" align="left">
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
 			<tr align="left">
 				<th>Last Name</th>
 				<th>First Name</th>
@@ -18,4 +24,8 @@
 				}
 			?>
 	</table>
+<<<<<<< HEAD
 </body>
+=======
+</div>
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522

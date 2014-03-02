@@ -7,17 +7,28 @@ class Display extends CI_Controller
 		parent::__construct();
 
 		$this->load->model('HR');
+<<<<<<< HEAD
 		$this->load->model('m_rankingCommittee');
+=======
+		$this->load->model('m_ranking');
+		$this->load->model('m_display');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
 		$this->load->library('form_validation');
 		$this->load->helper('url');
 		$this->load->helper('form');
+		
 	}
 	public function index()
 	{
 		$this->load->model('hr');
 		$page_content['program'] = $this->hr->program();
+<<<<<<< HEAD
 		$this->load->view('includes/header_hr');
 		//$this->load->view('includes/navi_hr');
+=======
+		$this->load->view('includes/header');
+		$this->load->view('includes/navi_hr');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
 		$this->load->view('display_form',$page_content);
 		//$this->load->view('includes/footer');
 		if ($this->input->post())
@@ -35,7 +46,11 @@ class Display extends CI_Controller
 		$this->load->view('display', $page_view_content);
 		// $this->load->view('includes/footer');
 	}
+<<<<<<< HEAD
 	 public function display_regular_faculty()
+=======
+       public function display_regular_faculty()
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
       {
     	$this->load->model('m_display');
         $empID = $this->uri->segment(3, 0); 
@@ -43,8 +58,13 @@ class Display extends CI_Controller
         // echo "<pre>";
         // print_r($content);
         // echo "</pre>";
+<<<<<<< HEAD
         $this->load->view('includes/header_hr');
         //$this->load->view('includes/navi_hr');
+=======
+        $this->load->view('includes/header');
+        $this->load->view('includes/navi_hr');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
         $this->load->view('display_regular_faculty', $content);
         $this->load->view('includes/footer');
          
@@ -57,13 +77,19 @@ class Display extends CI_Controller
         // echo "<pre>";
         // print_r($content);
         // echo "</pre>";
+<<<<<<< HEAD
         $this->load->view('includes/header_hr');
         //$this->load->view('includes/navi_hr');
+=======
+        $this->load->view('includes/header');
+        $this->load->view('includes/navi_hr');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
         $this->load->view('display_unregular_faculty', $content);
         $this->load->view('includes/footer');
          
     }
 
+<<<<<<< HEAD
 	public function committee()
 	{	
 		$this->load->model('m_rankingCommittee');
@@ -73,4 +99,6 @@ class Display extends CI_Controller
 		$this->load->view('display_committee', $page_view_content);
 		$this->load->view('includes/footer');
 	}
+=======
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
 }

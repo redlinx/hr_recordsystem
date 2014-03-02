@@ -21,9 +21,14 @@
         for ($x=date('o'); $x>=1940; $x--)
         {
             $year[$x] = $x;
+<<<<<<< HEAD
         } ?>
     <table class="table table-striped">
     <?php
+=======
+        }
+            echo "<table>";
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
                 echo form_open('add/children');
                     echo "<tr><td>Name</td><td>".form_input('name')."</td></tr>";
                     echo "<tr><td>Birthday</td><td>".form_dropdown('month',$months)."".form_dropdown('day',$days)."".form_dropdown('year',$year)."</td></tr>";

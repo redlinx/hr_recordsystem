@@ -19,6 +19,7 @@ class Upload extends CI_Controller {
 		// echo "<pre>";
 		// print_r($content);
 		// echo "</pre>";
+<<<<<<< HEAD
 		$this->load->view('includes/header_faculty');
  		//$this->load->view('includes/navi_faculty');
 		$this->load->view('upload_form', $content);
@@ -35,6 +36,12 @@ class Upload extends CI_Controller {
 				echo '<img src="' . base_url('uploads/' . $uploaded_file->file_name) . '" width="900" height="620">';
 			}
 		}
+=======
+		$this->load->view('includes/header');
+ 		$this->load->view('includes/navi_faculty');
+		$this->load->view('upload_form', $content);
+		$this->load->view('includes/footer');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
 	}
 
 	function do_upload()
@@ -54,8 +61,13 @@ class Upload extends CI_Controller {
 			{
 				$content = array('error' => $this->upload->display_errors(),
 						 		 'page_content' => $this->m_display->uploadCategory());
+<<<<<<< HEAD
 				$this->load->view('includes/header_faculty');
  				//$this->load->view('includes/navi_faculty');
+=======
+				$this->load->view('includes/header');
+ 				$this->load->view('includes/navi_faculty');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
 				$this->load->view('upload_form', $content);
 				$this->load->view('includes/footer');
 			}
@@ -75,8 +87,13 @@ class Upload extends CI_Controller {
 								 );
 				
 				$this->db->insert('upload', $content);
+<<<<<<< HEAD
 				$this->load->view('includes/header_faculty');
  				//$this->load->view('includes/navi_faculty');
+=======
+				$this->load->view('includes/header');
+ 				$this->load->view('includes/navi_faculty');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
 				$this->load->view('upload_success', $data);
 				$this->load->view('includes/footer');
 

@@ -21,9 +21,14 @@
     for ($x=date('o'); $x>=1940; $x--)
     {
         $year[$x] = $x;
+<<<<<<< HEAD
     } ?>
     <table class="table table-striped">
     <?php
+=======
+    }
+            echo "<table>";
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
                 echo form_open('update/work');
                     echo form_hidden('workID', $page_view_content['work_exp_id']);
                     echo "<tr><td>Company</td><td>".form_input('company', $page_view_content['company'])."</td></tr>";

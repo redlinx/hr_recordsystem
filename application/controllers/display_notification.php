@@ -15,11 +15,16 @@ class Display_notification extends CI_Controller
     {
         $empID = $this->uri->segment(3, 0); 
         $content = array('page_view_content' => $this->hr->display_notification());
+<<<<<<< HEAD
         // echo "<pre>";
         // print_r($content);
         // echo "</pre>";
         $this->load->view('includes/header_hr');
         //$this->load->view('includes/navi_hr');
+=======
+        $this->load->view('includes/header');
+        $this->load->view('includes/navi_hr');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
         $this->load->view('view_notification', $content);
         $this->load->view('includes/footer');
          
@@ -28,10 +33,14 @@ class Display_notification extends CI_Controller
     public function verify_notification()
     {
         $uploadID = $this->uri->segment(3, 0); 
+<<<<<<< HEAD
         $content = array('page_view_content' => $this->hr->updateUpload( $uploadID));
         // echo "<pre>";
         // print_r($content);
         // echo "</pre>";
+=======
+        $content = array('page_view_content' => $this->hr->updateUpload($uploadID));
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
         $faculty['upload_id'] = $content['page_view_content']['upload_id'];
         $faculty['emp_id'] = $content['page_view_content']['emp_id'];
 
@@ -46,8 +55,13 @@ class Display_notification extends CI_Controller
       // echo "<pre>";
       // print_r($content);
       // echo "</pre>";
+<<<<<<< HEAD
       $this->load->view('includes/header_hr');
       //$this->load->view('includes/navi_hr');
+=======
+      $this->load->view('includes/header');
+      $this->load->view('includes/navi_hr');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
       $this->load->view('display_educNoti', $content);
       $this->load->view('includes/footer');
       
@@ -61,8 +75,13 @@ class Display_notification extends CI_Controller
       // echo "<pre>";
       // print_r($content);
       // echo "</pre>";
+<<<<<<< HEAD
       $this->load->view('includes/header_hr');
       //$this->load->view('includes/navi_hr');
+=======
+      $this->load->view('includes/header');
+      $this->load->view('includes/navi_hr');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
       $this->load->view('view_faculty_educ_noti', $content);
       $this->load->view('includes/footer');
     }
@@ -96,11 +115,16 @@ class Display_notification extends CI_Controller
 
         $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
         $data['page_view_content'] = $this->hr->display_profUpdate($config['per_page'],$page);
+<<<<<<< HEAD
         // echo "<pre>";
         // print_r($data);
         // echo "</pre>";
         $this->load->view('includes/header_hr');
         //$this->load->view('includes/navi_hr');
+=======
+        $this->load->view('includes/header');
+        $this->load->view('includes/navi_hr');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
         $this->load->view('display_profNoti', $data);
         $this->load->view('includes/footer');
     }
@@ -112,8 +136,13 @@ class Display_notification extends CI_Controller
         // echo "<pre>";
         // print_r($page_view_content);
         // echo "</pre>";
+<<<<<<< HEAD
         $this->load->view('includes/header_hr');
         //$this->load->view('includes/navi_hr');
+=======
+        $this->load->view('includes/header');
+        $this->load->view('includes/navi_hr');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
         $this->load->view('view_faculty_prof_noti', $page_view_content);
         $this->load->view('includes/footer');
     }
@@ -127,7 +156,11 @@ class Display_notification extends CI_Controller
         // echo "</pre>";
         $faculty['emp_id'] = $content['page_view_content']['emp_id'];
         $this->hr->verify_profile($faculty);
+<<<<<<< HEAD
         // $this->db->insert('notifications', array('description' => 'user attack bla bla', 'date' => 'date karon'));
+=======
+        //$this->db->insert('notifications', array('description' => 'user attack bla bla', 'date' => 'date karon'));
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
         redirect(base_url().'index.php/display_notification/display_profUpdate');
     }
 
@@ -138,8 +171,13 @@ class Display_notification extends CI_Controller
         // echo "<pre>";
         // print_r($content);
         //echo "</pre>";
+<<<<<<< HEAD
         $this->load->view('includes/header_hr');
         //$this->load->view('includes/navi_hr');
+=======
+        $this->load->view('includes/header');
+        $this->load->view('includes/navi_hr');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
         $this->load->view('display_trainingNoti', $content);
         $this->load->view('includes/footer');
     }
@@ -152,8 +190,13 @@ class Display_notification extends CI_Controller
         // echo "<pre>";
         // print_r($content);
         // echo "</pre>";
+<<<<<<< HEAD
         $this->load->view('includes/header_faculty');
        // $this->load->view('includes/navi_faculty');
+=======
+        $this->load->view('includes/header');
+        $this->load->view('includes/navi_faculty');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
         $this->load->view('view_faculty_training_noti', $content);
         $this->load->view('includes/footer');
     }
@@ -179,8 +222,13 @@ class Display_notification extends CI_Controller
         // echo "<pre>";
         // print_r($content);
         // echo "</pre>";
+<<<<<<< HEAD
         $this->load->view('includes/header_hr');
         //$this->load->view('includes/navi_hr');
+=======
+        $this->load->view('includes/header');
+        $this->load->view('includes/navi_hr');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
         $this->load->view('display_workExp', $content);
         $this->load->view('includes/footer');
     }
@@ -192,8 +240,13 @@ class Display_notification extends CI_Controller
         // echo "<pre>";
         // print_r($content);
         // echo "</pre>";
+<<<<<<< HEAD
         $this->load->view('includes/header_faculty');
         //$this->load->view('includes/navi_faculty');
+=======
+        $this->load->view('includes/header');
+        $this->load->view('includes/navi_faculty');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
         $this->load->view('view_faculty_work_noti', $content);
         $this->load->view('includes/footer');
     }

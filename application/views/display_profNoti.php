@@ -1,7 +1,13 @@
 <div id="body">
+<<<<<<< HEAD
     <h3>Profile Notification</h3>
     <?php echo $this->pagination->create_links(); ?>
     <table class="table table-striped">
+=======
+    <h3>Profile</h3>
+    <?php echo $this->pagination->create_links(); ?>
+    <table width="400" align="left">
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
         <tr align="left">
             <th>Firstname</th>
             <th>Lastname</th>

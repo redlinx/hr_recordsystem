@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="nav">
     
     <nav class="navbar navbar-primary" role="navigation">
@@ -50,12 +51,20 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Faculty<b class="caret"></b></a>
     <ul class="dropdown-menu">
        
+=======
+<div id="nav">
+    <ul>
+        <li>
+            <a href="http://localhost/hr_recordsystem/index.php/verifylogin">Home</a>
+        </li>
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
         <li>
             <a href="http://localhost/hr_recordsystem/index.php/register_faculty">Add Faculty</a>
         </li>
         <li>
             <a href="http://localhost/hr_recordsystem/index.php/display">View Faculty</a>
         </li>
+<<<<<<< HEAD
     </ul>
     </li>
         <li>
@@ -117,3 +126,37 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="<?php echo base_url('assets/js/jquery-1.10.2.min.js'); ?>"></script>
     <script src="<?php echo base_url('assets/js/bootstrap.min.js'); ?>"></script>
+=======
+        <li>
+            <a href="http://localhost/hr_recordsystem/index.php/regularization_candidate"> Candidate for Regularization </a>
+        </li>
+         <li>
+            <a href="http://localhost/hr_recordsystem/index.php/display/display_regular_faculty"> Regular Faculty </a>
+        </li>
+         <li>
+            <a href="http://localhost/hr_recordsystem/index.php/display/display_unRegular_faculty"> Unregular Faculty </a>
+        </li>
+        <li>
+            <a href="http://localhost/hr_recordsystem/index.php/ranking_committee"> Ranking Committee </a>
+        </li>
+        <li>
+            <b>Notifications</b>
+        </li>
+        <li style="margin-left:30px;">
+            <a href="http://localhost/hr_recordsystem/index.php/display_notification"> Upload </a>
+        </li>
+        <li style="margin-left:30px;">
+            <a href="http://localhost/hr_recordsystem/index.php/display_notification/display_profUpdate"> Profile </a>
+        </li>
+        <li style="margin-left:30px;">
+            <a href="http://localhost/hr_recordsystem/index.php/display_notification/display_education"> Education </a>
+        </li>
+        <li style="margin-left:30px;">
+            <a href="http://localhost/hr_recordsystem/index.php/display_notification/display_trainingNoti"> Training </a>
+        </li>
+        <li style="margin-left:30px;">
+            <a href="http://localhost/hr_recordsystem/index.php/display_notification/display_workExp"> Work Experience </a>
+        </li>
+</ul>
+</div>
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522

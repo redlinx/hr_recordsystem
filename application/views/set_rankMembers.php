@@ -15,7 +15,11 @@
 					echo '<tr>';
 					echo '<td>'.$page_view_content[$x]['lastname'].'</td>';
 					echo '<td>'.$page_view_content[$x]['firstname'].'</td>';
+<<<<<<< HEAD
 					echo '<td><a href="'.base_url().'index.php/ranking_committee/set_rankingMember/'.$page_view_content[$x]['faculty_emp_id'].'">Set</a></td>';
+=======
+					echo '<td><a href="'.base_url().'index.php/ranking_committee/set_rankingMember/'.$page_view_content[$x]['emp_id'].'">Set</a></td>';
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
 					echo '</tr>';
 				}
 			?>

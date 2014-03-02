@@ -6,7 +6,11 @@
       }
     </script>
     <button onclick="goBack()"> Back </button>
+<<<<<<< HEAD
     <table class="table table-striped" align="center">
+=======
+    <table align="center">
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
         <?php
             echo form_open();
                 echo "<tr><td>Last Name</td><td>:  ".$faculty_profile['lastname']."</td></tr>";

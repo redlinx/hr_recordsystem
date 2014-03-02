@@ -1,6 +1,11 @@
 <div id="body">
+<<<<<<< HEAD
     <h3>Work Experiences Notification</h3>
     <table class="table table-striped">
+=======
+    <h3>Work Experiences</h3>
+    <table width="400" align="left">
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
         <tr align="left">
             <th>Firstname</th>
             <th>Lastname</th>

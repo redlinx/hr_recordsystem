@@ -7,9 +7,14 @@
             for($x=0;$x<count($page_content);$x++)
             {
                 $type_option[$page_content[$x]['type_id']] = $page_content[$x]['type_desc'];
+<<<<<<< HEAD
             } ?>
     <table class="table table-striped">
     <?php
+=======
+            }
+                echo "<table>";
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
                     echo form_open('add/education');
                         echo "<tr><td>School Name</td><td>".form_input('school_name')."</td></tr>";
                         echo "<tr><td>Address</td><td>".form_input('address')."</td></tr>";

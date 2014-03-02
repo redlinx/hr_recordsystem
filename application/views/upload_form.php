@@ -5,7 +5,12 @@
             $category_option[$page_content[$x]['category_id']] = $page_content[$x]['category_name'];
         }
     ?>
+<<<<<<< HEAD
     <table class="table table-striped">
+=======
+    <?php echo '<a href="'.base_url().'index.php/view_faculty/uploads/'.$this->session->userdata('emp_id').'">'; ?> <?php echo form_submit('mysubmit', 'Gallery') ?> </a>
+    <table>
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
         <?php echo $error;?>
             <?php echo form_open_multipart('upload/do_upload');?>
                 <tr>

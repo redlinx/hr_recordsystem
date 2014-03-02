@@ -1,8 +1,14 @@
 <div id="body">
     <?php
+<<<<<<< HEAD
     echo "<table>";
         $this->load->helper('form');
         echo form_open('ranking_committee/rank_faculty'.$faculty_profile['emp_id']);
+=======
+       echo "<table>";
+        $this->load->helper('form');
+        echo form_open('ranking_committee/rank_faculty/'.$faculty_profile['emp_id']);
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
             echo "<tr><td>Educational Qualification</td><td>".form_input('EQ')."</td></tr>";
             echo "<tr><td>Teaching Proficiency</td><td>".form_input('TeachP')."</td></tr>";
             echo "<tr><td>Research/ Pr. Research</td><td>".form_input('Research')."</td></tr>";

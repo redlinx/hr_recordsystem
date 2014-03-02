@@ -8,10 +8,28 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
     <title>Welcome to Records Management System</title>
+<<<<<<< HEAD
     <link href="<?php echo base_url().'assets/css/bootstrap.css'?>" rel="stylesheet" type="text/css">
     <link href="<?php echo base_url().'assets/css/bootstrap-theme.css'?>" rel="stylesheet" type="text/css">
     <link href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>" rel="stylesheet" type="text/css">
     <link href="<?php echo base_url('assets/css/jumbotron.css'); ?>" rel="stylesheet">
+=======
+    <style type="text/css">
+
+    ::selection{ background-color: #E13300; color: white; }
+    ::moz-selection{ background-color: #E13300; color: white; }
+    ::webkit-selection{ background-color: #E13300; color: white; }
+
+    body
+    {
+        background-color: #fff;
+        margin: auto;
+        margin-top: 50px;
+        width: 60%;
+        font: 13px/20px normal Helvetica, Arial, sans-serif;
+        color: #4F5155;
+    }
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
    
 </head>
 <body>
@@ -64,6 +82,7 @@
                         </div>                     
                     </div>  
         </div>
+<<<<<<< HEAD
         <div id="signupbox" style="display:none; margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
                     <div class="panel panel-info">
                         <div class="panel-heading">
@@ -124,6 +143,34 @@
                             </form>
                          </div>
                     </div>
+=======
+        <div id="form_login">
+            <form action="<?php echo base_url();?>index.php/login/form_login" method="post" name="login">
+                <table>
+                <tr>
+                    <td>
+                        <input id="username" type="text" size="20" name="username" value="<?php echo set_value('username');?>" placeholder="Username"class="inputan">
+                        <?php echo form_error('username');?>
+                    </td>
+                    <td>
+                        <input id="password" type="password" size="20" name="password" value="<?php echo set_value('password');?>" placeholder="Password" class="inputan">
+                        <?php echo form_error('password');?>
+                    </td>
+                </tr>
+                <tr>
+                    <td> <a href="http://localhost/hr_recordsystem/index.php/gfp" id="forgotPass">Forgot Password? </a> </td>
+                    <td> <input id="submit" type="submit" name="login" value="Login" class="button"> </td>
+                </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <div id="body">
+    	
+    </div>
+    <p class="footer">© Human Resource Office, University of the Immaculate Conception, Davao City, Philippines</p>
+</div>
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
 
                
                

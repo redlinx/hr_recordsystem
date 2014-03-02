@@ -268,9 +268,18 @@ function UsePRE($opt=true)
 //Page header
 function Header()
 {
+<<<<<<< HEAD
 $this->SetFont( 'Arial', 'B', 14 );            
 $this->writeHTML("<center>University of the Immaculate Conception<br></center>");
 $this->writeHTML("<center>Human Resource Office<br>Fr. Selga St., Davao City<br>221-8181, 221-8090 local 131</center><br><br>");
+=======
+$this->image('uploads/uic.jpg',90,9,33 );
+$this->SetFont( 'Arial', 'B', 16 );   
+$this->Cell(140);      
+$this->writeHTML("<center>University of the Immaculate Conception<br></center>");
+$this->writeHTML("<center>Human Resource Office<br>Fr. Selga St., Davao City<br>221-8181, 221-8090 local 131</center><br><br>");
+$this->SetFont('Arial','B',15);
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
 //! @return void
 //! @desc The header is printed in every page.
   /*if($this->usetableheader and $content != '')
