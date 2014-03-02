@@ -16,8 +16,23 @@ class Register_faculty extends CI_Controller {
 		$this->load->model('m_display');
 		$content = array('page_content' => $this->m_display->programType(),
  						 'page_view_content' => $this->m_display->facultyLevel());
+<<<<<<< HEAD
 		$this->load->view('includes/header_hr');
  		//$this->load->view('includes/navi_hr');
+=======
+<<<<<<< HEAD
+		$this->load->view('includes/header_hr');
+ 		//$this->load->view('includes/navi_hr');
+=======
+<<<<<<< HEAD
+		$this->load->view('includes/header_hr');
+ 		//$this->load->view('includes/navi_hr');
+=======
+		$this->load->view('includes/header');
+ 		$this->load->view('includes/navi_hr');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
 		$this->load->view('registration_form',$content);
 		$this->load->view('includes/footer');
 

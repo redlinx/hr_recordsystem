@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
 <div class="nav">
     
     <nav class="navbar navbar-primary" role="navigation">
@@ -17,10 +24,36 @@
     <div class="collapse navbar-collapse navbar-default" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
          <li class="active">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+<div id="nav">
+    <ul>
+        <li>
+            <a href="http://localhost/hr_recordsystem/index.php/verifylogin">Home</a>
+        </li>
+        <li>
+            <?php echo '<a href="'.base_url().'index.php/view_faculty/profile/'.$this->session->userdata('emp_id').'">'; ?>
+            Profile
+            </a>
+        </li>
+        <li>
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
             <?php echo '<a href="'.base_url().'index.php/view_faculty/education/'.$this->session->userdata('emp_id').'">'; ?>
             Education
             </a>
         </li>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
        <li class="active">
             <?php echo '<a href="'.base_url().'index.php/view_faculty/training/'.$this->session->userdata('emp_id').'">'; ?>
             Training
@@ -30,10 +63,34 @@
             Work
         </a>
          <li class="active">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+        <li>
+            <?php echo '<a href="'.base_url().'index.php/view_faculty/training/'.$this->session->userdata('emp_id').'">'; ?>
+            Training
+        </a>
+        <li>
+            <?php echo '<a href="'.base_url().'index.php/view_faculty/work/'.$this->session->userdata('emp_id').'">'; ?>
+            Work
+        </a>
+        <li>
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
             <?php echo '<a href="'.base_url().'index.php/view_faculty/skill/'.$this->session->userdata('emp_id').'">'; ?>
             Skills
         </a>
         </li>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
          <li class="active">
             <a href="http://localhost/hr_recordsystem/index.php/upload">Upload</a>
         </li>
@@ -45,4 +102,19 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+        <li>
+            <a href="http://localhost/hr_recordsystem/index.php/upload">Upload</a>
+        </li>
+        <li>
+            <a href="http://localhost/hr_recordsystem/index.php/change_pass">Change Password</a>
+        </li>
+    </ul>
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
 </div>

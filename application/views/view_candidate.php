@@ -1,18 +1,61 @@
+<<<<<<< HEAD
 <div class="body">
     <table class="table table-striped">
+=======
+<<<<<<< HEAD
+<div class="body">
+    <table class="table table-striped">
+=======
+<<<<<<< HEAD
+<div class="body">
+    <table class="table table-striped">
+=======
+<div id="body">
+    <table width="525" align="left">
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
         <tr align="left">
             <th>Last Name</th>
             <th>First Name</th>
             <th>Date Hired</th>
+<<<<<<< HEAD
             <th>Years of Service</th>
+=======
+<<<<<<< HEAD
+            <th>Years of Service</th>
+=======
+<<<<<<< HEAD
+            <th>Years of Service</th>
+=======
+            <th>YoS</th>
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
             <th>Education</th>
             <th>Regular</th>
         </tr>
         <?php
             for($x=0;$x<count($page_view_content);$x++)
+<<<<<<< HEAD
             
             {
 
+=======
+<<<<<<< HEAD
+            
+            {
+
+=======
+<<<<<<< HEAD
+            
+            {
+
+=======
+            {
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
                 echo form_open();
                     echo '<tr>';
                     echo "<td>".$page_view_content[$x]['lastname']."</td>";
@@ -23,6 +66,13 @@
                     echo '<td><a href="'.base_url().'index.php/regularization_candidate/verify_regularization/'.$page_view_content[$x]['account_id'].'"> Regular </a></td>';
                     echo '</tr>';
                 echo form_close();
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
                 //echo '<td><a href="'.base_url().'index.php/view_faculty/view/'.$faculty[$x]['emp_id'].'">View</a></td>';
                 //echo '<td><a href="'.base_url().'index.php/update_faculty/update_form/'.$faculty[$x]['emp_id'].'">Update</a></td>';
             }  ?> 
@@ -31,5 +81,16 @@
             <span class="glyphicon glyphicon-print"></span> Generate
                 </a></button>
          
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+            }
+             echo '<a href="' . base_url() . 'index.php/Report_controller/candidate_reports">Generate</a>';
+        ?>    
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
     </table>
 </div>

@@ -1,5 +1,21 @@
+<<<<<<< HEAD
 <body id="content">
 	<table class="table table-striped">
+=======
+<<<<<<< HEAD
+<body id="content">
+	<table class="table table-striped">
+=======
+<<<<<<< HEAD
+<body id="content">
+	<table class="table table-striped">
+=======
+<div id="body">
+	<br/>
+	<table id="list" width="400" align="left">
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
 			<tr align="left">
 				<th>Last Name</th>
 				<th>First Name</th>
@@ -18,4 +34,16 @@
 				}
 			?>
 	</table>
+<<<<<<< HEAD
 </body>
+=======
+<<<<<<< HEAD
+</body>
+=======
+<<<<<<< HEAD
+</body>
+=======
+</div>
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af

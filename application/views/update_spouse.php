@@ -21,9 +21,26 @@
     for ($x=date('o'); $x>=1940; $x--)
     {
         $year[$x] = $x;
+<<<<<<< HEAD
     }?>
     <table class="table table-striped">
     <?php
+=======
+<<<<<<< HEAD
+    }?>
+    <table class="table table-striped">
+    <?php
+=======
+<<<<<<< HEAD
+    }?>
+    <table class="table table-striped">
+    <?php
+=======
+    }
+        echo "<table>";
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
             $this->load->helper('form');
             echo form_open('update/spouse');
                 echo form_hidden('spouse_id', $page_view_content['spouse_id']);
