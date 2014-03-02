@@ -6,7 +6,7 @@ class Add_training extends CI_Controller {
 	{
 		parent::__construct();
 
-		$this->load->model('HR');
+		$this->load->model('faculty');
 		$this->load->library('form_validation');
 		$this->load->helper('url');
 	}
