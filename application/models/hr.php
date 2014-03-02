@@ -22,6 +22,32 @@ class HR extends CI_Model {
 		//$this->load->database();
 	}
 
+	public function update_faculty_profile($faculty)
+	{
+		$sql = "CALL hr_update_faculty_profile( '".$faculty['emp_id']."',
+												'".$faculty['emp_lname']."',
+											 	'".$faculty['emp_fname']."',
+											 	'".$faculty['emp_mname']."',
+											 	'".$faculty['emp_bday']."',
+											 	'".$faculty['emp_gender']."',
+											 	'".$faculty['emp_civStat']."',
+											 	'".$faculty['emp_cellNo']."',
+											 	'".$faculty['emp_tellNo']."',
+											 	'".$faculty['emp_email']."',
+											 	'".$faculty['progID']."')";
+		$this->db->query($sql);
+		$this->db->close();
+	}
+
+	public function program()
+	{
+		$sql = "CALL display_program()";
+		$sQuery = $this->db->query($sql);
+		$this->db->close();
+
+		return $sQuery->result_array();
+	}
+	
 	public function display_regularization_candidate()
 	{
 		$sql = 'CALL display_regularization_candidate()';
@@ -30,46 +56,22 @@ class HR extends CI_Model {
 
 		return $sQuery->result_array();
 	}
-	public function display_program()
-	{
-		$sql = "CALL display_program()";
-		$sQuery = $this->db->query($sql);
-		$this->db->close();
-
-		return $sQuery->result_array();
-	}
-
+	
 	public function add_faculty($faculty)
 	{
 		$sql = "CALL add_faculty(
-								 '".$faculty['emp_lname']."',
-								 '".$faculty['emp_fname']."',
-								 '".$faculty['emp_mname']."',
-								 '".$faculty['emp_bday']."',
-								 '".$faculty['emp_gender']."',
-								 '".$faculty['emp_civStat']."',
-								 '".$faculty['emp_cellNo']."',
-								 '".$faculty['emp_tellNo']."',
-								 '".$faculty['emp_email']."',
+								 '".$faculty['lastname']."',
+								 '".$faculty['firstname']."',
+								 '".$faculty['middlename']."',
+								 '".$faculty['bday']."',
+								 '".$faculty['gender']."',
+								 '".$faculty['civStat']."',
+								 '".$faculty['cellNo']."',
+								 '".$faculty['tellNo']."',
+								 '".$faculty['email']."',
 								 '".$faculty['username']."',
-								 '".$faculty['userpass']."',
+								 '".$faculty['password']."',
 								 '".$faculty['progID']."')";
-		$this->db->query($sql);
-		$this->db->close();
-	}
-
-	public function update_faculty($faculty)
-	{
-		$sql = "CALL update_faculty('".$faculty['emp_id']."',
-									'".$faculty['emp_lname']."',
-								 	'".$faculty['emp_fname']."',
-								 	'".$faculty['emp_mname']."',
-								 	'".$faculty['emp_bday']."',
-								 	'".$faculty['emp_gender']."',
-								 	'".$faculty['emp_civStat']."',
-								 	'".$faculty['emp_cellNo']."',
-								 	'".$faculty['emp_tellNo']."',
-								 	'".$faculty['emp_email']."')";
 		$this->db->query($sql);
 		$this->db->close();
 	}
@@ -92,105 +94,6 @@ class HR extends CI_Model {
 		return $sQuery->row_array(1);
 	}
 
-	public function display_ITE()
-	{
-		$sql =  "CALL `rms`.`display_ITE`()";
-		$sQuery = $this->db->query($sql);
-		$this->db->close();
-
-		return $sQuery->result_array();
-	}
-
-	public function display_MLS()
-	{
-		$sql =  "CALL `rms`.`display_MLS`()";
-		$sQuery = $this->db->query($sql);
-		$this->db->close();
-
-		return $sQuery->result_array();
-	}
-
-	public function display_ABA()
-	{
-		$sql =  "CALL `rms`.`display_ABA`()";
-		$sQuery = $this->db->query($sql);
-		$this->db->close();
-
-		return $sQuery->result_array();
-	}
-
-	public function display_PharmaChem()
-	{
-		$sql =  "CALL `rms`.`display_PharmaChem`()";
-		$sQuery = $this->db->query($sql);
-		$this->db->close();
-
-		return $sQuery->result_array();
-	}
-
-	public function display_NDHM()
-	{
-		$sql =  "CALL `rms`.`display_NDHM`()";
-		$sQuery = $this->db->query($sql);
-		$this->db->close();
-
-		return $sQuery->result_array();
-	}
-
-	public function display_Music()
-	{
-		$sql =  "CALL `rms`.`display_Music`()";
-		$sQuery = $this->db->query($sql);
-		$this->db->close();
-
-		return $sQuery->result_array();
-	}
-
-	public function display_Nursing()
-	{
-		$sql =  "CALL `rms`.`display_Nursing`()";
-		$sQuery = $this->db->query($sql);
-		$this->db->close();
-
-		return $sQuery->result_array();
-	}
-
-	public function display_LA()
-	{
-		$sql =  "CALL `rms`.`display_LA`()";
-		$sQuery = $this->db->query($sql);
-		$this->db->close();
-
-		return $sQuery->result_array();
-	}
-
-	public function display_Educ()
-	{
-		$sql =  "CALL `rms`.`display_Educ`()";
-		$sQuery = $this->db->query($sql);
-		$this->db->close();
-
-		return $sQuery->result_array();
-	}
-
-	public function display_Eng()
-	{
-		$sql =  "CALL `rms`.`display_Eng`()";
-		$sQuery = $this->db->query($sql);
-		$this->db->close();
-
-		return $sQuery->result_array();
-	}
-
-	public function display_Admin()
-	{
-		$sql =  "CALL `rms`.`display_Admin`()";
-		$sQuery = $this->db->query($sql);
-		$this->db->close();
-
-		return $sQuery->result_array();
-	}
-
 	public function display_byProgram($progID)
 	{
 		$sql = "CALL `rms`.`display_byProgram`(".$progID.");";
@@ -200,28 +103,168 @@ class HR extends CI_Model {
 		return $sQuery->result_array();
 	}
 
-	public function change_password($empID)
+ public function display_notification()
 	{
-		$sql = "CALL change_password('".$faculty['empID']."',
-					'".$faculty['username']."',
-					'".$faculty['userpass']."')";
+
+		$sql = "CALL display_notification()";
+		$sQuery = $this->db->query($sql);
+		$this->db->close();
+       
+		return $sQuery->result_array();
+	}
+
+	public function verify_notification($faculty)
+
+	{
+		$sql = "CALL verify_upload('".$faculty['emp_id']."',
+					                      '".$faculty['upload_id']."')";
 				
-		$this->db->query($sql);
+		$sQuery = $this->db->query($sql);
+		$this->db->close();
+	}
+	public function updateUpload($uploadID)
+	{
+	 	$sql = "CALL updateUpload(".$uploadID.")";
+		$sQuery = $this->db->query($sql);
+		$this->db->close();
+       
+		return $sQuery->row_array(1);
+	}
+
+	public function display_educNoti()
+	{
+		
+		$sql = "CALL display_educNoti()";
+		$sQuery = $this->db->query($sql);
+		$this->db->close();
+       
+		return $sQuery->result_array();
+	}
+	public function verify_education($faculty)
+
+	{
+		$sql = "CALL verify_education( '".$faculty['emp_id']."',
+					                   '".$faculty['educ_id']."')";
+				
+		$sQuery = $this->db->query($sql);
+		$this->db->close();
+	}
+	public function updateEduc($educID)
+	{
+	 	$sql = "CALL updateEduc(".$educID.")";
+		$sQuery = $this->db->query($sql);
+		$this->db->close();
+       
+		return $sQuery->row_array(1);
+	}
+
+	public function display_profUpdate($limit, $start)
+	{
+		$this->db->limit($limit, $start);
+		$sql = "CALL display_profUpdate()";
+		$sQuery = $this->db->query($sql);
+		$this->db->close();
+       
+		return $sQuery->result_array();
+
+		// $this->db->select('*')->where('prof_status', 0);
+		// $query=$this->db->get('faculty_profile', $limit, $start);
+
+		// if ($query->num_rows() > 0)
+		// {
+		// 	return $query->result_array();
+		// }
+		// else
+		// {
+		// 	return false;
+		// }
+
+	}
+	public function verify_profile($faculty)
+
+	{
+		$sql = "CALL verify_profile( '".$faculty['emp_id']."')";
+				
+		$sQuery = $this->db->query($sql);
 		$this->db->close();
 	}
 
-	public function change_password_account( $username, $userpass )
+	public function updateProf($empID)
 	{
-		$this->load->database();
+	 	$sql = "CALL updateProf(".$empID.")";
+		$sQuery = $this->db->query($sql);
+		$this->db->close();
+       
+		return $sQuery->row_array(1);
+	}
+	public function display_trainingNoti()
+	{
+		
+		$sql = "CALL display_trainingNoti()";
+		$sQuery = $this->db->query($sql);
+		$this->db->close();
+       
+		return $sQuery->result_array();
+	}
 
-		$sql_change_password = "UPDATE `rms`.`faculty_account`
-					SET `username` = username,
-					`password` = userpass
-					WHERE `faculty_profile_emp_id` = empID";
+	public function verify_training($faculty)
 
-		$query = $this->db->query($sql_change_password);
+	{
+		$sql = "CALL verify_training( '".$faculty['faculty_profile_emp_id']."',
+					                   '".$faculty['training_id']."')";
+				
+		$sQuery = $this->db->query($sql);
+		$this->db->close();
+	}
+	public function updateTraining($typeID)
+	{
+	 	$sql = "CALL updateTraining(".$typeID.")";
+		$sQuery = $this->db->query($sql);
+		$this->db->close();
+       
+		return $sQuery->row_array(1);
+	}
+		public function display_workExp()
+	{
+		
+		$sql = "CALL display_workExp()";
+		$sQuery = $this->db->query($sql);
+		$this->db->close();
+       
+		return $sQuery->result_array();
+	}
 
-		$faculty_id = mysql_update_id();
+	public function verify_workExp($faculty)
+	{
+		$sql = "CALL verify_workExp( '".$faculty['emp_id']."',
+					                   '".$faculty['work_exp_id']."')";
+				
+		$sQuery = $this->db->query($sql);
+		$this->db->close();
+	}
+	public function updateWorkExp($workID)
+	{
+	 	$sql = "CALL updateWorkExp(".$workID.")";
+		$sQuery = $this->db->query($sql);
+		$this->db->close();
+       
+		return $sQuery->row_array(1);
+	}
+	public function verify_regularization($faculty)
+	{
+		$sql = "CALL verify_regularization( '".$faculty['emp_id']."',
+					                   		'".$faculty['account_id']."')";
+				
+		$sQuery = $this->db->query($sql);
+		$this->db->close();
+	}
+	public function updateRegularization($accountID)
+	{
+	 	$sql = "CALL updateRegularization(".$accountID.")";
+		$sQuery = $this->db->query($sql);
+		$this->db->close();
+       
+		return $sQuery->row_array(1);
 	}
 
 }
