@@ -18,7 +18,7 @@ class Login extends CI_Controller
     }
     else
     {
-      redirect('facu_home');
+      redirect('login/form_login');
     }
   }
 
@@ -41,7 +41,7 @@ class Login extends CI_Controller
         $level = $this->input->post('level');
         $fname = $this->input->post('fname');
         $lname = $this->input->post('lname');
-        $cek = $this->m_login->takeUser($lname,$fname,$username, $password, 1, $level);
+        $cek = $this->m_login->takeUser($lname,$fname,$username, $password, $level);
         if($cek <> 0)
         {
             $this->session->set_userdata('isLogin', TRUE);
