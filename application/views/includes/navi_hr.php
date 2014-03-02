@@ -1,3 +1,22 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
+>>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
+>>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
+>>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
+>>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
 <div class="nav">
     
     <nav class="navbar navbar-primary" role="navigation">
@@ -50,12 +69,56 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Faculty<b class="caret"></b></a>
     <ul class="dropdown-menu">
        
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+<div id="nav">
+    <ul>
+        <li>
+            <a href="http://localhost/hr_recordsystem/index.php/verifylogin">Home</a>
+        </li>
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
+>>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
+>>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
+>>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
+>>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
         <li>
             <a href="http://localhost/hr_recordsystem/index.php/register_faculty">Add Faculty</a>
         </li>
         <li>
             <a href="http://localhost/hr_recordsystem/index.php/display">View Faculty</a>
         </li>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
+>>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
+>>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
+>>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
+>>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
     </ul>
     </li>
         <li>
@@ -116,4 +179,62 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="<?php echo base_url('assets/js/jquery-1.10.2.min.js'); ?>"></script>
+<<<<<<< HEAD
     <script src="<?php echo base_url('assets/js/bootstrap.min.js'); ?>"></script>
+=======
+<<<<<<< HEAD
+    <script src="<?php echo base_url('assets/js/bootstrap.min.js'); ?>"></script>
+=======
+<<<<<<< HEAD
+    <script src="<?php echo base_url('assets/js/bootstrap.min.js'); ?>"></script>
+=======
+<<<<<<< HEAD
+    <script src="<?php echo base_url('assets/js/bootstrap.min.js'); ?>"></script>
+=======
+<<<<<<< HEAD
+    <script src="<?php echo base_url('assets/js/bootstrap.min.js'); ?>"></script>
+=======
+<<<<<<< HEAD
+    <script src="<?php echo base_url('assets/js/bootstrap.min.js'); ?>"></script>
+=======
+    <script src="<?php echo base_url('assets/js/bootstrap.min.js'); ?>"></script>
+=======
+        <li>
+            <a href="http://localhost/hr_recordsystem/index.php/regularization_candidate"> Candidate for Regularization </a>
+        </li>
+         <li>
+            <a href="http://localhost/hr_recordsystem/index.php/display/display_regular_faculty"> Regular Faculty </a>
+        </li>
+         <li>
+            <a href="http://localhost/hr_recordsystem/index.php/display/display_unRegular_faculty"> Unregular Faculty </a>
+        </li>
+        <li>
+            <a href="http://localhost/hr_recordsystem/index.php/ranking_committee"> Ranking Committee </a>
+        </li>
+        <li>
+            <b>Notifications</b>
+        </li>
+        <li style="margin-left:30px;">
+            <a href="http://localhost/hr_recordsystem/index.php/display_notification"> Upload </a>
+        </li>
+        <li style="margin-left:30px;">
+            <a href="http://localhost/hr_recordsystem/index.php/display_notification/display_profUpdate"> Profile </a>
+        </li>
+        <li style="margin-left:30px;">
+            <a href="http://localhost/hr_recordsystem/index.php/display_notification/display_education"> Education </a>
+        </li>
+        <li style="margin-left:30px;">
+            <a href="http://localhost/hr_recordsystem/index.php/display_notification/display_trainingNoti"> Training </a>
+        </li>
+        <li style="margin-left:30px;">
+            <a href="http://localhost/hr_recordsystem/index.php/display_notification/display_workExp"> Work Experience </a>
+        </li>
+</ul>
+</div>
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
+>>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
+>>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
+>>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
+>>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089

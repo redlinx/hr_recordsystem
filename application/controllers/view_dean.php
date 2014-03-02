@@ -17,10 +17,53 @@ class View_dean extends CI_Controller
 		$empID = $this->uri->segment(3, 0);
  		$page_view_content['faculty_profile'] = $this->m_view->faculty($empID);
 		// echo "<pre>";
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
+>>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
+>>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
+>>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
+>>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
 	 // 	print_r($page_view_content);
 	 // 	echo "</pre>";
  		$this->load->view('includes/header_faculty');
  		$this->load->view('includes/navi_rankMember');
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+		// print_r($page_view_content);
+		// echo "</pre>";
+ 		$this->load->view('includes/header');
+ 		$this->load->view('includes/navi_dean');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
+>>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
+>>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
+>>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
+>>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
  		$this->load->view('dean_view_faculty_profile', $page_view_content);
  		$this->load->view('includes/footer');
 	}
@@ -29,11 +72,55 @@ class View_dean extends CI_Controller
 	{
 		$empID = $this->uri->segment(3, 0);	
  		$content = array('page_view_content' => $this->m_view->education($empID));
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
+>>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
+>>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
+>>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
+>>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
  	//     echo "<pre>";
 		// print_r($content);
 		// echo "</pre>";
 		$this->load->view('includes/header_faculty');
 		$this->load->view('includes/navi_rankMember');
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+		// echo "<pre>";
+		// print_r($content);
+		// echo "</pre>";
+		$this->load->view('includes/header');
+		$this->load->view('includes/navi_dean');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
+>>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
+>>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
+>>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
+>>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
 		$this->load->view('hr_view_faculty_education', $content);
 		$this->load->view('includes/footer');
 	}
@@ -45,8 +132,43 @@ class View_dean extends CI_Controller
  	    //echo "<pre>";
 		// print_r($content);
 		// echo "</pre>";
+<<<<<<< HEAD
 		$this->load->view('includes/header_faculty');
 		$this->load->view('includes/navi_rankMember');
+=======
+<<<<<<< HEAD
+		$this->load->view('includes/header_faculty');
+		$this->load->view('includes/navi_rankMember');
+=======
+<<<<<<< HEAD
+		$this->load->view('includes/header_faculty');
+		$this->load->view('includes/navi_rankMember');
+=======
+<<<<<<< HEAD
+		$this->load->view('includes/header_faculty');
+		$this->load->view('includes/navi_rankMember');
+=======
+<<<<<<< HEAD
+		$this->load->view('includes/header_faculty');
+		$this->load->view('includes/navi_rankMember');
+=======
+<<<<<<< HEAD
+		$this->load->view('includes/header_faculty');
+		$this->load->view('includes/navi_rankMember');
+=======
+<<<<<<< HEAD
+		$this->load->view('includes/header_faculty');
+		$this->load->view('includes/navi_rankMember');
+=======
+		$this->load->view('includes/header');
+		$this->load->view('includes/navi_dean');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
+>>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
+>>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
+>>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
+>>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
 		$this->load->view('hr_view_faculty_training', $content);
 		$this->load->view('includes/footer');
 	}
@@ -58,8 +180,43 @@ class View_dean extends CI_Controller
  	    //echo "<pre>";
 		// print_r($content);
 		// echo "</pre>";
+<<<<<<< HEAD
 		$this->load->view('includes/header_faculty');
 		$this->load->view('includes/navi_rankMember');
+=======
+<<<<<<< HEAD
+		$this->load->view('includes/header_faculty');
+		$this->load->view('includes/navi_rankMember');
+=======
+<<<<<<< HEAD
+		$this->load->view('includes/header_faculty');
+		$this->load->view('includes/navi_rankMember');
+=======
+<<<<<<< HEAD
+		$this->load->view('includes/header_faculty');
+		$this->load->view('includes/navi_rankMember');
+=======
+<<<<<<< HEAD
+		$this->load->view('includes/header_faculty');
+		$this->load->view('includes/navi_rankMember');
+=======
+<<<<<<< HEAD
+		$this->load->view('includes/header_faculty');
+		$this->load->view('includes/navi_rankMember');
+=======
+<<<<<<< HEAD
+		$this->load->view('includes/header_faculty');
+		$this->load->view('includes/navi_rankMember');
+=======
+		$this->load->view('includes/header');
+		$this->load->view('includes/navi_dean');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
+>>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
+>>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
+>>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
+>>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
 		$this->load->view('hr_view_faculty_skill', $content);
 		$this->load->view('includes/footer');
 	}
@@ -71,8 +228,43 @@ class View_dean extends CI_Controller
 		// echo "<pre>";
  		// print_r($page_view_content);
  		// echo "</pre>";
+<<<<<<< HEAD
  		$this->load->view('includes/header_faculty');
  		$this->load->view('includes/navi_rankMember');
+=======
+<<<<<<< HEAD
+ 		$this->load->view('includes/header_faculty');
+ 		$this->load->view('includes/navi_rankMember');
+=======
+<<<<<<< HEAD
+ 		$this->load->view('includes/header_faculty');
+ 		$this->load->view('includes/navi_rankMember');
+=======
+<<<<<<< HEAD
+ 		$this->load->view('includes/header_faculty');
+ 		$this->load->view('includes/navi_rankMember');
+=======
+<<<<<<< HEAD
+ 		$this->load->view('includes/header_faculty');
+ 		$this->load->view('includes/navi_rankMember');
+=======
+<<<<<<< HEAD
+ 		$this->load->view('includes/header_faculty');
+ 		$this->load->view('includes/navi_rankMember');
+=======
+<<<<<<< HEAD
+ 		$this->load->view('includes/header_faculty');
+ 		$this->load->view('includes/navi_rankMember');
+=======
+ 		$this->load->view('includes/header');
+ 		$this->load->view('includes/navi_dean');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
+>>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
+>>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
+>>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
+>>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
  		$this->load->view('hr_view_faculty_spouse', $page_view_content);
  		$this->load->view('includes/footer');
 	}
@@ -84,8 +276,43 @@ class View_dean extends CI_Controller
  		// echo "<pre>";
 		// print_r($content);
 		// echo "</pre>";
+<<<<<<< HEAD
 		$this->load->view('includes/header_faculty');
 		$this->load->view('includes/navi_rankMember');
+=======
+<<<<<<< HEAD
+		$this->load->view('includes/header_faculty');
+		$this->load->view('includes/navi_rankMember');
+=======
+<<<<<<< HEAD
+		$this->load->view('includes/header_faculty');
+		$this->load->view('includes/navi_rankMember');
+=======
+<<<<<<< HEAD
+		$this->load->view('includes/header_faculty');
+		$this->load->view('includes/navi_rankMember');
+=======
+<<<<<<< HEAD
+		$this->load->view('includes/header_faculty');
+		$this->load->view('includes/navi_rankMember');
+=======
+<<<<<<< HEAD
+		$this->load->view('includes/header_faculty');
+		$this->load->view('includes/navi_rankMember');
+=======
+<<<<<<< HEAD
+		$this->load->view('includes/header_faculty');
+		$this->load->view('includes/navi_rankMember');
+=======
+		$this->load->view('includes/header');
+		$this->load->view('includes/navi_dean');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
+>>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
+>>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
+>>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
+>>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
 		$this->load->view('hr_view_faculty_work', $content);
 		$this->load->view('includes/footer');
 	}
@@ -94,11 +321,55 @@ class View_dean extends CI_Controller
 	{
 		$empID = $this->uri->segment(3, 0);
  		$content = array('page_view_content' => $this->m_view->children($empID));
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
+>>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
+>>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
+>>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
+>>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
  	//     echo "<pre>";
 		// print_r($content);
 		// echo "</pre>";
 		$this->load->view('includes/header_faculty');
 		$this->load->view('includes/navi_rankMember');
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+		// echo "<pre>";
+		// print_r($content);
+		// echo "</pre>";
+		$this->load->view('includes/header');
+		$this->load->view('includes/navi_dean');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
+>>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
+>>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
+>>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
+>>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
 		$this->load->view('hr_view_faculty_children', $content);
 		$this->load->view('includes/footer');
 	}
@@ -118,8 +389,43 @@ class View_dean extends CI_Controller
 		// echo "<pre>";
 		// print_r($page_view_content);
 		// echo "</pre>";
+<<<<<<< HEAD
 		$this->load->view('includes/header_faculty');
 		$this->load->view('includes/navi_rankMember');
+=======
+<<<<<<< HEAD
+		$this->load->view('includes/header_faculty');
+		$this->load->view('includes/navi_rankMember');
+=======
+<<<<<<< HEAD
+		$this->load->view('includes/header_faculty');
+		$this->load->view('includes/navi_rankMember');
+=======
+<<<<<<< HEAD
+		$this->load->view('includes/header_faculty');
+		$this->load->view('includes/navi_rankMember');
+=======
+<<<<<<< HEAD
+		$this->load->view('includes/header_faculty');
+		$this->load->view('includes/navi_rankMember');
+=======
+<<<<<<< HEAD
+		$this->load->view('includes/header_faculty');
+		$this->load->view('includes/navi_rankMember');
+=======
+<<<<<<< HEAD
+		$this->load->view('includes/header_faculty');
+		$this->load->view('includes/navi_rankMember');
+=======
+		$this->load->view('includes/header');
+		$this->load->view('includes/navi_dean');
+>>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+>>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
+>>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
+>>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
+>>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
+>>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
+>>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
 		$this->load->view('dean_view_faculty', $page_view_content);
 		$this->load->view('includes/footer');
 	}
