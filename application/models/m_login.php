@@ -20,17 +20,17 @@ class M_login extends CI_Model
 		$this->load->database($config);
 	} 
 
-	public function takeUser($firstname, $lastname,$username, $password, $type, $level) 
+	public function takeUser($firstname, $lastname,$username, $password, $level) 
 	{ 
 		$this->db->select('*');
 		$this->db->from('faculty_account');
 		$this->db->where('username', $username);
 		$this->db->where('password', $password);
-		$this->db->where('type', $type);
 		// $this->db->where('level', $level);
 		$query = $this->db->get();
 		return $query->num_rows(); 
-	} 
+	}
+
 	public function userData($username) 
 	{ 
 		// $this->db->select('username'); 
@@ -39,7 +39,8 @@ class M_login extends CI_Model
 		$this->db->where('username', $username);
 		$query = $this->db->get('faculty_account'); 
 		return $query->row(); 
-	} 
+	}
+
 	public function user_login()
 	{
 		$sql = 'CALL user_login("' . $this->session->userdata('username') . '", "' . $this->session->userdata('password') . '")';
