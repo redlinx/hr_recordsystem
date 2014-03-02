@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 02, 2014 at 02:54 AM
+-- Generation Time: Mar 02, 2014 at 03:19 AM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.19
 
@@ -457,6 +457,7 @@ BEGIN
 		faculty_account.date_hired,
 		faculty_profile.firstname,
 		faculty_profile.lastname,
+        faculty_profile.middlename,
 		faculty_account.account_id,
 		faculty_account.faculty_profile_emp_id,
 		DATE_FORMAT(faculty_account.date_hired, '%b') AS MonthName,
