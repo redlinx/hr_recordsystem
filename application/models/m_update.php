@@ -29,11 +29,19 @@ class M_update extends CI_Model
 								 	'".$faculty['emp_fname']."',
 								 	'".$faculty['emp_mname']."',
 								 	'".$faculty['emp_bday']."',
+								 	'".$faculty['birthplace']."',
 								 	'".$faculty['emp_gender']."',
 								 	'".$faculty['emp_civStat']."',
+								 	'".$faculty['religion']."',
 								 	'".$faculty['emp_cellNo']."',
 								 	'".$faculty['emp_tellNo']."',
-								 	'".$faculty['emp_email']."')";
+								 	'".$faculty['emp_email']."',
+								 	'".$faculty['city_add']."',
+								 	'".$faculty['prov_add']."',
+								 	'".$faculty['philhealth']."',
+								 	'".$faculty['pag_ibig']."',
+								 	'".$faculty['sss']."',
+								 	'".$faculty['tin']."')";
 		$this->db->query($sql);
 		$this->db->close();
 	}
@@ -48,7 +56,6 @@ class M_update extends CI_Model
 								 '".$faculty['spouse_bday']."',
 								 '".$faculty['birth_place']."',
 								 '".$faculty['emp_id']."',
-								 '".$faculty['spousecol']."',
 								 '".$faculty['contact']."',
 								 '".$faculty['educ_attain']."',
 								 '".$faculty['occupation']."',
@@ -75,6 +82,20 @@ class M_update extends CI_Model
 		$this->db->query($sql);
 		$this->db->close();
 	}
+
+	public function eligibility($faculty)
+	{
+		$sql = "CALL update_eligibility(
+									'".$faculty['eligibility_id']."',
+									'".$faculty['examName']."',
+									'".$faculty['examDate']."',
+									'".$faculty['examPlace']."',
+									'".$faculty['rating']."',
+									'".$faculty['emp_id']."')";
+		$this->db->query($sql);
+		$this->db->close();
+	}
+
 
 	public function training($faculty)
 	{
@@ -120,7 +141,7 @@ class M_update extends CI_Model
 		$sql = "CALL update_children(
 									'".$faculty['child_id']."',
 									'".$faculty['name']."',
-									'".$faculty['bday']."',
+									'".$faculty['child_bday']."',
 									'".$faculty['emp_id']."')";
 		$this->db->query($sql);
 		$this->db->close();

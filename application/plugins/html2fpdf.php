@@ -268,54 +268,13 @@ function UsePRE($opt=true)
 //Page header
 function Header()
 {
-<<<<<<< HEAD
-$this->SetFont( 'Arial', 'B', 14 );            
-$this->writeHTML("<center>University of the Immaculate Conception<br></center>");
-$this->writeHTML("<center>Human Resource Office<br>Fr. Selga St., Davao City<br>221-8181, 221-8090 local 131</center><br><br>");
-=======
-<<<<<<< HEAD
-$this->SetFont( 'Arial', 'B', 14 );            
-$this->writeHTML("<center>University of the Immaculate Conception<br></center>");
-$this->writeHTML("<center>Human Resource Office<br>Fr. Selga St., Davao City<br>221-8181, 221-8090 local 131</center><br><br>");
-=======
-<<<<<<< HEAD
-$this->SetFont( 'Arial', 'B', 14 );            
-$this->writeHTML("<center>University of the Immaculate Conception<br></center>");
-$this->writeHTML("<center>Human Resource Office<br>Fr. Selga St., Davao City<br>221-8181, 221-8090 local 131</center><br><br>");
-=======
-<<<<<<< HEAD
-$this->SetFont( 'Arial', 'B', 14 );            
-$this->writeHTML("<center>University of the Immaculate Conception<br></center>");
-$this->writeHTML("<center>Human Resource Office<br>Fr. Selga St., Davao City<br>221-8181, 221-8090 local 131</center><br><br>");
-=======
-<<<<<<< HEAD
-$this->SetFont( 'Arial', 'B', 14 );            
-$this->writeHTML("<center>University of the Immaculate Conception<br></center>");
-$this->writeHTML("<center>Human Resource Office<br>Fr. Selga St., Davao City<br>221-8181, 221-8090 local 131</center><br><br>");
-=======
-<<<<<<< HEAD
-$this->SetFont( 'Arial', 'B', 14 );            
-$this->writeHTML("<center>University of the Immaculate Conception<br></center>");
-$this->writeHTML("<center>Human Resource Office<br>Fr. Selga St., Davao City<br>221-8181, 221-8090 local 131</center><br><br>");
-=======
-<<<<<<< HEAD
-$this->SetFont( 'Arial', 'B', 14 );            
-$this->writeHTML("<center>University of the Immaculate Conception<br></center>");
-$this->writeHTML("<center>Human Resource Office<br>Fr. Selga St., Davao City<br>221-8181, 221-8090 local 131</center><br><br>");
-=======
+  if($this->page==1)
+  {
 $this->image('uploads/uic.jpg',90,9,33 );
-$this->SetFont( 'Arial', 'B', 16 );   
-$this->Cell(140);      
 $this->writeHTML("<center>University of the Immaculate Conception<br></center>");
 $this->writeHTML("<center>Human Resource Office<br>Fr. Selga St., Davao City<br>221-8181, 221-8090 local 131</center><br><br>");
 $this->SetFont('Arial','B',15);
->>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
->>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
->>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
->>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
->>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
->>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
->>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
+}
 //! @return void
 //! @desc The header is printed in every page.
   /*if($this->usetableheader and $content != '')

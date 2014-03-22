@@ -56,6 +56,24 @@ class M_display extends CI_Model
 		return $sQuery->result_array();
 	}
 
+	public function rankProgram()
+	{
+		$sql = "CALL display_rankProgram()";
+		$sQuery = $this->db->query($sql);
+		$this->db->close();
+
+		return $sQuery->result_array();
+	}
+
+	public function rank()
+	{
+		$sql = "CALL display_rank()";
+		$sQuery = $this->db->query($sql);
+		$this->db->close();
+
+		return $sQuery->result_array();
+	}
+
 	public function uploadCategory()
 	{
 		$sql = "CALL display_category()";
@@ -73,6 +91,7 @@ class M_display extends CI_Model
 
 		return $sQuery->result_array();
 	}
+	
 	public function picture($uploadID)
 	{
 		$sql = "CALL view_picture(".$uploadID.")";
@@ -81,6 +100,7 @@ class M_display extends CI_Model
 
 		return $sQuery->row_array(1);
 	}
+
         public function display_regular_faculty()
 	{
 		$sql = "CALL display_regular_faculty()";

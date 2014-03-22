@@ -21,8 +21,9 @@
     for ($x=date('o'); $x>=1940; $x--)
     {
         $year[$x] = $x;
-    }
-        echo "<table>";
+    } ?>
+        <table class="table table-striped">
+            <?php
             $this->load->helper('form');
             echo form_open('add/spouse');
                 echo "<tr><td>Last Name</td><td>".form_input('lastname')."</td></tr>";
@@ -31,7 +32,6 @@
                 //echo "<tr><td>Birthday</td><td>".form_input('bday')."</td></tr>";
                 echo "<tr><td>Birthday</td><td>".form_dropdown('month',$months)."".form_dropdown('day',$days)."".form_dropdown('year',$year)."</td></tr>";
                 echo "<tr><td>Birth Place</td><td>".form_input('birth_place')."</td></tr>";
-                echo "<tr><td>Spouse Col</td><td>".form_input('spousecol')."</td></tr>";
                 echo "<tr><td>Contact No.</td><td>".form_input('contact')."</td></tr>";
                 echo "<tr><td>Highest Educ. Attain.</td><td>".form_input('educ_attain')."</td></tr>";
                 echo "<tr><td>Occupation</td><td>".form_input('occupation')."</td></tr>";
@@ -40,8 +40,9 @@
                 echo "<tr><td>SSS</td><td>".form_input('SSS')."</td></tr>";
                 echo "<tr><td>Pag-Ibig</td><td>".form_input('pag_ibig')."</td></tr>";
                 echo "<tr><td>PhilHealth</td><td>".form_input('philhealth')."</td></tr>";
-                echo "<tr><td>TIN</td><td>".form_input('TIN')."</td></tr>";
-                echo "<tr><td colspan=2>".form_submit('mysubmit', 'Add')."</td></tr>";
+                echo "<tr><td>TIN</td><td>".form_input('TIN')."</td></tr>"; ?>
+                <tr><td colspan=2><button type="mysubmit" class="btn btn-primary">Add</button></td></tr>
+            <?php
             echo form_close();
         echo "</table>";
     ?>

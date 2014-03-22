@@ -1,36 +1,17 @@
-<div id="body">
+<div class="body">
+<br/>
     <script>
         function goBack()
         {
             window.history.go(-1)
         }
     </script>
-    <button onclick="goBack()"> Back </button>
+    <button onclick="goBack()" class="btn btn-primary">Back</button>
+    <br/><br/>
     <?php
     $gender = array(
                     'Male' => 'Male',
                     'Female' => 'Female');
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-
-=======
     $civilStatus = array(
                     'Single'                         => 'Single',
                     'Married'                        => 'Married',
@@ -40,13 +21,6 @@
                     'Non-Working Spouse'             => 'Non-Working Spouse',
                     'Entitled Exemption Units'       => 'Entitled Exemption Units',
                     'Not Entitled to Exemption Unit' => 'Not Entitled to Exemption Unit');
->>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
->>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
->>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
->>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
->>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
->>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
->>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
     $months = array(
                     '1'  => 'Jan',
                     '2'  => 'Feb',
@@ -69,62 +43,34 @@
     {
         $year[$x] = $x;
     }
-    foreach($page_content as $page)
+    foreach($page_content1 as $page)
     {
         if ($page['prog_name'] == $page_view_content['prog_name'])
         {
             $current_program = $page['prog_id'];
         }
-            $page_array[$page['prog_id']] = $page['prog_name'];
+            $page_array1[$page['prog_id']] = $page['prog_name'];
     }
-        echo "<table>";
-            echo form_open('hr_update/faculty_profile');
+
+    foreach($page_content2 as $page)
+    {
+        if ($page['rank_desc'] == $page_view_content['rank_desc'])
+        {
+            $current_rank = $page['rank_id'];
+        }
+            $page_array2[$page['rank_id']] = $page['rank_desc'];
+    } ?>
+        <table class="table table-striped">
+        <?php    echo form_open('hr_update/faculty_profile');
                 echo form_hidden('emp_id', $page_view_content['emp_id']);
                 echo "<tr><td>Last Name</td><td>".form_input('lastname', $page_view_content['lastname'])."</td></tr>";
                 echo "<tr><td>First Name</td><td>".form_input('firstname', $page_view_content['firstname'])."</td></tr>";
                 echo "<tr><td>Middle Name</td><td>".form_input('middlename', $page_view_content['middlename'])."</td></tr>";
                 echo "<tr><td>Birthday</td><td>".form_dropdown('month', $months, $page_view_content['Month'])."".form_dropdown('day',$days, $page_view_content['Day'])."".form_dropdown('year',$year, $page_view_content['Year'])."</td></tr>";
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
->>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
->>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
->>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
->>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
->>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
-                echo "<tr><td>Gender</td><td>".form_dropdown('gender', $gender, $page_view_content['gender'])."</td></tr>";
-                // echo "<tr><td>Gender</td><td>".form_input('gender', $page_view_content['gender'])."</td></tr>";
-                echo "<tr><td>Civil Status</td><td>".form_input('civil_status', $page_view_content['civil_status'])."</td></tr>";
-                echo "<tr><td>Cell #</td><td>".form_input('cell_no', $page_view_content['cell_no'])."</td></tr>";
-                echo "<tr><td>Tell #</td><td>".form_input('tell_no', $page_view_content['tell_no'])."</td></tr>";
-                echo "<tr><td>Email </td><td>".form_input('email', $page_view_content['email'])."</td></tr>";
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-=======
                 echo "<tr><td>Birth Place </td><td>".form_input('birthplace', $page_view_content['birthplace'])."</td></tr>";
                 echo "<tr><td>Gender</td><td>".form_dropdown('gender', $gender, $page_view_content['gender'])."</td></tr>";
                 echo "<tr><td>Civil Status</td><td>".form_dropdown('civil_status', $civilStatus, $page_view_content['civil_status'])."</td></tr>";
+               echo "<tr><td>Religion</td><td>".form_input('religion', $page_view_content['religion'])."</td></tr>";
                 echo "<tr><td>Cell #</td><td>".form_input('cell_no', $page_view_content['cell_no'])."</td></tr>";
                 echo "<tr><td>Tell #</td><td>".form_input('tell_no', $page_view_content['tell_no'])."</td></tr>";
                 echo "<tr><td>Email </td><td>".form_input('email', $page_view_content['email'])."</td></tr>";
@@ -134,16 +80,12 @@
                 echo "<tr><td>Pag-Ibig # </td><td>".form_input('pag_ibig', $page_view_content['pag_ibig'])."</td></tr>";
                 echo "<tr><td>SSS # </td><td>".form_input('sss', $page_view_content['sss'])."</td></tr>";
                 echo "<tr><td>TIN # </td><td>".form_input('tin', $page_view_content['tin'])."</td></tr>";
->>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
->>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
->>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
->>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
->>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
->>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
->>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
-                echo "<tr><td>Program</td><td>".form_dropdown('program', $page_array, $current_program)."</td></tr>";
-                echo "<tr><td colspan=2>".form_submit('mysubmit', 'Update')."</td></tr>";   
+                echo "<tr><td>Program</td><td>".form_dropdown('program', $page_array1, $current_program)."</td></tr>";
+                echo "<tr><td>Rank</td><td>".form_dropdown('level', $page_array2, $current_rank)."</td></tr>"; ?>
+                <tr><td colspan=2><button type="mysubmit" class="btn btn-primary">Update</button></td></tr>
+            <?php
             echo form_close();
         echo "</table>";
     ?>
+        <br/>
 </div>

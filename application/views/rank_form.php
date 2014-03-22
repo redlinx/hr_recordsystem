@@ -1,58 +1,27 @@
-<div id="body">
+<div class="body">
+    <br/>
+    <script>
+    function goBack()
+    {
+        window.history.go(-1)
+    }
+    </script>
+    <br/>
+    <button onclick="goBack()" class="btn btn-primary"> Back </button>
+    <br/><br/>
+    <table width="500" align="left">
     <?php
-<<<<<<< HEAD
-    echo "<table>";
-        $this->load->helper('form');
-        echo form_open('ranking_committee/rank_faculty'.$faculty_profile['emp_id']);
-=======
-<<<<<<< HEAD
-    echo "<table>";
-        $this->load->helper('form');
-        echo form_open('ranking_committee/rank_faculty'.$faculty_profile['emp_id']);
-=======
-<<<<<<< HEAD
-    echo "<table>";
-        $this->load->helper('form');
-        echo form_open('ranking_committee/rank_faculty'.$faculty_profile['emp_id']);
-=======
-<<<<<<< HEAD
-    echo "<table>";
-        $this->load->helper('form');
-        echo form_open('ranking_committee/rank_faculty'.$faculty_profile['emp_id']);
-=======
-<<<<<<< HEAD
-    echo "<table>";
-        $this->load->helper('form');
-        echo form_open('ranking_committee/rank_faculty'.$faculty_profile['emp_id']);
-=======
-<<<<<<< HEAD
-    echo "<table>";
-        $this->load->helper('form');
-        echo form_open('ranking_committee/rank_faculty'.$faculty_profile['emp_id']);
-=======
-<<<<<<< HEAD
-    echo "<table>";
-        $this->load->helper('form');
-        echo form_open('ranking_committee/rank_faculty'.$faculty_profile['emp_id']);
-=======
-       echo "<table>";
         $this->load->helper('form');
         echo form_open('ranking_committee/rank_faculty/'.$faculty_profile['emp_id']);
->>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
->>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
->>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
->>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
->>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
->>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
->>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
-            echo "<tr><td>Educational Qualification</td><td>".form_input('EQ')."</td></tr>";
-            echo "<tr><td>Teaching Proficiency</td><td>".form_input('TeachP')."</td></tr>";
-            echo "<tr><td>Research/ Pr. Research</td><td>".form_input('Research')."</td></tr>";
-            echo "<tr><td>Community Services</td><td>".form_input('CS')."</td></tr>";
-            echo "<tr><td>Training Programs</td><td>".form_input('TrainP')."</td></tr>";
-            echo "<tr><td>Ivolvement in Ogranizations</td><td>".form_input('Involvement')."</td></tr>";
-            echo "<tr><td colspan=2>".form_submit('mysubmit', 'Rank')."</td></tr>";
+            echo "<td>Educational Qualification</td><td><input type='textarea' size='20' class='form-control input-sm' name='EQ' placeholder='2'></td></tr>";
+            echo "<td>Teaching Proficiency</td><td><input type='textarea' size='20' class='form-control input-sm' name='TeachP' placeholder='7'></td></tr>";
+            echo "<td>Research/ Pr. Research</td><td><input type='textarea' size='20' class='form-control input-sm' name='Research' placeholder='5'></td></tr>";
+            echo "<td>Community Services</td><td><input type='textarea' size='20' class='form-control input-sm' name='CS' placeholder='4'></td></tr>";
+            echo "<td>Training Programs</td><td><input type='textarea' size='20' class='form-control input-sm' name='TrainP' placeholder='1'></td></tr>";
+            echo "<td>Ivolvement in Ogranizations</td><td><input type='textarea' size='20' class='form-control input-sm' name='Involvement' placeholder='1'></td></tr>";
+            echo "<tr><td colspan=2>".form_submit('mysubmit', 'Rank', 'class="btn btn-default"')."</td></tr>";
         echo form_close();
-    echo "</table>";
-    ?>
+    ?> 
+    </table>
+    <br/>
 </div>

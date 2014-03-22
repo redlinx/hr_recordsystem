@@ -31,11 +31,19 @@ class Update extends CI_Controller
 		$faculty['emp_fname'] 	= $this->input->post('firstname');
 		$faculty['emp_mname'] 	= $this->input->post('middlename');
 		$faculty['emp_bday'] 	= $this->input->post('year')."-".$this->input->post('month')."-".$this->input->post('day');
+		$faculty['birthplace'] 	= $this->input->post('birthplace');
 		$faculty['emp_gender'] 	= $this->input->post('gender');
 		$faculty['emp_civStat'] = $this->input->post('civil_status');
+		$faculty['religion'] 	= $this->input->post('religion');
 		$faculty['emp_cellNo'] 	= $this->input->post('cell_no');
 		$faculty['emp_tellNo'] 	= $this->input->post('tell_no');
 		$faculty['emp_email'] 	= $this->input->post('email');
+		$faculty['city_add'] 	= $this->input->post('city_add');
+		$faculty['prov_add'] 	= $this->input->post('prov_add');
+		$faculty['philhealth'] 	= $this->input->post('philhealth');
+		$faculty['pag_ibig'] 	= $this->input->post('pag_ibig');
+		$faculty['sss'] 		= $this->input->post('sss');
+		$faculty['tin'] 		= $this->input->post('tin');
 		// echo '<pre>';
 		// print_r($faculty);
 		// echo '</pre>';
@@ -49,7 +57,6 @@ class Update extends CI_Controller
 		$this->form_validation->set_rules('firstname', 'First Name', 'required|xss_clean');
 		$this->form_validation->set_rules('middlename', 'Middle Name', 'required|xss_clean');
 		$this->form_validation->set_rules('birth_place', 'Birthday Place', 'required|xss_clean');
-		$this->form_validation->set_rules('spousecol', 'Civil Status', 'required|xss_clean');
 		$this->form_validation->set_rules('contact', 'Contact No.', 'required|xss_clean');
 		$this->form_validation->set_rules('educ_attain', 'Highest Education Attainment', 'required|xss_clean');
 		$this->form_validation->set_rules('occupation', 'Occupation', 'required|xss_clean');
@@ -66,7 +73,6 @@ class Update extends CI_Controller
 		$faculty['middlename'] 	= $this->input->post('middlename');
 		$faculty['spouse_bday'] = $this->input->post('year')."-".$this->input->post('month')."-".$this->input->post('day');
 		$faculty['birth_place'] = $this->input->post('birth_place');
-		$faculty['spousecol'] 	= $this->input->post('spousecol');
 		$faculty['contact'] 	= $this->input->post('contact');
 		$faculty['educ_attain'] = $this->input->post('educ_attain');
 		$faculty['emp_id'] 		= $this->session->userdata('emp_id');
@@ -106,6 +112,33 @@ class Update extends CI_Controller
 		redirect(base_url().'index.php/view_faculty/education/'.$this->session->userdata('emp_id'));
 	}
 
+	public function eligibility()
+	{
+		$this->form_validation->set_rules('examName', 'School Name', 'required|xss_clean');
+		$this->form_validation->set_rules('examPlace', 'Address', 'required|xss_clean');
+		$this->form_validation->set_rules('rating', 'Year', 'required|xss_clean');
+		
+		if($this->form_validation->run() != NULL)
+		{
+			$faculty['eligibility_id']	= $this->input->post('eligibilityID');
+			$faculty['examName']	= $this->input->post('examName');
+			$faculty['examDate']	= $this->input->post('year')."-".$this->input->post('month')."-".$this->input->post('day');
+			$faculty['examPlace'] 	= $this->input->post('examPlace');
+			$faculty['rating'] 		= $this->input->post('rating');
+			$faculty['emp_id'] 		= $this->session->userdata('emp_id');
+
+			$this->m_update->eligibility($faculty);
+			redirect(base_url().'index.php/view_faculty/eligibility/'.$this->session->userdata('emp_id'));
+		}
+		else
+		{
+			echo "<script> alert('Please Insert Data'); history.go(-1); </script>";
+		}
+		// echo '<pre>';
+		// print_r($faculty);
+		// echo '</pre>';
+	}
+
 	public function training()
 	{
 		$this->form_validation->set_rules('trainingTitle', 'Training Title', 'required|xss_clean');
@@ -117,7 +150,7 @@ class Update extends CI_Controller
 		$faculty['training_id']		= $this->input->post('trainingID');
 		$faculty['training_title']	= $this->input->post('trainingTitle');
 		$faculty['venue'] 			= $this->input->post('venue');
-		$faculty['date'] 			= $this->input->post('year')."-".$this->input->post('day')."-".$this->input->post('month');
+		$faculty['date'] 			= $this->input->post('year')."-".$this->input->post('month')."-".$this->input->post('day');
 		$faculty['organizer'] 		= $this->input->post('organizer');
 		$faculty['role'] 			= $this->input->post('role');
 		$faculty['type'] 			= $this->input->post('type');
@@ -139,8 +172,8 @@ class Update extends CI_Controller
 		$faculty['company']		= $this->input->post('company');
 		$faculty['address'] 	= $this->input->post('address');
 		$faculty['position'] 	= $this->input->post('position');
-		$faculty['start_date'] 	= $this->input->post('syear')."-".$this->input->post('sday')."-".$this->input->post('smonth');
-		$faculty['end_date'] 	= $this->input->post('eyear')."-".$this->input->post('eday')."-".$this->input->post('emonth');
+		$faculty['start_date'] 	= $this->input->post('syear')."-".$this->input->post('smonth')."-".$this->input->post('sday');
+		$faculty['end_date'] 	= $this->input->post('eyear')."-".$this->input->post('emonth')."-".$this->input->post('eday');
 		$faculty['emp_id'] 		= $this->session->userdata('emp_id');
 		// echo '<pre>';
 		// print_r($faculty);

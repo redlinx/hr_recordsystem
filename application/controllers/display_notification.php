@@ -15,52 +15,8 @@ class Display_notification extends CI_Controller
     {
         $empID = $this->uri->segment(3, 0); 
         $content = array('page_view_content' => $this->hr->display_notification());
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
->>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
->>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
->>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
->>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
->>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
-        // echo "<pre>";
-        // print_r($content);
-        // echo "</pre>";
-        $this->load->view('includes/header_hr');
-        //$this->load->view('includes/navi_hr');
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-=======
         $this->load->view('includes/header');
         $this->load->view('includes/navi_hr');
->>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
->>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
->>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
->>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
->>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
->>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
->>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
         $this->load->view('view_notification', $content);
         $this->load->view('includes/footer');
          
@@ -69,50 +25,7 @@ class Display_notification extends CI_Controller
     public function verify_notification()
     {
         $uploadID = $this->uri->segment(3, 0); 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
->>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
->>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
->>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
->>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
->>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
-        $content = array('page_view_content' => $this->hr->updateUpload( $uploadID));
-        // echo "<pre>";
-        // print_r($content);
-        // echo "</pre>";
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-=======
         $content = array('page_view_content' => $this->hr->updateUpload($uploadID));
->>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
->>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
->>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
->>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
->>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
->>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
->>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
         $faculty['upload_id'] = $content['page_view_content']['upload_id'];
         $faculty['emp_id'] = $content['page_view_content']['emp_id'];
 
@@ -127,43 +40,8 @@ class Display_notification extends CI_Controller
       // echo "<pre>";
       // print_r($content);
       // echo "</pre>";
-<<<<<<< HEAD
-      $this->load->view('includes/header_hr');
-      //$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-      $this->load->view('includes/header_hr');
-      //$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-      $this->load->view('includes/header_hr');
-      //$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-      $this->load->view('includes/header_hr');
-      //$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-      $this->load->view('includes/header_hr');
-      //$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-      $this->load->view('includes/header_hr');
-      //$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-      $this->load->view('includes/header_hr');
-      //$this->load->view('includes/navi_hr');
-=======
       $this->load->view('includes/header');
       $this->load->view('includes/navi_hr');
->>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
->>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
->>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
->>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
->>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
->>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
->>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
       $this->load->view('display_educNoti', $content);
       $this->load->view('includes/footer');
       
@@ -177,43 +55,8 @@ class Display_notification extends CI_Controller
       // echo "<pre>";
       // print_r($content);
       // echo "</pre>";
-<<<<<<< HEAD
-      $this->load->view('includes/header_hr');
-      //$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-      $this->load->view('includes/header_hr');
-      //$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-      $this->load->view('includes/header_hr');
-      //$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-      $this->load->view('includes/header_hr');
-      //$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-      $this->load->view('includes/header_hr');
-      //$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-      $this->load->view('includes/header_hr');
-      //$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-      $this->load->view('includes/header_hr');
-      //$this->load->view('includes/navi_hr');
-=======
       $this->load->view('includes/header');
       $this->load->view('includes/navi_hr');
->>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
->>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
->>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
->>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
->>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
->>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
->>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
       $this->load->view('view_faculty_educ_noti', $content);
       $this->load->view('includes/footer');
     }
@@ -235,64 +78,11 @@ class Display_notification extends CI_Controller
 
     public function display_profUpdate()
     { 
-        $this->load->library('pagination');
-        $config = array();
-        $config['base_url'] = base_url().'/index.php/display_notification/display_profUpdate/';
-        $config['total_rows'] = 50;
-        $config['per_page'] = 10;
-        $config['num_links'] = 5;
-        $config["uri_segment"] = 3;
-
-        $this->pagination->initialize($config);
 
         $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
         $data['page_view_content'] = $this->hr->display_profUpdate($config['per_page'],$page);
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
->>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
->>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
->>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
->>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
->>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
-        // echo "<pre>";
-        // print_r($data);
-        // echo "</pre>";
-        $this->load->view('includes/header_hr');
-        //$this->load->view('includes/navi_hr');
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-=======
         $this->load->view('includes/header');
         $this->load->view('includes/navi_hr');
->>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
->>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
->>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
->>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
->>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
->>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
->>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
         $this->load->view('display_profNoti', $data);
         $this->load->view('includes/footer');
     }
@@ -304,43 +94,8 @@ class Display_notification extends CI_Controller
         // echo "<pre>";
         // print_r($page_view_content);
         // echo "</pre>";
-<<<<<<< HEAD
-        $this->load->view('includes/header_hr');
-        //$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-        $this->load->view('includes/header_hr');
-        //$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-        $this->load->view('includes/header_hr');
-        //$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-        $this->load->view('includes/header_hr');
-        //$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-        $this->load->view('includes/header_hr');
-        //$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-        $this->load->view('includes/header_hr');
-        //$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-        $this->load->view('includes/header_hr');
-        //$this->load->view('includes/navi_hr');
-=======
         $this->load->view('includes/header');
         $this->load->view('includes/navi_hr');
->>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
->>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
->>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
->>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
->>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
->>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
->>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
         $this->load->view('view_faculty_prof_noti', $page_view_content);
         $this->load->view('includes/footer');
     }
@@ -354,35 +109,7 @@ class Display_notification extends CI_Controller
         // echo "</pre>";
         $faculty['emp_id'] = $content['page_view_content']['emp_id'];
         $this->hr->verify_profile($faculty);
-<<<<<<< HEAD
-        // $this->db->insert('notifications', array('description' => 'user attack bla bla', 'date' => 'date karon'));
-=======
-<<<<<<< HEAD
-        // $this->db->insert('notifications', array('description' => 'user attack bla bla', 'date' => 'date karon'));
-=======
-<<<<<<< HEAD
-        // $this->db->insert('notifications', array('description' => 'user attack bla bla', 'date' => 'date karon'));
-=======
-<<<<<<< HEAD
-        // $this->db->insert('notifications', array('description' => 'user attack bla bla', 'date' => 'date karon'));
-=======
-<<<<<<< HEAD
-        // $this->db->insert('notifications', array('description' => 'user attack bla bla', 'date' => 'date karon'));
-=======
-<<<<<<< HEAD
-        // $this->db->insert('notifications', array('description' => 'user attack bla bla', 'date' => 'date karon'));
-=======
-<<<<<<< HEAD
-        // $this->db->insert('notifications', array('description' => 'user attack bla bla', 'date' => 'date karon'));
-=======
         //$this->db->insert('notifications', array('description' => 'user attack bla bla', 'date' => 'date karon'));
->>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
->>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
->>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
->>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
->>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
->>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
->>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
         redirect(base_url().'index.php/display_notification/display_profUpdate');
     }
 
@@ -393,43 +120,8 @@ class Display_notification extends CI_Controller
         // echo "<pre>";
         // print_r($content);
         //echo "</pre>";
-<<<<<<< HEAD
-        $this->load->view('includes/header_hr');
-        //$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-        $this->load->view('includes/header_hr');
-        //$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-        $this->load->view('includes/header_hr');
-        //$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-        $this->load->view('includes/header_hr');
-        //$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-        $this->load->view('includes/header_hr');
-        //$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-        $this->load->view('includes/header_hr');
-        //$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-        $this->load->view('includes/header_hr');
-        //$this->load->view('includes/navi_hr');
-=======
         $this->load->view('includes/header');
         $this->load->view('includes/navi_hr');
->>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
->>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
->>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
->>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
->>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
->>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
->>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
         $this->load->view('display_trainingNoti', $content);
         $this->load->view('includes/footer');
     }
@@ -442,43 +134,8 @@ class Display_notification extends CI_Controller
         // echo "<pre>";
         // print_r($content);
         // echo "</pre>";
-<<<<<<< HEAD
-        $this->load->view('includes/header_faculty');
-       // $this->load->view('includes/navi_faculty');
-=======
-<<<<<<< HEAD
-        $this->load->view('includes/header_faculty');
-       // $this->load->view('includes/navi_faculty');
-=======
-<<<<<<< HEAD
-        $this->load->view('includes/header_faculty');
-       // $this->load->view('includes/navi_faculty');
-=======
-<<<<<<< HEAD
-        $this->load->view('includes/header_faculty');
-       // $this->load->view('includes/navi_faculty');
-=======
-<<<<<<< HEAD
-        $this->load->view('includes/header_faculty');
-       // $this->load->view('includes/navi_faculty');
-=======
-<<<<<<< HEAD
-        $this->load->view('includes/header_faculty');
-       // $this->load->view('includes/navi_faculty');
-=======
-<<<<<<< HEAD
-        $this->load->view('includes/header_faculty');
-       // $this->load->view('includes/navi_faculty');
-=======
         $this->load->view('includes/header');
-        $this->load->view('includes/navi_faculty');
->>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
->>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
->>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
->>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
->>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
->>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
->>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
+        $this->load->view('includes/navi_hr');
         $this->load->view('view_faculty_training_noti', $content);
         $this->load->view('includes/footer');
     }
@@ -504,43 +161,8 @@ class Display_notification extends CI_Controller
         // echo "<pre>";
         // print_r($content);
         // echo "</pre>";
-<<<<<<< HEAD
-        $this->load->view('includes/header_hr');
-        //$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-        $this->load->view('includes/header_hr');
-        //$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-        $this->load->view('includes/header_hr');
-        //$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-        $this->load->view('includes/header_hr');
-        //$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-        $this->load->view('includes/header_hr');
-        //$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-        $this->load->view('includes/header_hr');
-        //$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-        $this->load->view('includes/header_hr');
-        //$this->load->view('includes/navi_hr');
-=======
         $this->load->view('includes/header');
         $this->load->view('includes/navi_hr');
->>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
->>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
->>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
->>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
->>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
->>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
->>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
         $this->load->view('display_workExp', $content);
         $this->load->view('includes/footer');
     }
@@ -552,43 +174,8 @@ class Display_notification extends CI_Controller
         // echo "<pre>";
         // print_r($content);
         // echo "</pre>";
-<<<<<<< HEAD
-        $this->load->view('includes/header_faculty');
-        //$this->load->view('includes/navi_faculty');
-=======
-<<<<<<< HEAD
-        $this->load->view('includes/header_faculty');
-        //$this->load->view('includes/navi_faculty');
-=======
-<<<<<<< HEAD
-        $this->load->view('includes/header_faculty');
-        //$this->load->view('includes/navi_faculty');
-=======
-<<<<<<< HEAD
-        $this->load->view('includes/header_faculty');
-        //$this->load->view('includes/navi_faculty');
-=======
-<<<<<<< HEAD
-        $this->load->view('includes/header_faculty');
-        //$this->load->view('includes/navi_faculty');
-=======
-<<<<<<< HEAD
-        $this->load->view('includes/header_faculty');
-        //$this->load->view('includes/navi_faculty');
-=======
-<<<<<<< HEAD
-        $this->load->view('includes/header_faculty');
-        //$this->load->view('includes/navi_faculty');
-=======
         $this->load->view('includes/header');
-        $this->load->view('includes/navi_faculty');
->>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
->>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
->>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
->>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
->>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
->>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
->>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
+        $this->load->view('includes/navi_hr');
         $this->load->view('view_faculty_work_noti', $content);
         $this->load->view('includes/footer');
     }
@@ -605,6 +192,120 @@ class Display_notification extends CI_Controller
         $this->hr->verify_workExp($faculty);
         // $this->db->insert('notifications', array('description' => 'user attack bla bla', 'date' => 'date karon'));
         redirect(base_url().'index.php/display_notification/display_workExp');
+    }
+    public function display_rankPoints()
+    {
+        $empID = $this->uri->segment(3, 0); 
+        $content = array('page_view_content' => $this->hr->display_rankPoints());
+        // echo "<pre>";
+        // print_r($content);
+        // echo "</pre>";
+        if($this->session->userdata('level') == 2)
+        {
+          $this->load->view('includes/header');
+          $this->load->view('includes/navi_hr');
+          $this->load->view('display_rankPoints', $content);
+          $this->load->view('includes/footer');
+        }
+        else if($this->session->userdata('level') == 5)
+        {
+          $this->load->view('includes/header');
+          $this->load->view('includes/navi_hrSec');
+          $this->load->view('display_rankPoints', $content);
+          $this->load->view('includes/footer');
+        }
+    }
+     public function display_eligibilityNoti()
+    {
+      $empID = $this->uri->segment(3, 0); 
+      $content = array('page_view_content' => $this->hr->display_eligibilityNoti());
+      // echo "<pre>";
+      // print_r($content);
+      // echo "</pre>";
+      $this->load->view('includes/header');
+      $this->load->view('includes/navi_hr');
+      $this->load->view('display_eligibilityNoti', $content);
+      $this->load->view('includes/footer');
+        
+    }
+
+     public function verify_eligibility()
+    {
+        $empID = $this->uri->segment(3, 0); 
+        $content = array('page_view_content' => $this->hr->updateEligibility($empID));
+        //  echo "<pre>";
+        //  print_r($content);
+        // echo "</pre>";
+        $faculty['eligibility_id'] = $content['page_view_content']['eligibility_id'];
+        $faculty['emp_id'] = $content['page_view_content']['emp_id'];
+        $this->hr->verify_eligibility($faculty);
+        // $this->db->insert('notifications', array('description' => 'user attack bla bla', 'date' => 'date karon'));
+        redirect(base_url().'index.php/display_notification/display_eligibilityNoti');
+    }
+    public function view_eligibility()
+    {
+        $eligibilityID = $this->uri->segment(3, 0);
+        $content = array('page_view_content' => $this->m_view->faculty_eligibility($eligibilityID));
+        // echo "<pre>";
+        // print_r($content);
+        // echo "</pre>";
+         $this->load->view('includes/header');
+        $this->load->view('includes/navi_hr');
+        $this->load->view('view_faculty_eligibility_noti', $content);
+        $this->load->view('includes/footer');
+    }
+      public function display_rankNoti()
+      {
+                $content = array('page_view_content' => $this->hr->display_rankNoti());
+                // echo "<pre>";
+                // print_r($content);
+                // echo "</pre>";
+                $this->load->view('includes/header');
+                $this->load->view('includes/navi_hr');
+                $this->load->view('display_rankNoti', $content);
+                $this->load->view('includes/footer');
+    }
+
+    public function promote()
+    {
+        $empID = $this->uri->segment(3, 0);
+        $content = array('page_content1'    => $this->m_display->programType(),
+                         'page_content2'    => $this->m_display->rank(),
+                         'page_view_content'=> $this->m_view->faculty($empID),
+                         'total_points'     => $this->hr->totalPoints($empID));
+        // echo "<pre>";
+        // print_r($content);
+        // echo "</pre>";
+        $this->load->view('includes/header');
+        $this->load->view('includes/navi_hr');
+        $this->load->view('display_promote', $content);
+        $this->load->view('includes/footer');
+    }
+    
+     public function promote_faculty()
+    {
+        
+        $faculty['empID']   = $this->input->post('emp_id');
+        $faculty['rankID']  = $this->input->post('rank');
+        // echo '<pre>';
+        // print_r($faculty);
+        // echo '</pre>';
+        $this->hr->promote_faculty($faculty);
+
+        $faculty['empID']   = $this->input->post('emp_id');
+        $faculty['rankID']  = $this->input->post('rank');
+        // echo '<pre>';
+        // print_r($faculty);
+        // echo '</pre>';
+        $this->hr->rank_history($faculty);
+
+        $faculty['rankID']       = $this->input->post('rank');
+        $faculty['totalPoints'] = $this->input->post('TotalPoints');
+        // echo '<pre>';
+        // print_r($faculty);
+        // echo '</pre>';
+        $this->hr->update_totalPoints($faculty);
+        redirect(base_url().'index.php/display_notification/display_rankNoti/'.$this->input->post('emp_id'));
     }
 }
 ?>

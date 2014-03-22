@@ -1,6 +1,6 @@
-<div id="body">
+<div class="body">
 	<br/>
-	<table id="list" width="400" align="left">
+	<table id="list" width="400" align="left" class="table table-striped">
 			<tr align="left">
 				<th>Last Name</th>
 				<th>First Name</th>
@@ -19,4 +19,5 @@
 				}
 			?>
 	</table>
+	<br/>
 </div>

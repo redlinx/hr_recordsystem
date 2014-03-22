@@ -1,16 +1,18 @@
-<div id="body">
+<div class="body">
+    <br/>
     <script>
     function goBack()
       {
       window.history.go(-1)
       }
     </script>
-    <button onclick="goBack()"> Back </button>
-    <table width="545" align="left">
-    <h3>Results</h2>
+    <br/>
+    <button onclick="goBack()" class="btn btn-primary"> Back </button>
+    <br/><h4>Results</h4>
+    <table width="545" align="left" class="table table-stripped">
         <tr align="left">
-            <th>Lastname</th>
-            <th>Firstname</th>
+            <th>Last Name</th>
+            <th>First Name</th>
             <th>View</th>
         </tr>
         <?php
@@ -23,6 +25,14 @@
                     echo "<td>".$val['lastname']."</td>";
                     echo "<td>".$val['firstname']."</td>";
                     echo '<td><a href="'.base_url().'index.php/view_hr/faculty/'.$val['emp_id'].'">View</a></td>';
+                    // if($val['acct_stat'] == 1)
+                    // {
+                    //     echo '<td><a href="'.base_url().'index.php/hr_update/deactivate/'.$val['emp_id'].'">Deactivate</a></td>';
+                    // }
+                    // else
+                    // {
+                    //     echo '<td><a href="'.base_url().'index.php/hr_update/activate/'.$val['emp_id'].'">Activate</a></td>';
+                    // }
                     echo '</tr>';
                 echo form_close();
                 //echo '<td><a href="'.base_url().'index.php/view_faculty/view/'.$faculty[$x]['emp_id'].'">View</a></td>';
@@ -35,4 +45,5 @@
         }
         ?>  
     </table>
+    <br/>
 </div>

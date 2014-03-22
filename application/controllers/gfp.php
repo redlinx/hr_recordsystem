@@ -46,7 +46,7 @@ class Gfp extends CI_Controller
 			 
 				if($this->email->send())
 				{
-					echo "Please check your email address.";
+					echo "<script> alert('Please Check Your Email Address'); history.go(-2); </script>";
 				}
 				else
 				{

@@ -1,12 +1,15 @@
-<div id="body">
+<div class="body">
+    <br/>
     <script>
     function goBack()
       {
       window.history.go(-1)
       }
     </script>
-    <button onclick="goBack()"> Back </button>
-    <table width="500" align="left">
+    <br/>
+    <button onclick="goBack()" class="btn btn-primary"> Back </button>
+    <br/><h4>Uploads</h4><br/>
+    <table width="500" align="left" class="table table-stripped">
         <tr align="left">
             <th>File Name</th>
             <th>Title</th>
@@ -26,4 +29,5 @@
             }
         ?>
     </table>
+    <br/>
 </div>

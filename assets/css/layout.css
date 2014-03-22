@@ -1,35 +1,37 @@
 ::selection{ background-color: #E13300; color: white; }
 ::moz-selection{ background-color: #E13300; color: white; }
 ::webkit-selection{ background-color: #E13300; color: white; }
+    
+    body
+    {
+        background-color: #fff;
+        margin: auto;
+        margin-top: 0%;
+        width: 100%;
+        font: 15px/20px normal Helvetica, Arial, sans-serif;
+        color: #4F5155;
+    }
 
     #header
     {
-        color: #444;
-        background-color: transparent;
-        border-bottom: 2px solid #D0D0D0;
-        font-size: 17px;
+        font-size: 23px;
         font-weight: bold;
-        margin: 0 0 -1px 0;
-        padding: 10px 15px 50px 10px;
+    }
+    .row
+    {
+        text-indent: 0%;
     }
 
     #subtitle
     {
-        font-size: 12px;
+        font-size: 15px;
         font-weight: normal;
+        text-indent: 2px;
     }
 
     #banner
     {
         float: left;
-    }
-
-    #form_login
-    {
-        float: right;
-        font-size: 13px;
-        text-decoration: none;
-        margin-top: 3%;
     }
     
     #forgotPass
@@ -42,183 +44,102 @@
 
     #nav
     {
+        text-decoration: none;
+        line-height: 1.3;
+        display: block;
+        color: #ffffff;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
         float: left;
-        border: 1px solid #D0D0D0;
-        padding: 0px 10px 10px 0px;
+        padding: 0px 0px 0px 0px;
+        font-size: 16px;
+        text-indent: 11%;
+        position: relative;
+    }
+    .nav_sidebar
+    {
+        border-right: 0px solid #D0D0D0;
+        height: 100%;
+    }
+    .sub_nav h4, .sub_nav a
+    {
+        color: blue;
+        text-decoration: none;
+        height: 25px;
+        font-size: 18px;
+    }
+    .sub_nav h4
+    {
+        padding-left: 20px;
+    }
+    
+    .sub_nav h4 li a{
+        font-size: 12px;
+        padding-left: 40px;
+
+    }
+    nav nav-pills nav-stacked
+    {
+        font-size: 14px;
+        height: 20px
+    }
+    .sub_menu{
+        font-size: 15px;
+        margin-left: 30px;
     }
 
+    #level
+    {
+        font-size: 12px;
+        font-style: italic;
+        font-weight: bold;
+    }
+    
     a
     {
         text-decoration: none;
-        color: Black ;
-
+        color: Black;
     }
     
     #body
     {
-       border: 0px solid #D0D0D0;
        padding: 10px 15px 25px 25px;
        float: left;
-
-    }
-
-<<<<<<< HEAD
-    img
-=======
-<<<<<<< HEAD
-    img
-=======
-<<<<<<< HEAD
-    img
-=======
-<<<<<<< HEAD
-    img
-=======
-<<<<<<< HEAD
-    img
-=======
-<<<<<<< HEAD
-    img
-=======
-<<<<<<< HEAD
-    img
-=======
-    #content
-    {
-        text-indent: ;
     }
 
     #ProfPic
->>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
->>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
->>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
->>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
->>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
->>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
->>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
     {
-        border: solid;
-        border-width: 1px; 
-        width: 150px;
-        height: 150px;
+        width: 190px;
+        height: 190px;
     }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
->>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
->>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
->>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
->>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
->>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
-    #content
-    {
-        text-indent: 20px;
-    }
-    
-=======
     #facultyPic
     {
-        border: solid;
-        border-width: 1px; 
-        width: 110px;
-        height: 110px;
+        width: 160px;
+        height: 160px;
     }
 
     #list
     {
         text-indent: 20px;
     }
->>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
+
     p.footer
     {
         text-align: right;
         font-size: 11px;
         border-top: 1px solid #D0D0D0;
         line-height: 32px;
-        padding: 0 10px 0 10px;
-<<<<<<< HEAD
-        margin: 53% 0 0 0;
-=======
-<<<<<<< HEAD
-        margin: 53% 0 0 0;
-=======
-<<<<<<< HEAD
-        margin: 53% 0 0 0;
-=======
-<<<<<<< HEAD
-        margin: 53% 0 0 0;
-=======
-<<<<<<< HEAD
-        margin: 53% 0 0 0;
-=======
-<<<<<<< HEAD
-        margin: 53% 0 0 0;
-=======
-<<<<<<< HEAD
-        margin: 53% 0 0 0;
-=======
-        margin: 100% 0 0 0;
->>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
->>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
->>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
->>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
->>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
->>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
->>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
+        padding: 10px 8px 0 8px;
+        
     }
 
     #container
     {
-<<<<<<< HEAD
-        margin: 5px;
-        height: 525px;
-=======
-<<<<<<< HEAD
-        margin: 5px;
-        height: 525px;
-=======
-<<<<<<< HEAD
-        margin: 5px;
-        height: 525px;
-=======
-<<<<<<< HEAD
-        margin: 5px;
-        height: 525px;
-=======
-<<<<<<< HEAD
-        margin: 5px;
-        height: 525px;
-=======
-<<<<<<< HEAD
-        margin: 5px;
-        height: 525px;
-=======
-<<<<<<< HEAD
-        margin: 5px;
-        height: 525px;
-=======
->>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
->>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
->>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
->>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
->>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
->>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
->>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
-        border: 1px solid #D0D0D0;
+        border: 2px solid #D0D0D0;
         border-top-style: solid;
-        border-top-width: 4px;
+        border-top-width: 5px;
         border-top-color: MediumBlue;
         -webkit-box-shadow: 0 0 8px #D0D0D0;
     }
@@ -244,3 +165,49 @@
         list-style: none outside none;
         margin-left: -30px;
     }
+
+    #profile_menu
+    {
+        text-indent: 30px;
+    }
+
+    .h4_1
+    {
+        color: AshGray;
+        background-color: WhiteSmoke;
+        border: solid 1px;
+        border-color: #B6B6B4;
+        border-radius: 5px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 25px;
+        padding-right: ;
+        text-align: left;
+    }
+
+    .h4_1:hover
+    {
+        background-color: #D1D0CE;
+        border: solid 1px;
+        border-color: #B6B6B4;
+        border-radius: 5px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 25px;
+        padding-right: ;
+        text-align: left;
+    }
+
+    a:hover
+    {
+        text-decoration: none;
+    }
+
+    .sub_menu
+    {
+        text-align: center;
+        color: AshGray;
+        font-weight: bold;
+    }
+
+

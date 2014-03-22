@@ -1,4 +1,4 @@
-<div id="body">
+<div class="body">
     <?php
     $months = array(
                     '1'  => 'Jan',
@@ -21,50 +21,8 @@
     for ($x=date('o'); $x>=1940; $x--)
     {
         $year[$x] = $x;
-<<<<<<< HEAD
-    }?>
-    <table class="table table-striped">
-    <?php
-=======
-<<<<<<< HEAD
-    }?>
-    <table class="table table-striped">
-    <?php
-=======
-<<<<<<< HEAD
-    }?>
-    <table class="table table-striped">
-    <?php
-=======
-<<<<<<< HEAD
-    }?>
-    <table class="table table-striped">
-    <?php
-=======
-<<<<<<< HEAD
-    }?>
-    <table class="table table-striped">
-    <?php
-=======
-<<<<<<< HEAD
-    }?>
-    <table class="table table-striped">
-    <?php
-=======
-<<<<<<< HEAD
-    }?>
-    <table class="table table-striped">
-    <?php
-=======
     }
         echo "<table>";
->>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
->>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
->>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
->>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
->>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
->>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
->>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
             $this->load->helper('form');
             echo form_open('update/spouse');
                 echo form_hidden('spouse_id', $page_view_content['spouse_id']);
@@ -74,7 +32,6 @@
                 //echo "<tr><td>Birthday</td><td>".form_input('bday', $page_view_content['bday'])."</td></tr>";
                 echo "<tr><td>Birthday</td><td>".form_dropdown('month',$months, $page_view_content['Month'])."".form_dropdown('day',$days, $page_view_content['Day'])."".form_dropdown('year',$year, $page_view_content['Year'])."</td></tr>";
                 echo "<tr><td>Birth Place</td><td>".form_input('birth_place', $page_view_content['birth_place'])."</td></tr>";
-                echo "<tr><td>Spouse Col</td><td>".form_input('spousecol', $page_view_content['faculty_spousecol'])."</td></tr>";
                 echo "<tr><td>Contact No.</td><td>".form_input('contact', $page_view_content['contact_no'])."</td></tr>";
                 echo "<tr><td>Highest Educ. Attain.</td><td>".form_input('educ_attain', $page_view_content['educational_attainment'])."</td></tr>";
                 echo "<tr><td>Occupation</td><td>".form_input('occupation', $page_view_content['occupation'])."</td></tr>";
@@ -84,8 +41,9 @@
                 echo "<tr><td>Pag-Ibig</td><td>".form_input('pag_ibig', $page_view_content['pag_ibig'])."</td></tr>";
                 echo "<tr><td>PhilHealth</td><td>".form_input('philhealth', $page_view_content['philhealth'])."</td></tr>";
                 echo "<tr><td>TIN</td><td>".form_input('TIN', $page_view_content['TIN'])."</td></tr>";
-                echo "<tr><td colspan=2>".form_submit('mysubmit', 'Update')."</td></tr>";  
+                echo "<tr><td colspan=2>".form_submit('mysubmit', 'Update', 'class="btn btn-primary"')."</td></tr>";  
             echo form_close();
         echo "</table>";
     ?>
+    <br/>
 </div>

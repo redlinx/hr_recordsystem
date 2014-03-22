@@ -35,16 +35,35 @@ class Add extends CI_Controller
 		{
 			echo "<script> alert('Please Insert Data'); history.go(-1); </script>";
 		}
-		// echo '<pre>';
-		// print_r($faculty);
-		// echo '</pre>';
+	}
+
+	public function eligibility()
+	{
+		$this->form_validation->set_rules('examName', 'School Name', 'required|xss_clean');
+		$this->form_validation->set_rules('examPlace', 'Address', 'required|xss_clean');
+		$this->form_validation->set_rules('rating', 'Year', 'required|xss_clean');
+		
+		if($this->form_validation->run() != NULL)
+		{
+			$faculty['examName']	= $this->input->post('examName');
+			$faculty['examDate']	= $this->input->post('year')."-".$this->input->post('month')."-".$this->input->post('day');
+			$faculty['examPlace'] 	= $this->input->post('examPlace');
+			$faculty['rating'] 		= $this->input->post('rating');
+			$faculty['emp_id'] 		= $this->session->userdata('emp_id');
+
+			$this->m_add->eligibility($faculty);
+			redirect(base_url().'index.php/view_faculty/eligibility/'.$this->session->userdata('emp_id'));
+		}
+		else
+		{
+			echo "<script> alert('Please Insert Data'); history.go(-1); </script>";
+		}
 	}
 
 	public function training()
 	{
 		$this->form_validation->set_rules('trainingTitle', 'Training Title', 'required|xss_clean');
 		$this->form_validation->set_rules('venue', 'Venue', 'required|xss_clean');
-		// $this->form_validation->set_rules('date', 'Date', 'required|xss_clean');
 		$this->form_validation->set_rules('organizer', 'Organizer', 'required|xss_clean');
 		$this->form_validation->set_rules('role', 'Role', 'required|xss_clean');
 		$this->form_validation->set_rules('type', 'Type', 'required|xss_clean');
@@ -53,7 +72,7 @@ class Add extends CI_Controller
 		{
 			$faculty['trainingTitle']	= $this->input->post('trainingTitle');
 			$faculty['venue'] 			= $this->input->post('venue');
-			$faculty['date'] 			= $this->input->post('year')."-".$this->input->post('day')."-".$this->input->post('month');
+			$faculty['date'] 			= $this->input->post('year')."-".$this->input->post('month')."-".$this->input->post('day');
 			$faculty['organizer'] 		= $this->input->post('organizer');
 			$faculty['role'] 			= $this->input->post('role');
 			$faculty['type'] 			= $this->input->post('type');
@@ -95,9 +114,7 @@ class Add extends CI_Controller
 		$this->form_validation->set_rules('lastname', 'Last Name', 'required|xss_clean');
 		$this->form_validation->set_rules('firstname', 'First Name', 'required|xss_clean');
 		$this->form_validation->set_rules('middlename', 'Middle Name', 'required|xss_clean');
-		//$this->form_validation->set_rules('bday', 'Birthday', 'required|xss_clean');
 		$this->form_validation->set_rules('birth_place', 'Birthday Place', 'required|xss_clean');
-		$this->form_validation->set_rules('spousecol', 'Civil Status', 'required|xss_clean');
 		$this->form_validation->set_rules('contact', 'Contact No.', 'required|xss_clean');
 		$this->form_validation->set_rules('educ_attain', 'Highest Education Attainment', 'required|xss_clean');
 		$this->form_validation->set_rules('occupation', 'Occupation', 'required|xss_clean');
@@ -113,9 +130,8 @@ class Add extends CI_Controller
 			$faculty['lastname'] 	= $this->input->post('lastname');
 			$faculty['firstname'] 	= $this->input->post('firstname');
 			$faculty['middlename'] 	= $this->input->post('middlename');
-			$faculty['bday'] 		= $this->input->post('year')."-".$this->input->post('day')."-".$this->input->post('month');;
+			$faculty['bday'] 		= $this->input->post('year')."-".$this->input->post('month')."-".$this->input->post('day');;
 			$faculty['birth_place'] = $this->input->post('birth_place');
-			$faculty['spousecol'] 	= $this->input->post('spousecol');
 			$faculty['contact'] 	= $this->input->post('contact');
 			$faculty['educ_attain'] = $this->input->post('educ_attain');
 			$faculty['emp_id'] 		= $this->session->userdata('emp_id');
@@ -144,16 +160,14 @@ class Add extends CI_Controller
 		$this->form_validation->set_rules('company', 'Company', 'required|xss_clean');
 		$this->form_validation->set_rules('address', 'Address', 'required|xss_clean');
 		$this->form_validation->set_rules('position', 'Position', 'required|xss_clean');
-		// $this->form_validation->set_rules('start_date', 'Start Date', 'required|xss_clean');
-		// $this->form_validation->set_rules('end_date', 'End Date', 'required|xss_clean');
 
 		if($this->form_validation->run() != NULL)
 		{
 			$faculty['company']		= $this->input->post('company');
 			$faculty['address'] 	= $this->input->post('address');
 			$faculty['position'] 	= $this->input->post('position');
-			$faculty['start_date'] 	= $this->input->post('year')."-".$this->input->post('day')."-".$this->input->post('month');
-			$faculty['end_date'] 	= $this->input->post('year')."-".$this->input->post('day')."-".$this->input->post('month');
+			$faculty['start_date'] 	= $this->input->post('Syear')."-".$this->input->post('Smonth')."-".$this->input->post('Sday');
+			$faculty['end_date'] 	= $this->input->post('Eyear')."-".$this->input->post('Eday')."-".$this->input->post('Eday');
 			$faculty['emp_id'] 		= $this->session->userdata('emp_id');
 			// echo '<pre>';
 			// print_r($faculty);
@@ -170,12 +184,11 @@ class Add extends CI_Controller
 	public function children()
 	{
 		$this->form_validation->set_rules('name', 'Name', 'required|xss_clean');
-		//$this->form_validation->set_rules('bday', 'Birthday', 'required|xss_clean');
 
 		if($this->form_validation->run() != NULL)
 		{
 			$faculty['name']	= $this->input->post('name');
-			$faculty['bday'] 	= $this->input->post('year')."-".$this->input->post('day')."-".$this->input->post('month');
+			$faculty['bday'] 	= $this->input->post('year')."-".$this->input->post('month')."-".$this->input->post('day');
 			$faculty['emp_id'] 	= $this->session->userdata('emp_id');
 			// echo '<pre>';
 			// print_r($faculty);

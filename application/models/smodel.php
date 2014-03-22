@@ -31,8 +31,7 @@ class Smodel extends CI_Model {
         $this->db->or_like('lastname',$search_term);
         $this->db->or_like('middlename',$search_term);
         $this->db->or_like('gender',$search_term);
-         $this->db->or_like('civil_status',$search_term);
-
+        $this->db->or_like('civil_status',$search_term);
 
         // Execute the query.
         $query = $this->db->get();

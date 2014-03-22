@@ -35,6 +35,18 @@ class M_add extends CI_Model
 		$this->db->close();
 	}
 
+	public function eligibility($faculty)
+	{
+		$sql = "CALL add_eligibility(
+								 '".$faculty['examName']."',
+								 '".$faculty['examDate']."',
+								 '".$faculty['examPlace']."',
+								 '".$faculty['rating']."',
+								 '".$faculty['emp_id']."')";
+		$this->db->query($sql);
+		$this->db->close();
+	}
+
 	public function training($faculty)
 	{
 		$sql = "CALL add_training(
@@ -80,7 +92,6 @@ class M_add extends CI_Model
 								 '".$faculty['bday']."',
 								 '".$faculty['birth_place']."',
 								 '".$faculty['emp_id']."',
-								 '".$faculty['spousecol']."',
 								 '".$faculty['contact']."',
 								 '".$faculty['educ_attain']."',
 								 '".$faculty['occupation']."',

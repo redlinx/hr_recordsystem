@@ -19,10 +19,27 @@ class View_rankMember extends CI_Controller
 		// echo "<pre>";
 		// print_r($page_view_content);
 		// echo "</pre>";
- 		$this->load->view('includes/header');
- 		$this->load->view('includes/navi_rankMember');
- 		$this->load->view('rankMember_view_faculty_profile', $page_view_content);
- 		$this->load->view('includes/footer');
+ 		if ($this->session->userdata('level') == 1)
+        {
+            $this->load->view('includes/header');
+			$this->load->view('includes/navi_faculty');
+        	$this->load->view('rankMember_view_faculty_profile', $page_view_content);
+        	$this->load->view('includes/footer');
+        }
+        else if ($this->session->userdata('level') == 3)
+        {
+        	$this->load->view('includes/header');
+			$this->load->view('includes/navi_dean');
+        	$this->load->view('rankMember_view_faculty_profile', $page_view_content);
+        	$this->load->view('includes/footer');
+        }
+        else if ($this->session->userdata('level') == 4)
+        {
+        	$this->load->view('includes/header');
+			$this->load->view('includes/navi_admin');
+        	$this->load->view('rankMember_view_faculty_profile', $page_view_content);
+        	$this->load->view('includes/footer');
+        }
 	}
 
 	public function education()
@@ -32,10 +49,27 @@ class View_rankMember extends CI_Controller
 		// echo "<pre>";
 		// print_r($content);
 		// echo "</pre>";
-		$this->load->view('includes/header');
-		$this->load->view('includes/navi_rankMember');
-		$this->load->view('hr_view_faculty_education', $content);
-		$this->load->view('includes/footer');
+		if ($this->session->userdata('level') == 1)
+        {
+            $this->load->view('includes/header');
+			$this->load->view('includes/navi_faculty');
+        	$this->load->view('hr_view_faculty_education', $content);
+        	$this->load->view('includes/footer');
+        }
+        else if ($this->session->userdata('level') == 3)
+        {
+        	$this->load->view('includes/header');
+			$this->load->view('includes/navi_dean');
+        	$this->load->view('hr_view_faculty_education', $content);
+        	$this->load->view('includes/footer');
+        }
+        else if ($this->session->userdata('level') == 4)
+        {
+        	$this->load->view('includes/header');
+			$this->load->view('includes/navi_admin');
+        	$this->load->view('hr_view_faculty_education', $content);
+        	$this->load->view('includes/footer');
+        }
 	}
 
 	public function training()
@@ -45,10 +79,27 @@ class View_rankMember extends CI_Controller
  	    //echo "<pre>";
 		// print_r($content);
 		// echo "</pre>";
-		$this->load->view('includes/header');
-		$this->load->view('includes/navi_rankMember');
-		$this->load->view('hr_view_faculty_training', $content);
-		$this->load->view('includes/footer');
+		if ($this->session->userdata('level') == 1)
+        {
+            $this->load->view('includes/header');
+			$this->load->view('includes/navi_faculty');
+        	$this->load->view('hr_view_faculty_training', $content);
+        	$this->load->view('includes/footer');
+        }
+        else if ($this->session->userdata('level') == 3)
+        {
+        	$this->load->view('includes/header');
+			$this->load->view('includes/navi_dean');
+        	$this->load->view('hr_view_faculty_training', $content);
+        	$this->load->view('includes/footer');
+        }
+        else if ($this->session->userdata('level') == 4)
+        {
+        	$this->load->view('includes/header');
+			$this->load->view('includes/navi_admin');
+        	$this->load->view('hr_view_faculty_training', $content);
+        	$this->load->view('includes/footer');
+        }
 	}
 
 	public function skill()
@@ -58,10 +109,27 @@ class View_rankMember extends CI_Controller
  	    //echo "<pre>";
 		// print_r($content);
 		// echo "</pre>";
-		$this->load->view('includes/header');
-		$this->load->view('includes/navi_rankMember');
-		$this->load->view('hr_view_faculty_skill', $content);
-		$this->load->view('includes/footer');
+		if ($this->session->userdata('level') == 1)
+        {
+            $this->load->view('includes/header');
+			$this->load->view('includes/navi_faculty');
+        	$this->load->view('hr_view_faculty_skill', $content);
+        	$this->load->view('includes/footer');
+        }
+        else if ($this->session->userdata('level') == 3)
+        {
+        	$this->load->view('includes/header');
+			$this->load->view('includes/navi_dean');
+        	$this->load->view('hr_view_faculty_skill', $content);
+        	$this->load->view('includes/footer');
+        }
+        else if ($this->session->userdata('level') == 4)
+        {
+        	$this->load->view('includes/header');
+			$this->load->view('includes/navi_admin');
+        	$this->load->view('hr_view_faculty_skill', $content);
+        	$this->load->view('includes/footer');
+        }
 	}
 
 	public function spouse()
@@ -71,10 +139,27 @@ class View_rankMember extends CI_Controller
 		// echo "<pre>";
  		// print_r($page_view_content);
  		// echo "</pre>";
- 		$this->load->view('includes/header');
- 		$this->load->view('includes/navi_rankMember');
- 		$this->load->view('hr_view_faculty_spouse', $page_view_content);
- 		$this->load->view('includes/footer');
+ 		if ($this->session->userdata('level') == 1)
+        {
+            $this->load->view('includes/header');
+			$this->load->view('includes/navi_faculty');
+        	$this->load->view('hr_view_faculty_spouse', $page_view_content);
+        	$this->load->view('includes/footer');
+        }
+        else if ($this->session->userdata('level') == 3)
+        {
+        	$this->load->view('includes/header');
+			$this->load->view('includes/navi_dean');
+        	$this->load->view('hr_view_faculty_spouse', $page_view_content);
+        	$this->load->view('includes/footer');
+        }
+        else if ($this->session->userdata('level') == 4)
+        {
+        	$this->load->view('includes/header');
+			$this->load->view('includes/navi_admin');
+        	$this->load->view('hr_view_faculty_spouse', $page_view_content);
+        	$this->load->view('includes/footer');
+        }
 	}
 
 	public function work()
@@ -84,10 +169,27 @@ class View_rankMember extends CI_Controller
  		// echo "<pre>";
 		// print_r($content);
 		// echo "</pre>";
-		$this->load->view('includes/header');
-		$this->load->view('includes/navi_rankMember');
-		$this->load->view('hr_view_faculty_work', $content);
-		$this->load->view('includes/footer');
+		if ($this->session->userdata('level') == 1)
+        {
+            $this->load->view('includes/header');
+			$this->load->view('includes/navi_faculty');
+        	$this->load->view('hr_view_faculty_work', $content);
+        	$this->load->view('includes/footer');
+        }
+        else if ($this->session->userdata('level') == 3)
+        {
+        	$this->load->view('includes/header');
+			$this->load->view('includes/navi_dean');
+        	$this->load->view('hr_view_faculty_work', $content);
+        	$this->load->view('includes/footer');
+        }
+        else if ($this->session->userdata('level') == 4)
+        {
+        	$this->load->view('includes/header');
+			$this->load->view('includes/navi_admin');
+        	$this->load->view('hr_view_faculty_work', $content);
+        	$this->load->view('includes/footer');
+        }
 	}
 
 	public function children()
@@ -97,10 +199,27 @@ class View_rankMember extends CI_Controller
 		// echo "<pre>";
 		// print_r($content);
 		// echo "</pre>";
-		$this->load->view('includes/header');
-		$this->load->view('includes/navi_rankMember');
-		$this->load->view('hr_view_faculty_children', $content);
-		$this->load->view('includes/footer');
+		if ($this->session->userdata('level') == 1)
+        {
+            $this->load->view('includes/header');
+			$this->load->view('includes/navi_faculty');
+        	$this->load->view('hr_view_faculty_children', $content);
+        	$this->load->view('includes/footer');
+        }
+        else if ($this->session->userdata('level') == 3)
+        {
+        	$this->load->view('includes/header');
+			$this->load->view('includes/navi_dean');
+        	$this->load->view('hr_view_faculty_children', $content);
+        	$this->load->view('includes/footer');
+        }
+        else if ($this->session->userdata('level') == 4)
+        {
+        	$this->load->view('includes/header');
+			$this->load->view('includes/navi_admin');
+        	$this->load->view('hr_view_faculty_children', $content);
+        	$this->load->view('includes/footer');
+        }
 	}
 
 	public function uploads()
@@ -110,10 +229,27 @@ class View_rankMember extends CI_Controller
  		// echo "<pre>";
 		// print_r($content);
 		// echo "</pre>";
-		$this->load->view('includes/header');
-		$this->load->view('includes/navi_rankMember');
-		$this->load->view('hr_view_faculty_uploads', $content);
-		$this->load->view('includes/footer');
+		if ($this->session->userdata('level') == 1)
+        {
+            $this->load->view('includes/header');
+			$this->load->view('includes/navi_faculty');
+        	$this->load->view('hr_view_faculty_uploads', $content);
+        	$this->load->view('includes/footer');
+        }
+        else if ($this->session->userdata('level') == 3)
+        {
+        	$this->load->view('includes/header');
+			$this->load->view('includes/navi_dean');
+        	$this->load->view('hr_view_faculty_uploads', $content);
+        	$this->load->view('includes/footer');
+        }
+        else if ($this->session->userdata('level') == 4)
+        {
+        	$this->load->view('includes/header');
+			$this->load->view('includes/navi_admin');
+        	$this->load->view('hr_view_faculty_uploads', $content);
+        	$this->load->view('includes/footer');
+        }
 	}
 
 	public function view_upload()
@@ -127,5 +263,35 @@ class View_rankMember extends CI_Controller
 		// $this->load->view('includes/navi_faculty');
 		$this->load->view('hr_view_faculty_picture', $content);
 		// $thiss->load->view('includes/footer');
+	}
+
+	public function rankHistory()
+	{
+		$empID = $this->uri->segment(3, 0);
+ 		$content = array('page_view_content' => $this->m_view->rankHistory($empID));
+ 	//     echo "<pre>";
+		// print_r($content);
+		// echo "</pre>";
+		if ($this->session->userdata('level') == 1)
+        {
+            $this->load->view('includes/header');
+			$this->load->view('includes/navi_faculty');
+        	$this->load->view('display_rankHistory', $content);
+        	$this->load->view('includes/footer');
+        }
+        else if ($this->session->userdata('level') == 3)
+        {
+        	$this->load->view('includes/header');
+			$this->load->view('includes/navi_dean');
+        	$this->load->view('display_rankHistory', $content);
+        	$this->load->view('includes/footer');
+        }
+        else if ($this->session->userdata('level') == 4)
+        {
+        	$this->load->view('includes/header');
+			$this->load->view('includes/navi_admin');
+        	$this->load->view('display_rankHistory', $content);
+        	$this->load->view('includes/footer');
+        }
 	}
 }

@@ -49,6 +49,24 @@ class M_view extends CI_Model
 		return $sQuery->result_array();
 	}
 
+	public function eligibility($empID)
+	{
+		$sql = "CALL view_faculty_eligibility(".$empID.")";
+		$sQuery = $this->db->query($sql);
+		$this->db->close();
+
+		return $sQuery->result_array();
+	}
+
+	public function faculty_eligibility($eligibilityID)
+	{
+		$sql = "CALL update_form_eligibility(".$eligibilityID.")";
+		$sQuery = $this->db->query($sql);
+		$this->db->close();
+
+		return $sQuery->row_array(1);
+	}
+
 	public function faculty_educ($educID)
 	{
 		$sql = "CALL update_form_education(".$educID.")";
@@ -137,5 +155,23 @@ class M_view extends CI_Model
 		$this->db->close();
 
 		return $sQuery->row_array(1);
+	}
+
+	public function rank_points($empID)
+	{
+		$sql = "CALL view_rankPoints(".$empID.")";
+		$sQuery = $this->db->query($sql);
+		$this->db->close();
+
+		return $sQuery->result_array();
+	}
+
+	public function rankHistory($empID)
+	{
+		$sql = "CALL view_rankHistory(".$empID.")";
+		$sQuery = $this->db->query($sql);
+		$this->db->close();
+
+		return $sQuery->result_array();
 	}
 }

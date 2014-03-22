@@ -1,67 +1,15 @@
-<div id="body">
+<div class="body">
+    <br/>
     <script>
     function goBack()
       {
       window.history.go(-1)
       }
     </script>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
->>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
->>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
->>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
->>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
->>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
-    <button onclick="goBack()"> Back </button>
-    <?php
-    if($faculty_spouse != NULL)
-    {
-    ?>
-    <?php
-    }
-    else
-    {
-    ?>
-        <?php echo '<a href="'.base_url().'index.php/forms/spouse">'; ?> <?php echo form_submit('mysubmit', 'Add Spouse') ?> </a>
-    <?php
-    }
-    ?>
-
-    
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-=======
-    <button onclick="goBack()"> Back </button>  
->>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
->>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
->>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
->>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
->>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
->>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
->>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
-    <table align="center">
+    <br/>
+    <button onclick="goBack()" class="btn btn-primary"> Back </button>
+    <br/><h4>Spouse</h4><br/>
+    <table align="center" class="table table-stripped">
         <?php
             if($faculty_spouse != NULL)
             {
@@ -89,4 +37,5 @@
             }
         ?>
     </table>
+    <br/>
 </div>

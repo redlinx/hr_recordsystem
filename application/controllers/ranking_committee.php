@@ -16,99 +16,29 @@ class Ranking_committee extends CI_Controller
 	}
 	public function index()
 	{
-<<<<<<< HEAD
-		$this->load->view('includes/header_hr');
-		//$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-		$this->load->view('includes/header_hr');
-		//$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-		$this->load->view('includes/header_hr');
-		//$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-		$this->load->view('includes/header_hr');
-		//$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-		$this->load->view('includes/header_hr');
-		//$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-		$this->load->view('includes/header_hr');
-		//$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-		$this->load->view('includes/header_hr');
-		//$this->load->view('includes/navi_hr');
-=======
 		$this->load->view('includes/header');
 		$this->load->view('includes/navi_hr');
->>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
->>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
->>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
->>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
->>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
->>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
->>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
 		$this->load->view('ranking_committee');
 		$this->load->view('includes/footer');
 	}
-	public function set()
+
+	public function set_rankMember()
 	{
 		$page_content['program'] = $this->hr->program();
-<<<<<<< HEAD
-		$this->load->view('includes/header_hr');
-		//$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-		$this->load->view('includes/header_hr');
-		//$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-		$this->load->view('includes/header_hr');
-		//$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-		$this->load->view('includes/header_hr');
-		//$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-		$this->load->view('includes/header_hr');
-		//$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-		$this->load->view('includes/header_hr');
-		//$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-		$this->load->view('includes/header_hr');
-		//$this->load->view('includes/navi_hr');
-=======
 		$this->load->view('includes/header');
 		$this->load->view('includes/navi_hr');
->>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
->>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
->>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
->>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
->>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
->>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
->>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
 		$this->load->view('display_form',$page_content);
-		//$this->load->view('includes/footer');
 		if ($this->input->post())
 		{
-			$this->view($this->input->post('program'));
+			$this->view_member($this->input->post('program'));
 		}
+		$this->load->view('includes/footer');
 	}
-	public function view($program_id)
+
+	public function view_member($program_id)
 	{	
 		$content = array('page_content' => $this->m_display->programType(),
- 						 'page_view_content' =>$this->hr->display_byProgram($program_id));
-		//$this->load->view('includes/header');
-		//$this->load->view('includes/navi_hr');
+ 						 'page_view_content' =>$this->m_ranking->display_facultyMembers($program_id));
 		// echo "<pre>";
 		// print_r($content);
 		// echo "</pre>";
@@ -121,103 +51,202 @@ class Ranking_committee extends CI_Controller
 		$empID = $this->uri->segment(3, 0); 
         $content = array('page_view_content' => $this->m_ranking->set_rankMember($empID));
 		// echo "<pre>";
-  //       print_r($content);
-  //       echo "</pre>";
+		// print_r($content);
+		// echo "</pre>";
         $faculty['faculty_emp_id'] = $content['page_view_content']['emp_id'];
         $this->m_ranking->update_level($faculty);
         // echo "<pre>";
         // print_r($faculty);
         // echo "</pre>";
         $this->m_ranking->add_rankMember($faculty);
-        redirect(base_url().'index.php/ranking_committee/view_rankMembers');
+        redirect(base_url().'index.php/ranking_committee/hr_view_rankMembers');
+	}
+
+	public function set_rankChairman()
+	{
+		$page_content['program'] = $this->hr->program();
+		$this->load->view('includes/header');
+		$this->load->view('includes/navi_hr');
+		$this->load->view('display_form',$page_content);
+		//$this->load->view('includes/footer');
+		if ($this->input->post())
+		{
+			$this->view_chairman($this->input->post('program'));
+		}
+		$this->load->view('includes/footer');
+	}
+
+	public function view_chairman($program_id)
+	{	
+		$content = array('page_content' => $this->m_display->programType(),
+ 						 'page_view_content' =>$this->m_ranking->display_facultyMembers($program_id));
+		//$this->load->view('includes/header');
+		//$this->load->view('includes/navi_hr');
+		// echo "<pre>";
+		// print_r($content);
+		// echo "</pre>";
+		$this->load->view('set_rankChairman', $content);
+		// $this->load->view('includes/footer');
+	}
+
+	public function set_rankingChairman()
+	{
+		$empID = $this->uri->segment(3, 0); 
+        $content = array('page_view_content' => $this->m_ranking->set_rankMember($empID));
+		// echo "<pre>";
+		// print_r($content);
+		// echo "</pre>";
+        $faculty['faculty_emp_id'] = $content['page_view_content']['emp_id'];
+        // echo "<pre>";
+        // print_r($faculty);
+        // echo "</pre>";
+        $this->m_ranking->set_rankChair($faculty);
+        redirect(base_url().'index.php/ranking_committee/hr_view_rankChairman');
+	}
+
+	public function unset_chairman()
+	{
+		$empID = $this->uri->segment(3, 0); 
+        $content = array('page_view_content' => $this->m_ranking->set_rankMember($empID));
+		// echo "<pre>";
+		// print_r($content);
+		// echo "</pre>";
+        $faculty['faculty_emp_id'] = $content['page_view_content']['emp_id'];
+        // echo "<pre>";
+        // print_r($faculty);
+        // echo "</pre>";
+        $this->m_ranking->unset_chairman($faculty);
+        redirect(base_url().'index.php/ranking_committee/hr_view_rankChairman');
+	}
+
+	public function unset_member()
+	{
+		$empID = $this->uri->segment(3, 0); 
+        $content = array('page_view_content' => $this->m_ranking->set_rankMember($empID));
+		// echo "<pre>";
+		// print_r($content);
+		// echo "</pre>";
+        $faculty['faculty_emp_id'] = $content['page_view_content']['emp_id'];
+        // echo "<pre>";
+        // print_r($faculty);
+        // echo "</pre>";
+        $this->m_ranking->unset_member($faculty);
+        redirect(base_url().'index.php/ranking_committee/hr_view_rankMembers');
+	}
+
+	public function hr_view_rankChairman()
+	{
+		$content = array('page_view_content' => $this->m_ranking->display_rankChairman());
+		// echo "<pre>";
+		// print_r($content);
+		// echo "</pre>";
+        $this->load->view('includes/header');
+		$this->load->view('includes/navi_hr');
+        $this->load->view('hr_view_rankChairman', $content);
+        $this->load->view('includes/footer');
+	}
+
+	public function hr_view_rankMembers()
+	{
+		$content = array('page_view_content' => $this->m_ranking->display_rankMember());
+		// echo "<pre>";
+		// print_r($content);
+		// echo "</pre>";
+        $this->load->view('includes/header');
+		$this->load->view('includes/navi_hr');
+        $this->load->view('hr_view_rankMembers', $content);
+        $this->load->view('includes/footer');
 	}
 
 	public function view_rankMembers()
 	{
-		$content = array('page_view_content' => $this->m_ranking->display_rankMember());
+		$content = array('page_view_content' => $this->m_ranking->display_rankMember(),
+						 'page_content' => $this->m_ranking->display_rankChairman());
 		// echo "<pre>";
-  //       print_r($content);
-  //       echo "</pre>";
-<<<<<<< HEAD
-        $this->load->view('includes/header_hr');
-		//$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-        $this->load->view('includes/header_hr');
-		//$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-        $this->load->view('includes/header_hr');
-		//$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-        $this->load->view('includes/header_hr');
-		//$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-        $this->load->view('includes/header_hr');
-		//$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-        $this->load->view('includes/header_hr');
-		//$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-        $this->load->view('includes/header_hr');
-		//$this->load->view('includes/navi_hr');
-=======
-        $this->load->view('includes/header');
-		$this->load->view('includes/navi_hr');
->>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
->>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
->>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
->>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
->>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
->>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
->>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
-        $this->load->view('view_rankMembers', $content);
-        $this->load->view('includes/footer');
+		// print_r($content);
+		// echo "</pre>";
+		if ($this->session->userdata('level') == 1)
+        {
+            $this->load->view('includes/header');
+			$this->load->view('includes/navi_faculty');
+        	$this->load->view('view_rankMembers', $content);
+        	$this->load->view('includes/footer');
+        }
+        else if ($this->session->userdata('level') == 3)
+        {
+        	$this->load->view('includes/header');
+			$this->load->view('includes/navi_dean');
+        	$this->load->view('view_rankMembers', $content);
+        	$this->load->view('includes/footer');
+        }
+        else if ($this->session->userdata('level') == 4)
+        {
+        	$this->load->view('includes/header');
+			$this->load->view('includes/navi_admin');
+        	$this->load->view('view_rankMembers', $content);
+        	$this->load->view('includes/footer');
+        }
+    
 	}
 
 	public function members()
 	{	
-		$content = array('page_content' => $this->m_display->programType(),
+		$content = array('page_content' => $this->m_display->rankProgram(),
  						 'page_view_content' => $this->m_ranking->display_rankMember());
-		// echo "<pre>";
-  //       print_r($content);
-  //       echo "</pre>";
-<<<<<<< HEAD
-		$this->load->view('includes/header_hr');
-=======
-<<<<<<< HEAD
-		$this->load->view('includes/header_hr');
-=======
-<<<<<<< HEAD
-		$this->load->view('includes/header_hr');
-=======
-<<<<<<< HEAD
-		$this->load->view('includes/header_hr');
-=======
-<<<<<<< HEAD
-		$this->load->view('includes/header_hr');
-=======
-<<<<<<< HEAD
-		$this->load->view('includes/header_hr');
-=======
-<<<<<<< HEAD
-		$this->load->view('includes/header_hr');
-=======
-		$this->load->view('includes/header');
->>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
->>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
->>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
->>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
->>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
->>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
->>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
-		$this->load->view('includes/navi_rankChair');
-		$this->load->view('display_committee', $content);
-		$this->load->view('includes/footer');
+		// echo '<pre>';
+		// print_r($content);
+		// echo '</pre>';
+		if ($this->session->userdata('level') == 1)
+        {
+            $this->load->view('includes/header');
+			$this->load->view('includes/navi_faculty');
+        	$this->load->view('display_committee', $content);
+        	$this->load->view('includes/footer');
+        }
+        else if ($this->session->userdata('level') == 3)
+        {
+        	$this->load->view('includes/header');
+			$this->load->view('includes/navi_dean');
+        	$this->load->view('display_committee', $content);
+        	$this->load->view('includes/footer');
+        }
+        else if ($this->session->userdata('level') == 4)
+        {
+        	$this->load->view('includes/header');
+			$this->load->view('includes/navi_admin');
+        	$this->load->view('display_committee', $content);
+        	$this->load->view('includes/footer');
+        }
+	}
+
+	public function chairman()
+	{	
+		$content = array('page_content' => $this->m_display->rankProgram(),
+ 						 'page_view_content' => $this->m_ranking->display_rankChairman());
+		// echo '<pre>';
+		// print_r($content);
+		// echo '</pre>';
+		if ($this->session->userdata('level') == 1)
+        {
+            $this->load->view('includes/header');
+			$this->load->view('includes/navi_faculty');
+        	$this->load->view('display_chairman', $content);
+        	$this->load->view('includes/footer');
+        }
+        else if ($this->session->userdata('level') == 3)
+        {
+        	$this->load->view('includes/header');
+			$this->load->view('includes/navi_dean');
+        	$this->load->view('display_chairman', $content);
+        	$this->load->view('includes/footer');
+        }
+        else if ($this->session->userdata('level') == 4)
+        {
+        	$this->load->view('includes/header');
+			$this->load->view('includes/navi_admin');
+        	$this->load->view('display_chairman', $content);
+        	$this->load->view('includes/footer');
+        }
 	}
 
 	public function set_program()
@@ -235,69 +264,148 @@ class Ranking_committee extends CI_Controller
         // echo "</pre>";
 
        	$this->m_ranking->update_program($faculty);
+       	redirect(base_url().'index.php/ranking_committee/members');
+	}
+
+	public function set_chairProgram()
+	{
+		$empID = $this->uri->segment(3, 0); 
+        $content = array('page_view_content' => $this->m_ranking->set_program($empID),
+        				 'faculty_list' => $this->m_ranking->display_rankChairman());
+        // echo "<pre>";
+        // print_r($content);
+        // echo "</pre>";
+        $faculty['faculty_emp_id'] = $this->input->post('empID');
+        $faculty['rankProgram'] = $this->input->post('program');
+       	// echo "<pre>";
+        // print_r($faculty);
+        // echo "</pre>";
+       	$this->m_ranking->update_chairProgram($faculty);
        	redirect(base_url().'index.php/ranking_committee/view_rankMembers');
 	}
 
-	public function faculty_list()
+	public function member_faculty_list()
 	{
-		
 		$id = $this->session->userdata('emp_id');
+		// echo "<pre>";
+		// print_r($id);
+		// echo "</pre>";
 		$content = array('faculty_profile' => $this->m_ranking->view_ranking_profile($id));
 		// echo "<pre>";
 		// print_r($content);
 		// echo "</pre>";
-		$progID = $content['faculty_profile']['rankProgram'];
+		$progID = $content['faculty_profile']['prog_id'];
 		$page_view_content['faculty_list'] =  $this->hr->display_byProgram($progID);
+		// echo "<pre>";
+		// print_r($page_view_content);
+		// echo "</pre>";
+		if($page_view_content['faculty_list'] != NULL)
+		{
+			if ($this->session->userdata('level') == 1)
+	        {
+	            $this->load->view('includes/header');
+				$this->load->view('includes/navi_faculty');
+	        	$this->load->view('ranking_faculty_list', $page_view_content);
+	        	$this->load->view('includes/footer');
+	        }
+	        else if ($this->session->userdata('level') == 3)
+	        {
+	        	$this->load->view('includes/header');
+				$this->load->view('includes/navi_dean');
+	        	$this->load->view('ranking_faculty_list', $page_view_content);
+	        	$this->load->view('includes/footer');
+	        }
+	        else if ($this->session->userdata('level') == 4)
+	        {
+	        	$this->load->view('includes/header');
+				$this->load->view('includes/navi_admin');
+	        	$this->load->view('ranking_faculty_list', $page_view_content);
+	        	$this->load->view('includes/footer');
+	        }	
+		}
+		else
+		{
+			echo "<script> alert('Not Yet Set!'); history.go(-1); </script>";
+		}
+	}
 
-		$this->load->view('includes/header');
-		$this->load->view('includes/navi_rankMember');
-		$this->load->view('ranking_faculty_list', $page_view_content);
-		$this->load->view('includes/footer');
+	public function chairman_faculty_list()
+	{
+		$id = $this->session->userdata('emp_id');
+		// echo "<pre>";
+		// print_r($id);
+		// echo "</pre>";
+		$content = array('faculty_profile' => $this->m_ranking->view_ranking_chairProfile($id));
+		// echo "<pre>";
+		// print_r($content);
+		// echo "</pre>";
+		$progID = $content['faculty_profile']['prog_id'];
+		$page_view_content['faculty_list'] =  $this->hr->display_byProgram($progID);
+		// echo "<pre>";
+		// print_r($page_view_content);
+		// echo "</pre>";
+		if($page_view_content['faculty_list'] != NULL)
+		{
+			if ($this->session->userdata('level') == 1)
+	        {
+	            $this->load->view('includes/header');
+				$this->load->view('includes/navi_faculty');
+	        	$this->load->view('rankingChair_faculty_list', $page_view_content);
+	        	$this->load->view('includes/footer');
+	        }
+	        else if ($this->session->userdata('level') == 3)
+	        {
+	        	$this->load->view('includes/header');
+				$this->load->view('includes/navi_dean');
+	        	$this->load->view('rankingChair_faculty_list', $page_view_content);
+	        	$this->load->view('includes/footer');
+	        }
+	        else if ($this->session->userdata('level') == 4)
+	        {
+	        	$this->load->view('includes/header');
+				$this->load->view('includes/navi_admin');
+	        	$this->load->view('rankingChair_faculty_list', $page_view_content);
+	        	$this->load->view('includes/footer');
+	        }
+		}
+		else
+		{
+			echo "<script> alert('Not Yet Set!'); history.go(-1); </script>";
+		}
 	}
 
 	public function rank_form()
 	{
 		$empID = $this->uri->segment(3, 0);
  		$content = array('faculty_profile' =>  $this->m_view->faculty($empID));
- 	// 	echo "<pre>";
+		// 	echo "<pre>";
 		// print_r($content);
 		// echo "</pre>";
 		$empID = $content['faculty_profile']['emp_id'];
 		// echo "<pre>";
 		// print_r($empID);
 		// echo "</pre>";
-		$this->load->view('includes/header');
-		$this->load->view('includes/navi_rankMember');
-<<<<<<< HEAD
-		$this->load->view('rank_form');
-=======
-<<<<<<< HEAD
-		$this->load->view('rank_form');
-=======
-<<<<<<< HEAD
-		$this->load->view('rank_form');
-=======
-<<<<<<< HEAD
-		$this->load->view('rank_form');
-=======
-<<<<<<< HEAD
-		$this->load->view('rank_form');
-=======
-<<<<<<< HEAD
-		$this->load->view('rank_form');
-=======
-<<<<<<< HEAD
-		$this->load->view('rank_form');
-=======
-		$this->load->view('rank_form', $content);
->>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
->>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
->>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
->>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
->>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
->>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
->>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
-		$this->load->view('includes/footer');
+		if ($this->session->userdata('level') == 1)
+        {
+            $this->load->view('includes/header');
+			$this->load->view('includes/navi_faculty');
+        	$this->load->view('rank_form', $content);
+        	$this->load->view('includes/footer');
+        }
+        else if ($this->session->userdata('level') == 3)
+        {
+        	$this->load->view('includes/header');
+			$this->load->view('includes/navi_dean');
+        	$this->load->view('rank_form', $content);
+        	$this->load->view('includes/footer');
+        }
+        else if ($this->session->userdata('level') == 4)
+        {
+        	$this->load->view('includes/header');
+			$this->load->view('includes/navi_admin');
+        	$this->load->view('rank_form', $content);
+        	$this->load->view('includes/footer');
+        }
 	}
 
 	public function rank_faculty()
@@ -308,71 +416,6 @@ class Ranking_committee extends CI_Controller
 		// 	print_r($faculty);
 		// 	echo "</pre>";
 		$empID = $content['faculty_profile']['emp_id'];
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
->>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
->>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
->>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
->>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
->>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
-		echo "<pre>";
-		print_r($empID);
-		echo "</pre>";
-		// $this->form_validation->set_rules('EQ', 'Educational Qualification', 'required|xss_clean');
-		// $this->form_validation->set_rules('TeachP', 'Teaching Proficiency', 'required|xss_clean');
-		// $this->form_validation->set_rules('Research', 'Research', 'required|xss_clean');
-		// $this->form_validation->set_rules('CS', 'Community Services', 'required|xss_clean');
-		// $this->form_validation->set_rules('TrainP', 'Training Programs', 'required|xss_clean');
-		// $this->form_validation->set_rules('Involvement', 'Organizational Involvements', 'required|xss_clean');
-
-		// if($this->form_validation->run() != NULL)
-		// {
-		// 	$faculty['empID'] 						= $empID;
-		// 	$faculty['educational_qualification'] 	= $this->input->post('EQ');
-		// 	$faculty['teaching_proficiency'] 		= $this->input->post('TeachP');
-		// 	$faculty['research'] 					= $this->input->post('Research');
-		// 	$faculty['community_services'] 			= $this->input->post('CS');
-		// 	$faculty['training_programs'] 			= $this->input->post('TrainP');
-		// 	$faculty['involvements'] 				= $this->input->post('Involvement');
-
-		// 	echo "<pre>";
-		// 	print_r($faculty);
-		// 	echo "</pre>";
-		// }
-		// 	$this->load->model('hr');
-		// 	$this->hr->add_faculty($faculty);
-
-		// 	redirect(base_url().'index.php/register_faculty');
-		
-		// else
-		// {
-		// 	echo "<script> alert('Please Insert Data'); history.go(-1); </script>";
-		// }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-=======
 		// echo "<pre>";
 		// print_r($empID);
 		// echo "</pre>";
@@ -392,22 +435,16 @@ class Ranking_committee extends CI_Controller
 			$faculty['community_services'] 			= $this->input->post('CS');
 			$faculty['training_programs'] 			= $this->input->post('TrainP');
 			$faculty['involvements'] 				= $this->input->post('Involvement');
+			$faculty['total_points']				= $this->input->post('EQ') + $this->input->post('TeachP') + $this->input->post('Research') + $this->input->post('CS') + $this->input->post('TrainP') + $this->input->post('Involvement');
 			echo "<pre>";
 			print_r($faculty);
 			echo "</pre>";
 			$this->m_ranking->rank_faculty($faculty);
-			redirect(base_url().'index.php/ranking_committee/faculty_list');
+			redirect(base_url().'index.php/ranking_committee/chairman_faculty_list');
 		}	
 		else
 		{
 			echo "<script> alert('Please Insert Data'); history.go(-1); </script>";
 		}
->>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
->>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
->>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
->>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
->>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
->>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
->>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
 	}
 }

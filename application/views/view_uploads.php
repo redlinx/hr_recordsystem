@@ -1,13 +1,14 @@
-<div id="body">
+<div class="body">
+    <br/>
     <script>
     function goBack()
       {
       window.history.go(-1)
       }
     </script>
-    <button onclick="goBack()"> Back </button>
-    <a href="http://localhost/hr_recordsystem/index.php/upload/"> <?php echo form_submit('mysubmit', 'Upload') ?> </a>
-    <table width="500" align="left">
+    <button onclick="goBack()" class="btn btn-primary"> Back </button>
+    <a href="http://localhost/hr_recordsystem/index.php/upload/"> <button type="mysubmit" class="btn btn-primary">Upload</button> </a>
+    <br/><br/><table width="500" align="left" class="table">
         <tr align="left">
             <th>File Name</th>
             <th>Title</th>
@@ -27,4 +28,5 @@
             }
         ?>
     </table>
+    <br/>
 </div>

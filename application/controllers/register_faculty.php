@@ -16,45 +16,21 @@ class Register_faculty extends CI_Controller {
 		$this->load->model('m_display');
 		$content = array('page_content' => $this->m_display->programType(),
  						 'page_view_content' => $this->m_display->facultyLevel());
-<<<<<<< HEAD
-		$this->load->view('includes/header_hr');
- 		//$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-		$this->load->view('includes/header_hr');
- 		//$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-		$this->load->view('includes/header_hr');
- 		//$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-		$this->load->view('includes/header_hr');
- 		//$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-		$this->load->view('includes/header_hr');
- 		//$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-		$this->load->view('includes/header_hr');
- 		//$this->load->view('includes/navi_hr');
-=======
-<<<<<<< HEAD
-		$this->load->view('includes/header_hr');
- 		//$this->load->view('includes/navi_hr');
-=======
-		$this->load->view('includes/header');
- 		$this->load->view('includes/navi_hr');
->>>>>>> c1ceab07b081aa1b9fe45213ce1b6e8bf6fb4522
->>>>>>> 078f31a9c4edffbef67abb317fef9273c4ec5f9d
->>>>>>> 9462ffa67a47d9011ee6ef3d4385daa94ed203af
->>>>>>> ba5b9afaec87e811f68c0ebe8b603d0c0f18019c
->>>>>>> c4c3dbad091656ed4066a2a15858eb9ad2e27d52
->>>>>>> ba8b69dfff351ca86dbdb27da91b052c05cac7ce
->>>>>>> ae4d9117a2a10501d24d453974b081a981ff7089
-		$this->load->view('registration_form',$content);
-		$this->load->view('includes/footer');
+
+		if($this->session->userdata('level') == 2)
+        {
+          $this->load->view('includes/header');
+          $this->load->view('includes/navi_hr');
+          $this->load->view('registration_form', $content);
+          $this->load->view('includes/footer');
+        }
+        else if($this->session->userdata('level') == 5)
+        {
+          $this->load->view('includes/header');
+          $this->load->view('includes/navi_hrSec');
+          $this->load->view('registration_form', $content);
+          $this->load->view('includes/footer');
+        }
 
 	}
 
@@ -69,7 +45,8 @@ class Register_faculty extends CI_Controller {
 		$this->form_validation->set_rules('cellNo', 'Cell No.', 'required|xss_clean');
 		$this->form_validation->set_rules('tellNo', 'Tell No.', 'required|xss_clean');
 		$this->form_validation->set_rules('username', 'Username', 'required|xss_clean');
-		$this->form_validation->set_rules('password', 'Password', 'required|xss_clean');
+		$this->form_validation->set_rules('password', 'Password', 'required|xss_clean|md5');
+		$this->form_validation->set_rules('level', 'Level', 'required|xss_clean');
 		$this->form_validation->set_rules('program', 'Program', 'required|xss_clean');
 
 		if($this->form_validation->run() != NULL)
@@ -77,7 +54,7 @@ class Register_faculty extends CI_Controller {
 			$faculty['lastname'] 	= $this->input->post('lastname');
 			$faculty['firstname'] 	= $this->input->post('firstname');
 			$faculty['middlename'] 	= $this->input->post('middlename');
-			$faculty['bday'] 		= $this->input->post('year')."-".$this->input->post('day')."-".$this->input->post('month');
+			$faculty['bday'] 		= $this->input->post('year')."-".$this->input->post('month')."-".$this->input->post('day');
 			$faculty['gender'] 		= $this->input->post('gender');
 			$faculty['civStat'] 	= $this->input->post('civStat');
 			$faculty['cellNo'] 		= $this->input->post('cellNo');
@@ -86,6 +63,7 @@ class Register_faculty extends CI_Controller {
 			$faculty['username'] 	= $this->input->post('username');
 			$faculty['password'] 	= $this->input->post('password');
 			$faculty['progID'] 		= $this->input->post('program');
+			$faculty['levelID'] 	= $this->input->post('level');
 
 			// echo "<pre>";
 			// print_r($faculty);
@@ -93,7 +71,7 @@ class Register_faculty extends CI_Controller {
 			$this->load->model('hr');
 			$this->hr->add_faculty($faculty);
 
-			redirect(base_url().'index.php/register_faculty');
+			redirect(base_url().'index.php/verifylogin');
 		}
 		else
 		{
