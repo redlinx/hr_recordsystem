@@ -419,12 +419,12 @@ class Ranking_committee extends CI_Controller
 		// echo "<pre>";
 		// print_r($empID);
 		// echo "</pre>";
-		$this->form_validation->set_rules('EQ', 'Educational Qualification', 'required|xss_clean');
-		$this->form_validation->set_rules('TeachP', 'Teaching Proficiency', 'required|xss_clean');
-		$this->form_validation->set_rules('Research', 'Research', 'required|xss_clean');
-		$this->form_validation->set_rules('CS', 'Community Services', 'required|xss_clean');
-		$this->form_validation->set_rules('TrainP', 'Training Programs', 'required|xss_clean');
-		$this->form_validation->set_rules('Involvement', 'Organizational Involvements', 'required|xss_clean');
+		$this->form_validation->set_rules('EQ', 'Educational Qualification', 'required|xss_clean|min_length[0]|max_length[2]');
+		$this->form_validation->set_rules('TeachP', 'Teaching Proficiency', 'required|xss_clean|min_length[0]|max_length[7]');
+		$this->form_validation->set_rules('Research', 'Research', 'required|xss_clean|min_length[0]|max_length[5]');
+		$this->form_validation->set_rules('CS', 'Community Services', 'required|xss_clean|min_length[0]|max_length[4]');
+		$this->form_validation->set_rules('TrainP', 'Training Programs', 'required|xss_clean|min_length[0]|max_length[1]');
+		$this->form_validation->set_rules('Involvement', 'Organizational Involvements', 'required|xss_clean|min_length[0]|max_length[1]');
 
 		if($this->form_validation->run() != NULL)
 		{
@@ -444,7 +444,7 @@ class Ranking_committee extends CI_Controller
 		}	
 		else
 		{
-			echo "<script> alert('Please Insert Data'); history.go(-1); </script>";
+			echo "<script> alert('Invalid '); history.go(-1); </script>";
 		}
 	}
 }

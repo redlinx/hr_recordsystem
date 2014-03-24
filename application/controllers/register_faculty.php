@@ -85,7 +85,7 @@ class Register_faculty extends CI_Controller {
     $user_check = $this->hr->user_exists($username);
 
     if($user_check > 0) {
-        $this->form_validation->set_message('user_exists', 'This username is already taken');
+    	echo "<script> alert('This username is already taken'); history.go(-1); </script>";
         return FALSE;
     }
     else {
@@ -99,7 +99,8 @@ $this->load->model('hr');
     $check_email = $this->hr->email_exists($email);
 
     if($check_email > 0) {
-        $this->form_validation->set_message('email_exists', 'This email is already in use');
+    		echo "<script> alert('This email is already in use'); history.go(-1); </script>";
+     
         return FALSE;
     }
     else {
@@ -107,5 +108,6 @@ $this->load->model('hr');
     }
 
   }
+
 
 }
