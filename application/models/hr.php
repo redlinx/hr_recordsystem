@@ -22,6 +22,28 @@ class HR extends CI_Model {
 		//$this->load->database();
 	}
 
+
+function user_exists($username) {
+
+    $this->db->where('username', $username);
+    $query = $this->db->get('faculty_account');
+
+    return $query->num_rows();
+
+}
+
+
+function email_exists($email) {
+
+    $this->db->where('email', $email);
+    $query = $this->db->get('faculty_account');
+
+    return $query->num_rows();
+
+    }
+
+
+
 	public function update_faculty_profile($faculty)
 	{
 		$sql = "CALL hr_update_faculty_profile( '".$faculty['emp_id']."',

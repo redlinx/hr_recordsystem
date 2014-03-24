@@ -40,11 +40,11 @@ class Register_faculty extends CI_Controller {
 		$this->form_validation->set_rules('firstname', 'First Name', 'required|xss_clean');
 		$this->form_validation->set_rules('middlename', 'Middle Name', 'required|xss_clean');
 		$this->form_validation->set_rules('gender', 'Gender', 'required|xss_clean');
-		$this->form_validation->set_rules('email', 'Email Address', 'required|xss_clean');
+		$this->form_validation->set_rules('email', 'Email Address', 'required|xss_clean|valid_email|callback_email_exists');
 		$this->form_validation->set_rules('civStat', 'Civil Status', 'required|xss_clean');
 		$this->form_validation->set_rules('cellNo', 'Cell No.', 'required|xss_clean');
 		$this->form_validation->set_rules('tellNo', 'Tell No.', 'required|xss_clean');
-		$this->form_validation->set_rules('username', 'Username', 'required|xss_clean');
+		$this->form_validation->set_rules('username', 'Username', 'required|xss_clean|callback_user_exists');
 		$this->form_validation->set_rules('password', 'Password', 'required|xss_clean|md5');
 		$this->form_validation->set_rules('level', 'Level', 'required|xss_clean');
 		$this->form_validation->set_rules('program', 'Program', 'required|xss_clean');
@@ -79,4 +79,33 @@ class Register_faculty extends CI_Controller {
 		}
 
 	}
+
+	public function user_exists($username) {
+		$this->load->model('hr');
+    $user_check = $this->hr->user_exists($username);
+
+    if($user_check > 0) {
+        $this->form_validation->set_message('user_exists', 'This username is already taken');
+        return FALSE;
+    }
+    else {
+        return TRUE;
+    }
+
+  }
+
+public function email_exists($email) {
+$this->load->model('hr');
+    $check_email = $this->hr->email_exists($email);
+
+    if($check_email > 0) {
+        $this->form_validation->set_message('email_exists', 'This email is already in use');
+        return FALSE;
+    }
+    else {
+        return TRUE;
+    }
+
+  }
+
 }
