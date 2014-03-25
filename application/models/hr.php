@@ -42,6 +42,17 @@ function email_exists($email) {
 
     }
 
+function cell_exists($cell) {
+
+    $this->db->where('cell_no', $cell);
+    $query = $this->db->get('faculty_profile');
+
+    return $query->num_rows();
+
+    }
+
+
+
 
 
 	public function update_faculty_profile($faculty)
