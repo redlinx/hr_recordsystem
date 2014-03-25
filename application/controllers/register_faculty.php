@@ -42,7 +42,7 @@ class Register_faculty extends CI_Controller {
 		$this->form_validation->set_rules('gender', 'Gender', 'required|xss_clean');
 		$this->form_validation->set_rules('email', 'Email Address', 'required|xss_clean|valid_email|callback_email_exists');
 		$this->form_validation->set_rules('civStat', 'Civil Status', 'required|xss_clean');
-		$this->form_validation->set_rules('cellNo', 'Cell No.', 'required|xss_clean');
+		$this->form_validation->set_rules('cellNo', 'Cell No.', 'required|xss_clean|callback_cell_exists');
 		$this->form_validation->set_rules('tellNo', 'Tell No.', 'required|xss_clean');
 		$this->form_validation->set_rules('username', 'Username', 'required|xss_clean|callback_user_exists');
 		$this->form_validation->set_rules('password', 'Password', 'required|xss_clean|md5');
@@ -85,7 +85,7 @@ class Register_faculty extends CI_Controller {
     $user_check = $this->hr->user_exists($username);
 
     if($user_check > 0) {
-        $this->form_validation->set_message('user_exists', 'This username is already taken');
+    	echo "<script> alert('This username is already taken'); history.go(-1); </script>";
         return FALSE;
     }
     else {
@@ -99,7 +99,8 @@ $this->load->model('hr');
     $check_email = $this->hr->email_exists($email);
 
     if($check_email > 0) {
-        $this->form_validation->set_message('email_exists', 'This email is already in use');
+    		echo "<script> alert('This email is already in used'); history.go(-1); </script>";
+     
         return FALSE;
     }
     else {
@@ -107,5 +108,22 @@ $this->load->model('hr');
     }
 
   }
+
+  public function cell_exists($cell) {
+$this->load->model('hr');
+    $check_cell = $this->hr->cell_exists($cell);
+
+    if($check_cell > 0) {
+    		echo "<script> alert('This CellPhone Number is already in used'); history.go(-1); </script>";
+     
+        return FALSE;
+    }
+    else {
+        return TRUE;
+    }
+
+  }
+
+
 
 }
