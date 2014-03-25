@@ -81,25 +81,27 @@ class M_ranking extends CI_Model {
 
 	public function display_rankMember()
 	{
-		$sql =  "CALL display_rankMember()";
+		$sql =  "CALL display_rankCommittee()";
 		$sQuery = $this->db->query($sql);
 		$this->db->close();
 
 		return $sQuery->result_array();
 	}
 
-	public function display_rankChairman()
-	{
-		$sql =  "CALL display_rankChairman()";
-		$sQuery = $this->db->query($sql);
-		$this->db->close();
-
-		return $sQuery->result_array();
-	}
 	
 	public function set_program($empID)
 	{
 		$sql = "CALL set_RankProgram(".$empID.")";
+		$sQuery = $this->db->query($sql);
+		$this->db->close();
+       
+		return $sQuery->row_array(1);
+	}
+
+	public function set_level($faculty)
+	{
+		$sql = "CALL set_level('".$faculty['faculty_emp_id']."',
+							   '".$faculty['rank_id']."')";
 		$sQuery = $this->db->query($sql);
 		$this->db->close();
        

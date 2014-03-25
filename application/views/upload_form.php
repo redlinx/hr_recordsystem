@@ -6,7 +6,7 @@
             $category_option[$page_content[$x]['category_id']] = $page_content[$x]['category_name'];
         }
     ?>
-    <?php echo '<a href="'.base_url().'index.php/view_faculty/uploads/'.$this->session->userdata('emp_id').'">'; ?> <button type="submit" class="btn btn-default">Gallery</button> </a>
+    <?php echo '<a href="'.base_url().'index.php/view_faculty/uploads/'.$this->session->userdata('emp_id').'">'; ?> <button type="submit" class="btn btn-primary">Gallery</button> </a>
     <br/><br/>
     <table>
         <?php echo $error;?>
@@ -35,10 +35,9 @@
                 </tr>
                 <tr>
                     <td>
-                        <br><button type="submit" class="btn btn-default">Upload</button>
+                        <br><button type="submit" class="btn btn-primary">Upload</button>
                     </td>
                 </tr>
             <?php echo form_close(); ?>
     </table>
-    <br/>
 </div>

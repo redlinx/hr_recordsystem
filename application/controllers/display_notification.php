@@ -256,14 +256,15 @@ class Display_notification extends CI_Controller
     }
       public function display_rankNoti()
       {
-                $content = array('page_view_content' => $this->hr->display_rankNoti());
-                // echo "<pre>";
-                // print_r($content);
-                // echo "</pre>";
-                $this->load->view('includes/header');
-                $this->load->view('includes/navi_hr');
-                $this->load->view('display_rankNoti', $content);
-                $this->load->view('includes/footer');
+            
+            $content = array('page_view_content' => $this->hr->display_rankNoti());
+            // echo "<pre>";
+            // print_r($content);
+            // echo "</pre>";
+            $this->load->view('includes/header');
+            $this->load->view('includes/navi_hr');
+            $this->load->view('display_rankNoti', $content);
+            $this->load->view('includes/footer');
     }
 
     public function promote()

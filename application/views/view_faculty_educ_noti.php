@@ -1,5 +1,4 @@
-<div class="body">
-    <br/>
+<div id="body">
     <script>
     function goBack()
       {
@@ -8,7 +7,7 @@
     </script>
     <button onclick="goBack()" class="btn btn-primary"> Back </button>
     <br/><br/>
-    <table class="table">
+    <table class="table table-striped">
         <?php
             if($page_view_content != NULL)
             {

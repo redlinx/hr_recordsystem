@@ -22,7 +22,7 @@ class Ranking_committee extends CI_Controller
 		$this->load->view('includes/footer');
 	}
 
-	public function set_rankMember()
+	public function add_Commitee()
 	{
 		$page_content['program'] = $this->hr->program();
 		$this->load->view('includes/header');
@@ -46,7 +46,7 @@ class Ranking_committee extends CI_Controller
 		// $this->load->view('includes/footer');
 	}
 
-	public function set_rankingMember()
+	public function add_rankingCommittee()
 	{	
 		$empID = $this->uri->segment(3, 0); 
         $content = array('page_view_content' => $this->m_ranking->set_rankMember($empID));
@@ -54,11 +54,18 @@ class Ranking_committee extends CI_Controller
 		// print_r($content);
 		// echo "</pre>";
         $faculty['faculty_emp_id'] = $content['page_view_content']['emp_id'];
-        $this->m_ranking->update_level($faculty);
+        // $this->m_ranking->update_level($faculty);
         // echo "<pre>";
         // print_r($faculty);
         // echo "</pre>";
         $this->m_ranking->add_rankMember($faculty);
+        redirect(base_url().'index.php/ranking_committee/hr_view_rankMembers');
+	}
+
+	public function set_rankingMember()
+	{
+		$faculty['faculty_emp_id'] = $content['page_view_content']['emp_id'];
+        $this->m_ranking->update_level($faculty);
         redirect(base_url().'index.php/ranking_committee/hr_view_rankMembers');
 	}
 
@@ -134,21 +141,10 @@ class Ranking_committee extends CI_Controller
         redirect(base_url().'index.php/ranking_committee/hr_view_rankMembers');
 	}
 
-	public function hr_view_rankChairman()
-	{
-		$content = array('page_view_content' => $this->m_ranking->display_rankChairman());
-		// echo "<pre>";
-		// print_r($content);
-		// echo "</pre>";
-        $this->load->view('includes/header');
-		$this->load->view('includes/navi_hr');
-        $this->load->view('hr_view_rankChairman', $content);
-        $this->load->view('includes/footer');
-	}
-
 	public function hr_view_rankMembers()
 	{
-		$content = array('page_view_content' => $this->m_ranking->display_rankMember());
+		$content = array('page_view_content'	=> $this->m_ranking->display_rankMember(),
+						 'page_content'			=> $this->m_display->rankLevel());
 		// echo "<pre>";
 		// print_r($content);
 		// echo "</pre>";
@@ -158,10 +154,27 @@ class Ranking_committee extends CI_Controller
         $this->load->view('includes/footer');
 	}
 
+	public function set_level()
+	{
+		$empID = $this->uri->segment(3, 0); 
+        $content = array('page_view_content' => $this->m_ranking->set_program($empID),
+        				 'faculty_list' => $this->m_ranking->display_rankMember());
+        // echo "<pre>";
+        // print_r($content);
+        // echo "</pre>";
+        $faculty['faculty_emp_id'] 	= $this->input->post('empID');
+        $faculty['rank_id'] 	= $this->input->post('level');
+       	// echo "<pre>";
+        // print_r($faculty);
+        // echo "</pre>";
+       	$this->m_ranking->set_level($faculty);
+       	redirect(base_url().'index.php/ranking_committee/hr_view_rankMembers');
+	}
+
 	public function view_rankMembers()
 	{
-		$content = array('page_view_content' => $this->m_ranking->display_rankMember(),
-						 'page_content' => $this->m_ranking->display_rankChairman());
+		$content = array('page_content' => $this->m_display->rankProgram(),
+						 'page_view_content' => $this->m_ranking->display_rankMember());
 		// echo "<pre>";
 		// print_r($content);
 		// echo "</pre>";
@@ -254,17 +267,17 @@ class Ranking_committee extends CI_Controller
 		$empID = $this->uri->segment(3, 0); 
         $content = array('page_view_content' => $this->m_ranking->set_program($empID),
         				 'faculty_list' => $this->m_ranking->display_rankMember());
-        // echo "<pre>";
-        // print_r($content);
-        // echo "</pre>";
+        echo "<pre>";
+        print_r($content);
+        echo "</pre>";
         $faculty['faculty_emp_id'] = $this->input->post('empID');
         $faculty['rankProgram'] = $this->input->post('program');
-       	// echo "<pre>";
-        // print_r($faculty);
-        // echo "</pre>";
+       	echo "<pre>";
+        print_r($faculty);
+        echo "</pre>";
 
        	$this->m_ranking->update_program($faculty);
-       	redirect(base_url().'index.php/ranking_committee/members');
+       	redirect(base_url().'index.php/ranking_committee/view_rankMembers');
 	}
 
 	public function set_chairProgram()
@@ -335,7 +348,7 @@ class Ranking_committee extends CI_Controller
 		// echo "<pre>";
 		// print_r($id);
 		// echo "</pre>";
-		$content = array('faculty_profile' => $this->m_ranking->view_ranking_chairProfile($id));
+		$content = array('faculty_profile' => $this->m_ranking->view_ranking_profile($id));
 		// echo "<pre>";
 		// print_r($content);
 		// echo "</pre>";
@@ -413,18 +426,18 @@ class Ranking_committee extends CI_Controller
 		$empID = $this->uri->segment(3, 0);
 		$content = array('faculty_profile' =>  $this->m_view->faculty($empID));
 		// echo "<pre>";
-		// 	print_r($faculty);
-		// 	echo "</pre>";
+		// print_r($faculty);
+		// echo "</pre>";
 		$empID = $content['faculty_profile']['emp_id'];
 		// echo "<pre>";
 		// print_r($empID);
 		// echo "</pre>";
-		$this->form_validation->set_rules('EQ', 'Educational Qualification', 'required|xss_clean');
-		$this->form_validation->set_rules('TeachP', 'Teaching Proficiency', 'required|xss_clean');
-		$this->form_validation->set_rules('Research', 'Research', 'required|xss_clean');
-		$this->form_validation->set_rules('CS', 'Community Services', 'required|xss_clean');
-		$this->form_validation->set_rules('TrainP', 'Training Programs', 'required|xss_clean');
-		$this->form_validation->set_rules('Involvement', 'Organizational Involvements', 'required|xss_clean');
+		$this->form_validation->set_rules('EQ', 'Educational Qualification', 'required|greater_than[0]|less_than[3]|xss_clean');
+		$this->form_validation->set_rules('TeachP', 'Teaching Proficiency', 'required|greater_than[0]|less_than[8]|xss_clean');
+		$this->form_validation->set_rules('Research', 'Research', 'required|greater_than[0]|less_than[6]|xss_clean');
+		$this->form_validation->set_rules('CS', 'Community Services', 'required|greater_than[0]|less_than[5]|xss_clean');
+		$this->form_validation->set_rules('TrainP', 'Training Programs', 'required|greater_than[-1]|less_than[2]|xss_clean');
+		$this->form_validation->set_rules('Involvement', 'Organizational Involvements', 'required|greater_than[-1]|less_than[2]|xss_clean');
 
 		if($this->form_validation->run() != NULL)
 		{
@@ -436,15 +449,16 @@ class Ranking_committee extends CI_Controller
 			$faculty['training_programs'] 			= $this->input->post('TrainP');
 			$faculty['involvements'] 				= $this->input->post('Involvement');
 			$faculty['total_points']				= $this->input->post('EQ') + $this->input->post('TeachP') + $this->input->post('Research') + $this->input->post('CS') + $this->input->post('TrainP') + $this->input->post('Involvement');
-			echo "<pre>";
-			print_r($faculty);
-			echo "</pre>";
+			// echo "<pre>";
+			// print_r($faculty);
+			// echo "</pre>";
 			$this->m_ranking->rank_faculty($faculty);
 			redirect(base_url().'index.php/ranking_committee/chairman_faculty_list');
 		}	
 		else
 		{
-			echo "<script> alert('Please Insert Data'); history.go(-1); </script>";
+			echo validation_errors();
+			echo "<script> alert('Please Correct Data'); history.go(-1); </script>";
 		}
 	}
 }

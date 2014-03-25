@@ -1,4 +1,5 @@
 <div class="body">
+	<h3>Faculty</h3>
 	<br/>
 	<table id="list" width="400" align="left" class="table table-striped">
 			<tr align="left">

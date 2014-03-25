@@ -119,10 +119,9 @@ class View_faculty extends CI_Controller
 	{
 		$empID = $this->uri->segment(3, 0);
  		$content = array('page_view_content' => $this->m_display->uploads($empID));
- 		// echo "<pre>";
+ 	// 	echo "<pre>";
 		// print_r($content);
 		// echo "</pre>";
-		$this->load->view('includes/header');
 		$this->load->view('includes/navi_faculty');
 		$this->load->view('view_uploads', $content);
 		$this->load->view('includes/footer');

@@ -1,5 +1,4 @@
-<div class="body">
-    <br/>
+<div id="body">
     <?php
     $gender = array(
                     'Male' => 'Male',
@@ -43,13 +42,13 @@
     {
         $level_option[$page_view_content[$x]['level_id']] = $page_view_content[$x]['level_name'];
     }
-        echo "<table class='form-group'>";
+        echo "<table class='table table-striped'>";
             $this->load->helper('form');
             echo form_open('register_faculty/add_new_record');
                 echo "<tr><td>Last Name</td><td>".form_input('lastname', NULL, 'class="form-control input-sm"')."</td></tr>";
                 echo "<tr><td>First Name</td><td>".form_input('firstname', NULL, 'class="form-control input-sm"')."</td></tr>";
                 echo "<tr><td>Middle Name</td><td>".form_input('middlename', NULL, 'class="form-control input-sm"')."</td></tr>";;
-                echo "<tr><td>Birthday</td><td>".form_dropdown('month',$months)."".form_dropdown('day',$days)."".form_dropdown('year',$year)."</td></tr>";
+                echo "<tr><td>Birthday</td><td>".form_dropdown('month',$months, NULL, 'class="span1" class="form-control input-sm"') ." ". form_dropdown('day',$days, NULL, 'class="span1" class="form-control input-sm"') ." ". form_dropdown('year',$year, NULL, 'class="span1" class="form-control input-sm"')."</td></tr>";
                 echo "<tr><td>Gender</td><td>".form_dropdown('gender', $gender, NULL, 'class="form-control input-sm"')."</td></tr>";
                 echo "<tr><td>Civil Status</td><td>".form_dropdown('civStat', $civilStatus, NULL, 'class="form-control input-sm"')."</td></tr>";
                 echo "<tr><td>Cell No.</td><td>".form_input('cellNo', NULL, 'class="form-control input-sm"')."</td></tr>";
@@ -59,7 +58,7 @@
                 echo "<tr><td>Password</td><td>".form_password('password', NULL, 'class="form-control input-sm"')."</td></tr>";
                 echo "<tr><td>Level</td><td>".form_dropdown('level',$level_option, NULL, 'class="form-control input-sm"')."</td></tr>";
                 echo "<tr><td>Program</td><td>".form_dropdown('program',$program_option, NULL, 'class="form-control input-sm"')."</td></tr>";
-                echo "<tr><td colspan=2>".form_submit('mysubmit', 'Register')."</td></tr>";
+                echo "<tr><td colspan=2>".form_submit('mysubmit', 'Register', 'class="btn btn-primary"')."</td></tr>";
             echo form_close();
         echo "</table>";
     ?>

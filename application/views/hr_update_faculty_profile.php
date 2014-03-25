@@ -81,7 +81,7 @@
                 echo "<tr><td>SSS # </td><td>".form_input('sss', $page_view_content['sss'])."</td></tr>";
                 echo "<tr><td>TIN # </td><td>".form_input('tin', $page_view_content['tin'])."</td></tr>";
                 echo "<tr><td>Program</td><td>".form_dropdown('program', $page_array1, $current_program)."</td></tr>";
-                echo "<tr><td>Rank</td><td>".form_dropdown('level', $page_array2, $current_rank)."</td></tr>"; ?>
+                // echo "<tr><td>Rank</td><td>".form_dropdown('level', $page_array2, $current_rank)."</td></tr>"; ?>
                 <tr><td colspan=2><button type="mysubmit" class="btn btn-primary">Update</button></td></tr>
             <?php
             echo form_close();

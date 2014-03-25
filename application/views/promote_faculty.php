@@ -1,12 +1,11 @@
 <div id="body">
-    <br/>
     <script>
         function goBack()
         {
             window.history.go(-1)
         }
     </script>
-    <button onclick="goBack()"> Back </button>
+    <button onclick="goBack()" class="btn btn-primary"> Back </button>
     <?php
     foreach($page_content2 as $page)
     {

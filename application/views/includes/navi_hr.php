@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
-        <title>Home</title>
+        <title>Records Management System</title>
         <link href="<?php echo base_url().'assets/css/bootstrap.css'?>" rel="stylesheet" type="text/css">
         <link href="<?php echo base_url().'assets/css/bootstrap-theme.css'?>" rel="stylesheet" type="text/css">
         <link href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>" rel="stylesheet" type="text/css">
@@ -85,7 +85,7 @@
                             <a class="sub_menu" href="http://localhost/hr_recordsystem/index.php/display/display_regular_faculty"> Regular Faculty </a>
                         </h4>
                         <h4>
-                            <a class="sub_menu" href="http://localhost/hr_recordsystem/index.php/display/display_unRegular_faculty"> Probitionary Faculty </a>
+                            <a class="sub_menu" href="http://localhost/hr_recordsystem/index.php/display/display_unRegular_faculty"> Probationary Faculty </a>
                         </h4>
                         <h4>
                             <a class="sub_menu" href="http://localhost/hr_recordsystem/index.php/display/display_deactivatedFaculty"> Deactivated Faculty </a>
@@ -107,7 +107,7 @@
                     <h4 style="width=50px; cursor: pointer" class="h4_1">Notifications</h4> 
                     <div class="nav nav-pills nav-stacked">
                         <h4>
-                            <a class="sub_menu" href="http://localhost/hr_recordsystem/index.php/display_notification/display_rankNoti"> New Ranked Faculty </a>
+                            <a class="sub_menu" href="http://localhost/hr_recordsystem/index.php/display_notification/display_rankNoti"> Newly Ranked Faculty </a>
                         </h4>
                         <h4>
                             <a class="sub_menu" href="http://localhost/hr_recordsystem/index.php/display_notification"> Upload </a>
@@ -133,10 +133,7 @@
                     <h4 style="width=50px; cursor: pointer" class="h4_1">Ranking Committee</h4> 
                     <div class="nav nav-pills nav-stacked">
                         <h4>
-                            <?php echo '<a class="sub_menu" href="'.base_url().'index.php/ranking_committee/hr_view_rankChairman">'; ?> Ranking Chairman </a> 
-                        </h4>
-                        <h4>
-                            <?php echo '<a class="sub_menu" href="'.base_url().'index.php/ranking_committee/hr_view_rankMembers">'; ?> Ranking Members </a>
+                            <?php echo '<a class="sub_menu" href="'.base_url().'index.php/ranking_committee/hr_view_rankMembers">'; ?> Ranking Committee </a>
                         </h4>
                         <br>
                     </div> 

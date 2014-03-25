@@ -6,12 +6,12 @@
             window.history.go(-1)
         }
     </script>
-    <br/>
     <button onclick="goBack()" class="btn btn-primary"> Back </button>
-    <br/><h4>Faculty Profile</h4><br/>
-    <br/>
-    <img id="facultyPic" src = "<?php echo base_url('uploads/'. $faculty_profile['emp_id'] .'_profPic.jpg')?>"></img>
-    <br/> <br/>
+    <img align="right" id="facultyPic" src = "<?php echo base_url('uploads/'. $faculty_profile['emp_id'] .'_profPic.jpg')?>"></img>
+        <h2>
+            <?php echo $faculty_profile['firstname'] ." ". $faculty_profile['lastname'] . " Profile"; ?>
+        </h2>
+    <br/><br/><br/><br/><br/>
     <ul class="nav nav-pills nav-justified" id-"profile_menu">   
         <?php echo '<li><a href="'.base_url().'index.php/view_rankMember/spouse/'.$faculty_profile['emp_id'].'">'; ?> Spouse </a></li>
         <?php echo '<li><a href="'.base_url().'index.php/view_rankMember/children/'.$faculty_profile['emp_id'].'">'; ?> Children </a></li>

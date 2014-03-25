@@ -1,13 +1,11 @@
-<div id="content">
-    <br/>
+<div class="body">
     <script>
         function goBack()
           {
           window.history.go(-1)
           }
-        </script>
-        <br/>
-        <button onclick="goBack()" class="btn btn-primary"> Back </button><br/><br/>
+    </script>
+    <button onclick="goBack()" class="btn btn-primary"> Back </button><br/><br/>
     <?php
         echo '<table>';
         echo '<tr>';

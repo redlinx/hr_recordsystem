@@ -1,7 +1,6 @@
-<div class="body">
-    <br/>
-    <h4>Upload Profile Picture</h4>
-    <table align="left" >
+<div id="body">
+    <h3>Upload Profile Picture</h3>
+    <table align="left" class="table table-striped" >
         <?php echo $error;?>
             <?php echo form_open_multipart('upload_profPic/do_upload');?>
                 <tr>
@@ -13,7 +12,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <br/><button type="submit" class="btn btn-default">Upload</button>
+                        <button type="submit" class="btn btn-primary">Upload</button>
                     </td>
                 </tr>
             <?php echo form_close(); ?>

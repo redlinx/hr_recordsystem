@@ -80,7 +80,7 @@
                         <h4><a class="sub_menu" href="http://localhost/hr_recordsystem/index.php/upload">Upload</a></h4>
                     </div> 
                 </div>
-                    <?php if($this->session->userdata('rank_level') == 2)
+                    <?php if($this->session->userdata('rank_level') == 3)
                     { ?>
                             <h4 style="width=50px; cursor: pointer" class="h4_1">
                                 <a href="http://localhost/hr_recordsystem/index.php/ranking_committee/view_rankMembers">View Committee</a>
@@ -90,7 +90,7 @@
                             </h4>
                     <?php
                     }
-                    else if($this->session->userdata('rank_level') == 3)
+                    else if($this->session->userdata('rank_level') == 2)
                     {?>
                             <h4 style="width=50px; cursor: pointer" class="h4_1">
                                 <a href="http://localhost/hr_recordsystem/index.php/ranking_committee/member_faculty_list">Rank Program</a>

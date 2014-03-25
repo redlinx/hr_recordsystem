@@ -74,6 +74,15 @@ class M_display extends CI_Model
 		return $sQuery->result_array();
 	}
 
+	public function rankLevel()
+	{
+		$sql = "CALL display_rankLevel()";
+		$sQuery = $this->db->query($sql);
+		$this->db->close();
+
+		return $sQuery->result_array();
+	}
+
 	public function uploadCategory()
 	{
 		$sql = "CALL display_category()";

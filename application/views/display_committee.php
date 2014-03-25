@@ -22,7 +22,6 @@
 							echo '<td>'.$page_view_content[$x]['lastname'].'</td>';
 							echo '<td>'.$page_view_content[$x]['firstname'].'</td>';
 							echo '<td>'.form_dropdown('program', $page_array, $page_view_content[$x]['prog_id']).'</td>'; ?>
-
 							<td><button type="mysubmit" class="btn btn-primary">Set</button></td>
 							<?php
 						echo '</tr>';

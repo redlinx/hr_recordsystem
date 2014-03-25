@@ -1,14 +1,12 @@
 <div class="body">
-    <br/>
     <script>
     function goBack()
       {
       window.history.go(-1)
       }
     </script>
-    <br/>
     <button onclick="goBack()" class="btn btn-primary"> Back </button>
-    <br/><h4>Spouse</h4><br/>
+    <br/><h3>Spouse</h3><br/>
     <table align="center" class="table table-stripped">
         <?php
             if($faculty_spouse != NULL)

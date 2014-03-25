@@ -71,7 +71,7 @@ class Register_faculty extends CI_Controller {
 			$this->load->model('hr');
 			$this->hr->add_faculty($faculty);
 
-			redirect(base_url().'index.php/verifylogin');
+			redirect(base_url().'index.php/register_faculty');
 		}
 		else
 		{

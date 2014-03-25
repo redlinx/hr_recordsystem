@@ -1,4 +1,4 @@
-<div class="body">
+    <div class="body">
     <br/>
     <h3>Candidate of Regularization</h3>
     <?php echo '<a href="' . base_url() . 'index.php/Report_controller/candidate_reports">';?>
@@ -12,7 +12,7 @@
             <th>Years of Service</th>
             <th>Program</th>
             <th>Education</th>
-            <th>Regular</th>
+            <th>Status</th>
         </tr>
         <?php
             for($x=0;$x<count($page_view_content);$x++)
@@ -23,7 +23,7 @@
                     echo "<td>".$page_view_content[$x]['firstname']."</td>";
                     echo "<td>".$page_view_content[$x]['MonthName'].' '.$page_view_content[$x]['Day'].', '.$page_view_content[$x]['Year']."</td>";
                     echo "<td>".$page_view_content[$x]['Years_Of_Service']."</td>";
-                     echo "<td>".$page_view_content[$x]['prog_name']."</td>";
+                    echo "<td>".$page_view_content[$x]['prog_name']."</td>";
                     echo '<td><a href="'.base_url().'index.php/view_hr/education/'.$page_view_content[$x]['faculty_profile_emp_id'].'">View</a></td>';
                     echo '<td><a href="'.base_url().'index.php/regularization_candidate/verify_regularization/'.$page_view_content[$x]['account_id'].'"> Regular </a></td>';
                     echo '</tr>';
