@@ -28,7 +28,7 @@
             echo '<td>'.$page_view_content[$x]['position'].'</td>';
             echo '<td>'.$page_view_content[$x]['StartMonthName'].' '.$page_view_content[$x]['StartDay'].', '.$page_view_content[$x]['StartYear'].' - ' .$page_view_content[$x]['EndMonthName'].' '.$page_view_content[$x]['EndDay'].', '.$page_view_content[$x]['EndYear'].'</td>';
             echo '<td>'.$page_view_content[$x]['YearsOfService'].'</td>';
-            echo '<td><a href="'.base_url().'index.php/update_form/work/'.$page_view_content[$x]['work_exp_id'].'">Edit</a></td>';
+            echo '<td><a href="'.base_url().'index.php/update_form/work/'.$page_view_content[$x]['work_exp_id'].'"><button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></a></td>';
             if($page_view_content[$x]['work_status'] == 1)
             {
                 echo '<td>Verified</td>';

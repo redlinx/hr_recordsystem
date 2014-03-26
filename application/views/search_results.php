@@ -7,12 +7,12 @@
     </script>
     <button onclick="goBack()" class="btn btn-primary"> Back </button>
     <br/><h2>Results</h2><br/>
-    <table width="545" align="left" class="table table-striped">
+    <table width="545" align="left" class="table table-striped sortable">
         <tr align="left">
             <th>Last Name</th>
             <th>First Name</th>
             <th>Middle Name</th>
-            <th>View</th>
+            <th>Action</th>
         </tr>
         <?php
         if($results != NULL)

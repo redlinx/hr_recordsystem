@@ -32,7 +32,7 @@
             echo '<td>'.$page_view_content[$x]['organizer'].'</td>';
             echo '<td>'.$page_view_content[$x]['role'].'</td>';
             echo '<td>'.$page_view_content[$x]['type_desc'].'</td>';
-            echo '<td><a href="'.base_url().'index.php/update_form/training/'.$page_view_content[$x]['training_id'].'">Edit</a></td>';
+            echo '<td><a href="'.base_url().'index.php/update_form/training/'.$page_view_content[$x]['training_id'].'"><button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></a></td>';
             if($page_view_content[$x]['training_status'] == 1)
                     {
                         echo '<td>Verified</td>';

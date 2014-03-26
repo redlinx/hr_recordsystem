@@ -58,7 +58,7 @@
                 echo "<tr><td>Password</td><td>".form_password('password', NULL, 'class="form-control input-sm"')."</td></tr>";
                 echo "<tr><td>Level</td><td>".form_dropdown('level',$level_option, NULL, 'class="form-control input-sm"')."</td></tr>";
                 echo "<tr><td>Program</td><td>".form_dropdown('program',$program_option, NULL, 'class="form-control input-sm"')."</td></tr>";
-                echo "<tr><td colspan=2>".form_submit('mysubmit', 'Register', 'class="btn btn-primary"')."</td></tr>";
+                echo "<tr><td align='right' colspan=2>".form_submit('mysubmit', 'Register', 'class="btn btn-primary"')."</td></tr>";
             echo form_close();
         echo "</table>";
     ?>

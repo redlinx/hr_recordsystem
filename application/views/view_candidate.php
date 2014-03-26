@@ -22,8 +22,8 @@
                     echo "<td>".$page_view_content[$x]['MonthName'].' '.$page_view_content[$x]['Day'].', '.$page_view_content[$x]['Year']."</td>";
                     echo "<td>".$page_view_content[$x]['Years_Of_Service']."</td>";
                     echo "<td>".$page_view_content[$x]['prog_name']."</td>";
-                    echo '<td><a href="'.base_url().'index.php/view_hr/education/'.$page_view_content[$x]['faculty_profile_emp_id'].'"><button class="btn btn-primary">View</button></a></td>';
-                    echo '<td><a href="'.base_url().'index.php/regularization_candidate/verify_regularization/'.$page_view_content[$x]['account_id'].'"><button class="btn btn-primary">Regular</button></a></td>';
+                    echo '<td><a href="'.base_url().'index.php/view_hr/education/'.$page_view_content[$x]['faculty_profile_emp_id'].'"><button class="btn btn-primary btn-sm">View</button></a></td>';
+                    echo '<td><a href="'.base_url().'index.php/regularization_candidate/verify_regularization/'.$page_view_content[$x]['account_id'].'"><button class="btn btn-primary btn-sm">Promote</button></a></td>';
                     echo '</tr>';
             }
         ?>    

@@ -8,7 +8,7 @@
     <button onclick="goBack()" class="btn btn-primary"> Back </button>
     <br/><br/>
     <a href="http://localhost/hr_recordsystem/index.php/forms/education"> <button type="mysubmit"class="btn btn-primary">Add</button> </a>
-        <a href="http://localhost/hr_recordsystem/index.php/upload/education"><button class="btn btn-primary">Upload</button></a>
+    <a href="http://localhost/hr_recordsystem/index.php/upload/education"><button class="btn btn-primary">Upload</button></a>
     <?php echo '<a href="'.base_url().'index.php/view_faculty/uploads/'.$this->session->userdata('emp_id').'">'; ?> <button type="submit" class="btn btn-primary">Gallery</button></a>
     <br/><br/><h4>Academic and Professional Preparation</h4><br/>
         <table width="700" align="left" class="table table-striped">
@@ -32,7 +32,7 @@
                     echo '<td>'.$page_view_content[$x]['year'].'</td>';
                     echo '<td>'.$page_view_content[$x]['type_desc'].'</td>';
                     echo '<td>'.$page_view_content[$x]['degree'].'</td>';
-                    echo '<td><a href="'.base_url().'index.php/update_form/education/'.$page_view_content[$x]['educ_id'].'">Edit</a></td>';
+                    echo '<td><a href="'.base_url().'index.php/update_form/education/'.$page_view_content[$x]['educ_id'].'"><button class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></button></a></td>';
                     if($page_view_content[$x]['status'] == 1)
                     {
                         echo '<td>Verified</td>';

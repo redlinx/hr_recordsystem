@@ -25,7 +25,7 @@
                     echo '<td>'.$page_view_content[$x]['MonthName'].' '.$page_view_content[$x]['Day'].', '.$page_view_content[$x]['Year'].'</td>';
                     echo '<td>'.$page_view_content[$x]['exam_place'].'</td>';
                     echo '<td>'.$page_view_content[$x]['rating'].'</td>';
-                    echo '<td><a href="'.base_url().'index.php/update_form/eligibility/'.$page_view_content[$x]['eligibility_id'].'">Edit</a></td>';
+                    echo '<td><a href="'.base_url().'index.php/update_form/eligibility/'.$page_view_content[$x]['eligibility_id'].'"><button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></a></td>';
                     if($page_view_content[$x]['eligi_status'] == 1)
                     {
                         echo '<td>Verified</td>';
