@@ -1,11 +1,17 @@
 <div class="body">
-    <br/>
     <?php
         for($x=0;$x<count($page_content);$x++)
         {
             $category_option[$page_content[$x]['category_id']] = $page_content[$x]['category_name'];
         }
     ?>
+        <script>
+    function goBack()
+      {
+      window.history.go(-1)
+      }
+    </script>
+    <button onclick="goBack()" class="btn btn-primary"> Back </button>
     <?php echo '<a href="'.base_url().'index.php/view_faculty/uploads/'.$this->session->userdata('emp_id').'">'; ?> <button type="submit" class="btn btn-primary">Gallery</button> </a>
     <br/><br/>
     <table>

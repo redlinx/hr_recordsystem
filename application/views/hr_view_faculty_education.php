@@ -12,7 +12,7 @@
             <th>School</th>
             <th>Address</th>
             <th>Year</th>
-            <th>Type</th>
+            <th>Level</th>
             <th>Degree</th>
         </tr>
         <?php

@@ -46,6 +46,15 @@ class Display extends CI_Controller
 		$this->load->view('display', $page_view_content);
 		// $this->load->view('hr_display', $page_view_content);
 	}
+
+	public function sample($program_id)
+	{	
+		$this->load->model('hr');
+		$page_view_content['faculty_list'] =  $this->hr->display_byProgram($program_id);
+		// $this->load->view('includes/navi_hr');
+		$this->load->view('sampledata', $page_view_content);
+		// $this->load->view('includes/footer');
+	}
     
     public function display_regular_faculty()
     {

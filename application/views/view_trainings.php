@@ -5,9 +5,11 @@
       window.history.go(-1)
       }
     </script>
-    <br/>
     <button onclick="goBack()" class="btn btn-primary"> Back </button>
-    <a href="http://localhost/hr_recordsystem/index.php/forms/training"> <button type="mysubmit"class="btn btn-primary">Add</button> </a>
+    <br/><br/>
+    <a href="http://localhost/hr_recordsystem/index.php/forms/training"><button type="mysubmit"class="btn btn-primary">Add</button> </a>
+    <a href="http://localhost/hr_recordsystem/index.php/upload/training"><button class="btn btn-primary">Upload</button></a>
+    <?php echo '<a href="'.base_url().'index.php/view_faculty/uploads/'.$this->session->userdata('emp_id').'">'; ?> <button type="submit" class="btn btn-primary">Gallery</button></a>
     <br/><br/><h4>Trainings and Seminars</h4><br/>
     <table width="650" align="left" class="table table-striped">
         <tr align="left">

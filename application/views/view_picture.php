@@ -7,7 +7,7 @@
     </script>
     <button onclick="goBack()" class="btn btn-primary"> Back </button><br/><br/>
     <?php
-        echo '<table>';
+        echo '<table class="table table-striped">';
         echo '<tr>';
         echo '<td>File name: <b>'.$page_view_content['file_name'].'</b></td>';
         echo '</tr>';

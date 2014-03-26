@@ -432,21 +432,12 @@ class Ranking_committee extends CI_Controller
 		// echo "<pre>";
 		// print_r($empID);
 		// echo "</pre>";
-<<<<<<< HEAD
 		$this->form_validation->set_rules('EQ', 'Educational Qualification', 'required|greater_than[0]|less_than[3]|xss_clean');
 		$this->form_validation->set_rules('TeachP', 'Teaching Proficiency', 'required|greater_than[0]|less_than[8]|xss_clean');
 		$this->form_validation->set_rules('Research', 'Research', 'required|greater_than[0]|less_than[6]|xss_clean');
 		$this->form_validation->set_rules('CS', 'Community Services', 'required|greater_than[0]|less_than[5]|xss_clean');
 		$this->form_validation->set_rules('TrainP', 'Training Programs', 'required|greater_than[-1]|less_than[2]|xss_clean');
 		$this->form_validation->set_rules('Involvement', 'Organizational Involvements', 'required|greater_than[-1]|less_than[2]|xss_clean');
-=======
-		$this->form_validation->set_rules('EQ', 'Educational Qualification', 'required|xss_clean|min_length[0]|max_length[2]');
-		$this->form_validation->set_rules('TeachP', 'Teaching Proficiency', 'required|xss_clean|min_length[0]|max_length[7]');
-		$this->form_validation->set_rules('Research', 'Research', 'required|xss_clean|min_length[0]|max_length[5]');
-		$this->form_validation->set_rules('CS', 'Community Services', 'required|xss_clean|min_length[0]|max_length[4]');
-		$this->form_validation->set_rules('TrainP', 'Training Programs', 'required|xss_clean|min_length[0]|max_length[1]');
-		$this->form_validation->set_rules('Involvement', 'Organizational Involvements', 'required|xss_clean|min_length[0]|max_length[1]');
->>>>>>> 8171cbeaf07ad4b581c09f81e9bb1fee25268449
 
 		if($this->form_validation->run() != NULL)
 		{
@@ -466,12 +457,7 @@ class Ranking_committee extends CI_Controller
 		}	
 		else
 		{
-<<<<<<< HEAD
-			echo validation_errors();
 			echo "<script> alert('Please Correct Data'); history.go(-1); </script>";
-=======
-			echo "<script> alert('Invalid '); history.go(-1); </script>";
->>>>>>> 8171cbeaf07ad4b581c09f81e9bb1fee25268449
 		}
 	}
 }

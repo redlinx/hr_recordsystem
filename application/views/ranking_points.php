@@ -1,14 +1,12 @@
 <div class="body">
-    <br/>
     <script>
     function goBack()
       {
       window.history.go(-1)
       }
     </script>
-    <br/>
     <button onclick="goBack()" class="btn btn-primary"> Back </button>
-    <br/><h4>Rank Points</h4><br/>
+    <br/><h3>Rank Points</h3><br/>
     <table width="900" align="left" class="table table-stripped">
         <tr align="left">
             <th width="1">Educational Qualification</th>

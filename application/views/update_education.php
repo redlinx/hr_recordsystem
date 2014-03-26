@@ -19,7 +19,7 @@
                 echo "<tr><td>School Name</td><td>".form_input('school_name', $page_view_content['school_name'], 'class="form-control input-sm"')."</td></tr>";
                 echo "<tr><td>Address</td><td>".form_input('address', $page_view_content['address'], 'class="form-control input-sm"')."</td></tr>";
                 echo "<tr><td>Year</td><td>".form_dropdown('year',$year, $page_view_content['year'], 'class="form-control input-sm"')."</td></tr>";
-                echo "<tr><td>Type</td><td>".form_dropdown('type',$page_array, $current_type, 'class="form-control input-sm"')."</td></tr>";
+                echo "<tr><td>Level</td><td>".form_dropdown('type',$page_array, $current_type, 'class="form-control input-sm"')."</td></tr>";
                 echo "<tr><td>Degree</td><td>".form_input('degree', $page_view_content['degree'], 'class="form-control input-sm"')."</td></tr>";
                 echo "<tr><td colspan=2>".form_submit('mysubmit', 'Update', 'class="btn btn-primary"')."</td></tr>";
             echo form_close();

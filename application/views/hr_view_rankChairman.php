@@ -1,10 +1,9 @@
 <div class="body">
-	<br/>
 	<p>
 		<b>Ranking Committee Chairman</b>
 	</p>
 	<?php echo '<a href="'.base_url().'index.php/ranking_committee/set_rankChairman">'; ?> [Add Chairman] </a>
-	<table id="list" width="400" align="left" class="table table-stripped" >
+	<table id="list" width="400" align="left" class="table table-stripped sortable" >
 			<tr align="left">
 				<th>Last Name</th>
 				<th>First Name</th>

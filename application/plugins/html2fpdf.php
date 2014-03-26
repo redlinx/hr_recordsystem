@@ -268,54 +268,54 @@ function UsePRE($opt=true)
 //Page header
 function Header()
 {
-  if($this->page==1)
-  {
-$this->image('uploads/uic.jpg',90,9,33 );
-$this->writeHTML("<center>University of the Immaculate Conception<br></center>");
-$this->writeHTML("<center>Human Resource Office<br>Fr. Selga St., Davao City<br>221-8181, 221-8090 local 131</center><br><br>");
-$this->SetFont('Arial','B',15);
-}
-//! @return void
-//! @desc The header is printed in every page.
-  /*if($this->usetableheader and $content != '')
-  {
+    if($this->page==1)
+    {
+    $this->image('uploads/uic.jpg',90,9,33 );
+    $this->writeHTML("<center>University of the Immaculate Conception<br></center>");
+    $this->writeHTML("<center>Human Resource Office<br>Fr. Selga St., Davao City</center><br>");
+    $this->SetFont('Arial','B',15);
+    }
+    //! @return void
+    //! @desc The header is printed in every page.
+    /*if($this->usetableheader and $content != '')
+    {
     $y = $this->y;
     foreach($content as $tableheader)
     {
-      $this->y = $y;
-      //Set some cell values
-      $x = $tableheader['x'];
-      $w = $tableheader['w'];
-      $h = $tableheader['h'];
-      $va = $tableheader['va'];
-      $mih = $tableheader['mih'];
-      $fill = $tableheader['bgcolor'];
-      $border = $tableheader['border'];
-      $align = $tableheader['a'];
-      //Align
-      $this->divalign=$align;
-			$this->x = $x;
-		  //Vertical align
-		  if (!isset($va) || $va=='M') $this->y += ($h-$mih)/2;
-      elseif (isset($va) && $va=='B') $this->y += $h-$mih;
-			if ($fill)
-      {
- 					$color = ConvertColor($fill);
- 					$this->SetFillColor($color['R'],$color['G'],$color['B']);
- 					$this->Rect($x, $y, $w, $h, 'F');
-			}
-   		//Border
-  		if (isset($border) and $border != 'all') $this->_tableRect($x, $y, $w, $h, $border);
-  		elseif (isset($border) && $border == 'all') $this->Rect($x, $y, $w, $h);
-  		//Print cell content
-      $this->divwidth = $w-2;
-      $this->divheight = 1.1*$this->lineheight;
-      $textbuffer = $tableheader['textbuffer'];
-      if (!empty($textbuffer)) $this->printbuffer($textbuffer,false,true);
-      /*$textbuffer = array();
+    $this->y = $y;
+    //Set some cell values
+    $x = $tableheader['x'];
+    $w = $tableheader['w'];
+    $h = $tableheader['h'];
+    $va = $tableheader['va'];
+    $mih = $tableheader['mih'];
+    $fill = $tableheader['bgcolor'];
+    $border = $tableheader['border'];
+    $align = $tableheader['a'];
+    //Align
+    $this->divalign=$align;
+    $this->x = $x;
+    //Vertical align
+    if (!isset($va) || $va=='M') $this->y += ($h-$mih)/2;
+    elseif (isset($va) && $va=='B') $this->y += $h-$mih;
+    if ($fill)
+    {
+    $color = ConvertColor($fill);
+    $this->SetFillColor($color['R'],$color['G'],$color['B']);
+    $this->Rect($x, $y, $w, $h, 'F');
+    }
+    //Border
+    if (isset($border) and $border != 'all') $this->_tableRect($x, $y, $w, $h, $border);
+    elseif (isset($border) && $border == 'all') $this->Rect($x, $y, $w, $h);
+    //Print cell content
+    $this->divwidth = $w-2;
+    $this->divheight = 1.1*$this->lineheight;
+    $textbuffer = $tableheader['textbuffer'];
+    if (!empty($textbuffer)) $this->printbuffer($textbuffer,false,true);
+    /*$textbuffer = array();
     }
     $this->y = $y + $h; //Update y coordinate
-  }//end of 'if usetableheader ...'*/
+    }//end of 'if usetableheader ...'*/
 }
 
 //Page footer
@@ -327,11 +327,12 @@ function Footer()
     $this->SetY(-10);
     //Copyright //especial para esta versão
     $this->SetFont('Arial','B',9);
-  	$this->SetTextColor(0);
+    $this->SetTextColor(0);
     //Arial italic 9
     $this->SetFont('Arial','I',9);
     //Page number
-    $this->Cell(0,10,$this->PageNo().'/{nb}',0,0,'C');
+    // $this->Cell(0,10,$this->PageNo().'/{nb}',0,0,'C');
+    $this->writeHTML("<div align='right'><hr>© Human Resource Office, University of the Immaculate Conception</div>");
     //Return Font to normal
     $this->SetFont('Arial','',11);
 }
@@ -341,9 +342,9 @@ function Footer()
 ///////////////////
 function WriteHTML($html)
 {
-//! @desc HTML parser
-//! @return void
-/* $e == content */
+    //! @desc HTML parser
+    //! @return void
+    /* $e == content */
 
   $this->ReadMetaTags($html);
   $html = AdjustHTML($html,$this->usepre); //Try to make HTML look more like XHTML
@@ -495,8 +496,8 @@ function WriteHTML($html)
 
 function OpenTag($tag,$attr)
 {
-//! @return void
-// What this gets: < $tag $attr['WIDTH']="90px" > does not get content here </closeTag here>
+    //! @return void
+    // What this gets: < $tag $attr['WIDTH']="90px" > does not get content here </closeTag here>
 
   $align = array('left'=>'L','center'=>'C','right'=>'R','top'=>'T','middle'=>'M','bottom'=>'B','justify'=>'J');
 

@@ -6,7 +6,10 @@
       }
     </script>
     <button onclick="goBack()" class="btn btn-primary"> Back </button>
+    <br/><br/>
     <a href="http://localhost/hr_recordsystem/index.php/forms/education"> <button type="mysubmit"class="btn btn-primary">Add</button> </a>
+        <a href="http://localhost/hr_recordsystem/index.php/upload/education"><button class="btn btn-primary">Upload</button></a>
+    <?php echo '<a href="'.base_url().'index.php/view_faculty/uploads/'.$this->session->userdata('emp_id').'">'; ?> <button type="submit" class="btn btn-primary">Gallery</button></a>
     <br/><br/><h4>Academic and Professional Preparation</h4><br/>
         <table width="700" align="left" class="table table-striped">
             <tr align="left">

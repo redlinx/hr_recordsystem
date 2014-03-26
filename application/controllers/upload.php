@@ -25,6 +25,31 @@ class Upload extends CI_Controller {
 		$this->load->view('includes/footer');
 	}
 
+	function training()
+	{
+		$content = array('error' => '',
+						 'page_content' => $this->m_display->uploadCategory());
+		// echo "<pre>";
+		// print_r($content);
+		// echo "</pre>";
+		$this->load->view('includes/header');
+ 		$this->load->view('includes/navi_faculty');
+		$this->load->view('upload_training_form', $content);
+		$this->load->view('includes/footer');
+	}
+
+	function education()
+	{
+		$content = array('error' => '',
+						 'page_content' => $this->m_display->uploadCategory());
+		// echo "<pre>";
+		// print_r($content);
+		// echo "</pre>";
+		$this->load->view('includes/header');
+ 		$this->load->view('includes/navi_faculty');
+		$this->load->view('upload_education_form', $content);
+		$this->load->view('includes/footer');
+	}
 	function do_upload()
 	{
 		if($this->input->post())

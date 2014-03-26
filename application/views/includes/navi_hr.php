@@ -8,23 +8,14 @@
         <meta name="author" content="">
         <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
         <title>Records Management System</title>
-        <link href="<?php echo base_url().'assets/css/bootstrap.css'?>" rel="stylesheet" type="text/css">
-        <link href="<?php echo base_url().'assets/css/bootstrap-theme.css'?>" rel="stylesheet" type="text/css">
-        <link href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>" rel="stylesheet" type="text/css">
-        <link href="<?php echo base_url('assets/css/dashboard.css'); ?>" rel="stylesheet">
-        <link href="<?php echo base_url('assets/css/layout.css'); ?>" rel="stylesheet">
-        <script src="<?php echo base_url('assets/js/metro.min.js'); ?>"></script>
-        <script src="<?php echo base_url('assets/js/metro-dropdown.js'); ?>"></script>
-        <!-- Just for debugging purposes. Don't actually copy this line! -->
-        <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
+        <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>"  type="text/css">
+        <link rel="stylesheet" href="<?php echo base_url('assets/css/dashboard.css'); ?>" >
+        <link rel="stylesheet" href="<?php echo base_url('assets/css/layout.css'); ?>" >
+        <link rel="stylesheet" href="<?php echo base_url().'datatable/jqwidgets/styles/jqx.base.css'?>" type="text/css">
+        <script type="text/javascript" src="<?php echo base_url('assets/js/sorttable.js'); ?>"></script>
+        <script type="text/javascript" src="<?php echo base_url('assets/js/metro.min.js'); ?>"></script>
+        <script type="text/javascript" src="<?php echo base_url('assets/js/metro-dropdown.js'); ?>"></script>
     </head>
-
 <body>
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container-fluid">
@@ -141,10 +132,5 @@
             </ul>
         </div>
     </div>
-</div>
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="<?php echo base_url('assets/js/jquery-1.10.2.min.js'); ?>"></script>
-<script src="<?php echo base_url('assets/js/bootstrap.min.js'); ?>"></script>
+</div> 
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">

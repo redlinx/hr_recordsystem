@@ -1,6 +1,6 @@
 <div class="body">
 	<br/>
-	<table id="list" width="400" align="left" class = "table table-striped">
+	<table id="list" width="400" align="left"  class="table table-striped sortable">
 			<tr align="left">
 				<th>Last Name</th>
 				<th>First Name</th>
@@ -16,14 +16,14 @@
 					echo '<tr>';
 					echo '<td>'.$faculty_list[$x]['lastname'].'</td>';
 					echo '<td>'.$faculty_list[$x]['firstname'].'</td>';
-					echo '<td><a href="'.base_url().'index.php/view_hr/faculty/'.$faculty_list[$x]['emp_id'].'">View</a></td>';
+					echo '<td><a href="'.base_url().'index.php/view_hr/faculty/'.$faculty_list[$x]['emp_id'].'"><button class="btn btn-primary">View</button></a></td>';
 					if($faculty_list[$x]['acct_stat'] == 1)
 					{
-						echo '<td><a href="'.base_url().'index.php/hr_update/deactivate/'.$faculty_list[$x]['emp_id'].'">Deactivate</a></td>';
+						echo '<td><a href="'.base_url().'index.php/hr_update/deactivate/'.$faculty_list[$x]['emp_id'].'"><button class="btn btn-danger">Deactivate</button></a></td>';
 					}
 					else
 					{
-						echo '<td><a href="'.base_url().'index.php/hr_update/activate/'.$faculty_list[$x]['emp_id'].'">Activate</a></td>';
+						echo '<td><a href="'.base_url().'index.php/hr_update/activate/'.$faculty_list[$x]['emp_id'].'"><button class="btn btn-primary">Activate</button></a></td>';
 					}
 					echo '</tr>';
 				}

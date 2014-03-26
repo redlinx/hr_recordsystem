@@ -23,7 +23,7 @@
                 echo "<td>".$val['lastname']."</td>";
                 echo "<td>".$val['firstname']."</td>";
                 echo "<td>".$val['middlename']."</td>";
-                echo '<td><a href="'.base_url().'index.php/view_hr/faculty/'.$val['emp_id'].'">View</a></td>';
+                echo '<td><a href="'.base_url().'index.php/view_hr/faculty/'.$val['emp_id'].'"><button class="btn btn-sm btn-primary">View</button></a></td>';
                 echo '</tr>';
             }
         }
