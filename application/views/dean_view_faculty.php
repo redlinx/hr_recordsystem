@@ -1,6 +1,6 @@
 <div class="body">
 	<br/>
-	<table class="table table-striped">
+	<table class="table table-striped sortable">
 			<tr align="left">
 				<th>Last Name</th>
 				<th>First Name</th>
@@ -15,7 +15,7 @@
 					echo '<tr>';
 					echo '<td>'.$faculty_list[$x]['lastname'].'</td>';
 					echo '<td>'.$faculty_list[$x]['firstname'].'</td>';
-					echo '<td><a href="'.base_url().'index.php/view_dean/faculty/'.$faculty_list[$x]['emp_id'].'">View</a></td>';
+					echo '<td><a href="'.base_url().'index.php/view_dean/faculty/'.$faculty_list[$x]['emp_id'].'"><button class="btn btn-primary btn-sm">View</button></a></td>';
 				}
 			?>
 	</table>

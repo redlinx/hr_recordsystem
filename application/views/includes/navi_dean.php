@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
-        <title>Home</title>
+        <title>Records Management System</title>
         <link href="<?php echo base_url().'assets/css/bootstrap.css'?>" rel="stylesheet" type="text/css">
         <link href="<?php echo base_url().'assets/css/bootstrap-theme.css'?>" rel="stylesheet" type="text/css">
         <link href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>" rel="stylesheet" type="text/css">
@@ -15,6 +15,16 @@
         <link href="<?php echo base_url('assets/css/layout.css'); ?>" rel="stylesheet">
         <script src="<?php echo base_url('assets/js/metro.min.js'); ?>"></script>
         <script src="<?php echo base_url('assets/js/metro-dropdown.js'); ?>"></script>
+        <script type="text/javascript" src="<?php echo base_url('assets/js/sorttable.js'); ?>"></script>
+        <script src="<?php echo base_url('assets/js/jquery-1.10.2.min.js'); ?>"></script>
+        <script src="<?php echo base_url('assets/js/bootstrap.min.js'); ?>"></script>
+        <script type="text/javascript" src="<?php echo base_url('assets/js/jquery-1.9.1.js') ?>" /></script>
+        <script type="text/javascript" src="<?php echo base_url('assets/js/jquery-ui.js') ?>" /></script>
+        <script> $(function() { $( "#accordion1" ).accordion({ collapsible: true, active: false }); }); </script>
+        <script> $(function() { $( "#ranking" ).accordion({ collapsible: true, active: false }); }); </script>
+        <script> $(function() { $( "#accordion2" ).accordion({ collapsible: true, active: false }); }); </script>
+        <script> $(function() { $( "#promotions" ).accordion({ collapsible: true, active: false }); }); </script>
+        <script> $(function() { $( "#faculty" ).accordion({ collapsible: true, active: false }); }); </script>
         <!-- Just for debugging purposes. Don't actually copy this line! -->
         <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
@@ -71,7 +81,7 @@
                 <h4 style="width=50px; cursor: pointer" class="h4_1">
                     <a href="http://localhost/hr_recordsystem/index.php/view_dean/view_faculty_members">View Faculty Members</a>
                 </h4>
-                <?php if($this->session->userdata('rank_level') == 2)
+                <?php if($this->session->userdata('rank_level') == 3)
                     { ?>
                             <h4 style="width=50px; cursor: pointer" class="h4_1">
                                 <a href="http://localhost/hr_recordsystem/index.php/ranking_committee/view_rankMembers">View Committee</a>
@@ -81,7 +91,7 @@
                             </h4>
                     <?php
                     }
-                    else if($this->session->userdata('rank_level') == 3)
+                    else if($this->session->userdata('rank_level') == 2)
                     {?>
                             <h4 style="width=50px; cursor: pointer" class="h4_1">
                                 <a href="http://localhost/hr_recordsystem/index.php/ranking_committee/member_faculty_list">Rank Program</a>
@@ -95,6 +105,4 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="<?php echo base_url('assets/js/jquery-1.10.2.min.js'); ?>"></script>
-<script src="<?php echo base_url('assets/js/bootstrap.min.js'); ?>"></script>
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
