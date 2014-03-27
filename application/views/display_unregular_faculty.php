@@ -4,7 +4,7 @@
     <button type="button" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-print"></span></button> </a>
     <br/><br/>
     <table width="450" align="left" class="table table-striped sortable">
-        <tr align="left">
+        <tr align="left" bgcolor="#E3E3E4">
             <th>Lastname</th>
             <th>Firstname</th>
             <th>Program</th>

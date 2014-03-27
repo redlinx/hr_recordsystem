@@ -7,7 +7,7 @@
     </script>
     <button onclick="goBack()" class="btn btn-primary"> Back </button>
     <br/><h3>Rank Points</h3><br/>
-    <table width="900" align="left" class="table table-stripped">
+    <table width="900" align="left" class="table table-striped">
         <tr align="left">
             <th width="1">Educational Qualification</th>
             <th width="1">Teaching Proficiency</th>
@@ -18,7 +18,7 @@
             <th width="1">Total Points</th>
             <th width="1">Date</th>
         </tr>   
-        <tr></tr>
+       
     <?php
         for($x=0;$x<count($page_view_content);$x++)
         {

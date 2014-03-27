@@ -4,9 +4,9 @@
     <button type="button" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-print"></span></button> </a>
     <br/><br/>
     <table width="400" align="left" class="table table-striped sortable">
-        <tr align="left">
-            <th>Lastname</th>
-            <th>Firstname</th>
+        <tr align="left" bgcolor="#E3E3E4">
+            <th>LastName</th>
+            <th>FirstName</th>
             <th>Program</th>
             <th>Date Hired</th>
             <th>Date Regular</th>

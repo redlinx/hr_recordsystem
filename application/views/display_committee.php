@@ -8,7 +8,7 @@
 	<br/>
 	<a href="http://localhost/hr_recordsystem/index.php/ranking_committee/view_rankMembers">[View Members]</a>
 	<table class="table table-striped">
-			<tr align="left">
+			<tr align="left" bgcolor="#E3E3E4">
 				<th>Last Name</th>
 				<th>First Name</th>
 				<th>Program to Rank</th>

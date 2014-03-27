@@ -4,7 +4,7 @@
     <button type="button" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-print"></span></button> </a>
     <br/><br/>
     <table width="600" align="left" class="table table-striped">
-        <tr align="left">
+        <tr align="left" bgcolor="#E3E3E4">
             <th>Last Name</th>
             <th>First Name</th>
             <th>Date Hired</th>
@@ -23,7 +23,7 @@
                     echo "<td>".$page_view_content[$x]['Years_Of_Service']."</td>";
                     echo "<td>".$page_view_content[$x]['prog_name']."</td>";
                     echo '<td><a href="'.base_url().'index.php/view_hr/education/'.$page_view_content[$x]['faculty_profile_emp_id'].'"><button class="btn btn-primary btn-sm">View</button></a></td>';
-                    echo '<td><a href="'.base_url().'index.php/regularization_candidate/verify_regularization/'.$page_view_content[$x]['account_id'].'"><button class="btn btn-primary btn-sm">Promote</button></a></td>';
+                    echo '<td><a href="'.base_url().'index.php/regularization_candidate/verify_regularization/'.$page_view_content[$x]['account_id'].'"><button class="btn btn-danger btn-sm">Promote</button></a></td>';
                     echo '</tr>';
             }
         ?>    

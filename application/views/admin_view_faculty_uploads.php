@@ -8,7 +8,7 @@
     </script>
     <button onclick="goBack()" class="btn btn-primary"> Back </button><br/><br/>
     <table width="500" align="left" class="table table-striped">
-        <tr align="left">
+        <tr align="left" bgcolor="#E3E3E4">
             <th>File Name</th>
             <th>Title</th>
             <th>Category</th>

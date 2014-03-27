@@ -2,14 +2,14 @@
     <h3>Newly Rank Faculty</h3>
     <br/>
     <table width="500" align="left" class="table table-striped">
-        <tr align="left">
+        <tr align="left"  bgcolor="#E3E3E4">
             <th>Firstname</th>
             <th>Lastname</th>
             <th>Program</th>
             <th>Current Rank</th>
             <th>TotalPoints</th>
             <th>Date Ranked</th>
-            <th>Promote</th>
+            <th>Action</th>
         </tr>
         <?php
             for($x=0;$x<count($page_view_content);$x++)
@@ -22,7 +22,7 @@
                     echo "<td>".$page_view_content[$x]['rank_desc']."</td>";
                     echo "<td>".$page_content['TotalPoints']."</td>";
                     echo "<td>".$page_view_content[$x]['MonthName'].' '.$page_view_content[$x]['Day'].', '.$page_view_content[$x]['Year']."</td>";
-                    echo '<td><a href="'.base_url().'index.php/display_notification/promote/'.$page_view_content[$x]['emp_id'].'"> <button class="btn btn-primary">Promote</button> </a></td>';
+                    echo '<td><a href="'.base_url().'index.php/display_notification/promote/'.$page_view_content[$x]['emp_id'].'"> <button class="btn btn-danger btn-sm">Promote</button> </a></td>';
                 echo '</tr>';
             }
         ?>  

@@ -17,7 +17,7 @@
                     echo "<td>".$page_view_content[$x]['firstname']."</td>";
                     echo "<td>".$page_view_content[$x]['MonthName'].', '.$page_view_content[$x]['Day'].' '.$page_view_content[$x]['Year']."</td>";
                     echo '<td><a href="'.base_url().'index.php/display_notification/view_training/'.$page_view_content[$x]['training_id'].'"><button class="btn btn-primary btn-sm">View</button></a></td>';
-                    echo '<td><a href="'.base_url().'index.php/display_notification/verify_training/'.$page_view_content[$x]['training_id'].'"><button class="btn btn-primary btn-sm">Verify</button></a></td>';
+                    echo '<td><a href="'.base_url().'index.php/display_notification/verify_training/'.$page_view_content[$x]['training_id'].'"><button class="btn btn-danger btn-sm">Verify</button></a></td>';
                     echo '</tr>';
             }
         ?>  

@@ -1,7 +1,7 @@
 <div class="body">
 	<br/>
 	<table id="list" width="400" align="left" class="table table-striped">
-			<tr align="left">
+			<tr align="left" bgcolor="#E3E3E4">
 				<th>Last Name</th>
 				<th>First Name</th>
 				<th>View</th>

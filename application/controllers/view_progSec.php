@@ -21,7 +21,7 @@ class View_progSec extends CI_Controller
 		// echo "</pre>";
  		$this->load->view('includes/header');
  		$this->load->view('includes/navi_progSec');
- 		$this->load->view('dean_view_faculty_profile', $page_view_content);
+ 		$this->load->view('hr_view_faculty_profile', $page_view_content);
  		$this->load->view('includes/footer');
 	}
 
