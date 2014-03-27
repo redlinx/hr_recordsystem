@@ -135,21 +135,6 @@ class View_dean extends CI_Controller
 		$this->load->view('includes/navi_dean');
 		$this->load->view('dean_view_faculty', $page_view_content);
 		$this->load->view('includes/footer');
-		// if($this->session->userdata('rank_level') == 0)
-		// {
-		// 	$this->load->view('includes/header');
-		// 	$this->load->view('includes/navi_dean');
-		// 	$this->load->view('dean_view_faculty', $page_view_content);
-		// 	$this->load->view('includes/footer');
-		// }
-		// else if($this->session->userdata('rank_level') == 3)
-		// {
-		// 	$this->load->view('includes/header');
-		// 	$this->load->view('includes/navi_dean');
-		// 	$this->load->view('includes/navi_rankMember');
-		// 	$this->load->view('dean_view_faculty', $page_view_content);
-		// 	$this->load->view('includes/footer');
-		// }
 	}
 
 	public function uploads()

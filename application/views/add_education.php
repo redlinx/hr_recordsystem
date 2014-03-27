@@ -18,7 +18,7 @@
                         echo "<tr><td>Level</td><td>".form_dropdown('type',$type_option)."</td></tr>";
                         echo "<tr><td>Degree</td><td>".form_input('degree')."</td></tr>";
                         ?>
-                        <tr><td colspan=2><button type="mysubmit" class="btn btn-primary">Add</button></td></tr>
+                        <tr><td align="right" colspan=2><button type="mysubmit" class="btn btn-primary">Add</button></td></tr>
             <?php        echo form_close();
                 echo "</table>";
         ?>

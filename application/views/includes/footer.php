@@ -1,4 +1,5 @@
 
+
 </div>
 </div>
 </body>
@@ -11,4 +12,10 @@
 <script> $(function() { $( "#accordion2" ).accordion({ collapsible: true, active: false }); }); </script>
 <script> $(function() { $( "#promotions" ).accordion({ collapsible: true, active: false }); }); </script>
 <script> $(function() { $( "#faculty" ).accordion({ collapsible: true, active: false }); }); </script>
+
+            </div>
+        </div>
+    </div>
+ </div>
+
 </html>

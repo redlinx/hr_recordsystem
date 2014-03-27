@@ -1,4 +1,3 @@
-<div class="body">
     <script>
     function goBack()
       {
@@ -33,5 +32,3 @@
         }
         ?>  
     </table>
-    <br/>
-</div>

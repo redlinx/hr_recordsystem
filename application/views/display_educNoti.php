@@ -1,12 +1,14 @@
 <div class="body">
     <h3>Educational Attainment</h3>
     <br/>
-    <table class="table table-striped">
+    <table class="table table-striped sortable">
         <tr align="left">
             <th>Lastname</th>
             <th>Firstname</th>
             <th>Updates</th>
             <th>View</th>
+            <th>Date</th>
+            <th></th>
             <th>Action</th>
         </tr>
         <?php
@@ -17,7 +19,11 @@
                     echo "<td>".$page_view_content[$x]['firstname']."</td>";
                     echo "<td>".$page_view_content[$x]['MonthName'].', '.$page_view_content[$x]['Day'].' '.$page_view_content[$x]['Year']."</td>";     
                     echo '<td><a href="'.base_url().'index.php/display_notification/view_education/'.$page_view_content[$x]['educ_id'].'"><button class="btn btn-primary btn-sm">View</button></a></td>';
+
                     echo '<td><a href="'.base_url().'index.php/display_notification/verify_education/'.$page_view_content[$x]['educ_id'].'"><button class="btn btn-danger btn-sm">Verify</button></a></td>';
+
+                    echo '<td><a href="'.base_url().'index.php/display_notification/verify_education/'.$page_view_content[$x]['educ_id'].'"><button class="btn btn-success btn-sm">Verify</button></a></td>';
+
                     echo '</tr>';
             }
         ?>  

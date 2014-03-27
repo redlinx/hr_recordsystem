@@ -120,24 +120,8 @@ class View_progSec extends CI_Controller
 		// echo "</pre>";
 		$this->load->view('includes/header');
 		$this->load->view('includes/navi_progSec');
-		$this->load->view('includes/navi_rankMember');
 		$this->load->view('dean_view_faculty', $page_view_content);
 		$this->load->view('includes/footer');
-		if($this->session->userdata('rank_level') == 0)
-		{
-			$this->load->view('includes/header');
-			$this->load->view('includes/navi_progSec');
-			$this->load->view('dean_view_faculty', $page_view_content);
-			$this->load->view('includes/footer');
-		}
-		else if($this->session->userdata('rank_level') == 3)
-		{
-			$this->load->view('includes/header');
-			$this->load->view('includes/navi_progSec');
-			$this->load->view('includes/navi_rankMember');
-			$this->load->view('dean_view_faculty', $page_view_content);
-			$this->load->view('includes/footer');
-		}
 	}
 
 	public function uploads()
